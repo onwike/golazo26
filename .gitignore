@@ -1,0 +1,20 @@
+node_modules/
+.env
+.env.*
+.dev.vars
+.wrangler/
+dist/
+build/
+out/
+*.log
+.DS_Store
+tmp/
+.cache/
+data/live-state.json
+
+* [0-9].*
+data/ai-predictions.json
+data/leaderboard.json
+data/stories.json
+g26-db-backup.sql
+*-backup.sql
