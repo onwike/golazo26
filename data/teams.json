@@ -1,0 +1,630 @@
+{
+  "generated_at": "2026-06-10T04:13:52.645Z",
+  "count": 48,
+  "teams": [
+    {
+      "name": "Czechia",
+      "slug": "czechia",
+      "group": "A",
+      "iso": "CZ",
+      "flag": "🇨🇿",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Korea Republic",
+      "slug": "korea-republic",
+      "group": "A",
+      "iso": "KR",
+      "flag": "🇰🇷",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Mexico",
+      "slug": "mexico",
+      "group": "A",
+      "iso": "MX",
+      "flag": "🇲🇽",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "South Africa",
+      "slug": "south-africa",
+      "group": "A",
+      "iso": "ZA",
+      "flag": "🇿🇦",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "slug": "bosnia-and-herzegovina",
+      "group": "B",
+      "iso": "BA",
+      "flag": "🇧🇦",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Canada",
+      "slug": "canada",
+      "group": "B",
+      "iso": "CA",
+      "flag": "🇨🇦",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Qatar",
+      "slug": "qatar",
+      "group": "B",
+      "iso": "QA",
+      "flag": "🇶🇦",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Switzerland",
+      "slug": "switzerland",
+      "group": "B",
+      "iso": "CH",
+      "flag": "🇨🇭",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Brazil",
+      "slug": "brazil",
+      "group": "C",
+      "iso": "BR",
+      "flag": "🇧🇷",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Haiti",
+      "slug": "haiti",
+      "group": "C",
+      "iso": "HT",
+      "flag": "🇭🇹",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Morocco",
+      "slug": "morocco",
+      "group": "C",
+      "iso": "MA",
+      "flag": "🇲🇦",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Scotland",
+      "slug": "scotland",
+      "group": "C",
+      "iso": "GB-SCT",
+      "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Australia",
+      "slug": "australia",
+      "group": "D",
+      "iso": "AU",
+      "flag": "🇦🇺",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Paraguay",
+      "slug": "paraguay",
+      "group": "D",
+      "iso": "PY",
+      "flag": "🇵🇾",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Türkiye",
+      "slug": "turkiye",
+      "group": "D",
+      "iso": "TR",
+      "flag": "🇹🇷",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "USA",
+      "slug": "usa",
+      "group": "D",
+      "iso": "US",
+      "flag": "🇺🇸",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Côte d'Ivoire",
+      "slug": "cote-d-ivoire",
+      "group": "E",
+      "iso": "CI",
+      "flag": "🇨🇮",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Curaçao",
+      "slug": "curacao",
+      "group": "E",
+      "iso": "CW",
+      "flag": "🇨🇼",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Ecuador",
+      "slug": "ecuador",
+      "group": "E",
+      "iso": "EC",
+      "flag": "🇪🇨",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Germany",
+      "slug": "germany",
+      "group": "E",
+      "iso": "DE",
+      "flag": "🇩🇪",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Japan",
+      "slug": "japan",
+      "group": "F",
+      "iso": "JP",
+      "flag": "🇯🇵",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Netherlands",
+      "slug": "netherlands",
+      "group": "F",
+      "iso": "NL",
+      "flag": "🇳🇱",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Sweden",
+      "slug": "sweden",
+      "group": "F",
+      "iso": "SE",
+      "flag": "🇸🇪",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Tunisia",
+      "slug": "tunisia",
+      "group": "F",
+      "iso": "TN",
+      "flag": "🇹🇳",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Belgium",
+      "slug": "belgium",
+      "group": "G",
+      "iso": "BE",
+      "flag": "🇧🇪",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Egypt",
+      "slug": "egypt",
+      "group": "G",
+      "iso": "EG",
+      "flag": "🇪🇬",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "IR Iran",
+      "slug": "ir-iran",
+      "group": "G",
+      "iso": "IR",
+      "flag": "🇮🇷",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "New Zealand",
+      "slug": "new-zealand",
+      "group": "G",
+      "iso": "NZ",
+      "flag": "🇳🇿",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Cabo Verde",
+      "slug": "cabo-verde",
+      "group": "H",
+      "iso": "CV",
+      "flag": "🇨🇻",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Saudi Arabia",
+      "slug": "saudi-arabia",
+      "group": "H",
+      "iso": "SA",
+      "flag": "🇸🇦",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Spain",
+      "slug": "spain",
+      "group": "H",
+      "iso": "ES",
+      "flag": "🇪🇸",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Uruguay",
+      "slug": "uruguay",
+      "group": "H",
+      "iso": "UY",
+      "flag": "🇺🇾",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "France",
+      "slug": "france",
+      "group": "I",
+      "iso": "FR",
+      "flag": "🇫🇷",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Iraq",
+      "slug": "iraq",
+      "group": "I",
+      "iso": "IQ",
+      "flag": "🇮🇶",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Norway",
+      "slug": "norway",
+      "group": "I",
+      "iso": "NO",
+      "flag": "🇳🇴",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Senegal",
+      "slug": "senegal",
+      "group": "I",
+      "iso": "SN",
+      "flag": "🇸🇳",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Algeria",
+      "slug": "algeria",
+      "group": "J",
+      "iso": "DZ",
+      "flag": "🇩🇿",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Argentina",
+      "slug": "argentina",
+      "group": "J",
+      "iso": "AR",
+      "flag": "🇦🇷",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Austria",
+      "slug": "austria",
+      "group": "J",
+      "iso": "AT",
+      "flag": "🇦🇹",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Jordan",
+      "slug": "jordan",
+      "group": "J",
+      "iso": "JO",
+      "flag": "🇯🇴",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Colombia",
+      "slug": "colombia",
+      "group": "K",
+      "iso": "CO",
+      "flag": "🇨🇴",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Congo DR",
+      "slug": "congo-dr",
+      "group": "K",
+      "iso": "CD",
+      "flag": "🇨🇩",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Portugal",
+      "slug": "portugal",
+      "group": "K",
+      "iso": "PT",
+      "flag": "🇵🇹",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Uzbekistan",
+      "slug": "uzbekistan",
+      "group": "K",
+      "iso": "UZ",
+      "flag": "🇺🇿",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Croatia",
+      "slug": "croatia",
+      "group": "L",
+      "iso": "HR",
+      "flag": "🇭🇷",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "England",
+      "slug": "england",
+      "group": "L",
+      "iso": "GB-ENG",
+      "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Ghana",
+      "slug": "ghana",
+      "group": "L",
+      "iso": "GH",
+      "flag": "🇬🇭",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "name": "Panama",
+      "slug": "panama",
+      "group": "L",
+      "iso": "PA",
+      "flag": "🇵🇦",
+      "sources": {
+        "name_and_group": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    }
+  ]
+}

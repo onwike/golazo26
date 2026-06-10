@@ -1,0 +1,2294 @@
+{
+  "generated_at": "2026-06-10T04:13:52.645Z",
+  "count": 104,
+  "matches": [
+    {
+      "match_no": 1,
+      "stage": "group",
+      "group": "A",
+      "matchday": 1,
+      "kickoff_utc": "2026-06-11T19:00:00Z",
+      "venue_id": "mexico-city",
+      "home": {
+        "team": "Mexico"
+      },
+      "away": {
+        "team": "South Africa"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 2,
+      "stage": "group",
+      "group": "A",
+      "matchday": 1,
+      "kickoff_utc": "2026-06-12T02:00:00Z",
+      "venue_id": "guadalajara",
+      "home": {
+        "team": "Korea Republic"
+      },
+      "away": {
+        "team": "Czechia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 3,
+      "stage": "group",
+      "group": "B",
+      "matchday": 2,
+      "kickoff_utc": "2026-06-12T19:00:00Z",
+      "venue_id": "toronto",
+      "home": {
+        "team": "Canada"
+      },
+      "away": {
+        "team": "Bosnia and Herzegovina"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 4,
+      "stage": "group",
+      "group": "D",
+      "matchday": 2,
+      "kickoff_utc": "2026-06-13T01:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "team": "USA"
+      },
+      "away": {
+        "team": "Paraguay"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 5,
+      "stage": "group",
+      "group": "C",
+      "matchday": 3,
+      "kickoff_utc": "2026-06-14T01:00:00Z",
+      "venue_id": "boston",
+      "home": {
+        "team": "Haiti"
+      },
+      "away": {
+        "team": "Scotland"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 6,
+      "stage": "group",
+      "group": "D",
+      "matchday": 3,
+      "kickoff_utc": "2026-06-14T04:00:00Z",
+      "venue_id": "vancouver",
+      "home": {
+        "team": "Australia"
+      },
+      "away": {
+        "team": "Türkiye"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 7,
+      "stage": "group",
+      "group": "C",
+      "matchday": 3,
+      "kickoff_utc": "2026-06-13T22:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "team": "Brazil"
+      },
+      "away": {
+        "team": "Morocco"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 8,
+      "stage": "group",
+      "group": "B",
+      "matchday": 3,
+      "kickoff_utc": "2026-06-13T19:00:00Z",
+      "venue_id": "sf-bay-area",
+      "home": {
+        "team": "Qatar"
+      },
+      "away": {
+        "team": "Switzerland"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 9,
+      "stage": "group",
+      "group": "E",
+      "matchday": 4,
+      "kickoff_utc": "2026-06-14T23:00:00Z",
+      "venue_id": "philadelphia",
+      "home": {
+        "team": "Côte d'Ivoire"
+      },
+      "away": {
+        "team": "Ecuador"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 10,
+      "stage": "group",
+      "group": "E",
+      "matchday": 4,
+      "kickoff_utc": "2026-06-14T17:00:00Z",
+      "venue_id": "houston",
+      "home": {
+        "team": "Germany"
+      },
+      "away": {
+        "team": "Curaçao"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 11,
+      "stage": "group",
+      "group": "F",
+      "matchday": 4,
+      "kickoff_utc": "2026-06-14T20:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "team": "Netherlands"
+      },
+      "away": {
+        "team": "Japan"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 12,
+      "stage": "group",
+      "group": "F",
+      "matchday": 4,
+      "kickoff_utc": "2026-06-15T02:00:00Z",
+      "venue_id": "monterrey",
+      "home": {
+        "team": "Sweden"
+      },
+      "away": {
+        "team": "Tunisia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 13,
+      "stage": "group",
+      "group": "H",
+      "matchday": 5,
+      "kickoff_utc": "2026-06-15T22:00:00Z",
+      "venue_id": "miami",
+      "home": {
+        "team": "Saudi Arabia"
+      },
+      "away": {
+        "team": "Uruguay"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 14,
+      "stage": "group",
+      "group": "H",
+      "matchday": 5,
+      "kickoff_utc": "2026-06-15T16:00:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "team": "Spain"
+      },
+      "away": {
+        "team": "Cabo Verde"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 15,
+      "stage": "group",
+      "group": "G",
+      "matchday": 5,
+      "kickoff_utc": "2026-06-16T01:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "team": "IR Iran"
+      },
+      "away": {
+        "team": "New Zealand"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 16,
+      "stage": "group",
+      "group": "G",
+      "matchday": 5,
+      "kickoff_utc": "2026-06-15T19:00:00Z",
+      "venue_id": "seattle",
+      "home": {
+        "team": "Belgium"
+      },
+      "away": {
+        "team": "Egypt"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 17,
+      "stage": "group",
+      "group": "I",
+      "matchday": 6,
+      "kickoff_utc": "2026-06-16T19:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "team": "France"
+      },
+      "away": {
+        "team": "Senegal"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 18,
+      "stage": "group",
+      "group": "I",
+      "matchday": 6,
+      "kickoff_utc": "2026-06-16T22:00:00Z",
+      "venue_id": "boston",
+      "home": {
+        "team": "Iraq"
+      },
+      "away": {
+        "team": "Norway"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 19,
+      "stage": "group",
+      "group": "J",
+      "matchday": 6,
+      "kickoff_utc": "2026-06-17T01:00:00Z",
+      "venue_id": "kansas-city",
+      "home": {
+        "team": "Argentina"
+      },
+      "away": {
+        "team": "Algeria"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 20,
+      "stage": "group",
+      "group": "J",
+      "matchday": 6,
+      "kickoff_utc": "2026-06-17T04:00:00Z",
+      "venue_id": "sf-bay-area",
+      "home": {
+        "team": "Austria"
+      },
+      "away": {
+        "team": "Jordan"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 21,
+      "stage": "group",
+      "group": "L",
+      "matchday": 7,
+      "kickoff_utc": "2026-06-17T23:00:00Z",
+      "venue_id": "toronto",
+      "home": {
+        "team": "Ghana"
+      },
+      "away": {
+        "team": "Panama"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 22,
+      "stage": "group",
+      "group": "L",
+      "matchday": 7,
+      "kickoff_utc": "2026-06-17T20:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "team": "England"
+      },
+      "away": {
+        "team": "Croatia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 23,
+      "stage": "group",
+      "group": "K",
+      "matchday": 7,
+      "kickoff_utc": "2026-06-17T17:00:00Z",
+      "venue_id": "houston",
+      "home": {
+        "team": "Portugal"
+      },
+      "away": {
+        "team": "Congo DR"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 24,
+      "stage": "group",
+      "group": "K",
+      "matchday": 7,
+      "kickoff_utc": "2026-06-18T02:00:00Z",
+      "venue_id": "mexico-city",
+      "home": {
+        "team": "Uzbekistan"
+      },
+      "away": {
+        "team": "Colombia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 25,
+      "stage": "group",
+      "group": "A",
+      "matchday": 8,
+      "kickoff_utc": "2026-06-18T16:00:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "team": "Czechia"
+      },
+      "away": {
+        "team": "South Africa"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 26,
+      "stage": "group",
+      "group": "B",
+      "matchday": 8,
+      "kickoff_utc": "2026-06-18T19:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "team": "Switzerland"
+      },
+      "away": {
+        "team": "Bosnia and Herzegovina"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 27,
+      "stage": "group",
+      "group": "B",
+      "matchday": 8,
+      "kickoff_utc": "2026-06-18T22:00:00Z",
+      "venue_id": "vancouver",
+      "home": {
+        "team": "Canada"
+      },
+      "away": {
+        "team": "Qatar"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 28,
+      "stage": "group",
+      "group": "A",
+      "matchday": 8,
+      "kickoff_utc": "2026-06-19T01:00:00Z",
+      "venue_id": "guadalajara",
+      "home": {
+        "team": "Mexico"
+      },
+      "away": {
+        "team": "Korea Republic"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 29,
+      "stage": "group",
+      "group": "C",
+      "matchday": 9,
+      "kickoff_utc": "2026-06-20T00:30:00Z",
+      "venue_id": "philadelphia",
+      "home": {
+        "team": "Brazil"
+      },
+      "away": {
+        "team": "Haiti"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 30,
+      "stage": "group",
+      "group": "C",
+      "matchday": 9,
+      "kickoff_utc": "2026-06-19T22:00:00Z",
+      "venue_id": "boston",
+      "home": {
+        "team": "Scotland"
+      },
+      "away": {
+        "team": "Morocco"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 31,
+      "stage": "group",
+      "group": "D",
+      "matchday": 9,
+      "kickoff_utc": "2026-06-20T03:00:00Z",
+      "venue_id": "sf-bay-area",
+      "home": {
+        "team": "Türkiye"
+      },
+      "away": {
+        "team": "Paraguay"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 32,
+      "stage": "group",
+      "group": "D",
+      "matchday": 9,
+      "kickoff_utc": "2026-06-19T19:00:00Z",
+      "venue_id": "seattle",
+      "home": {
+        "team": "USA"
+      },
+      "away": {
+        "team": "Australia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 33,
+      "stage": "group",
+      "group": "E",
+      "matchday": 10,
+      "kickoff_utc": "2026-06-20T20:00:00Z",
+      "venue_id": "toronto",
+      "home": {
+        "team": "Germany"
+      },
+      "away": {
+        "team": "Côte d'Ivoire"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 34,
+      "stage": "group",
+      "group": "E",
+      "matchday": 10,
+      "kickoff_utc": "2026-06-21T00:00:00Z",
+      "venue_id": "kansas-city",
+      "home": {
+        "team": "Ecuador"
+      },
+      "away": {
+        "team": "Curaçao"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 35,
+      "stage": "group",
+      "group": "F",
+      "matchday": 10,
+      "kickoff_utc": "2026-06-20T17:00:00Z",
+      "venue_id": "houston",
+      "home": {
+        "team": "Netherlands"
+      },
+      "away": {
+        "team": "Sweden"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 36,
+      "stage": "group",
+      "group": "F",
+      "matchday": 10,
+      "kickoff_utc": "2026-06-21T04:00:00Z",
+      "venue_id": "monterrey",
+      "home": {
+        "team": "Tunisia"
+      },
+      "away": {
+        "team": "Japan"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 37,
+      "stage": "group",
+      "group": "H",
+      "matchday": 11,
+      "kickoff_utc": "2026-06-21T22:00:00Z",
+      "venue_id": "miami",
+      "home": {
+        "team": "Uruguay"
+      },
+      "away": {
+        "team": "Cabo Verde"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 38,
+      "stage": "group",
+      "group": "H",
+      "matchday": 11,
+      "kickoff_utc": "2026-06-21T16:00:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "team": "Spain"
+      },
+      "away": {
+        "team": "Saudi Arabia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 39,
+      "stage": "group",
+      "group": "G",
+      "matchday": 11,
+      "kickoff_utc": "2026-06-21T19:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "team": "Belgium"
+      },
+      "away": {
+        "team": "IR Iran"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 40,
+      "stage": "group",
+      "group": "G",
+      "matchday": 11,
+      "kickoff_utc": "2026-06-22T01:00:00Z",
+      "venue_id": "vancouver",
+      "home": {
+        "team": "New Zealand"
+      },
+      "away": {
+        "team": "Egypt"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 41,
+      "stage": "group",
+      "group": "I",
+      "matchday": 12,
+      "kickoff_utc": "2026-06-23T00:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "team": "Norway"
+      },
+      "away": {
+        "team": "Senegal"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 42,
+      "stage": "group",
+      "group": "I",
+      "matchday": 12,
+      "kickoff_utc": "2026-06-22T21:00:00Z",
+      "venue_id": "philadelphia",
+      "home": {
+        "team": "France"
+      },
+      "away": {
+        "team": "Iraq"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 43,
+      "stage": "group",
+      "group": "J",
+      "matchday": 12,
+      "kickoff_utc": "2026-06-22T17:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "team": "Argentina"
+      },
+      "away": {
+        "team": "Austria"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 44,
+      "stage": "group",
+      "group": "J",
+      "matchday": 12,
+      "kickoff_utc": "2026-06-23T03:00:00Z",
+      "venue_id": "sf-bay-area",
+      "home": {
+        "team": "Jordan"
+      },
+      "away": {
+        "team": "Algeria"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 45,
+      "stage": "group",
+      "group": "L",
+      "matchday": 13,
+      "kickoff_utc": "2026-06-23T20:00:00Z",
+      "venue_id": "boston",
+      "home": {
+        "team": "England"
+      },
+      "away": {
+        "team": "Ghana"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 46,
+      "stage": "group",
+      "group": "L",
+      "matchday": 13,
+      "kickoff_utc": "2026-06-23T23:00:00Z",
+      "venue_id": "toronto",
+      "home": {
+        "team": "Panama"
+      },
+      "away": {
+        "team": "Croatia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 47,
+      "stage": "group",
+      "group": "K",
+      "matchday": 13,
+      "kickoff_utc": "2026-06-23T17:00:00Z",
+      "venue_id": "houston",
+      "home": {
+        "team": "Portugal"
+      },
+      "away": {
+        "team": "Uzbekistan"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 48,
+      "stage": "group",
+      "group": "K",
+      "matchday": 13,
+      "kickoff_utc": "2026-06-24T02:00:00Z",
+      "venue_id": "guadalajara",
+      "home": {
+        "team": "Colombia"
+      },
+      "away": {
+        "team": "Congo DR"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 49,
+      "stage": "group",
+      "group": "C",
+      "matchday": 14,
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "venue_id": "miami",
+      "home": {
+        "team": "Scotland"
+      },
+      "away": {
+        "team": "Brazil"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 50,
+      "stage": "group",
+      "group": "C",
+      "matchday": 14,
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "team": "Morocco"
+      },
+      "away": {
+        "team": "Haiti"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 51,
+      "stage": "group",
+      "group": "B",
+      "matchday": 14,
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "venue_id": "vancouver",
+      "home": {
+        "team": "Switzerland"
+      },
+      "away": {
+        "team": "Canada"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 52,
+      "stage": "group",
+      "group": "B",
+      "matchday": 14,
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "venue_id": "seattle",
+      "home": {
+        "team": "Bosnia and Herzegovina"
+      },
+      "away": {
+        "team": "Qatar"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 53,
+      "stage": "group",
+      "group": "A",
+      "matchday": 14,
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "venue_id": "mexico-city",
+      "home": {
+        "team": "Czechia"
+      },
+      "away": {
+        "team": "Mexico"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 54,
+      "stage": "group",
+      "group": "A",
+      "matchday": 14,
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "venue_id": "monterrey",
+      "home": {
+        "team": "South Africa"
+      },
+      "away": {
+        "team": "Korea Republic"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 55,
+      "stage": "group",
+      "group": "E",
+      "matchday": 15,
+      "kickoff_utc": "2026-06-25T20:00:00Z",
+      "venue_id": "philadelphia",
+      "home": {
+        "team": "Curaçao"
+      },
+      "away": {
+        "team": "Côte d'Ivoire"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 56,
+      "stage": "group",
+      "group": "E",
+      "matchday": 15,
+      "kickoff_utc": "2026-06-25T20:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "team": "Ecuador"
+      },
+      "away": {
+        "team": "Germany"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 57,
+      "stage": "group",
+      "group": "F",
+      "matchday": 15,
+      "kickoff_utc": "2026-06-25T23:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "team": "Japan"
+      },
+      "away": {
+        "team": "Sweden"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 58,
+      "stage": "group",
+      "group": "F",
+      "matchday": 15,
+      "kickoff_utc": "2026-06-25T23:00:00Z",
+      "venue_id": "kansas-city",
+      "home": {
+        "team": "Tunisia"
+      },
+      "away": {
+        "team": "Netherlands"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 59,
+      "stage": "group",
+      "group": "D",
+      "matchday": 15,
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "team": "Türkiye"
+      },
+      "away": {
+        "team": "USA"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 60,
+      "stage": "group",
+      "group": "D",
+      "matchday": 15,
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "venue_id": "sf-bay-area",
+      "home": {
+        "team": "Paraguay"
+      },
+      "away": {
+        "team": "Australia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 61,
+      "stage": "group",
+      "group": "I",
+      "matchday": 16,
+      "kickoff_utc": "2026-06-26T19:00:00Z",
+      "venue_id": "boston",
+      "home": {
+        "team": "Norway"
+      },
+      "away": {
+        "team": "France"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 62,
+      "stage": "group",
+      "group": "I",
+      "matchday": 16,
+      "kickoff_utc": "2026-06-26T19:00:00Z",
+      "venue_id": "toronto",
+      "home": {
+        "team": "Senegal"
+      },
+      "away": {
+        "team": "Iraq"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 63,
+      "stage": "group",
+      "group": "G",
+      "matchday": 16,
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "venue_id": "seattle",
+      "home": {
+        "team": "Egypt"
+      },
+      "away": {
+        "team": "IR Iran"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 64,
+      "stage": "group",
+      "group": "G",
+      "matchday": 16,
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "venue_id": "vancouver",
+      "home": {
+        "team": "New Zealand"
+      },
+      "away": {
+        "team": "Belgium"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 65,
+      "stage": "group",
+      "group": "H",
+      "matchday": 16,
+      "kickoff_utc": "2026-06-27T00:00:00Z",
+      "venue_id": "houston",
+      "home": {
+        "team": "Cabo Verde"
+      },
+      "away": {
+        "team": "Saudi Arabia"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 66,
+      "stage": "group",
+      "group": "H",
+      "matchday": 16,
+      "kickoff_utc": "2026-06-27T00:00:00Z",
+      "venue_id": "guadalajara",
+      "home": {
+        "team": "Uruguay"
+      },
+      "away": {
+        "team": "Spain"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 67,
+      "stage": "group",
+      "group": "L",
+      "matchday": 17,
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "team": "Panama"
+      },
+      "away": {
+        "team": "England"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 68,
+      "stage": "group",
+      "group": "L",
+      "matchday": 17,
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "venue_id": "philadelphia",
+      "home": {
+        "team": "Croatia"
+      },
+      "away": {
+        "team": "Ghana"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 69,
+      "stage": "group",
+      "group": "J",
+      "matchday": 17,
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "venue_id": "kansas-city",
+      "home": {
+        "team": "Algeria"
+      },
+      "away": {
+        "team": "Austria"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 70,
+      "stage": "group",
+      "group": "J",
+      "matchday": 17,
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "team": "Jordan"
+      },
+      "away": {
+        "team": "Argentina"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 71,
+      "stage": "group",
+      "group": "K",
+      "matchday": 17,
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "venue_id": "miami",
+      "home": {
+        "team": "Colombia"
+      },
+      "away": {
+        "team": "Portugal"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 72,
+      "stage": "group",
+      "group": "K",
+      "matchday": 17,
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "team": "Congo DR"
+      },
+      "away": {
+        "team": "Uzbekistan"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 73,
+      "stage": "r32",
+      "kickoff_utc": "2026-06-28T19:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "placeholder": "2A",
+        "placeholder_text": "Runner-up Group A"
+      },
+      "away": {
+        "placeholder": "2B",
+        "placeholder_text": "Runner-up Group B"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 74,
+      "stage": "r32",
+      "kickoff_utc": "2026-06-29T20:30:00Z",
+      "venue_id": "boston",
+      "home": {
+        "placeholder": "1E",
+        "placeholder_text": "Winner Group E"
+      },
+      "away": {
+        "placeholder": "3A/B/C/D/F",
+        "placeholder_text": "Third place, Group A/B/C/D/F"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 75,
+      "stage": "r32",
+      "kickoff_utc": "2026-06-30T01:00:00Z",
+      "venue_id": "monterrey",
+      "home": {
+        "placeholder": "1F",
+        "placeholder_text": "Winner Group F"
+      },
+      "away": {
+        "placeholder": "2C",
+        "placeholder_text": "Runner-up Group C"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 76,
+      "stage": "r32",
+      "kickoff_utc": "2026-06-29T17:00:00Z",
+      "venue_id": "houston",
+      "home": {
+        "placeholder": "1C",
+        "placeholder_text": "Winner Group C"
+      },
+      "away": {
+        "placeholder": "2F",
+        "placeholder_text": "Runner-up Group F"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 77,
+      "stage": "r32",
+      "kickoff_utc": "2026-06-30T21:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "placeholder": "1I",
+        "placeholder_text": "Winner Group I"
+      },
+      "away": {
+        "placeholder": "3C/D/F/G/H",
+        "placeholder_text": "Third place, Group C/D/F/G/H"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 78,
+      "stage": "r32",
+      "kickoff_utc": "2026-06-30T17:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "placeholder": "2E",
+        "placeholder_text": "Runner-up Group E"
+      },
+      "away": {
+        "placeholder": "2I",
+        "placeholder_text": "Runner-up Group I"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 79,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-01T01:00:00Z",
+      "venue_id": "mexico-city",
+      "home": {
+        "placeholder": "1A",
+        "placeholder_text": "Winner Group A"
+      },
+      "away": {
+        "placeholder": "3C/E/F/H/I",
+        "placeholder_text": "Third place, Group C/E/F/H/I"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 80,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-01T16:00:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "placeholder": "1L",
+        "placeholder_text": "Winner Group L"
+      },
+      "away": {
+        "placeholder": "3E/H/I/J/K",
+        "placeholder_text": "Third place, Group E/H/I/J/K"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 81,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-02T00:00:00Z",
+      "venue_id": "sf-bay-area",
+      "home": {
+        "placeholder": "1D",
+        "placeholder_text": "Winner Group D"
+      },
+      "away": {
+        "placeholder": "3B/E/F/I/J",
+        "placeholder_text": "Third place, Group B/E/F/I/J"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 82,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-01T20:00:00Z",
+      "venue_id": "seattle",
+      "home": {
+        "placeholder": "1G",
+        "placeholder_text": "Winner Group G"
+      },
+      "away": {
+        "placeholder": "3A/E/H/I/J",
+        "placeholder_text": "Third place, Group A/E/H/I/J"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 83,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-02T23:00:00Z",
+      "venue_id": "toronto",
+      "home": {
+        "placeholder": "2K",
+        "placeholder_text": "Runner-up Group K"
+      },
+      "away": {
+        "placeholder": "2L",
+        "placeholder_text": "Runner-up Group L"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 84,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-02T19:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "placeholder": "1H",
+        "placeholder_text": "Winner Group H"
+      },
+      "away": {
+        "placeholder": "2J",
+        "placeholder_text": "Runner-up Group J"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 85,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-03T03:00:00Z",
+      "venue_id": "vancouver",
+      "home": {
+        "placeholder": "1B",
+        "placeholder_text": "Winner Group B"
+      },
+      "away": {
+        "placeholder": "3E/F/G/I/J",
+        "placeholder_text": "Third place, Group E/F/G/I/J"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 86,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-03T22:00:00Z",
+      "venue_id": "miami",
+      "home": {
+        "placeholder": "1J",
+        "placeholder_text": "Winner Group J"
+      },
+      "away": {
+        "placeholder": "2H",
+        "placeholder_text": "Runner-up Group H"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 87,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-04T01:30:00Z",
+      "venue_id": "kansas-city",
+      "home": {
+        "placeholder": "1K",
+        "placeholder_text": "Winner Group K"
+      },
+      "away": {
+        "placeholder": "3D/E/I/J/L",
+        "placeholder_text": "Third place, Group D/E/I/J/L"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 88,
+      "stage": "r32",
+      "kickoff_utc": "2026-07-03T18:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "placeholder": "2D",
+        "placeholder_text": "Runner-up Group D"
+      },
+      "away": {
+        "placeholder": "2G",
+        "placeholder_text": "Runner-up Group G"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 89,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-04T21:00:00Z",
+      "venue_id": "philadelphia",
+      "home": {
+        "placeholder": "W74",
+        "placeholder_text": "Winner Match 74"
+      },
+      "away": {
+        "placeholder": "W77",
+        "placeholder_text": "Winner Match 77"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 90,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-04T17:00:00Z",
+      "venue_id": "houston",
+      "home": {
+        "placeholder": "W73",
+        "placeholder_text": "Winner Match 73"
+      },
+      "away": {
+        "placeholder": "W75",
+        "placeholder_text": "Winner Match 75"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 91,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-05T20:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "placeholder": "W76",
+        "placeholder_text": "Winner Match 76"
+      },
+      "away": {
+        "placeholder": "W78",
+        "placeholder_text": "Winner Match 78"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 92,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-06T00:00:00Z",
+      "venue_id": "mexico-city",
+      "home": {
+        "placeholder": "W79",
+        "placeholder_text": "Winner Match 79"
+      },
+      "away": {
+        "placeholder": "W80",
+        "placeholder_text": "Winner Match 80"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 93,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-06T19:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "placeholder": "W83",
+        "placeholder_text": "Winner Match 83"
+      },
+      "away": {
+        "placeholder": "W84",
+        "placeholder_text": "Winner Match 84"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 94,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-07T00:00:00Z",
+      "venue_id": "seattle",
+      "home": {
+        "placeholder": "W81",
+        "placeholder_text": "Winner Match 81"
+      },
+      "away": {
+        "placeholder": "W82",
+        "placeholder_text": "Winner Match 82"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 95,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-07T16:00:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "placeholder": "W86",
+        "placeholder_text": "Winner Match 86"
+      },
+      "away": {
+        "placeholder": "W88",
+        "placeholder_text": "Winner Match 88"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 96,
+      "stage": "r16",
+      "kickoff_utc": "2026-07-07T20:00:00Z",
+      "venue_id": "vancouver",
+      "home": {
+        "placeholder": "W85",
+        "placeholder_text": "Winner Match 85"
+      },
+      "away": {
+        "placeholder": "W87",
+        "placeholder_text": "Winner Match 87"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 97,
+      "stage": "qf",
+      "kickoff_utc": "2026-07-09T20:00:00Z",
+      "venue_id": "boston",
+      "home": {
+        "placeholder": "W89",
+        "placeholder_text": "Winner Match 89"
+      },
+      "away": {
+        "placeholder": "W90",
+        "placeholder_text": "Winner Match 90"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 98,
+      "stage": "qf",
+      "kickoff_utc": "2026-07-10T19:00:00Z",
+      "venue_id": "los-angeles",
+      "home": {
+        "placeholder": "W93",
+        "placeholder_text": "Winner Match 93"
+      },
+      "away": {
+        "placeholder": "W94",
+        "placeholder_text": "Winner Match 94"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 99,
+      "stage": "qf",
+      "kickoff_utc": "2026-07-11T21:00:00Z",
+      "venue_id": "miami",
+      "home": {
+        "placeholder": "W91",
+        "placeholder_text": "Winner Match 91"
+      },
+      "away": {
+        "placeholder": "W92",
+        "placeholder_text": "Winner Match 92"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 100,
+      "stage": "qf",
+      "kickoff_utc": "2026-07-12T01:00:00Z",
+      "venue_id": "kansas-city",
+      "home": {
+        "placeholder": "W95",
+        "placeholder_text": "Winner Match 95"
+      },
+      "away": {
+        "placeholder": "W96",
+        "placeholder_text": "Winner Match 96"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 101,
+      "stage": "sf",
+      "kickoff_utc": "2026-07-14T19:00:00Z",
+      "venue_id": "dallas",
+      "home": {
+        "placeholder": "W97",
+        "placeholder_text": "Winner Match 97"
+      },
+      "away": {
+        "placeholder": "W98",
+        "placeholder_text": "Winner Match 98"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 102,
+      "stage": "sf",
+      "kickoff_utc": "2026-07-15T19:00:00Z",
+      "venue_id": "atlanta",
+      "home": {
+        "placeholder": "W99",
+        "placeholder_text": "Winner Match 99"
+      },
+      "away": {
+        "placeholder": "W100",
+        "placeholder_text": "Winner Match 100"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 103,
+      "stage": "third",
+      "kickoff_utc": "2026-07-18T21:00:00Z",
+      "venue_id": "miami",
+      "home": {
+        "placeholder": "L101",
+        "placeholder_text": "Loser Match 101"
+      },
+      "away": {
+        "placeholder": "L102",
+        "placeholder_text": "Loser Match 102"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    },
+    {
+      "match_no": 104,
+      "stage": "final",
+      "kickoff_utc": "2026-07-19T19:00:00Z",
+      "venue_id": "new-york-nj",
+      "home": {
+        "placeholder": "W101",
+        "placeholder_text": "Winner Match 101"
+      },
+      "away": {
+        "placeholder": "W102",
+        "placeholder_text": "Winner Match 102"
+      },
+      "score": null,
+      "status": "scheduled",
+      "sources": {
+        "schedule": [
+          "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json",
+          "https://fixturedownload.com/feed/json/fifa-world-cup-2026"
+        ]
+      }
+    }
+  ]
+}

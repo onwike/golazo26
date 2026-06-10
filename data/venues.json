@@ -1,0 +1,154 @@
+{
+  "generated_at": "2026-06-10T04:13:52.645Z",
+  "sources": {
+    "fifa_name": "https://fixturedownload.com/feed/json/fifa-world-cup-2026",
+    "common_name_and_city": "https://en.wikipedia.org/w/index.php?title=2026_FIFA_World_Cup&oldid=1358650246#Venues",
+    "locality": "https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json"
+  },
+  "venues": [
+    {
+      "id": "mexico-city",
+      "fifa_name": "Mexico City Stadium",
+      "common_name": "Estadio Azteca",
+      "city": "Mexico City",
+      "locality": "Mexico City",
+      "country": "MX",
+      "tz": "America/Mexico_City"
+    },
+    {
+      "id": "guadalajara",
+      "fifa_name": "Guadalajara Stadium",
+      "common_name": "Estadio Akron",
+      "city": "Guadalajara",
+      "locality": "Zapopan",
+      "country": "MX",
+      "tz": "America/Mexico_City"
+    },
+    {
+      "id": "monterrey",
+      "fifa_name": "Monterrey Stadium",
+      "common_name": "Estadio BBVA",
+      "city": "Monterrey",
+      "locality": "Guadalupe",
+      "country": "MX",
+      "tz": "America/Monterrey"
+    },
+    {
+      "id": "vancouver",
+      "fifa_name": "BC Place Vancouver",
+      "common_name": "BC Place",
+      "city": "Vancouver",
+      "locality": "Vancouver",
+      "country": "CA",
+      "tz": "America/Vancouver"
+    },
+    {
+      "id": "toronto",
+      "fifa_name": "Toronto Stadium",
+      "common_name": "BMO Field",
+      "city": "Toronto",
+      "locality": "Toronto",
+      "country": "CA",
+      "tz": "America/Toronto"
+    },
+    {
+      "id": "atlanta",
+      "fifa_name": "Atlanta Stadium",
+      "common_name": "Mercedes-Benz Stadium",
+      "city": "Atlanta",
+      "locality": "Atlanta",
+      "country": "US",
+      "tz": "America/New_York"
+    },
+    {
+      "id": "boston",
+      "fifa_name": "Boston Stadium",
+      "common_name": "Gillette Stadium",
+      "city": "Boston",
+      "locality": "Foxborough",
+      "country": "US",
+      "tz": "America/New_York"
+    },
+    {
+      "id": "dallas",
+      "fifa_name": "Dallas Stadium",
+      "common_name": "AT&T Stadium",
+      "city": "Dallas",
+      "locality": "Arlington",
+      "country": "US",
+      "tz": "America/Chicago"
+    },
+    {
+      "id": "houston",
+      "fifa_name": "Houston Stadium",
+      "common_name": "NRG Stadium",
+      "city": "Houston",
+      "locality": "Houston",
+      "country": "US",
+      "tz": "America/Chicago"
+    },
+    {
+      "id": "kansas-city",
+      "fifa_name": "Kansas City Stadium",
+      "common_name": "Arrowhead Stadium",
+      "city": "Kansas City",
+      "locality": "Kansas City",
+      "country": "US",
+      "tz": "America/Chicago"
+    },
+    {
+      "id": "los-angeles",
+      "fifa_name": "Los Angeles Stadium",
+      "common_name": "SoFi Stadium",
+      "city": "Los Angeles",
+      "locality": "Inglewood",
+      "country": "US",
+      "tz": "America/Los_Angeles"
+    },
+    {
+      "id": "miami",
+      "fifa_name": "Miami Stadium",
+      "common_name": "Hard Rock Stadium",
+      "city": "Miami",
+      "locality": "Miami Gardens",
+      "country": "US",
+      "tz": "America/New_York"
+    },
+    {
+      "id": "new-york-nj",
+      "fifa_name": "New York/New Jersey Stadium",
+      "common_name": "MetLife Stadium",
+      "city": "New York/New Jersey",
+      "locality": "East Rutherford",
+      "country": "US",
+      "tz": "America/New_York"
+    },
+    {
+      "id": "philadelphia",
+      "fifa_name": "Philadelphia Stadium",
+      "common_name": "Lincoln Financial Field",
+      "city": "Philadelphia",
+      "locality": "Philadelphia",
+      "country": "US",
+      "tz": "America/New_York"
+    },
+    {
+      "id": "sf-bay-area",
+      "fifa_name": "San Francisco Bay Area Stadium",
+      "common_name": "Levi's Stadium",
+      "city": "San Francisco Bay Area",
+      "locality": "Santa Clara",
+      "country": "US",
+      "tz": "America/Los_Angeles"
+    },
+    {
+      "id": "seattle",
+      "fifa_name": "Seattle Stadium",
+      "common_name": "Lumen Field",
+      "city": "Seattle",
+      "locality": "Seattle",
+      "country": "US",
+      "tz": "America/Los_Angeles"
+    }
+  ]
+}
