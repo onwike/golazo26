@@ -1,0 +1,173 @@
+{
+  "generated_at": "2026-06-10T04:23:26.027050+00:00",
+  "org": "FIFA",
+  "verified_at": "2026-06-10",
+  "verification": "every role re-checked against sources; 2 source attributions corrected; Deputy SG kept TBD",
+  "people": [
+    {
+      "name": "Gianni Infantino",
+      "role": "FIFA President",
+      "org": "FIFA",
+      "source_url": "https://inside.fifa.com/organisation/secretary-general",
+      "wikipedia_title": "Gianni Infantino",
+      "notes": "9th FIFA President since 26 February 2016; re-elected 2019 and 2023. Confirmed current as of 2026 via inside.fifa.com pages and Wikipedia (incumbent). Cross-checked: https://en.wikipedia.org/wiki/Gianni_Infantino",
+      "status": "confirmed"
+    },
+    {
+      "name": "Mattias Grafström",
+      "role": "FIFA Secretary General",
+      "org": "FIFA",
+      "source_url": "https://inside.fifa.com/organisation/secretary-general",
+      "wikipedia_title": "Mattias Grafström",
+      "notes": "Appointed Secretary General by FIFA Council on 15 May 2024 (acting from 31 Dec 2023). Confirmed incumbent as of 2026 via Wikipedia (last edited Apr 2026) and recent 2026 inside.fifa.com news. Cross-checked: https://en.wikipedia.org/wiki/Mattias_Grafstr%C3%B6m",
+      "status": "confirmed"
+    },
+    {
+      "name": "Arsène Wenger",
+      "role": "Chief of Global Football Development",
+      "org": "FIFA",
+      "source_url": "https://inside.fifa.com/media-releases/fifa-announces-arsene-wenger-as-chief-of-global-football-development",
+      "wikipedia_title": "Arsène Wenger",
+      "notes": "Appointed Chief of Global Football Development on 13 November 2019. Still in role per 2026 World Cup Technical Study Group coverage and Wikipedia. Cross-checked: https://en.wikipedia.org/wiki/Ars%C3%A8ne_Wenger",
+      "status": "confirmed"
+    },
+    {
+      "name": "Thomas Peyer",
+      "role": "FIFA Chief Finance Officer",
+      "org": "FIFA",
+      "source_url": "https://inside.fifa.com/news/thomas-peyer-appointed-fifa-chief-finance-officer-2830404",
+      "wikipedia_title": "",
+      "notes": "Appointed Chief Finance Officer effective 5 September 2016 (FIFA uses 'Chief Finance Officer', not 'Chief Financial Officer'). Confirmed still in role at 73rd FIFA Congress (2023) page: https://inside.fifa.com/watch/73rd-fifa-congress-fifa-chief-finance-officer-thomas-peyer . Could not find a dated June-2026 page explicitly reconfirming he still holds the title; no contradicting departure found. No Wikipedia article.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Kevin Lamour",
+      "role": "Chief Operating Officer",
+      "org": "FIFA",
+      "source_url": "https://inside.fifa.com/news/kevin-lamour-joins-fifa-as-chief-operating-officer",
+      "wikipedia_title": "",
+      "notes": "Joined FIFA as Chief Operating Officer effective 1 November 2024 (from UEFA). Oversees Audit & Advisory, Communications, Finance, Legal & Compliance, Member Associations, People, Technology & Operations, Professional Football Relations and Development, and Social Responsibility & Education. No 2026-dated departure found; assumed current. No Wikipedia article.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Manolo Zubiria",
+      "role": "FIFA World Cup 2026 Chief Tournament Officer – USA",
+      "org": "FIFA / FIFA World Cup 2026",
+      "source_url": "https://inside.fifa.com/organisation/media-releases/los-angeles-lineup-revealed-world-cup-2026-countdown-concert-series-canada-mexico-usa",
+      "wikipedia_title": "",
+      "notes": "Exact title 'FIFA World Cup 2026 Chief Tournament Officer – USA' quoted verbatim on official inside.fifa.com 2026 media release. In role since August 2023; also FIFA Director of Competitions. No Wikipedia article (Wikidata-only / disambiguation with a 19th-century namesake).",
+      "status": "confirmed"
+    },
+    {
+      "name": "Heimo Schirgi",
+      "role": "FIFA Chief Event Operations Officer (also Chief Operating Officer, FIFA26 tournament delivery organisation)",
+      "org": "FIFA / FIFA World Cup 2026",
+      "source_url": "https://inside.fifa.com/organisation/news/world-cup-2026-team-workshop-atlanta-infantino-heimo-schirgi",
+      "wikipedia_title": "",
+      "notes": "Official inside.fifa.com (2026 Atlanta workshop article) gives title 'FIFA's Chief Event Operations Officer'. Multiple 2026 outlets also style him 'FIFA World Cup 2026 Chief Operating Officer' for the FIFA26 North American delivery org. Senior officer responsible for World Cup 26 operations. No Wikipedia article.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Salman bin Ibrahim Al Khalifa",
+      "role": "FIFA Senior Vice-President; FIFA Council Vice-President (AFC President)",
+      "org": "FIFA / AFC",
+      "source_url": "https://en.wikipedia.org/wiki/Salman_bin_Ibrahim_Al_Khalifa",
+      "wikipedia_title": "Salman bin Ibrahim Al Khalifa",
+      "notes": "FIFA Senior Vice-President (since 2018) and AFC President (since 2013). Named as Senior Vice-President in a FIFA Council meeting photo caption on the inside.fifa.com secretary-general page. Wikipedia last updated Apr 2026 lists him as Senior Vice-President of FIFA Council.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Aleksander Čeferin",
+      "role": "FIFA Council Vice-President (UEFA President)",
+      "org": "FIFA / UEFA",
+      "source_url": "https://en.wikipedia.org/wiki/FIFA_Council",
+      "wikipedia_title": "Aleksander Čeferin",
+      "notes": "UEFA President since 2016, automatically a FIFA Vice-President; re-elected UEFA 2023. Listed on FIFA Council Wikipedia page as a Vice-President. Cross-checked: https://en.wikipedia.org/wiki/Aleksander_%C4%8Ceferin",
+      "status": "confirmed"
+    },
+    {
+      "name": "Sándor Csányi",
+      "role": "FIFA Council Vice-President (UEFA, Hungary)",
+      "org": "FIFA / UEFA",
+      "source_url": "https://en.mlsz.hu/hir/sandor-csanyi-re-elected-to-uefa-exco-while-also-becoming-uefa-and-fifa-vice-president",
+      "wikipedia_title": "Sándor Csányi (banker)",
+      "notes": "FIFA Vice-President (UEFA quota) since Feb 2019; re-elected at 47th UEFA Congress (April 2023, term to 2027). Source corrected on re-check: confirmed via his Wikipedia article and the Hungarian FA announcement.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Debbie Hewitt",
+      "role": "FIFA Council Vice-President (UEFA, England/FA Chair)",
+      "org": "FIFA / UEFA / The FA",
+      "source_url": "https://www.thefa.com/news/2023/apr/05/debbie-hewitt-elected-as-a-new-fifa-vice-president",
+      "wikipedia_title": "Debbie Hewitt",
+      "notes": "FIFA Vice-President elected 5 April 2023 (first female FIFA VP; four-year term). FA Chair, reappointed Dec 2024 (term Jan 2025-Jan 2028). Source corrected on re-check: The FA's official announcement.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Victor Montagliani",
+      "role": "FIFA Council Vice-President (CONCACAF President)",
+      "org": "FIFA / CONCACAF",
+      "source_url": "https://en.wikipedia.org/wiki/Victor_Montagliani",
+      "wikipedia_title": "Victor Montagliani",
+      "notes": "CONCACAF President and FIFA Vice-President since 12 May 2016. Wikipedia (last edited 4 May 2026) lists both roles as incumbent.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Alejandro Domínguez",
+      "role": "FIFA Council Vice-President (CONMEBOL President)",
+      "org": "FIFA / CONMEBOL",
+      "source_url": "https://en.wikipedia.org/wiki/Alejandro_Dom%C3%ADnguez_(football_executive)",
+      "wikipedia_title": "Alejandro Domínguez (football executive)",
+      "notes": "CONMEBOL President since 2016 (re-elected, term to 2029), a FIFA Vice-President and FIFA Council member. Named in a FIFA Council meeting photo caption on inside.fifa.com. Wikipedia title disambiguated as '(football executive)'.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Patrice Motsepe",
+      "role": "FIFA Council Vice-President (CAF President)",
+      "org": "FIFA / CAF",
+      "source_url": "https://en.wikipedia.org/wiki/Patrice_Motsepe",
+      "wikipedia_title": "Patrice Motsepe",
+      "notes": "CAF President since 2021, re-elected 12 March 2025; serves as a FIFA Vice-President. Named in a FIFA Council meeting photo caption on the inside.fifa.com secretary-general page.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Lambert Maltock",
+      "role": "FIFA Council Vice-President (OFC President)",
+      "org": "FIFA / OFC",
+      "source_url": "https://en.wikipedia.org/wiki/Lambert_Maltock",
+      "wikipedia_title": "Lambert Maltock",
+      "notes": "OFC President and FIFA Council member since 2019 (re-elected OFC 2023); serves as a FIFA Vice-President. Named in a FIFA Council meeting photo caption on the inside.fifa.com secretary-general page.",
+      "status": "confirmed"
+    },
+    {
+      "name": "TBD",
+      "role": "Deputy Secretary General",
+      "org": "FIFA",
+      "source_url": "https://inside.fifa.com/organisation",
+      "wikipedia_title": "",
+      "notes": "COULD NOT VERIFY current holder(s) as of June 2026. Former Deputy SG (Football) Mattias Grafström was promoted to Secretary General (May 2024); former Deputy SG (Administration) Alasdair Bell departed FIFA in 2024. No source found naming a current Deputy Secretary General. Marked TBD per no-hallucination rule. The inside.fifa.com organisation page renders via JS and returned no names to WebFetch.",
+      "status": "tbd"
+    }
+  ],
+  "sources_used": [
+    "https://inside.fifa.com/organisation/secretary-general",
+    "https://inside.fifa.com/media-releases/fifa-announces-arsene-wenger-as-chief-of-global-football-development",
+    "https://inside.fifa.com/news/thomas-peyer-appointed-fifa-chief-finance-officer-2830404",
+    "https://inside.fifa.com/watch/73rd-fifa-congress-fifa-chief-finance-officer-thomas-peyer",
+    "https://inside.fifa.com/news/kevin-lamour-joins-fifa-as-chief-operating-officer",
+    "https://inside.fifa.com/organisation/media-releases/los-angeles-lineup-revealed-world-cup-2026-countdown-concert-series-canada-mexico-usa",
+    "https://inside.fifa.com/organisation/news/world-cup-2026-team-workshop-atlanta-infantino-heimo-schirgi",
+    "https://en.wikipedia.org/wiki/Gianni_Infantino",
+    "https://en.wikipedia.org/wiki/Mattias_Grafstr%C3%B6m",
+    "https://en.wikipedia.org/wiki/Ars%C3%A8ne_Wenger",
+    "https://en.wikipedia.org/wiki/FIFA_Council",
+    "https://en.wikipedia.org/wiki/Salman_bin_Ibrahim_Al_Khalifa",
+    "https://en.wikipedia.org/wiki/Aleksander_%C4%8Ceferin",
+    "https://en.wikipedia.org/wiki/S%C3%A1ndor_Cs%C3%A1nyi_(banker)",
+    "https://en.wikipedia.org/wiki/Debbie_Hewitt",
+    "https://en.wikipedia.org/wiki/Victor_Montagliani",
+    "https://en.wikipedia.org/wiki/Alejandro_Dom%C3%ADnguez_(football_executive)",
+    "https://en.wikipedia.org/wiki/Patrice_Motsepe",
+    "https://en.wikipedia.org/wiki/Lambert_Maltock"
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "generated_at": "2026-06-10T04:23:26.027050+00:00",
+  "org": "USSF",
+  "verified_at": "2026-06-10",
+  "verification": "every role re-checked against ussoccer.com; 0 corrections",
+  "people": [
+    {
+      "name": "Cindy Parlow Cone",
+      "role": "President",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/governance/board-of-directors/about",
+      "wikipedia_title": "Cindy Parlow Cone",
+      "notes": "Confirmed June 2026. Re-elected to a second full term at the U.S. Soccer National Council Meeting on Feb 21, 2026 (official AGM story). Listed as President on the official board page.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Nathán Goldberg Crenier",
+      "role": "Vice President",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/governance/board-of-directors/about",
+      "wikipedia_title": "",
+      "notes": "Confirmed on official board-of-directors page (June 2026). Elected VP in Feb 2024 for a four-year term (Harvard gocrimson.com, Equalizer Soccer). No English Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "JT Batson",
+      "role": "CEO and Secretary General",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/executive-leadership/jt-batson",
+      "wikipedia_title": "",
+      "notes": "Confirmed on official executive-leadership page. In role since September 2022. No standalone English Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Dan Helfrich",
+      "role": "Chief Operating Officer",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/executive-leadership/dan-helfrich",
+      "wikipedia_title": "",
+      "notes": "Confirmed on official executive-leadership page (June 2026). After Sporting Director Matt Crocker's April 14, 2026 departure, Helfrich took on executive oversight of the Federation's sporting operations (per ussoccer.com departure announcement). No Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Oguchi Onyewu",
+      "role": "Assistant Sporting Director",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/executive-leadership/oguchi-onyewu",
+      "wikipedia_title": "Oguchi Onyewu",
+      "notes": "Confirmed as Assistant Sporting Director on his official ussoccer.com profile and in the April 2026 Crocker departure article, where he is named as a leader of sporting operations. Note: the Wikipedia lead inconsistently calls him 'Vice President of Sporting' while the same article's career section says 'assistant sporting director' — official U.S. Soccer source is authoritative.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Chelle Adams",
+      "role": "Chief Financial Officer",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/executive-leadership/chelle-adams",
+      "wikipedia_title": "",
+      "notes": "Confirmed on official executive-leadership page (June 2026). No Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "David Wright",
+      "role": "Chief Commercial Officer",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/executive-leadership/david-wright",
+      "wikipedia_title": "",
+      "notes": "Confirmed on official executive-leadership page (June 2026). No Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Carlos Kuri",
+      "role": "Chief Legal Officer and EVP Corporate Development",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/executive-leadership/carlos-kuri",
+      "wikipedia_title": "",
+      "notes": "Confirmed on official executive-leadership page (June 2026). No Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Catherine Newman",
+      "role": "Chief Marketing & Communications Officer",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/executive-leadership/catherine-newman",
+      "wikipedia_title": "",
+      "notes": "Confirmed on official executive-leadership page (June 2026). Joined July 2024 as CMO; added Communications in January 2025. No Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Mauricio Pochettino",
+      "role": "Head Coach, U.S. Men's National Team (USMNT)",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/coaches/mauricio-pochettino",
+      "wikipedia_title": "Mauricio Pochettino",
+      "notes": "Confirmed on official ussoccer.com coach profile (June 2026). Appointed August 2024 to lead USMNT into the 2026 FIFA World Cup; named the 26-player World Cup roster in May 2026.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Jesús Pérez",
+      "role": "Assistant Coach, U.S. Men's National Team (first assistant)",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/stories/2024/10/us-soccer-changes-additions-to-mens-national-team-staff",
+      "wikipedia_title": "",
+      "notes": "Confirmed in official October 2024 USMNT staff announcement and reaffirmed in a November 2025 ussoccer.com feature. Longtime Pochettino assistant. No English Wikipedia article found (only third-party pages).",
+      "status": "confirmed"
+    },
+    {
+      "name": "Miguel \"Miki\" D'Agostino",
+      "role": "Assistant Coach, U.S. Men's National Team",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/stories/2024/10/us-soccer-changes-additions-to-mens-national-team-staff",
+      "wikipedia_title": "",
+      "notes": "Confirmed in official October 2024 USMNT staff announcement. No English Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Antonio \"Toni\" Jiménez",
+      "role": "Goalkeepers Coach, U.S. Men's National Team",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/stories/2024/10/us-soccer-changes-additions-to-mens-national-team-staff",
+      "wikipedia_title": "Toni Jiménez",
+      "notes": "Confirmed in official October 2024 USMNT staff announcement; appointed September 2024. Full name Antonio Jiménez Sistachs. Wikipedia article 'Toni Jiménez' covers him.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Sebastiano Pochettino",
+      "role": "Sport Scientist, U.S. Men's National Team",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/stories/2024/10/us-soccer-changes-additions-to-mens-national-team-staff",
+      "wikipedia_title": "",
+      "notes": "Confirmed in official October 2024 USMNT staff announcement. No English Wikipedia article found.",
+      "status": "confirmed"
+    },
+    {
+      "name": "Silvia Tuya Viñas",
+      "role": "Strength and Conditioning Coach, U.S. Men's National Team",
+      "org": "U.S. Soccer Federation",
+      "source_url": "https://www.ussoccer.com/stories/2024/10/us-soccer-changes-additions-to-mens-national-team-staff",
+      "wikipedia_title": "",
+      "notes": "Confirmed in official October 2024 USMNT staff announcement (rendered there as 'Silvia Tuya Viña'). No English Wikipedia article found.",
+      "status": "confirmed"
+    }
+  ],
+  "sources_used": [
+    "https://www.ussoccer.com/governance/board-of-directors/about",
+    "https://www.ussoccer.com/executive-leadership/cindy-parlow-cone",
+    "https://www.ussoccer.com/executive-leadership/jt-batson",
+    "https://www.ussoccer.com/executive-leadership/dan-helfrich",
+    "https://www.ussoccer.com/executive-leadership/oguchi-onyewu",
+    "https://www.ussoccer.com/executive-leadership/chelle-adams",
+    "https://www.ussoccer.com/executive-leadership/david-wright",
+    "https://www.ussoccer.com/executive-leadership/carlos-kuri",
+    "https://www.ussoccer.com/executive-leadership/catherine-newman",
+    "https://www.ussoccer.com/coaches/mauricio-pochettino",
+    "https://www.ussoccer.com/stories/2024/10/us-soccer-changes-additions-to-mens-national-team-staff",
+    "https://www.ussoccer.com/stories/2026/04/federation/sporting-director-matt-crocker-departure",
+    "https://en.wikipedia.org/wiki/Oguchi_Onyewu",
+    "https://www.insideworldfootball.com/2026/01/29/cindy-parlow-cone-set-run-opposed-u-s-soccer-federation-president",
+    "https://en.wikipedia.org/wiki/Toni_Jim%C3%A9nez"
+  ]
+}
