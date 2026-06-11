@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-06-10T04:23:26.027050+00:00",
+  "note": "Country-level viewing guidance (not per-match).",
+  "claims": [
+    {
+      "n": 0,
+      "us_english": "Bell Media (TSN / CTV)",
+      "us_spanish": "TBD",
+      "source_url": "https://www.goal.com/en-ca/news/tsn-ctv-rds-watch-and-live-stream-fifa-world-cup-2026-canada/blt9b2d846001b1c908",
+      "notes": "CANADA - RIGHTS HOLDER. 'Bell Media holds exclusive FIFA World Cup television rights in Canada.' Coverage spans CTV (English OTA), Noovo (French OTA), TSN (English pay), RDS (French pay), plus Crave and TSN+ streaming. Verified by opening this Goal.com Canada page; corroborated by Bell Media's own announcement at https://www.tsn.ca/soccer/fifa-world-cup/article/bell-media-is-canadas-destination-for-every-fifa-world-cup-2026-moment/ (also opened): TSN and RDS are the 'exclusive home to complete coverage of all 104 matches' June 11 - July 19, 2026. Note: Canada has French-language feeds (RDS/Noovo), not Spanish; us_spanish field marked TBD."
+    },
+    {
+      "n": 0,
+      "us_english": "CTV (free over-the-air)",
+      "us_spanish": "TBD",
+      "source_url": "https://www.goal.com/en-ca/news/tsn-ctv-rds-watch-and-live-stream-fifa-world-cup-2026-canada/blt9b2d846001b1c908",
+      "notes": "CANADA - FREE OTA (ENGLISH). CTV is the free-to-air English option and carries 44 matches: 27 group games including all three of Canada's Group B fixtures (Jun 12 vs Bosnia and Herzegovina, Jun 18 vs Qatar, Jun 24 vs Switzerland), six of the 16 Round-of-32 fixtures, four of the eight Round-of-16 matches, then every match from the quarter-finals onward except the third-place play-off. Itemization corrected against the source's verbatim text (27+6+4+4+2+1 = 44)."
+    },
+    {
+      "n": 0,
+      "us_english": "TBD",
+      "us_spanish": "TBD",
+      "source_url": "https://www.goal.com/en-ca/news/tsn-ctv-rds-watch-and-live-stream-fifa-world-cup-2026-canada/blt9b2d846001b1c908",
+      "notes": "CANADA - FREE OTA (FRENCH). Noovo (Bell Media's French-language terrestrial network) broadcasts Canada's matches and the World Cup Final free over-the-air. Verified by opening this page. This is a French-language channel - both us_english and us_spanish marked TBD since Noovo fits neither field; channel name: Noovo."
+    },
+    {
+      "n": 0,
+      "us_english": "TSN (all 104 matches)",
+      "us_spanish": "TBD",
+      "source_url": "https://www.tsn.ca/soccer/fifa-world-cup/article/bell-media-is-canadas-destination-for-every-fifa-world-cup-2026-moment/",
+      "notes": "CANADA - PAY TV. TSN (English) and RDS (French) are the 'exclusive home to complete coverage of all 104 matches,' June 11 - July 19, 2026. Goal.com (opened) adds: 'Every game from the 2026 World Cup will be live in English on the TSN channels' across TSN1-TSN5, and RDS 'will be broadcasting live coverage of all 104 FIFA World Cup games' in French. Both require a TV subscription or the streaming services below. RDS is French-language (Canada analog of a second-language feed)."
+    },
+    {
+      "n": 0,
+      "us_english": "TSN+ (streaming)",
+      "us_spanish": "TBD",
+      "source_url": "https://mobilesyrup.com/2026/04/10/bell-media-hikes-price-of-tsn-subscription-bundles/",
+      "notes": "CANADA - STREAMING PRICE. TSN+ standalone: $29.99 CAD/month or $249.99 CAD/year (raised from $24.99/$199.90 effective April 14, 2026). Crave Premium + TSN bundle: $37.99 CAD/month. Disney+ bundles with TSN start at $28.99/month. Verified by opening this MobileSyrup article. Bell Media's announcement (opened) confirms TSN+ carries exclusive multi-language feeds (play-by-play in the competing teams' local languages) on top of full English coverage."
+    },
+    {
+      "n": 0,
+      "us_english": "Crave (streams live CTV channel)",
+      "us_spanish": "TBD",
+      "source_url": "https://www.savvynewcanadians.com/how-much-is-crave-tv/",
+      "notes": "CANADA - STREAMING. Crave streams the live CTV and Noovo channels (so all 44 CTV matches incl. every Canada group match and the Final), per Bell Media's announcement and Goal.com (both opened). Standalone Crave pricing per this guide (opened, updated June 8, 2026): Standard with ads $11.99 CAD/mo or $119.99/yr; Premium ad-free $22.00 CAD/mo or $220/yr. CAUTION: another aggregator listed $14.99/$19.99 tiers, and Crave's own pricing pages would not render (JS-only), so treat standalone tier prices as approximate; the Crave Premium + TSN bundle at $37.99/mo is firmly verified via MobileSyrup (opened)."
+    },
+    {
+      "n": 0,
+      "us_english": "TSN YouTube / TSN Radio (free extras)",
+      "us_spanish": "TBD",
+      "source_url": "https://www.tsn.ca/soccer/fifa-world-cup/article/bell-media-is-canadas-destination-for-every-fifa-world-cup-2026-moment/",
+      "notes": "CANADA - FREE DIGITAL EXTRAS. TSN's official YouTube channel streams all pre-game shows plus the first 10 minutes of every match free. TSN Radio delivers live audio coverage of all 104 matches via iHeartRadio.com and the iHeartRadio Canada app. Verified by opening Bell Media's announcement page."
+    },
+    {
+      "n": 0,
+      "us_english": "TBD",
+      "us_spanish": "TelevisaUnivision + TV Azteca",
+      "source_url": "https://expansion.mx/tendencias/2026/06/09/donde-se-transmite-mundial-2026-mexico",
+      "notes": "MEXICO - RIGHTS HOLDERS. TelevisaUnivision and TV Azteca hold the broadcast rights; ViX Premium holds exclusive streaming rights to all 104 matches. Verified by opening this Expansion article (June 9, 2026). Spanish Wikipedia rights table (opened) corroborates: 'Televisa (32 partidos en TV abierta y todos en ViX)' and 'TV Azteca (32 partidos)'. No English-language broadcaster in Mexico - us_english TBD."
+    },
+    {
+      "n": 0,
+      "us_english": "TBD",
+      "us_spanish": "Canal 5 / Las Estrellas / Nu9ve (Televisa) + Azteca 7 / Azteca Uno (TV Azteca)",
+      "source_url": "https://www.mediotiempo.com/futbol/copa-mundial/cuantos-partidos-mundial-2026-podras-ver-gratis-estos-juegos-iran-por-tv-abierta",
+      "notes": "MEXICO - FREE OTA. 32 of 104 matches air completely free on open TV: 'Televisa y TV Azteca transmitiran de forma completamente gratuita 32 de los 104 partidos' - largely the same 32 simulcast on Canal 5 and Azteca 7 (some also on Las Estrellas/Canal Nueve and Azteca Uno). Free slate breakdown per this opened Mediotiempo page: 17 group-stage matches, 4 Round-of-16, 4 quarterfinals (plus Mexico's QF if they advance), 2 semifinals, and the Final. ALL Mexico national team matches are free OTA, including knockout games if El Tri advances - verified by opening Expansion (https://expansion.mx/tendencias/2026/06/09/donde-se-transmite-mundial-2026-mexico): Mexico group matches June 11, 18, 24 on Azteca Uno/Azteca 7/Canal 5/Canal 9/Las Estrellas."
+    },
+    {
+      "n": 0,
+      "us_english": "TBD",
+      "us_spanish": "ViX (streaming, all 104 matches)",
+      "source_url": "https://mundial.vix.com/",
+      "notes": "MEXICO - STREAMING PRICE (official ViX page, opened June 10, 2026). Pase Mundial 2026: list price $999 MXN one-time payment, promo '$999 $899 MXN' available through June 9, 2026; includes 'Los 104 partidos del Mundial 2026' plus extended highlights, multicams, exclusive content, access June 11 - July 19. Monthly ViX Premium subscribers ($149 MXN/mo per Expansion, opened) must buy the pass separately; ANNUAL ViX Premium subscribers ($1,499 MXN/yr) get all matches 'sin costo adicional' (included free) - annual inclusion also verified via Xataka Mexico (opened, https://www.xataka.com.mx/streaming/vix-dijo-que-mundial-2026-costaria-extra-mexico-ahora-incluye-gratis-para-estos-usuarios). Pricing has shifted repeatedly (499 MXN in Jan 2026, 799 promo, 889, now 999/899) - the official page figures above are the ones to trust."
+    },
+    {
+      "n": 0,
+      "us_english": "TBD",
+      "us_spanish": "TUDN (pay TV) + izzi / Sky packages",
+      "source_url": "https://www.elsiglodedurango.com.mx/noticia/2026/donde-ver-el-mundial-2026-en-mexico-guia-para-no-perderse-entre-tv-abierta-cable-y-streaming.html",
+      "notes": "MEXICO - PAY TV. TUDN (TelevisaUnivision's pay sports channel) carries 'partidos seleccionados' (selected matches) - exact count TBD: a figure of 72 TUDN matches appeared in search-result summaries but was NOT confirmed on any page actually opened, so it is not asserted. Cable operators: izzi offers 'ViX Premium Mundial por 599 pesos' to existing customers for all 104 matches; Sky subscribers must add the ViX Premium Mundial complement, pricing varies by package. Also per this opened guide: ESPN/Disney+ Premium carries 30 matches in Mexico (partial coverage only). Full 104-match access requires ViX Premium + Pase Mundial."
+    }
+  ],
+  "sources_used": [
+    "https://www.goal.com/en-ca/news/tsn-ctv-rds-watch-and-live-stream-fifa-world-cup-2026-canada/blt9b2d846001b1c908",
+    "https://www.tsn.ca/soccer/fifa-world-cup/article/bell-media-is-canadas-destination-for-every-fifa-world-cup-2026-moment/",
+    "https://mobilesyrup.com/2026/04/10/bell-media-hikes-price-of-tsn-subscription-bundles/",
+    "https://www.savvynewcanadians.com/how-much-is-crave-tv/",
+    "https://expansion.mx/tendencias/2026/06/09/donde-se-transmite-mundial-2026-mexico",
+    "https://www.mediotiempo.com/futbol/copa-mundial/cuantos-partidos-mundial-2026-podras-ver-gratis-estos-juegos-iran-por-tv-abierta",
+    "https://mundial.vix.com/",
+    "https://www.xataka.com.mx/streaming/vix-dijo-que-mundial-2026-costaria-extra-mexico-ahora-incluye-gratis-para-estos-usuarios",
+    "https://www.elsiglodedurango.com.mx/noticia/2026/donde-ver-el-mundial-2026-en-mexico-guia-para-no-perderse-entre-tv-abierta-cable-y-streaming.html",
+    "https://es.wikipedia.org/wiki/Anexo:Derechos_de_transmisi%C3%B3n_de_la_Copa_Mundial_de_F%C3%BAtbol_de_2026"
+  ],
+  "verifier_corrections": [
+    {
+      "item": "Row 2 notes itemization: 'CTV ... carries 44 matches: ALL 3 of Canada's Group B matches ..., 27 other group-stage games, 6 Round-of-32 fixtures, 4 Round-of-16 matches, ALL four quarterfinals, BOTH semifinals, and THE FINAL.'",
+      "correction": "The group-stage breakdown is mis-itemized. The source's verbatim text is: 'It will televise 27 group games including all three of Canada's Group B fixtures, six (of 16) fixtures from the round of 32, half (four of eight) of the ties from the round of 16, then every match from the quarter-finals onwards with the exception of the third place play-off' — i.e., 27 group games INCLUDING Canada's 3 (so 24 other group-stage games, not 27). The claim's itemization (3 + 27 + 6 + 4 + 4 + 2 + 1) sums to 47, contradicting the verified 44-match total; the correct sum is 27 + 6 + 4 + 4 + 2 + 1 = 44. The 44 total itself is confirmed: 'The live coverage of these 44 games will be able to be streamed through Crave.'",
+      "source_url": "https://www.goal.com/en-ca/news/tsn-ctv-rds-watch-and-live-stream-fifa-world-cup-2026-canada/blt9b2d846001b1c908"
+    }
+  ],
+  "verifier_unverifiable": [
+    "Row 4 notes detail 'across TSN1-TSN5': the specific channel list TSN1 through TSN5 did not appear verbatim in the pages I opened — Goal.com's verified wording is 'live in English on the TSN channels'. The substance (all 104 matches live on TSN) is confirmed; treat the 'TSN1-TSN5' enumeration as unverified-as-quoted.",
+    "Scope note on the FS1/Universo directive: the provided ITEMS contain zero FS1 or Universo claims — all 4 rows are Canada (Bell Media) rows, so there were no FS1/Universo assignments to check. For context only, https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_broadcasting_rights (opened) lists US English rights = Fox Sports and US Spanish rights = Telemundo (NBCUniversal); any future FS1/Universo rows should be verified against network-level schedules, since the Wikipedia rights table names the parent rights holders, not FS1/Universo channel assignments.",
+    "Third-party corroboration attempt at https://www.sportsvideo.org/2026/06/04/bell-media-to-carry-all-104-fifa-world-cup-2026-matches-across-tsn-rds-and-streaming-platforms/ returned HTTP 403 (could not be opened); it was not used or needed — corroboration was obtained from the Bell Media press release and Wikipedia instead."
+  ]
+}

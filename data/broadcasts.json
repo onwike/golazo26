@@ -1,0 +1,961 @@
+{
+  "generated_at": "2026-06-10T04:23:26.027050+00:00",
+  "region": "US",
+  "totals": {
+    "FOX": 72,
+    "FS1": 32,
+    "Telemundo": 92,
+    "Universo": 12
+  },
+  "totals_note": "Per-match totals from June 2026 listings: FOX 72 / FS1 32; Telemundo 92 / Universo 12. Fox's January 2026 announcement said 70 FOX / 34 FS1 (sportsmediawatch.com/2026/01/fox-world-cup-broadcast-schedule/); current per-match listings sum to 72/32 — per-match sources govern, aggregate drift recorded as an open discrepancy.",
+  "sources_used": [
+    "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+    "https://worldsoccertalk.com/world-cup-tv-schedule/",
+    "https://www.centraloregondaily.com/sports/full-2026-world-cup-broadcast-schedule-on-fox-fs1/article_3e0bfbc8-24c5-56a7-a7c9-30cc5eea4d28.html",
+    "https://www.foxcorporation.com/news/corp-press-releases/2026/fox-sports-unveils-historic-fifa-world-cup-2026-broadcast-schedule/",
+    "https://www.foxsports.com/soccer/fifa-world-cup/schedule",
+    "https://www.nbcsports.com/pressbox/press-releases/how-to-watch-the-fifa-world-cup-2026-group-stage-live-on-telemundo-universo-peacock-and-telemundo-app",
+    "https://www.nbcsports.com/soccer/news/2026-world-cup-schedule-kick-off-times-stadiums-dates-groups-how-to-watch-live-bracket",
+    "https://www.nbcsports.com/soccer/news/how-to-watch-the-2026-world-cup-live-stream-link-tv-channel-dates-full-details",
+    "https://www.sportsmediawatch.com/2026/01/fox-world-cup-broadcast-schedule/",
+    "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/"
+  ],
+  "rows": [
+    {
+      "n": 1,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "FOX confirmed by sportsmediawatch + foxsports.com schedule; Telemundo confirmed by NBC press release. Tournament opener.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 2,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "FS1 confirmed by sportsmediawatch + foxsports.com (FS1's opening match). Telemundo per NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 3,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "FOX (sportsmediawatch + foxsports.com); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 4,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "USA match — all US matches air on FOX. Telemundo per NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 5,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Haiti vs Scotland: FOX (sportsmediawatch + foxsports.com); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 6,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Australia vs Türkiye (listed as 11:59 PM ET June 13 / 12 AM June 14): FS1 both English sources; Telemundo per NBC.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 7,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Brazil vs Morocco: FOX (sportsmediawatch + foxsports.com); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 8,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Qatar vs Switzerland: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 9,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Côte d'Ivoire (Ivory Coast) vs Ecuador: FS1 (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 10,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Germany vs Curacao: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 11,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Netherlands vs Japan: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 12,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Sweden vs Tunisia: FS1 (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 13,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Saudi Arabia vs Uruguay: FS1 (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 14,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Spain vs Cabo Verde (Cape Verde): FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 15,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Iran vs New Zealand: FS1 (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 16,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Belgium vs Egypt: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 17,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "France vs Senegal: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 18,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Iraq vs Norway: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 19,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Argentina vs Algeria: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 20,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Austria vs Jordan (listed 11:59 PM ET June 16 / 12 AM June 17): FS1 (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 21,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Ghana vs Panama: FS1 (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 22,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "England vs Croatia: FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 23,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Portugal vs Congo DR (DR Congo): FOX (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 24,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/",
+      "notes": "Uzbekistan vs Colombia: FS1 (both English sources); Telemundo (NBC press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 25,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Czechia vs South Africa, Jun 18 12pm ET. FOX confirmed also by AP listing (centraloregondaily.com); Telemundo confirmed by NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 26,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Switzerland vs Bosnia and Herzegovina, Jun 18 3pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release (not a Universo match).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 27,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Canada vs Qatar, Jun 18 6pm ET. FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 28,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Mexico vs Korea Republic, Jun 18 9pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 29,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Brazil vs Haiti, Jun 19. Worldsoccertalk lists 8:30pm ET (matches task), AP lists 9pm; both say FOX. Telemundo confirmed by NBC press release (9pm ET).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 30,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Scotland vs Morocco, Jun 19 6pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 31,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Turkiye vs Paraguay. Worldsoccertalk lists Jun 19 11pm ET FS1; AP and NBC list 12am ET (9pm Pacific, SF Bay Area). All sources agree FS1/Telemundo; match identity unambiguous by teams.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 32,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "USA vs Australia, Jun 19 3pm ET. FOX confirmed also by AP listing (all US matches on FOX); Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 33,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Germany vs Cote d'Ivoire, Jun 20 4pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 34,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Ecuador vs Curacao, Jun 20 8pm ET. FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 35,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Netherlands vs Sweden, Jun 20 1pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 36,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Tunisia vs Japan, midnight ET (Jun 21 00:00, listed under Jun 20 11pm local Monterrey by AP). FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 37,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Uruguay vs Cabo Verde, Jun 21 6pm ET. FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 38,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Spain vs Saudi Arabia, Jun 21 12pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 39,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Belgium vs IR Iran, Jun 21 3pm ET. FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 40,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "New Zealand vs Egypt, Jun 21 9pm ET. FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 41,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Norway vs Senegal, Jun 22 8pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 42,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "France vs Iraq, Jun 22 5pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 43,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Argentina vs Austria, Jun 22 1pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 44,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Jordan vs Algeria, Jun 22 11pm ET. FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 45,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "England vs Ghana, Jun 23 4pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 46,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Panama vs Croatia, Jun 23 7pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 47,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Portugal vs Uzbekistan, Jun 23 1pm ET. FOX confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 48,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Colombia vs Congo DR, Jun 23 10pm ET. FS1 confirmed also by AP listing; Telemundo confirmed by NBC press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 49,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Scotland v Brazil, Jun 24 6pm ET. English FOX confirmed by worldsoccertalk + centraloregondaily; Spanish Telemundo per NBC Sports press release (nbcsports.com/pressbox how-to-watch FIFA WC 2026 group stage Telemundo/Universo).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 50,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Morocco v Haiti, Jun 24 6pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 51,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Switzerland v Canada (listed Canada v Switzerland), Jun 24 3pm ET. English FOX (worldsoccertalk + search snippet from centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 52,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Bosnia & Herzegovina v Qatar, Jun 24 3pm ET. English FS1 (worldsoccertalk + search snippet). Spanish Universo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 53,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Czechia v Mexico (listed Mexico v Czechia), Jun 24 9pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 54,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "South Africa v Korea Republic (S Korea), Jun 24 9pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo confirmed by NBC Sports press release and independently in WebSearch snippet.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 55,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Curacao v Cote d'Ivoire (Ivory Coast), Jun 25 4pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 56,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Ecuador v Germany, Jun 25 4pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 57,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Japan v Sweden, Jun 25 7pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 58,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Tunisia v Netherlands, Jun 25 7pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 59,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Turkiye v USA (listed USA v Turkey), Jun 25 10pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 60,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Paraguay v Australia, Jun 25 10pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo confirmed by NBC Sports press release and independently in WebSearch snippet.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 61,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Norway v France (listed France v Norway), Jun 26 3pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 62,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Senegal v Iraq, Jun 26 3pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo confirmed by NBC Sports press release and independently in WebSearch snippet.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 63,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Egypt v IR Iran, Jun 26 11pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release (re-fetch confirmed Egypt v Iran = Universo, New Zealand v Belgium = Telemundo).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 64,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "New Zealand v Belgium, Jun 26 11pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release (re-fetch confirmed).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 65,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Cabo Verde (Cape Verde) v Saudi Arabia, Jun 26 8pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 66,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Uruguay v Spain (listed Spain v Uruguay), Jun 26 8pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 67,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Panama v England, Jun 27 5pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 68,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Croatia v Ghana, Jun 27 5pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 69,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Algeria v Austria, Jun 27 10pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release (re-fetch confirmed Algeria v Austria = Universo, Jordan v Argentina = Telemundo).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 70,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Jordan v Argentina, Jun 27 10pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release, confirmed on re-fetch (note: one WebSearch summary loosely listed this as Universo, but precise NBC release text says Telemundo carries the Argentina match; resolved in favor of authoritative release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 71,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Colombia v Portugal, Jun 27 7:30pm ET. English FOX (worldsoccertalk + centraloregondaily). Spanish Telemundo per NBC Sports press release (re-fetch confirmed).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 72,
+      "us_english": "FS1",
+      "us_spanish": "Universo",
+      "source_url": "https://worldsoccertalk.com/world-cup-tv-schedule/",
+      "notes": "Congo DR (DR Congo) v Uzbekistan, Jun 27 7:30pm ET. English FS1 (worldsoccertalk + centraloregondaily). Spanish Universo per NBC Sports press release (re-fetch confirmed).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 73,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "June 28, 3:00pm ET (2A vs 2B). FOX confirmed by Central Oregon Daily full Fox/FS1 schedule; Telemundo confirmed by NBC Sports per-match table (Match 73).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 74,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "June 29, 4:30pm ET (1E vs 3rd ABCDF). FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 74).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 75,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "June 29, 9:00pm ET (1F vs 2C), Monterrey. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 75).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 76,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "June 29, 1:00pm ET (1C vs 2F), Houston. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 76).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 77,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "June 30, 5:00pm ET (1I vs 3rd CDFGH). FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 77).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 78,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "June 30, 1:00pm ET (2E vs 2I), Dallas. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 78).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 79,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "June 30, 9:00pm ET (1A vs 3rd CEFHI), Mexico City. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 79).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 80,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 1, 12:00pm ET (1L vs 3rd EHIJK), Atlanta. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 80).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 81,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 1, 8:00pm ET (1D vs 3rd BEFIJ), SF Bay Area. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 81).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 82,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 1, 4:00pm ET (1G vs 3rd AEHIJ), Seattle. FS1 confirmed by Central Oregon Daily full schedule AND worldcuppass per-match table; one of the two R32 matches on FS1 per Fox Corp press release. Telemundo per NBC Sports (Match 82).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 83,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 2, 7:00pm ET (2K vs 2L), Toronto. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 83).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 84,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 2, 3:00pm ET (1H vs 2J), Los Angeles. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 84).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 85,
+      "us_english": "FS1",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 2, 11:00pm ET (1B vs 3rd EFGIJ), Vancouver. FS1 confirmed by Central Oregon Daily full schedule AND worldcuppass per-match table; the second of the two R32 matches on FS1 per Fox Corp press release. Telemundo per NBC Sports (Match 85).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 86,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 3, 6:00pm ET (1J vs 2H), Miami. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 86).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 87,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 3, 9:30pm ET (1K vs 3rd DEIJL), Kansas City. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 87).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 88,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "July 3, 2:00pm ET (2D vs 2G), Dallas. FOX per Central Oregon Daily; Telemundo per NBC Sports (Match 88).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 89,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 4 5:00 PM ET (Match 89). worldcuppass per-match table lists Match 89 = FOX (English) / Telemundo (Spanish). Cross-confirmed: FOX press release (sportsmediawatch) states 'every match from the Round of 16 onward' airs on FOX; NBC Sports press release confirms all 12 Universo matches are group-stage (June 24-27), so all knockout matches are on Telemundo in Spanish.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 90,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 4 1:00 PM ET (Match 90). worldcuppass table: FOX / Telemundo. Cross-confirmed by FOX press release (R16-onward on FOX) and NBC Sports press release (Universo = group-stage only).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 91,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 5 4:00 PM ET (Match 91). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 92,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 5 8:00 PM ET (Match 92). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 93,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 6 3:00 PM ET (Match 93). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 94,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 6 8:00 PM ET (Match 94). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 95,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 7 12:00 PM ET (Match 95). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 96,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "R16, July 7 4:00 PM ET (Match 96). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 97,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "QF, July 9 4:00 PM ET (Match 97). worldcuppass table: FOX / Telemundo. Cross-confirmed by FOX press release and NBC Sports Universo-group-stage-only confirmation.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 98,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "QF, July 10 3:00 PM ET (Match 98). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 99,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "QF, July 11 5:00 PM ET (Match 99). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 100,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "QF, July 11 9:00 PM ET (Match 100). worldcuppass table: FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 101,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "Semifinal, July 14 3:00 PM ET (Match 101). worldcuppass table: Semifinal 1 = FOX / Telemundo. Cross-confirmed by FOX press release (Final airs on FOX 3 PM ET July 19; all R16-onward on FOX).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 102,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "Semifinal, July 15 3:00 PM ET (Match 102). worldcuppass table: Semifinal 2 = FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 103,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "Third-place playoff, July 18 5:00 PM ET (Match 103). worldcuppass table: Third Place = FOX / Telemundo. Cross-confirmed.",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    },
+    {
+      "n": 104,
+      "us_english": "FOX",
+      "us_spanish": "Telemundo",
+      "source_url": "https://worldcuppass.com/2026-fifa-world-cup-tv-schedule-usa/",
+      "notes": "Final, July 19 3:00 PM ET (Match 104). worldcuppass table: Final = FOX / Telemundo. FOX press release explicitly states 'The Final will air on Fox at 3 PM ET on Sunday, July 19.' Spanish on Telemundo (Universo carries only the 12 group-stage simulcasts per NBC Sports press release).",
+      "verified_at": "2026-06-10",
+      "verified_by": "cross-checked against the listed sources"
+    }
+  ]
+}
