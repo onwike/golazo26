@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<style>:root{--i:#15181d;--a:#0a7d33}@media(prefers-color-scheme:dark){:root{--i:#e9edf3;--a:#2ee06f}}</style>
+<circle cx="28" cy="38" r="17" stroke="var(--i)" stroke-width="5"/>
+<path d="M28 30.5 L35.1 35.7 32.4 44.1 H23.6 L20.9 35.7 Z" stroke="var(--i)" stroke-width="4"/>
+<path d="M28 30.5 V21 M35.1 35.7 L44.7 32.9 M32.4 44.1 L38 51.8 M23.6 44.1 L18 51.8 M20.9 35.7 L11.3 32.9" stroke="var(--i)" stroke-width="3.5"/>
+<path d="M7.3 30.5 L-1.1 27.4 M13.9 21.1 L5.5 11.2 M24.2 16.3 L22.3 5.5 M35.5 17.3 L38.3 9.8" stroke="var(--a)" stroke-width="5"/>
+</svg>
