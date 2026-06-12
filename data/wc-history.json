@@ -1,0 +1,36 @@
+{
+  "_doc": "Reference list of past FIFA World Cup finals (host, year, champion). Used to ground references to past tournaments in page copy and to validate them at build time.",
+  "source": {
+    "title": "List of FIFA World Cup finals",
+    "permalink": "https://en.wikipedia.org/w/index.php?title=List_of_FIFA_World_Cup_finals&oldid=1357858968",
+    "revid": 1357858968,
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "verified_at": "2026-06-12",
+    "verified_by": "cross-checked vs FIFA.com, CBC Sports, and per-edition Wikipedia pages — 0 discrepancies across all 22 finals"
+  },
+  "editions": [
+    { "year": 1930, "host": "Uruguay", "winner": "Uruguay", "runner_up": "Argentina", "score": "4-2" },
+    { "year": 1934, "host": "Italy", "winner": "Italy", "runner_up": "Czechoslovakia", "score": "2-1" },
+    { "year": 1938, "host": "France", "winner": "Italy", "runner_up": "Hungary", "score": "4-2" },
+    { "year": 1950, "host": "Brazil", "winner": "Uruguay", "runner_up": "Brazil", "score": "2-1" },
+    { "year": 1954, "host": "Switzerland", "winner": "West Germany", "runner_up": "Hungary", "score": "3-2" },
+    { "year": 1958, "host": "Sweden", "winner": "Brazil", "runner_up": "Sweden", "score": "5-2" },
+    { "year": 1962, "host": "Chile", "winner": "Brazil", "runner_up": "Czechoslovakia", "score": "3-1" },
+    { "year": 1966, "host": "England", "winner": "England", "runner_up": "West Germany", "score": "4-2" },
+    { "year": 1970, "host": "Mexico", "winner": "Brazil", "runner_up": "Italy", "score": "4-1" },
+    { "year": 1974, "host": "West Germany", "winner": "West Germany", "runner_up": "Netherlands", "score": "2-1" },
+    { "year": 1978, "host": "Argentina", "winner": "Argentina", "runner_up": "Netherlands", "score": "3-1" },
+    { "year": 1982, "host": "Spain", "winner": "Italy", "runner_up": "West Germany", "score": "3-1" },
+    { "year": 1986, "host": "Mexico", "winner": "Argentina", "runner_up": "West Germany", "score": "3-2" },
+    { "year": 1990, "host": "Italy", "winner": "West Germany", "runner_up": "Argentina", "score": "1-0" },
+    { "year": 1994, "host": "United States", "winner": "Brazil", "runner_up": "Italy", "score": "0-0 (3-2 pen.)" },
+    { "year": 1998, "host": "France", "winner": "France", "runner_up": "Brazil", "score": "3-0" },
+    { "year": 2002, "host": "South Korea and Japan", "winner": "Brazil", "runner_up": "Germany", "score": "2-0" },
+    { "year": 2006, "host": "Germany", "winner": "Italy", "runner_up": "France", "score": "1-1 (5-3 pen.)" },
+    { "year": 2010, "host": "South Africa", "winner": "Spain", "runner_up": "Netherlands", "score": "1-0" },
+    { "year": 2014, "host": "Brazil", "winner": "Germany", "runner_up": "Argentina", "score": "1-0" },
+    { "year": 2018, "host": "Russia", "winner": "France", "runner_up": "Croatia", "score": "4-2" },
+    { "year": 2022, "host": "Qatar", "winner": "Argentina", "runner_up": "France", "score": "3-3 (4-2 pen.)" }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "_doc": "Human-entered, sourced goalscorers for matches where openfootball lags or omits events. Consulted by recapEvents() in scripts/run-stories.mjs BEFORE openfootball; each entry must agree with the confirmed FT score or it is ignored (recap holds). Goals are in our home/away terms. Every entry carries source_url + verified_by + verified_at — a score is an uncopyrightable public fact; we cite where a human read it.",
+  "matches": {
+    "3": {
+      "ft": [1, 1],
+      "ht": [0, 1],
+      "homeGoals": [{ "name": "Cyle Larin", "minute": 78 }],
+      "awayGoals": [{ "name": "Jovo Lukić", "minute": 21 }],
+      "source_url": "https://www.espn.com/soccer/match/_/gameId/760416/bosnia-herzegovina-canada",
+      "verified_by": "onwike",
+      "verified_at": "2026-06-14T05:20:00Z",
+      "note": "Canada 1-1 Bosnia & Herzegovina, Group B. Lukić header 21', Larin equaliser 78'. Cross-checked ESPN + FOX Sports + 101GreatGoals; openfootball had not yet posted scorers."
+    }
+  }
+}

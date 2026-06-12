@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-06-10T04:13:52.645Z",
+  "resolved": [
+    {
+      "match_no": 29,
+      "field": "kickoff_utc",
+      "openfootball": "2026-06-20T00:30:00Z",
+      "fixturedownload": "2026-06-20T01:00:00Z",
+      "resolved_value": "2026-06-20T00:30:00Z",
+      "kickoff_utc": "2026-06-20T00:30:00Z",
+      "rule": "2-of-3",
+      "agree": [
+        "openfootball",
+        "wikipedia"
+      ],
+      "outlier": "fixturedownload",
+      "tiebreaker_url": "https://en.wikipedia.org/w/index.php?title=2026_FIFA_World_Cup_Group_C&oldid=1358266916",
+      "note": "Brazil vs Haiti: Wikipedia (8:30 p.m. UTC-4, Jun 19) and openfootball agree on 00:30Z; fixturedownload says 01:00Z"
+    },
+    {
+      "match_no": 31,
+      "field": "kickoff_utc",
+      "openfootball": "2026-06-20T03:00:00Z",
+      "fixturedownload": "2026-06-20T04:00:00Z",
+      "resolved_value": "2026-06-20T03:00:00Z",
+      "kickoff_utc": "2026-06-20T03:00:00Z",
+      "rule": "2-of-3",
+      "agree": [
+        "openfootball",
+        "wikipedia"
+      ],
+      "outlier": "fixturedownload",
+      "tiebreaker_url": "https://en.wikipedia.org/w/index.php?title=2026_FIFA_World_Cup_Group_D&oldid=1358651133",
+      "note": "Türkiye vs Paraguay: Wikipedia (8:00 p.m. UTC-7, Jun 19) and openfootball agree on 03:00Z; fixturedownload says 04:00Z"
+    }
+  ],
+  "open": [
+    {
+      "id": "fox-totals-drift",
+      "severity": "warn",
+      "field": "us_english aggregate totals",
+      "value_a": "70 FOX / 34 FS1 (Fox announcement, Jan 2026)",
+      "value_b": "72 FOX / 32 FS1 (per-match listings, Jun 2026)",
+      "resolution": "per-match sources govern; site copy must not assert the January totals",
+      "source_a": "https://www.sportsmediawatch.com/2026/01/fox-world-cup-broadcast-schedule/",
+      "source_b": "https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/"
+    },
+    {
+      "id": "arg-aut-squad-size",
+      "severity": "warn",
+      "field": "squad sizes (Argentina, Austria)",
+      "value_a": "26 players each incl. Leonardo Balerdi (ARG #2) and Christoph Baumgartner (AUT #19) — FIFA official squad-lists PDF v1, modified 2026-06-10 01:34 UTC",
+      "value_b": "25 players each — pinned Wikipedia revision 1358656369, which reflects their corroborated injury withdrawals",
+      "resolution": "Pinned-revision data governs (it is the later snapshot). Replacements may be registered up to 24h before each team's first match; if Argentina registers one, totals become 26 and 1,247 — the daily roster watch must re-pin and rebuild.",
+      "source_a": "https://fdp.fifa.org/assetspublic/ce281/pdf/SquadLists-English.pdf",
+      "source_b": "https://en.wikipedia.org/w/index.php?title=2026_FIFA_World_Cup_squads&oldid=1358656369"
+    }
+  ]
+}

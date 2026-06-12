@@ -1,0 +1,4 @@
+{
+  "direction": "broadcast",
+  "_note": "Global shell direction (A=broadcast). Match-state skins (scheduled=broadcast, live=print, finished=record) are independent of this and always active — see site/brand/tokens.css state layer."
+}
