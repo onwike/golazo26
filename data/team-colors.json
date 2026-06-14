@@ -1,0 +1,898 @@
+{
+ "source": {
+  "name": "Twemoji flag artwork",
+  "version": "jdecked/twemoji v15.1.0",
+  "license": "CC-BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "method": "fill-hex extraction ranked by fill-frequency x path-length proxy; human-audited rank (white-field rule for JP/KR-style flags)",
+  "fetched_at": "2026-06-10T09:28:14.926Z",
+  "audited_at": "2026-06-10T09:30:11.509Z",
+  "audit_rules": "white-field rule; flag-dominant primary; kit-identity tiebreaks noted; picks constrained to extracted candidates or declared neutrals"
+ },
+ "teams": {
+  "czechia": {
+   "iso": "CZ",
+   "name": "Czechia",
+   "twemoji_file": "1f1e8-1f1ff.svg",
+   "colors": [
+    "#d7141a",
+    "#eeeeee",
+    "#11457e"
+   ],
+   "ui": {
+    "primary": "#d7141a",
+    "secondary": "#11457e",
+    "onLight": "#9f0f13",
+    "onDark": "#ef4e53"
+   },
+   "audited": true,
+   "note": "red band primary; blue wedge secondary"
+  },
+  "korea-republic": {
+   "iso": "KR",
+   "name": "Korea Republic",
+   "twemoji_file": "1f1f0-1f1f7.svg",
+   "colors": [
+    "#eeeeee",
+    "#c60c30",
+    "#003478"
+   ],
+   "ui": {
+    "primary": "#c60c30",
+    "secondary": "#003478",
+    "onLight": "#a30a28",
+    "onDark": "#f44869"
+   },
+   "audited": true,
+   "note": "white-field rule: taegeuk red primary, blue secondary"
+  },
+  "mexico": {
+   "iso": "MX",
+   "name": "Mexico",
+   "twemoji_file": "1f1f2-1f1fd.svg",
+   "colors": [
+    "#5c913b",
+    "#ffcc4d",
+    "#006847",
+    "#ce1126",
+    "#eeeeee",
+    "#a6d388"
+   ],
+   "ui": {
+    "primary": "#006847",
+    "secondary": "#ce1126",
+    "onLight": "#006847",
+    "onDark": "#3dffc2"
+   },
+   "audited": true,
+   "note": "green band primary; red band secondary (top-6 re-extraction recovered red)"
+  },
+  "south-africa": {
+   "iso": "ZA",
+   "name": "South Africa",
+   "twemoji_file": "1f1ff-1f1e6.svg",
+   "colors": [
+    "#de3830",
+    "#002395",
+    "#141414",
+    "#ffb611",
+    "#007a4d",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#007a4d",
+    "secondary": "#ffb611",
+    "onLight": "#007a4d",
+    "onDark": "#3dffb8"
+   },
+   "audited": true,
+   "note": "sporting green/gold pair from the six-color flag (top-6 recovered both)"
+  },
+  "bosnia-and-herzegovina": {
+   "iso": "BA",
+   "name": "Bosnia and Herzegovina",
+   "twemoji_file": "1f1e7-1f1e6.svg",
+   "colors": [
+    "#2d3189",
+    "#e1e8ed",
+    "#fbd116"
+   ],
+   "ui": {
+    "primary": "#2d3189",
+    "secondary": "#fbd116",
+    "onLight": "#2b2f83",
+    "onDark": "#6d71cf"
+   },
+   "audited": true,
+   "note": "blue field + yellow triangle"
+  },
+  "canada": {
+   "iso": "CA",
+   "name": "Canada",
+   "twemoji_file": "1f1e8-1f1e6.svg",
+   "colors": [
+    "#d52b1e",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#d52b1e",
+    "secondary": "#eeeeee",
+    "onLight": "#981f15",
+    "onDark": "#e75f55"
+   },
+   "audited": true,
+   "note": "red maple primary"
+  },
+  "qatar": {
+   "iso": "QA",
+   "name": "Qatar",
+   "twemoji_file": "1f1f6-1f1e6.svg",
+   "colors": [
+    "#8d1b3d",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#8d1b3d",
+    "secondary": "#eeeeee",
+    "onLight": "#8d1b3d",
+    "onDark": "#e05c84"
+   },
+   "audited": true,
+   "note": "maroon primary"
+  },
+  "switzerland": {
+   "iso": "CH",
+   "name": "Switzerland",
+   "twemoji_file": "1f1e8-1f1ed.svg",
+   "colors": [
+    "#d32d27"
+   ],
+   "ui": {
+    "primary": "#d32d27",
+    "secondary": "#d7dadd",
+    "onLight": "#921f1b",
+    "onDark": "#e1605b"
+   },
+   "audited": true,
+   "note": "red field; white cross is neutral-excluded — neutral secondary"
+  },
+  "brazil": {
+   "iso": "BR",
+   "name": "Brazil",
+   "twemoji_file": "1f1e7-1f1f7.svg",
+   "colors": [
+    "#009b3a",
+    "#fedf01",
+    "#002776",
+    "#cbe9d4",
+    "#88c9f9",
+    "#55acee"
+   ],
+   "ui": {
+    "primary": "#009b3a",
+    "secondary": "#fedf01",
+    "onLight": "#009b3a",
+    "onDark": "#3dff86"
+   },
+   "audited": true,
+   "note": "green field + yellow rhombus"
+  },
+  "haiti": {
+   "iso": "HT",
+   "name": "Haiti",
+   "twemoji_file": "1f1ed-1f1f9.svg",
+   "colors": [
+    "#d21c33",
+    "#f1b517",
+    "#00209f",
+    "#006a16"
+   ],
+   "ui": {
+    "primary": "#00209f",
+    "secondary": "#d21c33",
+    "onLight": "#00209f",
+    "onDark": "#3d64ff"
+   },
+   "audited": true,
+   "note": "blue-over-red bicolour in flag order (proxy had red first)"
+  },
+  "morocco": {
+   "iso": "MA",
+   "name": "Morocco",
+   "twemoji_file": "1f1f2-1f1e6.svg",
+   "colors": [
+    "#c1272d",
+    "#006233"
+   ],
+   "ui": {
+    "primary": "#c1272d",
+    "secondary": "#006233",
+    "onLight": "#901d22",
+    "onDark": "#de5e63"
+   },
+   "audited": true,
+   "note": "red field + green pentagram"
+  },
+  "scotland": {
+   "iso": "GB-SCT",
+   "name": "Scotland",
+   "twemoji_file": "1f3f4-e0067-e0062-e0073-e0063-e0074-e007f.svg",
+   "colors": [
+    "#0065bd",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#0065bd",
+    "secondary": "#eeeeee",
+    "onLight": "#005dad",
+    "onDark": "#3da5ff"
+   },
+   "audited": true,
+   "note": "saltire blue primary"
+  },
+  "australia": {
+   "iso": "AU",
+   "name": "Australia",
+   "twemoji_file": "1f1e6-1f1fa.svg",
+   "colors": [
+    "#00247d",
+    "#cf1b2b",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#00247d",
+    "secondary": "#cf1b2b",
+    "onLight": "#00247d",
+    "onDark": "#3d75ff"
+   },
+   "audited": true,
+   "note": "navy field primary"
+  },
+  "paraguay": {
+   "iso": "PY",
+   "name": "Paraguay",
+   "twemoji_file": "1f1f5-1f1fe.svg",
+   "colors": [
+    "#eeeeee",
+    "#007127",
+    "#0038a8",
+    "#d52b1e",
+    "#ffac33"
+   ],
+   "ui": {
+    "primary": "#0038a8",
+    "secondary": "#007127",
+    "onLight": "#0038a8",
+    "onDark": "#3d7eff"
+   },
+   "audited": true,
+   "note": "red band beyond extraction; blue band primary, emblem green secondary (noted)"
+  },
+  "turkiye": {
+   "iso": "TR",
+   "name": "Türkiye",
+   "twemoji_file": "1f1f9-1f1f7.svg",
+   "colors": [
+    "#e30917",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#e30917",
+    "secondary": "#eeeeee",
+    "onLight": "#a70711",
+    "onDark": "#f84550"
+   },
+   "audited": true,
+   "note": "red field primary; white crescent-star secondary"
+  },
+  "usa": {
+   "iso": "US",
+   "name": "USA",
+   "twemoji_file": "1f1fa-1f1f8.svg",
+   "colors": [
+    "#b22334",
+    "#eeeeee",
+    "#3c3b6e"
+   ],
+   "ui": {
+    "primary": "#3c3b6e",
+    "secondary": "#b22334",
+    "onLight": "#3c3b6e",
+    "onDark": "#8281bb"
+   },
+   "audited": true,
+   "note": "canton navy primary; stripe red secondary"
+  },
+  "cote-d-ivoire": {
+   "iso": "CI",
+   "name": "Côte d'Ivoire",
+   "twemoji_file": "1f1e8-1f1ee.svg",
+   "colors": [
+    "#f77f00",
+    "#eeeeee",
+    "#009e60"
+   ],
+   "ui": {
+    "primary": "#f77f00",
+    "secondary": "#009e60",
+    "onLight": "#ad5900",
+    "onDark": "#ffa13d"
+   },
+   "audited": true,
+   "note": "orange-white-green in flag order"
+  },
+  "curacao": {
+   "iso": "CW",
+   "name": "Curaçao",
+   "twemoji_file": "1f1e8-1f1fc.svg",
+   "colors": [
+    "#002b7f",
+    "#f9e814"
+   ],
+   "ui": {
+    "primary": "#002b7f",
+    "secondary": "#f9e814",
+    "onLight": "#002b7f",
+    "onDark": "#3d7fff"
+   },
+   "audited": true,
+   "note": "blue field + yellow stripe"
+  },
+  "ecuador": {
+   "iso": "EC",
+   "name": "Ecuador",
+   "twemoji_file": "1f1ea-1f1e8.svg",
+   "colors": [
+    "#c1694f",
+    "#ed1c23",
+    "#034ea2",
+    "#ffdd00",
+    "#6dbe46",
+    "#a6d388"
+   ],
+   "ui": {
+    "primary": "#ffdd00",
+    "secondary": "#034ea2",
+    "onLight": "#ad9600",
+    "onDark": "#ffe53d"
+   },
+   "audited": true,
+   "note": "yellow half primary (condor brown demoted); blue secondary"
+  },
+  "germany": {
+   "iso": "DE",
+   "name": "Germany",
+   "twemoji_file": "1f1e9-1f1ea.svg",
+   "colors": [
+    "#ffcd05",
+    "#ed1f24",
+    "#141414"
+   ],
+   "ui": {
+    "primary": "#141414",
+    "secondary": "#ed1f24",
+    "onLight": "#141414",
+    "onDark": "#9e9e9e"
+   },
+   "audited": true,
+   "note": "black-red-gold in flag order; gold tertiary in candidates"
+  },
+  "japan": {
+   "iso": "JP",
+   "name": "Japan",
+   "twemoji_file": "1f1ef-1f1f5.svg",
+   "colors": [
+    "#eeeeee",
+    "#ed1b2f"
+   ],
+   "ui": {
+    "primary": "#ed1b2f",
+    "secondary": "#d7dadd",
+    "onLight": "#a10d1b",
+    "onDark": "#f14b5b"
+   },
+   "audited": true,
+   "note": "white-field rule: hinomaru red primary; neutral secondary (flag has no second color)"
+  },
+  "netherlands": {
+   "iso": "NL",
+   "name": "Netherlands",
+   "twemoji_file": "1f1f3-1f1f1.svg",
+   "colors": [
+    "#eeeeee",
+    "#ae1f28",
+    "#20478b"
+   ],
+   "ui": {
+    "primary": "#ae1f28",
+    "secondary": "#20478b",
+    "onLight": "#931a22",
+    "onDark": "#e25b63"
+   },
+   "audited": true,
+   "note": "flag colors only: red band primary, blue secondary (Oranje is kit, not flag)"
+  },
+  "sweden": {
+   "iso": "SE",
+   "name": "Sweden",
+   "twemoji_file": "1f1f8-1f1ea.svg",
+   "colors": [
+    "#006aa7",
+    "#fecc00"
+   ],
+   "ui": {
+    "primary": "#006aa7",
+    "secondary": "#fecc00",
+    "onLight": "#006aa7",
+    "onDark": "#3db8ff"
+   },
+   "audited": true,
+   "note": "blue field + yellow cross"
+  },
+  "tunisia": {
+   "iso": "TN",
+   "name": "Tunisia",
+   "twemoji_file": "1f1f9-1f1f3.svg",
+   "colors": [
+    "#e70013"
+   ],
+   "ui": {
+    "primary": "#e70013",
+    "secondary": "#d7dadd",
+    "onLight": "#ad000e",
+    "onDark": "#ff3d4d"
+   },
+   "audited": true,
+   "note": "red field; white disc neutral-excluded"
+  },
+  "belgium": {
+   "iso": "BE",
+   "name": "Belgium",
+   "twemoji_file": "1f1e7-1f1ea.svg",
+   "colors": [
+    "#141414",
+    "#fdda24",
+    "#ef3340"
+   ],
+   "ui": {
+    "primary": "#141414",
+    "secondary": "#fdda24",
+    "onLight": "#141414",
+    "onDark": "#9e9e9e"
+   },
+   "audited": true,
+   "note": "black-yellow-red tricolour in flag order"
+  },
+  "egypt": {
+   "iso": "EG",
+   "name": "Egypt",
+   "twemoji_file": "1f1ea-1f1ec.svg",
+   "colors": [
+    "#eeeeee",
+    "#bf9300",
+    "#141414",
+    "#ce1225"
+   ],
+   "ui": {
+    "primary": "#ce1225",
+    "secondary": "#141414",
+    "onLight": "#9f0e1d",
+    "onDark": "#ef4d5d"
+   },
+   "audited": true,
+   "note": "red-white-black tricolour; white-field excluded; gold eagle beyond pair"
+  },
+  "ir-iran": {
+   "iso": "IR",
+   "name": "IR Iran",
+   "twemoji_file": "1f1ee-1f1f7.svg",
+   "colors": [
+    "#da0001",
+    "#eeeeee",
+    "#239f40",
+    "#e96667",
+    "#be1931",
+    "#7bc58c"
+   ],
+   "ui": {
+    "primary": "#239f40",
+    "secondary": "#da0001",
+    "onLight": "#1f8e39",
+    "onDark": "#60dc7d"
+   },
+   "audited": true,
+   "note": "green-white-red in flag order (proxy had red first)"
+  },
+  "new-zealand": {
+   "iso": "NZ",
+   "name": "New Zealand",
+   "twemoji_file": "1f1f3-1f1ff.svg",
+   "colors": [
+    "#cf1b2b",
+    "#eeeded",
+    "#00247d",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#00247d",
+    "secondary": "#cf1b2b",
+    "onLight": "#00247d",
+    "onDark": "#3d75ff"
+   },
+   "audited": true,
+   "note": "navy field primary (proxy had star red first)"
+  },
+  "cabo-verde": {
+   "iso": "CV",
+   "name": "Cabo Verde",
+   "twemoji_file": "1f1e8-1f1fb.svg",
+   "colors": [
+    "#003893",
+    "#eeeeee",
+    "#cf2027",
+    "#f7d116"
+   ],
+   "ui": {
+    "primary": "#003893",
+    "secondary": "#cf2027",
+    "onLight": "#003893",
+    "onDark": "#3d87ff"
+   },
+   "audited": true,
+   "note": "blue field primary; red stripe secondary (yellow stars beyond extraction)"
+  },
+  "saudi-arabia": {
+   "iso": "SA",
+   "name": "Saudi Arabia",
+   "twemoji_file": "1f1f8-1f1e6.svg",
+   "colors": [
+    "#006c35"
+   ],
+   "ui": {
+    "primary": "#006c35",
+    "secondary": "#d7dadd",
+    "onLight": "#006c35",
+    "onDark": "#3dff9c"
+   },
+   "audited": true,
+   "note": "green field primary; flag has no second color — neutral secondary"
+  },
+  "spain": {
+   "iso": "ES",
+   "name": "Spain",
+   "twemoji_file": "1f1ea-1f1f8.svg",
+   "colors": [
+    "#ea596e",
+    "#c60a1d",
+    "#ffc400",
+    "#f4a2b2",
+    "#dd2e44",
+    "#ffac33"
+   ],
+   "ui": {
+    "primary": "#c60a1d",
+    "secondary": "#ffc400",
+    "onLight": "#a50818",
+    "onDark": "#f64758"
+   },
+   "audited": true,
+   "note": "rojigualda red primary, gold secondary (crest pink tones demoted)"
+  },
+  "uruguay": {
+   "iso": "UY",
+   "name": "Uruguay",
+   "twemoji_file": "1f1fa-1f1fe.svg",
+   "colors": [
+    "#0038a8",
+    "#eeeeee",
+    "#ffac33",
+    "#ffd983",
+    "#ffcc4d",
+    "#c1694f"
+   ],
+   "ui": {
+    "primary": "#0038a8",
+    "secondary": "#ffac33",
+    "onLight": "#0038a8",
+    "onDark": "#3d7eff"
+   },
+   "audited": true,
+   "note": "blue stripes primary; Sun of May gold secondary"
+  },
+  "france": {
+   "iso": "FR",
+   "name": "France",
+   "twemoji_file": "1f1eb-1f1f7.svg",
+   "colors": [
+    "#ed2939",
+    "#002495",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#002495",
+    "secondary": "#ed2939",
+    "onLight": "#002495",
+    "onDark": "#3d6cff"
+   },
+   "audited": true,
+   "note": "kit-identity tiebreak: Les Bleus blue primary over proxy red"
+  },
+  "iraq": {
+   "iso": "IQ",
+   "name": "Iraq",
+   "twemoji_file": "1f1ee-1f1f6.svg",
+   "colors": [
+    "#141414",
+    "#eeeeee",
+    "#dd2e44",
+    "#007a3c"
+   ],
+   "ui": {
+    "primary": "#dd2e44",
+    "secondary": "#141414",
+    "onLight": "#951828",
+    "onDark": "#e4586a"
+   },
+   "audited": true,
+   "note": "red-white-black in flag order (proxy had black first)"
+  },
+  "norway": {
+   "iso": "NO",
+   "name": "Norway",
+   "twemoji_file": "1f1f3-1f1f4.svg",
+   "colors": [
+    "#ef2b2d",
+    "#002868",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#ef2b2d",
+    "secondary": "#002868",
+    "onLight": "#a10c0e",
+    "onDark": "#f14b4d"
+   },
+   "audited": true,
+   "note": "red field primary; indigo cross secondary"
+  },
+  "senegal": {
+   "iso": "SN",
+   "name": "Senegal",
+   "twemoji_file": "1f1f8-1f1f3.svg",
+   "colors": [
+    "#00853f",
+    "#fdef42",
+    "#e31b23"
+   ],
+   "ui": {
+    "primary": "#00853f",
+    "secondary": "#fdef42",
+    "onLight": "#00853f",
+    "onDark": "#3dff99"
+   },
+   "audited": true,
+   "note": "green-yellow-red in flag order"
+  },
+  "algeria": {
+   "iso": "DZ",
+   "name": "Algeria",
+   "twemoji_file": "1f1e9-1f1ff.svg",
+   "colors": [
+    "#d20f34",
+    "#006233",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#006233",
+    "secondary": "#d20f34",
+    "onLight": "#006233",
+    "onDark": "#3dffa2"
+   },
+   "audited": true,
+   "note": "green field primary; red star/crescent secondary"
+  },
+  "argentina": {
+   "iso": "AR",
+   "name": "Argentina",
+   "twemoji_file": "1f1e6-1f1f7.svg",
+   "colors": [
+    "#fcbf49",
+    "#843511",
+    "#75aadb",
+    "#eeeeee",
+    "#c16540",
+    "#ed8662"
+   ],
+   "ui": {
+    "primary": "#75aadb",
+    "secondary": "#fcbf49",
+    "onLight": "#24598a",
+    "onDark": "#75aadb"
+   },
+   "audited": true,
+   "note": "celeste primary (white band is neutral-excluded); Sun of May gold secondary"
+  },
+  "austria": {
+   "iso": "AT",
+   "name": "Austria",
+   "twemoji_file": "1f1e6-1f1f9.svg",
+   "colors": [
+    "#eeeeee",
+    "#ed2939"
+   ],
+   "ui": {
+    "primary": "#ed2939",
+    "secondary": "#eeeeee",
+    "onLight": "#a00d19",
+    "onDark": "#f04c5a"
+   },
+   "audited": true,
+   "note": "white-field rule: red primary, white band secondary"
+  },
+  "jordan": {
+   "iso": "JO",
+   "name": "Jordan",
+   "twemoji_file": "1f1ef-1f1f4.svg",
+   "colors": [
+    "#141414",
+    "#007a3d",
+    "#eeeeee",
+    "#ce1126"
+   ],
+   "ui": {
+    "primary": "#141414",
+    "secondary": "#007a3d",
+    "onLight": "#141414",
+    "onDark": "#9e9e9e"
+   },
+   "audited": true,
+   "note": "black-white-green bands in flag order; red chevron in candidates as tertiary"
+  },
+  "colombia": {
+   "iso": "CO",
+   "name": "Colombia",
+   "twemoji_file": "1f1e8-1f1f4.svg",
+   "colors": [
+    "#fbd116",
+    "#22408c",
+    "#ce2028"
+   ],
+   "ui": {
+    "primary": "#fbd116",
+    "secondary": "#22408c",
+    "onLight": "#aa8c03",
+    "onDark": "#fcd940"
+   },
+   "audited": true,
+   "note": "yellow upper half primary; blue secondary"
+  },
+  "congo-dr": {
+   "iso": "CD",
+   "name": "Congo DR",
+   "twemoji_file": "1f1e8-1f1e9.svg",
+   "colors": [
+    "#007fff",
+    "#f7d618",
+    "#ce1021"
+   ],
+   "ui": {
+    "primary": "#007fff",
+    "secondary": "#ce1021",
+    "onLight": "#0056ad",
+    "onDark": "#3d9eff"
+   },
+   "audited": true,
+   "note": "sky-blue field; red diagonal secondary"
+  },
+  "portugal": {
+   "iso": "PT",
+   "name": "Portugal",
+   "twemoji_file": "1f1f5-1f1f9.svg",
+   "colors": [
+    "#d52b1e",
+    "#829acd",
+    "#006600",
+    "#ffcc4d",
+    "#003399"
+   ],
+   "ui": {
+    "primary": "#d52b1e",
+    "secondary": "#006600",
+    "onLight": "#981f15",
+    "onDark": "#e75f55"
+   },
+   "audited": true,
+   "note": "red field primary (larger panel + kit); green hoist secondary"
+  },
+  "uzbekistan": {
+   "iso": "UZ",
+   "name": "Uzbekistan",
+   "twemoji_file": "1f1fa-1f1ff.svg",
+   "colors": [
+    "#0099b5",
+    "#1eb53a",
+    "#ce1126",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#0099b5",
+    "secondary": "#1eb53a",
+    "onLight": "#0093ad",
+    "onDark": "#3de1ff"
+   },
+   "audited": true,
+   "note": "azure band primary; green band secondary"
+  },
+  "croatia": {
+   "iso": "HR",
+   "name": "Croatia",
+   "twemoji_file": "1f1ed-1f1f7.svg",
+   "colors": [
+    "#171796",
+    "#d52b1e",
+    "#eeeeee",
+    "#0193dd"
+   ],
+   "ui": {
+    "primary": "#d52b1e",
+    "secondary": "#171796",
+    "onLight": "#981f15",
+    "onDark": "#e75f55"
+   },
+   "audited": true,
+   "note": "kit-identity tiebreak: checkerboard red primary over proxy blue"
+  },
+  "england": {
+   "iso": "GB-ENG",
+   "name": "England",
+   "twemoji_file": "1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.svg",
+   "colors": [
+    "#eeeeee",
+    "#ce1124"
+   ],
+   "ui": {
+    "primary": "#ce1124",
+    "secondary": "#eeeeee",
+    "onLight": "#a00d1c",
+    "onDark": "#f04c5c"
+   },
+   "audited": true,
+   "note": "white-field rule: St George red primary"
+  },
+  "ghana": {
+   "iso": "GH",
+   "name": "Ghana",
+   "twemoji_file": "1f1ec-1f1ed.svg",
+   "colors": [
+    "#cc212d",
+    "#fbd116",
+    "#288541"
+   ],
+   "ui": {
+    "primary": "#cc212d",
+    "secondary": "#fbd116",
+    "onLight": "#951821",
+    "onDark": "#e45862"
+   },
+   "audited": true,
+   "note": "red-gold-green in flag order"
+  },
+  "panama": {
+   "iso": "PA",
+   "name": "Panama",
+   "twemoji_file": "1f1f5-1f1e6.svg",
+   "colors": [
+    "#005293",
+    "#d21034",
+    "#eeeeee"
+   ],
+   "ui": {
+    "primary": "#d21034",
+    "secondary": "#005293",
+    "onLight": "#a10c28",
+    "onDark": "#f14b6a"
+   },
+   "audited": true,
+   "note": "quarters tie broken toward La Marea Roja kit red"
+  }
+ }
+}

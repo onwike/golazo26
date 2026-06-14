@@ -1,0 +1,203 @@
+{
+ "generated_at": "2026-06-10T09:04:26.905283+00:00",
+ "policy": "accept a photo only when the subject's identity is certain; a wrong person is worse than no photo",
+ "accepted": 25,
+ "rejected_or_unverifiable": 80,
+ "excluded_post_verification": [
+  {
+   "qid": "Q18199184",
+   "name": "Léo Pereira",
+   "file": "File:Léo Pereira (2025).jpg",
+   "reason": "accepted file has an active copyvio deletion nomination — license uncertain, excluded pending resolution"
+  },
+  {
+   "qid": "Q110258306",
+   "name": "Joan Garcia",
+   "file": "File:CE_Manresa_Aleví_A,_amb_el_porter_Joan_Garcia,_abril_de_2012_(cropped).jpg",
+   "reason": "accepted file shows the subject as a ~11-year-old (2012 youth team) — identity certain but editorially unsuitable; avatar preferred"
+  },
+  {
+   "qid": "Q130495887",
+   "name": "Amer Jamous",
+   "file": "File:AFC Champions League 2 - Esteghlal and Al-Wehdat football teams meet 32 (2025) Tasnim (cropped).jpg",
+   "reason": "same crop matched to two different players on review — identity not certain for either (duplicate-file guard)"
+  }
+ ],
+ "overrides": {
+  "Q112654481": {
+   "commons_file": "File:Adel Boulbina.jpg",
+   "name": "Adil Boulbina",
+   "evidence": "Commons structured data depicts=Q112654481 (exact subject); CC0 own work by Nadjib Berbouchi; description 'Adel Boulbina in the 2025 Afcon with algeria' matches his Algeria international career; used as page image on en/fr/ru/pl wikis (page_image_free); single-person portrait; 'Adel' is only a filename spelling variant of Adil. No deletion notice.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q118118504": {
+   "commons_file": "File:Ibrahim Maza 27 mars 2026.png",
+   "name": "Ibrahim Maza",
+   "evidence": "Commons structured data identifies subject Q118118504; CC0 own work; single person; dated 27 March 2026 (Algeria match, Stadio Luigi Ferraris) consistent with Maza's Algeria 2026 career; depicts + text_search evidence. No deletion/copyright notice.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q84462730": {
+   "commons_file": "File:Ivor Pandur.jpg",
+   "name": "Ivor Pandur",
+   "evidence": "Ground truth: Croatian GK b.2000, Hull City, Croatia 2026 squad. File is an explicit single-person crop (76%/82% reduction) extracted from 'Hughes and Pandur.jpg', named 'Ivor Pandur.jpg', description 'Ivor Pandur for Hull City ... 9 August 2025' (his current club), categorized Hull City A.F.C., CC0, used as pl-wiki page image. Task rule permits a group-origin file when it is explicitly a crop of the subject; goalkeeper role/kit distinguishes him from defender Hughes.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q1885": {
+   "commons_file": "File:Jürgen Locadia, Persepolis v Havadar, 5 September 2022.jpg",
+   "name": "Jürgen Locadia",
+   "evidence": "Confirmed Q1885 = Jürgen Locadia (Curaçaoan footballer, b.1993). File structured data depicts Q1885; CC-BY 4.0 from Mehr News Agency, license-reviewed 14 May 2024; serves as the primary/lead image for Locadia across 8 Wikipedias (en/fa/ja/tr/lv/ko/pt + more); Persepolis 2022 spell matches his career. Single primary subject. No deletion notice.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q98781677": {
+   "commons_file": "File:Ar'jany Martha 18042026 (3).jpg",
+   "name": "Ar'jany Martha",
+   "evidence": "Ground truth: Curaçao defender b.2003, signed Rotherham United (2025). File depicts Q98781677 only (single depicts), CC0 by Timmy96, description 'Ar'jany Martha signing autographs after the match between Leyton Orient and Rotherham United' (he is a Rotherham player — match fits), categorized 'Ar'jany Martha' + the 18 Apr 2026 match; he is the focal autograph-signing subject. Used as page image on en/tr/pap wikis. No deletion notice.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q2342765": {
+   "commons_file": "File:JoshuaBrenet.jpg",
+   "name": "Joshua Brenet",
+   "evidence": "Ground truth: Curaçao/Netherlands full-back b.1994, PSV then TSG Hoffenheim 2018+. File structured data depicts Q2342765 only (single depicts, verified via Commons API); description 'Joshua Brenet im Trikot der TSG 1899 Hoffenheim ... 11.05.2019' matches his Hoffenheim career; Commons Category:Joshua Brenet; CC-BY-SA 4.0 by Silesia711. No deletion notice.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q113390994": {
+   "commons_file": "File:JoelOrdóñez.jpg",
+   "name": "Joel Ordóñez",
+   "evidence": "Filename names the subject; Commons caption 'Joel Ordóñez en el Club Brujas'; single person in Club Brugge kit (Aug 2025), matching his career (Ecuadorian CB, Club Brugge 2023–present). It is the infobox/lead image on his en/es/uk Wikipedia (page_image_free). The two alternative files (Belgian Cup final; Anderlecht v Brugge) are multi-player match action and were rejected. Identity certain. (Note: file metadata credits IMAGO/Photo News — a possible license concern, but identity is sound and it is his accepted Wikipedia lead photo.)",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q60842120": {
+   "commons_file": "File:2022 FIFA World Cup Qatar 0–2 Ecuador - Plata.jpg",
+   "name": "Gonzalo Plata",
+   "evidence": "Filename ends '- Plata'; single player in Ecuador kit, cropped from the QAT–ECU 20 Nov 2022 World Cup match. It is the exact infobox/lead image on his English Wikipedia (caption 'Plata playing for Ecuador at the 2022 FIFA World Cup'), used on en/es/pt/vi (page_image_free), in category 'Gonzalo Plata'. Matches subject (Ecuadorian RW, 2022 WC squad confirmed). Other 5 candidates are group/match action or an SVG lineup graphic — rejected. Certain.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q313209": {
+   "commons_file": "File:Carlos Queiroz 2016-06-07 (cropped).jpg",
+   "name": "Carlos Queiroz",
+   "evidence": "Filename names the subject; Commons confirms a solo cropped portrait of Carlos Queiroz (Portuguese manager, b.1953; current Ghana head coach 2026), taken 7 June 2016 by Foad Ashtari (Tasnim). Single person, clearly identified, used as page_image_free (fr). Many other clean named solo portraits also exist (2018, Telles) reinforcing identity; chose this clean cropped single-subject portrait. Certain.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q27990922": {
+   "commons_file": "File:Ayumu Seko.jpg",
+   "name": "Ayumu Seko",
+   "evidence": "Solo portrait: Commons depicts statement = Ayumu Seko, category 'Ayumu Seko', description 'Ayumu Seko during the USA-Japan friendly in Columbus, Ohio (September 9, 2025)', single person in Japan kit — matches subject (Japanese CB, Japan NT). The cropped alt (Ayumu Seko Japan 2025 (cropped)) still shows TWO people (Zendejas + Seko) so was rejected; the 'Alex Zendejas and Ayumu Seko' file is a two-person shot, rejected. Chose the clean solo file. Certain.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q21621941": {
+   "commons_file": "File:Asian Nations Cup - Jordan and South Korea (67) (cropped3).jpg",
+   "name": "Mahmoud Al-Mardi",
+   "evidence": "Single-subject crop ('cropped3') of one player in Jordan national white kit, shirt #13 clearly visible — matches Wikipedia (Mahmoud Al-Mardi wears #13). Evidence type page_image_free across 8 wikis (ar/en/fa/ru/es/tr/ms/bg); nothing contradicts. Single primary person.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q33124960": {
+   "commons_file": "File:Sepahan and Al-Hussein Jordan football teams meet 21 (2025) esfahanzibaonline.ir (cropped2).jpg",
+   "name": "Salim Obaid",
+   "evidence": "Cropped to a single player in white Al-Hussein kit with shirt #21 clearly visible — matches Wikipedia (Obaid is Al-Hussein left back, #21). File is in commons category 'Salim Obaid' and is a single-subject crop. The other 11 candidates are groupy_flag full-match shots (rejected). Shirt-number discriminator separates him from teammate Saed Al-Rosan (#15) in the same gallery.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q130210573": {
+   "commons_file": "File:AFC Champions League - Sepahan of Iran and Al-Hussein of Jordan 17 (Mehr, 2025) (cropped).jpg",
+   "name": "Saed Al-Rosan",
+   "evidence": "Single-subject crop of one player in white Al-Hussein kit, shirt #15 clearly visible — matches Wikipedia (Al-Rosan is Al-Hussein centre-back, #15). page_image_free on en+fa wikis. Shirt number distinguishes him from teammate Salim Obaid (#21) in the same shared match gallery; other 9 candidates are groupy_flag full-team shots (rejected).",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q60048828": {
+   "commons_file": "File:Week 3 of the second level of the AFC Champions League; Esteghlal 2 - 0 Al-Wehdat Avash 27 (cropped).jpg",
+   "name": "Abdallah Al-Fakhouri",
+   "evidence": "Single-subject crop of a goalkeeper (dark kit, gloves, catching ball) wearing #99 — matches Wikipedia exactly (Al-Fakhouri is Al-Wehdat goalkeeper, #99, Esteghlal v Al-Wehdat 2025 AFC CL2). page_image_free on en wiki. GK + #99 + Al-Wehdat all consistent; other candidates are uncropped/groupy.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q56433831": {
+   "commons_file": "File:Luis Romo.png",
+   "name": "Luis Romo",
+   "evidence": "Official Mexico national-team portrait headshot (author 'Selección Nacional de México', 'Luis Romo en 2025'), single person in green Mexico kit. Used as page_image_free across 7 wikis (en/ru/es/ja/de/lv/pt). Rejected same-name decoys: Joseluisromocruz.jpg / RomoCruz.jpg / Elon Musk photo (a Hidalgo official named José Luis Romo) and Cruceria-gotico-mudejar.jpg (author named Luis Romo, depicts a church vault).",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q129652337": {
+   "commons_file": "File:Gilberto Mora.png",
+   "name": "Gilberto Mora",
+   "evidence": "Official Mexico portrait (author 'Selección Nacional de México', 'Gilberto Mora en 2025'), single teenage player in Mexico training kit (consistent with Mora born 2008, Club Tijuana attacking midfielder). Used as page_image_free across 9 wikis.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q109327842": {
+   "commons_file": "File:Abde Ezzalzouli (cropped).jpg",
+   "name": "Abde Ezzalzouli",
+   "evidence": "Filename explicitly names the subject; single player in Morocco red national kit dribbling, from the documented Morocco–Burkina Faso friendly 12 Sept 2023 (Abde is a Morocco international). page_image_free on fr wiki; single primary subject, correct nation/era. (Barcelona-training candidates were groupy_flag and rejected.)",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q100271502": {
+   "commons_file": "File:Partido Galicia - Panamá en Balaídos 16 (cropped).jpg",
+   "name": "César Yanis",
+   "evidence": "Single-subject crop, clean upper-body of one player in red Panama national kit (#21) from the Galicia–Panamá match (31 May 2024) that Yanis played in. Community curated this exact crop as the page image (page_image_free) on en+tr wikis. Evidence type page_image_free + single primary person + correct nation/event; nothing contradicts.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q101791178": {
+   "commons_file": "File:Juan José Cáceres 2025.jpg",
+   "name": "Juan José Cáceres",
+   "evidence": "Single player in Dynamo Moscow blue kit, #4, with surname 'КАСЕРЕС' (Cáceres) printed on the jersey — matches Wikipedia (Cáceres, right-back, joined Dynamo Moscow Feb 2025). page_image_free across 6 wikis. Rejected decoys: 'Juan Cáceres.jpg' (a 1974 goalkeeper for Colegio Nacional de Iquitos, wrong era/person) and 'Bilal El Khannouss against Paraguay.jpg' (a Morocco team photo).",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q26405109": {
+   "commons_file": "File:First Minister meets with Scottish National Football Team - 55168603663 (cropped).jpg",
+   "name": "Lyndon Dykes",
+   "evidence": "Single-face crop of a bearded man with a prominent neck tattoo in a navy Scotland national-team polo — both distinctive features match Dykes' well-documented appearance (Scotland-themed neck tattoo). Community cropped this specific person from the squad photo for Dykes' article: page_image_free on en/ja/lv/da. Single primary subject, correct team/era (Scottish FA event, Mar 2026).",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q123479947": {
+   "commons_file": "File:El Hadji Malick Diouf 04032026 (1).jpg",
+   "name": "El Hadji Malick Diouf",
+   "evidence": "Subject is Senegal LB at West Ham United (joined July 2025). File is in dedicated Commons category 'El Hadji Malick Diouf', described as him during Fulham v West Ham 4 Mar 2026, single subject, CC0. Kit/club/date match his West Ham timeline. Other candidates rejected: two are explicit pair shots (Callum Wilson + Diouf; Samuel Chukwueze + Diouf, groupy), two are generic 'West Ham v Burnley' with no Diouf identification.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q109906009": {
+   "commons_file": "File:Sweden - Greece26.jpg",
+   "name": "Taha Ali",
+   "evidence": "Subject is Sweden winger (Malmö FF, b.1998). File has SDC depicts statement 'Taha Ali', is categorized under the single player 'Taha Ali' plus 'Sweden vs Greece 2026' and 'Players of Sweden men's national association football team', dated 4 Jun 2026 — matches his Sweden NT career. No groupy_flag and only one player category. Other candidates rejected: MFF-Brommapojkarna celebration (Kiese Thelin, no Taha ID), and collisions with Sudanese VP Ali Osman Taha and a Nile landscape.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q2070073": {
+   "commons_file": "File:Rodrigo Aguirre.png",
+   "name": "Rodrigo Aguirre",
+   "evidence": "Subject is Uruguay striker (Club América/Tigres, full name Rodrigo Sebastián Aguirre Soto, b.1994). File described 'Rodrigo Aguirre en 2025' (dated Jan 2025), in 'Association football players', and is in active global use as the infobox image on es.wikipedia 'Rodrigo Aguirre Soto' (exact full-name match) and pt.wikipedia 'Rodrigo Aguirre'. page_image_free on his own named articles + 2025 date consistent with career. Accept.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q51670751": {
+   "commons_file": "File:Botirali Ergashev 03.jpg",
+   "name": "Botirali Ergashev",
+   "evidence": "Subject is Uzbekistan GK (Neftchi Fergana, b.1995). File is in dedicated Commons category 'Botirali Ergashev', described 'Botirali Ergashev', single subject, dated Dec 2025, and is the page_image_free infobox image on en/simple/uz Wikipedias. Accept. The 4th candidate (national team with the President, groupy_flag) is rejected as a group photo.",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  },
+  "Q96182876": {
+   "commons_file": "File:Jovo Lukić 099.jpg",
+   "name": "Jovo Lukić",
+   "evidence": "Ground truth: Jovo Lukić, BiH international, forward for FK Borac Banja Luka 2020-2024 (Wikidata Q96182876). File explicitly named 'Jovo Lukić', original work by Hatorcat from Borac vs Zrinjski, Banja Luka, BiH Premijer Liga 2023/24, 30 March 2024 — exactly his club/era. Thumbnail shows a single primary young player centered and in sharp focus in the Borac red/blue striped kit (others blurred in background); 'mtel'/'wwin liga' BiH sponsor boards confirm the league. Single-subject foreground sports photo. Accept (preferred over 'Jovo Lukić 97.jpg', cleaner framing).",
+   "verified_by": "manual photo ID review (accepted only when identity is certain)",
+   "verified_at": "2026-06-10T09:04:26.905283+00:00"
+  }
+ }
+}

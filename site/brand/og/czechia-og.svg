@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0b0e14"/>
+<g opacity=".5" transform="translate(0,390) scale(1)">
+<rect width="1200" height="240" fill="#11151d"/>
+<polygon points="797,0 947,0 753,240 603,240" fill="#d7141a" opacity="1"/>
+<polygon points="977,0 1067,0 873,240 783,240" fill="#11457e" opacity="0.92"/>
+<polygon points="1092,0 1116,0 922,240 898,240" fill="#11457e" opacity="0.85"/>
+<circle cx="130" cy="240" r="150" fill="none" stroke="#e9edf3" stroke-width="2" opacity="0.14"/>
+<path d="M0 26 H1200" stroke="#e9edf3" stroke-width="1" opacity="0.084"/>
+<g opacity=".05" stroke="#e9edf3" stroke-width="1"><path d="M0 0 H1200"/><path d="M0 8 H1200"/><path d="M0 16 H1200"/><path d="M0 24 H1200"/><path d="M0 32 H1200"/><path d="M0 40 H1200"/><path d="M0 48 H1200"/><path d="M0 56 H1200"/><path d="M0 64 H1200"/><path d="M0 72 H1200"/><path d="M0 80 H1200"/><path d="M0 88 H1200"/><path d="M0 96 H1200"/><path d="M0 104 H1200"/><path d="M0 112 H1200"/><path d="M0 120 H1200"/><path d="M0 128 H1200"/><path d="M0 136 H1200"/><path d="M0 144 H1200"/><path d="M0 152 H1200"/><path d="M0 160 H1200"/><path d="M0 168 H1200"/><path d="M0 176 H1200"/><path d="M0 184 H1200"/><path d="M0 192 H1200"/><path d="M0 200 H1200"/><path d="M0 208 H1200"/><path d="M0 216 H1200"/><path d="M0 224 H1200"/><path d="M0 232 H1200"/></g>
+</g>
+<g transform="translate(640,90) scale(5.2)" opacity=".95"><g fill="none" stroke-linecap="round" stroke-linejoin="round" transform="scale(1)">
+<path d="M10 56 V14 H86 V56" stroke="#e9edf3" stroke-width="5" stroke-linecap="square"/>
+<path d="M29 14 V52 M48 14 V52 M67 14 V52 M10 27 H86 M10 40 H86" stroke="#e9edf3" stroke-width="1.25" opacity=".3"/>
+<path d="M6 60 Q34 8 72 26" stroke="#e9edf3" stroke-width="2.5" stroke-dasharray="1 7"/>
+<circle cx="74" cy="27" r="8" fill="#2ee06f" stroke="none"/>
+</g></g>
+<g transform="translate(80,150) scale(2.6)">
+<circle cx="28" cy="38" r="17" stroke="#e9edf3" stroke-width="4"/>
+<path d="M28 30.5 L35.1 35.7 32.4 44.1 H23.6 L20.9 35.7 Z" stroke="#e9edf3" stroke-width="3"/>
+<path d="M28 30.5 V21 M35.1 35.7 L44.7 32.9 M32.4 44.1 L38 51.8 M23.6 44.1 L18 51.8 M20.9 35.7 L11.3 32.9" stroke="#e9edf3" stroke-width="3"/>
+<path d="M7.3 30.5 L-1.1 27.4 M13.9 21.1 L5.5 11.2 M24.2 16.3 L22.3 5.5 M35.5 17.3 L38.3 9.8" stroke="#2ee06f" stroke-width="3.75"/>
+</g>
+<text x="80" y="420" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-weight="800" font-size="92" fill="#e9edf3" letter-spacing="2">Golazo 26</text>
+<text x="82" y="478" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-weight="500" font-size="34" fill="#8b95a3">Czechia at the 2026 World Cup — fixtures, squad, how to watch free.</text>
+<text x="82" y="560" font-family="system-ui,-apple-system,'Segoe UI',sans-serif" font-weight="600" font-size="26" fill="#2ee06f">golazo26.onwike.workers.dev</text>
+</svg>
