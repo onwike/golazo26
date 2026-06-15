@@ -1,0 +1,5 @@
+/* predictions box (match pages only) */
+#predict-box .btn { background:var(--chipbg); border:1px solid var(--accent); color:var(--accent); border-radius:.5rem; padding:.4rem .9rem; font:inherit; cursor:pointer; }
+#predict-box .btn:hover { filter:brightness(1.1); }
+.predict-form { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
+.predict-form input { width:3.2rem; text-align:center; padding:.35rem; border:1px solid var(--line); border-radius:.4rem; background:var(--card); color:var(--fg); font:inherit; }

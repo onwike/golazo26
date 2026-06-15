@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Simplified nominative-use identification marks. Trademarks of their respective owners. Monochrome via currentColor so both themes stay legible. -->
+  <symbol id="ai-claude" viewBox="0 0 24 24">
+    <g fill="currentColor">
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9"/>
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9" transform="rotate(45 12 12)"/>
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9" transform="rotate(90 12 12)"/>
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9" transform="rotate(135 12 12)"/>
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9" transform="rotate(22.5 12 12)"/>
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9" transform="rotate(67.5 12 12)"/>
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9" transform="rotate(112.5 12 12)"/>
+      <rect x="11.1" y="2" width="1.8" height="20" rx=".9" transform="rotate(157.5 12 12)"/>
+    </g>
+  </symbol>
+  <symbol id="ai-gpt" viewBox="0 0 24 24">
+    <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"
+      d="M12 3.2 19.6 7.6 19.6 16.4 12 20.8 4.4 16.4 4.4 7.6 Z
+         M12 3.2 12 12 19.6 16.4
+         M12 12 4.4 16.4
+         M19.6 7.6 12 12 4.4 7.6"/>
+  </symbol>
+  <symbol id="ai-gemini" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 1.5c.3 4.6 1.6 6.6 3.9 8 -2.3 .4 -3.6 2.4 -3.9 13 -.3 -10.6 -1.6 -12.6 -3.9 -13 2.3 -1.4 3.6 -3.4 3.9 -8 Z" transform="scale(1 0.85) translate(0 2)"/>
+  </symbol>
+  <symbol id="ai-grok" viewBox="0 0 24 24">
+    <g fill="currentColor">
+      <path d="M5 3 h3.4 L19 19 h-3.4 Z"/>
+      <path d="M19 3 h-3.4 l-3.1 4.6 1.7 2.6 Z"/>
+      <path d="M5 21 h3.4 l3.1 -4.6 -1.7 -2.6 Z"/>
+    </g>
+  </symbol>
+</svg>
