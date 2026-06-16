@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Jordan — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-20@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260617T040000Z
+DURATION:PT2H
+SUMMARY:Austria vs Jordan (Group J)
+LOCATION:Levi's Stadium\, Santa Clara
+DESCRIPTION:Match 20 · how to watch: https://golazo26.onwike.workers.dev/matches/20
+END:VEVENT
+BEGIN:VEVENT
+UID:match-44@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260623T030000Z
+DURATION:PT2H
+SUMMARY:Jordan vs Algeria (Group J)
+LOCATION:Levi's Stadium\, Santa Clara
+DESCRIPTION:Match 44 · how to watch: https://golazo26.onwike.workers.dev/matches/44
+END:VEVENT
+BEGIN:VEVENT
+UID:match-70@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260628T020000Z
+DURATION:PT2H
+SUMMARY:Jordan vs Argentina (Group J)
+LOCATION:AT&T Stadium\, Arlington
+DESCRIPTION:Match 70 · how to watch: https://golazo26.onwike.workers.dev/matches/70
+END:VEVENT
+END:VCALENDAR

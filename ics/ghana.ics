@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Ghana — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-21@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260617T230000Z
+DURATION:PT2H
+SUMMARY:Ghana vs Panama (Group L)
+LOCATION:BMO Field\, Toronto
+DESCRIPTION:Match 21 · how to watch: https://golazo26.onwike.workers.dev/matches/21
+END:VEVENT
+BEGIN:VEVENT
+UID:match-45@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260623T200000Z
+DURATION:PT2H
+SUMMARY:England vs Ghana (Group L)
+LOCATION:Gillette Stadium\, Foxborough
+DESCRIPTION:Match 45 · how to watch: https://golazo26.onwike.workers.dev/matches/45
+END:VEVENT
+BEGIN:VEVENT
+UID:match-68@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T210000Z
+DURATION:PT2H
+SUMMARY:Croatia vs Ghana (Group L)
+LOCATION:Lincoln Financial Field\, Philadelphia
+DESCRIPTION:Match 68 · how to watch: https://golazo26.onwike.workers.dev/matches/68
+END:VEVENT
+END:VCALENDAR

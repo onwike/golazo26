@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Spain — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-14@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260615T160000Z
+DURATION:PT2H
+SUMMARY:Spain vs Cabo Verde (Group H)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 14 · how to watch: https://golazo26.onwike.workers.dev/matches/14
+END:VEVENT
+BEGIN:VEVENT
+UID:match-38@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T160000Z
+DURATION:PT2H
+SUMMARY:Spain vs Saudi Arabia (Group H)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 38 · how to watch: https://golazo26.onwike.workers.dev/matches/38
+END:VEVENT
+BEGIN:VEVENT
+UID:match-66@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T000000Z
+DURATION:PT2H
+SUMMARY:Uruguay vs Spain (Group H)
+LOCATION:Estadio Akron\, Zapopan
+DESCRIPTION:Match 66 · how to watch: https://golazo26.onwike.workers.dev/matches/66
+END:VEVENT
+END:VCALENDAR

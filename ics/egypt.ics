@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Egypt — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-16@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260615T190000Z
+DURATION:PT2H
+SUMMARY:Belgium vs Egypt (Group G)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 16 · how to watch: https://golazo26.onwike.workers.dev/matches/16
+END:VEVENT
+BEGIN:VEVENT
+UID:match-40@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260622T010000Z
+DURATION:PT2H
+SUMMARY:New Zealand vs Egypt (Group G)
+LOCATION:BC Place\, Vancouver
+DESCRIPTION:Match 40 · how to watch: https://golazo26.onwike.workers.dev/matches/40
+END:VEVENT
+BEGIN:VEVENT
+UID:match-63@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T030000Z
+DURATION:PT2H
+SUMMARY:Egypt vs IR Iran (Group G)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 63 · how to watch: https://golazo26.onwike.workers.dev/matches/63
+END:VEVENT
+END:VCALENDAR

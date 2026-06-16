@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Argentina — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-19@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260617T010000Z
+DURATION:PT2H
+SUMMARY:Argentina vs Algeria (Group J)
+LOCATION:Arrowhead Stadium\, Kansas City
+DESCRIPTION:Match 19 · how to watch: https://golazo26.onwike.workers.dev/matches/19
+END:VEVENT
+BEGIN:VEVENT
+UID:match-43@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260622T170000Z
+DURATION:PT2H
+SUMMARY:Argentina vs Austria (Group J)
+LOCATION:AT&T Stadium\, Arlington
+DESCRIPTION:Match 43 · how to watch: https://golazo26.onwike.workers.dev/matches/43
+END:VEVENT
+BEGIN:VEVENT
+UID:match-70@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260628T020000Z
+DURATION:PT2H
+SUMMARY:Jordan vs Argentina (Group J)
+LOCATION:AT&T Stadium\, Arlington
+DESCRIPTION:Match 70 · how to watch: https://golazo26.onwike.workers.dev/matches/70
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Paraguay — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-4@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260613T010000Z
+DURATION:PT2H
+SUMMARY:USA vs Paraguay (Group D)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 4 · how to watch: https://golazo26.onwike.workers.dev/matches/4
+END:VEVENT
+BEGIN:VEVENT
+UID:match-31@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260620T030000Z
+DURATION:PT2H
+SUMMARY:Türkiye vs Paraguay (Group D)
+LOCATION:Levi's Stadium\, Santa Clara
+DESCRIPTION:Match 31 · how to watch: https://golazo26.onwike.workers.dev/matches/31
+END:VEVENT
+BEGIN:VEVENT
+UID:match-60@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260626T020000Z
+DURATION:PT2H
+SUMMARY:Paraguay vs Australia (Group D)
+LOCATION:Levi's Stadium\, Santa Clara
+DESCRIPTION:Match 60 · how to watch: https://golazo26.onwike.workers.dev/matches/60
+END:VEVENT
+END:VCALENDAR

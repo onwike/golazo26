@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Congo DR — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-23@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260617T170000Z
+DURATION:PT2H
+SUMMARY:Portugal vs Congo DR (Group K)
+LOCATION:NRG Stadium\, Houston
+DESCRIPTION:Match 23 · how to watch: https://golazo26.onwike.workers.dev/matches/23
+END:VEVENT
+BEGIN:VEVENT
+UID:match-48@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260624T020000Z
+DURATION:PT2H
+SUMMARY:Colombia vs Congo DR (Group K)
+LOCATION:Estadio Akron\, Zapopan
+DESCRIPTION:Match 48 · how to watch: https://golazo26.onwike.workers.dev/matches/48
+END:VEVENT
+BEGIN:VEVENT
+UID:match-72@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T233000Z
+DURATION:PT2H
+SUMMARY:Congo DR vs Uzbekistan (Group K)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 72 · how to watch: https://golazo26.onwike.workers.dev/matches/72
+END:VEVENT
+END:VCALENDAR

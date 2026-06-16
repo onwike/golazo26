@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Australia — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-6@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260614T040000Z
+DURATION:PT2H
+SUMMARY:Australia vs Türkiye (Group D)
+LOCATION:BC Place\, Vancouver
+DESCRIPTION:Match 6 · how to watch: https://golazo26.onwike.workers.dev/matches/6
+END:VEVENT
+BEGIN:VEVENT
+UID:match-32@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260619T190000Z
+DURATION:PT2H
+SUMMARY:USA vs Australia (Group D)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 32 · how to watch: https://golazo26.onwike.workers.dev/matches/32
+END:VEVENT
+BEGIN:VEVENT
+UID:match-60@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260626T020000Z
+DURATION:PT2H
+SUMMARY:Paraguay vs Australia (Group D)
+LOCATION:Levi's Stadium\, Santa Clara
+DESCRIPTION:Match 60 · how to watch: https://golazo26.onwike.workers.dev/matches/60
+END:VEVENT
+END:VCALENDAR

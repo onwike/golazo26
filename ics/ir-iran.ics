@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:IR Iran — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-15@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260616T010000Z
+DURATION:PT2H
+SUMMARY:IR Iran vs New Zealand (Group G)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 15 · how to watch: https://golazo26.onwike.workers.dev/matches/15
+END:VEVENT
+BEGIN:VEVENT
+UID:match-39@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T190000Z
+DURATION:PT2H
+SUMMARY:Belgium vs IR Iran (Group G)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 39 · how to watch: https://golazo26.onwike.workers.dev/matches/39
+END:VEVENT
+BEGIN:VEVENT
+UID:match-63@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T030000Z
+DURATION:PT2H
+SUMMARY:Egypt vs IR Iran (Group G)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 63 · how to watch: https://golazo26.onwike.workers.dev/matches/63
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Germany — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-10@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260614T170000Z
+DURATION:PT2H
+SUMMARY:Germany vs Curaçao (Group E)
+LOCATION:NRG Stadium\, Houston
+DESCRIPTION:Match 10 · how to watch: https://golazo26.onwike.workers.dev/matches/10
+END:VEVENT
+BEGIN:VEVENT
+UID:match-33@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260620T200000Z
+DURATION:PT2H
+SUMMARY:Germany vs Côte d'Ivoire (Group E)
+LOCATION:BMO Field\, Toronto
+DESCRIPTION:Match 33 · how to watch: https://golazo26.onwike.workers.dev/matches/33
+END:VEVENT
+BEGIN:VEVENT
+UID:match-56@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260625T200000Z
+DURATION:PT2H
+SUMMARY:Ecuador vs Germany (Group E)
+LOCATION:MetLife Stadium\, East Rutherford
+DESCRIPTION:Match 56 · how to watch: https://golazo26.onwike.workers.dev/matches/56
+END:VEVENT
+END:VCALENDAR

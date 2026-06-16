@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Switzerland — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-8@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260613T190000Z
+DURATION:PT2H
+SUMMARY:Qatar vs Switzerland (Group B)
+LOCATION:Levi's Stadium\, Santa Clara
+DESCRIPTION:Match 8 · how to watch: https://golazo26.onwike.workers.dev/matches/8
+END:VEVENT
+BEGIN:VEVENT
+UID:match-26@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260618T190000Z
+DURATION:PT2H
+SUMMARY:Switzerland vs Bosnia and Herzegovina (Group B)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 26 · how to watch: https://golazo26.onwike.workers.dev/matches/26
+END:VEVENT
+BEGIN:VEVENT
+UID:match-51@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260624T190000Z
+DURATION:PT2H
+SUMMARY:Switzerland vs Canada (Group B)
+LOCATION:BC Place\, Vancouver
+DESCRIPTION:Match 51 · how to watch: https://golazo26.onwike.workers.dev/matches/51
+END:VEVENT
+END:VCALENDAR

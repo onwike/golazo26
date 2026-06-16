@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:USA — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-4@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260613T010000Z
+DURATION:PT2H
+SUMMARY:USA vs Paraguay (Group D)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 4 · how to watch: https://golazo26.onwike.workers.dev/matches/4
+END:VEVENT
+BEGIN:VEVENT
+UID:match-32@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260619T190000Z
+DURATION:PT2H
+SUMMARY:USA vs Australia (Group D)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 32 · how to watch: https://golazo26.onwike.workers.dev/matches/32
+END:VEVENT
+BEGIN:VEVENT
+UID:match-59@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260626T020000Z
+DURATION:PT2H
+SUMMARY:Türkiye vs USA (Group D)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 59 · how to watch: https://golazo26.onwike.workers.dev/matches/59
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Tunisia — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-12@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260615T020000Z
+DURATION:PT2H
+SUMMARY:Sweden vs Tunisia (Group F)
+LOCATION:Estadio BBVA\, Guadalupe
+DESCRIPTION:Match 12 · how to watch: https://golazo26.onwike.workers.dev/matches/12
+END:VEVENT
+BEGIN:VEVENT
+UID:match-36@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T040000Z
+DURATION:PT2H
+SUMMARY:Tunisia vs Japan (Group F)
+LOCATION:Estadio BBVA\, Guadalupe
+DESCRIPTION:Match 36 · how to watch: https://golazo26.onwike.workers.dev/matches/36
+END:VEVENT
+BEGIN:VEVENT
+UID:match-58@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260625T230000Z
+DURATION:PT2H
+SUMMARY:Tunisia vs Netherlands (Group F)
+LOCATION:Arrowhead Stadium\, Kansas City
+DESCRIPTION:Match 58 · how to watch: https://golazo26.onwike.workers.dev/matches/58
+END:VEVENT
+END:VCALENDAR

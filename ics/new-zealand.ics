@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:New Zealand — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-15@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260616T010000Z
+DURATION:PT2H
+SUMMARY:IR Iran vs New Zealand (Group G)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 15 · how to watch: https://golazo26.onwike.workers.dev/matches/15
+END:VEVENT
+BEGIN:VEVENT
+UID:match-40@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260622T010000Z
+DURATION:PT2H
+SUMMARY:New Zealand vs Egypt (Group G)
+LOCATION:BC Place\, Vancouver
+DESCRIPTION:Match 40 · how to watch: https://golazo26.onwike.workers.dev/matches/40
+END:VEVENT
+BEGIN:VEVENT
+UID:match-64@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T030000Z
+DURATION:PT2H
+SUMMARY:New Zealand vs Belgium (Group G)
+LOCATION:BC Place\, Vancouver
+DESCRIPTION:Match 64 · how to watch: https://golazo26.onwike.workers.dev/matches/64
+END:VEVENT
+END:VCALENDAR

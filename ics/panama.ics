@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Panama — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-21@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260617T230000Z
+DURATION:PT2H
+SUMMARY:Ghana vs Panama (Group L)
+LOCATION:BMO Field\, Toronto
+DESCRIPTION:Match 21 · how to watch: https://golazo26.onwike.workers.dev/matches/21
+END:VEVENT
+BEGIN:VEVENT
+UID:match-46@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260623T230000Z
+DURATION:PT2H
+SUMMARY:Panama vs Croatia (Group L)
+LOCATION:BMO Field\, Toronto
+DESCRIPTION:Match 46 · how to watch: https://golazo26.onwike.workers.dev/matches/46
+END:VEVENT
+BEGIN:VEVENT
+UID:match-67@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T210000Z
+DURATION:PT2H
+SUMMARY:Panama vs England (Group L)
+LOCATION:MetLife Stadium\, East Rutherford
+DESCRIPTION:Match 67 · how to watch: https://golazo26.onwike.workers.dev/matches/67
+END:VEVENT
+END:VCALENDAR

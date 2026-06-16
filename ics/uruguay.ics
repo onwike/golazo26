@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Uruguay — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-13@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260615T220000Z
+DURATION:PT2H
+SUMMARY:Saudi Arabia vs Uruguay (Group H)
+LOCATION:Hard Rock Stadium\, Miami Gardens
+DESCRIPTION:Match 13 · how to watch: https://golazo26.onwike.workers.dev/matches/13
+END:VEVENT
+BEGIN:VEVENT
+UID:match-37@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T220000Z
+DURATION:PT2H
+SUMMARY:Uruguay vs Cabo Verde (Group H)
+LOCATION:Hard Rock Stadium\, Miami Gardens
+DESCRIPTION:Match 37 · how to watch: https://golazo26.onwike.workers.dev/matches/37
+END:VEVENT
+BEGIN:VEVENT
+UID:match-66@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T000000Z
+DURATION:PT2H
+SUMMARY:Uruguay vs Spain (Group H)
+LOCATION:Estadio Akron\, Zapopan
+DESCRIPTION:Match 66 · how to watch: https://golazo26.onwike.workers.dev/matches/66
+END:VEVENT
+END:VCALENDAR

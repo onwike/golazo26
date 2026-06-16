@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Qatar — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-8@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260613T190000Z
+DURATION:PT2H
+SUMMARY:Qatar vs Switzerland (Group B)
+LOCATION:Levi's Stadium\, Santa Clara
+DESCRIPTION:Match 8 · how to watch: https://golazo26.onwike.workers.dev/matches/8
+END:VEVENT
+BEGIN:VEVENT
+UID:match-27@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260618T220000Z
+DURATION:PT2H
+SUMMARY:Canada vs Qatar (Group B)
+LOCATION:BC Place\, Vancouver
+DESCRIPTION:Match 27 · how to watch: https://golazo26.onwike.workers.dev/matches/27
+END:VEVENT
+BEGIN:VEVENT
+UID:match-52@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260624T190000Z
+DURATION:PT2H
+SUMMARY:Bosnia and Herzegovina vs Qatar (Group B)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 52 · how to watch: https://golazo26.onwike.workers.dev/matches/52
+END:VEVENT
+END:VCALENDAR

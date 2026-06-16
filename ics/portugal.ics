@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Portugal — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-23@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260617T170000Z
+DURATION:PT2H
+SUMMARY:Portugal vs Congo DR (Group K)
+LOCATION:NRG Stadium\, Houston
+DESCRIPTION:Match 23 · how to watch: https://golazo26.onwike.workers.dev/matches/23
+END:VEVENT
+BEGIN:VEVENT
+UID:match-47@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260623T170000Z
+DURATION:PT2H
+SUMMARY:Portugal vs Uzbekistan (Group K)
+LOCATION:NRG Stadium\, Houston
+DESCRIPTION:Match 47 · how to watch: https://golazo26.onwike.workers.dev/matches/47
+END:VEVENT
+BEGIN:VEVENT
+UID:match-71@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T233000Z
+DURATION:PT2H
+SUMMARY:Colombia vs Portugal (Group K)
+LOCATION:Hard Rock Stadium\, Miami Gardens
+DESCRIPTION:Match 71 · how to watch: https://golazo26.onwike.workers.dev/matches/71
+END:VEVENT
+END:VCALENDAR

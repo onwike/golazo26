@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Iraq — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-18@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260616T220000Z
+DURATION:PT2H
+SUMMARY:Iraq vs Norway (Group I)
+LOCATION:Gillette Stadium\, Foxborough
+DESCRIPTION:Match 18 · how to watch: https://golazo26.onwike.workers.dev/matches/18
+END:VEVENT
+BEGIN:VEVENT
+UID:match-42@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260622T210000Z
+DURATION:PT2H
+SUMMARY:France vs Iraq (Group I)
+LOCATION:Lincoln Financial Field\, Philadelphia
+DESCRIPTION:Match 42 · how to watch: https://golazo26.onwike.workers.dev/matches/42
+END:VEVENT
+BEGIN:VEVENT
+UID:match-62@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260626T190000Z
+DURATION:PT2H
+SUMMARY:Senegal vs Iraq (Group I)
+LOCATION:BMO Field\, Toronto
+DESCRIPTION:Match 62 · how to watch: https://golazo26.onwike.workers.dev/matches/62
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+<rect width="1200" height="240" fill="#11151d"/>
+<polygon points="797,0 947,0 753,240 603,240" fill="#006233" opacity="1"/>
+<polygon points="977,0 1067,0 873,240 783,240" fill="#d20f34" opacity="0.92"/>
+<polygon points="1092,0 1116,0 922,240 898,240" fill="#eeeeee" opacity="0.85"/>
+<circle cx="130" cy="240" r="150" fill="none" stroke="#e9edf3" stroke-width="2" opacity="0.14"/>
+<path d="M0 26 H1200" stroke="#e9edf3" stroke-width="1" opacity="0.084"/>
+<g opacity=".05" stroke="#e9edf3" stroke-width="1"><path d="M0 0 H1200"/><path d="M0 8 H1200"/><path d="M0 16 H1200"/><path d="M0 24 H1200"/><path d="M0 32 H1200"/><path d="M0 40 H1200"/><path d="M0 48 H1200"/><path d="M0 56 H1200"/><path d="M0 64 H1200"/><path d="M0 72 H1200"/><path d="M0 80 H1200"/><path d="M0 88 H1200"/><path d="M0 96 H1200"/><path d="M0 104 H1200"/><path d="M0 112 H1200"/><path d="M0 120 H1200"/><path d="M0 128 H1200"/><path d="M0 136 H1200"/><path d="M0 144 H1200"/><path d="M0 152 H1200"/><path d="M0 160 H1200"/><path d="M0 168 H1200"/><path d="M0 176 H1200"/><path d="M0 184 H1200"/><path d="M0 192 H1200"/><path d="M0 200 H1200"/><path d="M0 208 H1200"/><path d="M0 216 H1200"/><path d="M0 224 H1200"/><path d="M0 232 H1200"/></g>
+</svg>

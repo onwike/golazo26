@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Curaçao — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-10@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260614T170000Z
+DURATION:PT2H
+SUMMARY:Germany vs Curaçao (Group E)
+LOCATION:NRG Stadium\, Houston
+DESCRIPTION:Match 10 · how to watch: https://golazo26.onwike.workers.dev/matches/10
+END:VEVENT
+BEGIN:VEVENT
+UID:match-34@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T000000Z
+DURATION:PT2H
+SUMMARY:Ecuador vs Curaçao (Group E)
+LOCATION:Arrowhead Stadium\, Kansas City
+DESCRIPTION:Match 34 · how to watch: https://golazo26.onwike.workers.dev/matches/34
+END:VEVENT
+BEGIN:VEVENT
+UID:match-55@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260625T200000Z
+DURATION:PT2H
+SUMMARY:Curaçao vs Côte d'Ivoire (Group E)
+LOCATION:Lincoln Financial Field\, Philadelphia
+DESCRIPTION:Match 55 · how to watch: https://golazo26.onwike.workers.dev/matches/55
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Morocco — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-7@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260613T220000Z
+DURATION:PT2H
+SUMMARY:Brazil vs Morocco (Group C)
+LOCATION:MetLife Stadium\, East Rutherford
+DESCRIPTION:Match 7 · how to watch: https://golazo26.onwike.workers.dev/matches/7
+END:VEVENT
+BEGIN:VEVENT
+UID:match-30@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260619T220000Z
+DURATION:PT2H
+SUMMARY:Scotland vs Morocco (Group C)
+LOCATION:Gillette Stadium\, Foxborough
+DESCRIPTION:Match 30 · how to watch: https://golazo26.onwike.workers.dev/matches/30
+END:VEVENT
+BEGIN:VEVENT
+UID:match-50@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260624T220000Z
+DURATION:PT2H
+SUMMARY:Morocco vs Haiti (Group C)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 50 · how to watch: https://golazo26.onwike.workers.dev/matches/50
+END:VEVENT
+END:VCALENDAR

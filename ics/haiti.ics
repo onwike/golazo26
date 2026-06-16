@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Haiti — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-5@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260614T010000Z
+DURATION:PT2H
+SUMMARY:Haiti vs Scotland (Group C)
+LOCATION:Gillette Stadium\, Foxborough
+DESCRIPTION:Match 5 · how to watch: https://golazo26.onwike.workers.dev/matches/5
+END:VEVENT
+BEGIN:VEVENT
+UID:match-29@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260620T003000Z
+DURATION:PT2H
+SUMMARY:Brazil vs Haiti (Group C)
+LOCATION:Lincoln Financial Field\, Philadelphia
+DESCRIPTION:Match 29 · how to watch: https://golazo26.onwike.workers.dev/matches/29
+END:VEVENT
+BEGIN:VEVENT
+UID:match-50@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260624T220000Z
+DURATION:PT2H
+SUMMARY:Morocco vs Haiti (Group C)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 50 · how to watch: https://golazo26.onwike.workers.dev/matches/50
+END:VEVENT
+END:VCALENDAR

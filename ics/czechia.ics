@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Czechia — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-2@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260612T020000Z
+DURATION:PT2H
+SUMMARY:Korea Republic vs Czechia (Group A)
+LOCATION:Estadio Akron\, Zapopan
+DESCRIPTION:Match 2 · how to watch: https://golazo26.onwike.workers.dev/matches/2
+END:VEVENT
+BEGIN:VEVENT
+UID:match-25@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260618T160000Z
+DURATION:PT2H
+SUMMARY:Czechia vs South Africa (Group A)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 25 · how to watch: https://golazo26.onwike.workers.dev/matches/25
+END:VEVENT
+BEGIN:VEVENT
+UID:match-53@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260625T010000Z
+DURATION:PT2H
+SUMMARY:Czechia vs Mexico (Group A)
+LOCATION:Estadio Azteca\, Mexico City
+DESCRIPTION:Match 53 · how to watch: https://golazo26.onwike.workers.dev/matches/53
+END:VEVENT
+END:VCALENDAR

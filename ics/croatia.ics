@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Croatia — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-22@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260617T200000Z
+DURATION:PT2H
+SUMMARY:England vs Croatia (Group L)
+LOCATION:AT&T Stadium\, Arlington
+DESCRIPTION:Match 22 · how to watch: https://golazo26.onwike.workers.dev/matches/22
+END:VEVENT
+BEGIN:VEVENT
+UID:match-46@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260623T230000Z
+DURATION:PT2H
+SUMMARY:Panama vs Croatia (Group L)
+LOCATION:BMO Field\, Toronto
+DESCRIPTION:Match 46 · how to watch: https://golazo26.onwike.workers.dev/matches/46
+END:VEVENT
+BEGIN:VEVENT
+UID:match-68@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T210000Z
+DURATION:PT2H
+SUMMARY:Croatia vs Ghana (Group L)
+LOCATION:Lincoln Financial Field\, Philadelphia
+DESCRIPTION:Match 68 · how to watch: https://golazo26.onwike.workers.dev/matches/68
+END:VEVENT
+END:VCALENDAR

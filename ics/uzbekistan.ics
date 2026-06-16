@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Uzbekistan — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-24@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260618T020000Z
+DURATION:PT2H
+SUMMARY:Uzbekistan vs Colombia (Group K)
+LOCATION:Estadio Azteca\, Mexico City
+DESCRIPTION:Match 24 · how to watch: https://golazo26.onwike.workers.dev/matches/24
+END:VEVENT
+BEGIN:VEVENT
+UID:match-47@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260623T170000Z
+DURATION:PT2H
+SUMMARY:Portugal vs Uzbekistan (Group K)
+LOCATION:NRG Stadium\, Houston
+DESCRIPTION:Match 47 · how to watch: https://golazo26.onwike.workers.dev/matches/47
+END:VEVENT
+BEGIN:VEVENT
+UID:match-72@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T233000Z
+DURATION:PT2H
+SUMMARY:Congo DR vs Uzbekistan (Group K)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 72 · how to watch: https://golazo26.onwike.workers.dev/matches/72
+END:VEVENT
+END:VCALENDAR

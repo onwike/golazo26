@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Norway — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-18@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260616T220000Z
+DURATION:PT2H
+SUMMARY:Iraq vs Norway (Group I)
+LOCATION:Gillette Stadium\, Foxborough
+DESCRIPTION:Match 18 · how to watch: https://golazo26.onwike.workers.dev/matches/18
+END:VEVENT
+BEGIN:VEVENT
+UID:match-41@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260623T000000Z
+DURATION:PT2H
+SUMMARY:Norway vs Senegal (Group I)
+LOCATION:MetLife Stadium\, East Rutherford
+DESCRIPTION:Match 41 · how to watch: https://golazo26.onwike.workers.dev/matches/41
+END:VEVENT
+BEGIN:VEVENT
+UID:match-61@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260626T190000Z
+DURATION:PT2H
+SUMMARY:Norway vs France (Group I)
+LOCATION:Gillette Stadium\, Foxborough
+DESCRIPTION:Match 61 · how to watch: https://golazo26.onwike.workers.dev/matches/61
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Ecuador — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-9@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260614T230000Z
+DURATION:PT2H
+SUMMARY:Côte d'Ivoire vs Ecuador (Group E)
+LOCATION:Lincoln Financial Field\, Philadelphia
+DESCRIPTION:Match 9 · how to watch: https://golazo26.onwike.workers.dev/matches/9
+END:VEVENT
+BEGIN:VEVENT
+UID:match-34@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T000000Z
+DURATION:PT2H
+SUMMARY:Ecuador vs Curaçao (Group E)
+LOCATION:Arrowhead Stadium\, Kansas City
+DESCRIPTION:Match 34 · how to watch: https://golazo26.onwike.workers.dev/matches/34
+END:VEVENT
+BEGIN:VEVENT
+UID:match-56@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260625T200000Z
+DURATION:PT2H
+SUMMARY:Ecuador vs Germany (Group E)
+LOCATION:MetLife Stadium\, East Rutherford
+DESCRIPTION:Match 56 · how to watch: https://golazo26.onwike.workers.dev/matches/56
+END:VEVENT
+END:VCALENDAR

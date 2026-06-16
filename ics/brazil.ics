@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Brazil — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-7@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260613T220000Z
+DURATION:PT2H
+SUMMARY:Brazil vs Morocco (Group C)
+LOCATION:MetLife Stadium\, East Rutherford
+DESCRIPTION:Match 7 · how to watch: https://golazo26.onwike.workers.dev/matches/7
+END:VEVENT
+BEGIN:VEVENT
+UID:match-29@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260620T003000Z
+DURATION:PT2H
+SUMMARY:Brazil vs Haiti (Group C)
+LOCATION:Lincoln Financial Field\, Philadelphia
+DESCRIPTION:Match 29 · how to watch: https://golazo26.onwike.workers.dev/matches/29
+END:VEVENT
+BEGIN:VEVENT
+UID:match-49@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260624T220000Z
+DURATION:PT2H
+SUMMARY:Scotland vs Brazil (Group C)
+LOCATION:Hard Rock Stadium\, Miami Gardens
+DESCRIPTION:Match 49 · how to watch: https://golazo26.onwike.workers.dev/matches/49
+END:VEVENT
+END:VCALENDAR

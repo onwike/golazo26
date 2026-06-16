@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Saudi Arabia — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-13@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260615T220000Z
+DURATION:PT2H
+SUMMARY:Saudi Arabia vs Uruguay (Group H)
+LOCATION:Hard Rock Stadium\, Miami Gardens
+DESCRIPTION:Match 13 · how to watch: https://golazo26.onwike.workers.dev/matches/13
+END:VEVENT
+BEGIN:VEVENT
+UID:match-38@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T160000Z
+DURATION:PT2H
+SUMMARY:Spain vs Saudi Arabia (Group H)
+LOCATION:Mercedes-Benz Stadium\, Atlanta
+DESCRIPTION:Match 38 · how to watch: https://golazo26.onwike.workers.dev/matches/38
+END:VEVENT
+BEGIN:VEVENT
+UID:match-65@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T000000Z
+DURATION:PT2H
+SUMMARY:Cabo Verde vs Saudi Arabia (Group H)
+LOCATION:NRG Stadium\, Houston
+DESCRIPTION:Match 65 · how to watch: https://golazo26.onwike.workers.dev/matches/65
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Belgium — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-16@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260615T190000Z
+DURATION:PT2H
+SUMMARY:Belgium vs Egypt (Group G)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 16 · how to watch: https://golazo26.onwike.workers.dev/matches/16
+END:VEVENT
+BEGIN:VEVENT
+UID:match-39@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T190000Z
+DURATION:PT2H
+SUMMARY:Belgium vs IR Iran (Group G)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 39 · how to watch: https://golazo26.onwike.workers.dev/matches/39
+END:VEVENT
+BEGIN:VEVENT
+UID:match-64@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260627T030000Z
+DURATION:PT2H
+SUMMARY:New Zealand vs Belgium (Group G)
+LOCATION:BC Place\, Vancouver
+DESCRIPTION:Match 64 · how to watch: https://golazo26.onwike.workers.dev/matches/64
+END:VEVENT
+END:VCALENDAR

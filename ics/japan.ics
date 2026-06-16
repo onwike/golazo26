@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Japan — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-11@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260614T200000Z
+DURATION:PT2H
+SUMMARY:Netherlands vs Japan (Group F)
+LOCATION:AT&T Stadium\, Arlington
+DESCRIPTION:Match 11 · how to watch: https://golazo26.onwike.workers.dev/matches/11
+END:VEVENT
+BEGIN:VEVENT
+UID:match-36@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260621T040000Z
+DURATION:PT2H
+SUMMARY:Tunisia vs Japan (Group F)
+LOCATION:Estadio BBVA\, Guadalupe
+DESCRIPTION:Match 36 · how to watch: https://golazo26.onwike.workers.dev/matches/36
+END:VEVENT
+BEGIN:VEVENT
+UID:match-57@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260625T230000Z
+DURATION:PT2H
+SUMMARY:Japan vs Sweden (Group F)
+LOCATION:AT&T Stadium\, Arlington
+DESCRIPTION:Match 57 · how to watch: https://golazo26.onwike.workers.dev/matches/57
+END:VEVENT
+END:VCALENDAR

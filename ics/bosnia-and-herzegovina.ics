@@ -1,0 +1,32 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Golazo 26//fan guide//EN
+X-WR-CALNAME:Bosnia and Herzegovina — World Cup 2026 (Golazo 26)
+BEGIN:VEVENT
+UID:match-3@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260612T190000Z
+DURATION:PT2H
+SUMMARY:Canada vs Bosnia and Herzegovina (Group B)
+LOCATION:BMO Field\, Toronto
+DESCRIPTION:Match 3 · how to watch: https://golazo26.onwike.workers.dev/matches/3
+END:VEVENT
+BEGIN:VEVENT
+UID:match-26@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260618T190000Z
+DURATION:PT2H
+SUMMARY:Switzerland vs Bosnia and Herzegovina (Group B)
+LOCATION:SoFi Stadium\, Inglewood
+DESCRIPTION:Match 26 · how to watch: https://golazo26.onwike.workers.dev/matches/26
+END:VEVENT
+BEGIN:VEVENT
+UID:match-52@golazo26
+DTSTAMP:20260616T122529Z
+DTSTART:20260624T190000Z
+DURATION:PT2H
+SUMMARY:Bosnia and Herzegovina vs Qatar (Group B)
+LOCATION:Lumen Field\, Seattle
+DESCRIPTION:Match 52 · how to watch: https://golazo26.onwike.workers.dev/matches/52
+END:VEVENT
+END:VCALENDAR
