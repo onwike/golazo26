@@ -1,7 +1,7 @@
-/* Golazo 26 — design tokens.
+/* Golazo 26 - design tokens v2.00.00
    Two first-class themes: Studio (light, default) / Broadcast (dark).
    Theme selection: no [data-theme] = follow system; html[data-theme=light|dark] = forced
-   (matches site theme toggle). Aliases at the bottom keep older selectors working. */
+   (matches site theme toggle). Legacy aliases at the bottom keep v1 selectors working. */
 
 @font-face {
   font-family: 'Barlow Condensed';
@@ -13,7 +13,36 @@
   font-family: 'Barlow Condensed';
   font-style: normal; font-weight: 600; font-display: swap;
   src: url('/fonts/barlow-condensed-600-latin-ext.woff2') format('woff2');
-  unicode-range: U+0100-02AF, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  /* unicode-range corrected 2026-07-18: the previous U+1E00-1EFF claim was false —
+     this file's cmap covers only U+1E80-1E85 and U+1EF2-1EF9 in that block (verified
+     via fontTools; the Igbo precomposed vowels U+1EB9/1ECB/1ECD/1EE5 are NOT here —
+     they ship in barlow-condensed-600-igbo-ext.woff2 below). See
+     internal notes */
+  unicode-range: U+0100-02AF, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1E80-1E85, U+1EF2-1EF9, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* i18n supplements — glyphs the two Barlow Condensed 600 subsets above LACK,
+   needed to render Igbo (ig) and Twi (tw) UI text. Each unicode-range is narrowed to
+   exactly the codepoints the file supplies, so the browser pulls a supplement only for
+   those characters and the main subsets are untouched. Declared AFTER the faces above
+   so that for any overlapping range (the latin-ext U+0100-02AF window nominally spans
+   the Twi vowels it does not actually contain) the last-declared face — the supplement
+   that truly has the glyph — wins per the CSS Fonts unicode-range cascade. */
+@font-face {
+  /* Igbo precomposed dot-below vowels (ẹ ị ọ ụ + uppercase). Source: Barlow Condensed
+     SemiBold upstream (same family/weight/style as the heading face — metrics match). */
+  font-family: 'Barlow Condensed';
+  font-style: normal; font-weight: 600; font-display: swap;
+  src: url('/fonts/barlow-condensed-600-igbo-ext.woff2') format('woff2');
+  unicode-range: U+1EB8-1EB9, U+1ECA-1ECB, U+1ECC-1ECD, U+1EE4-1EE5;
+}
+@font-face {
+  /* Twi open vowels (ɛ ɔ Ɛ Ɔ). Not present in any Barlow release; sourced from Noto
+     Sans instanced to wght=600, wdth=75 to approximate the condensed heading face — a
+     subtle width mismatch is accepted (plan R4). */
+  font-family: 'Barlow Condensed';
+  font-style: normal; font-weight: 600; font-display: swap;
+  src: url('/fonts/barlow-condensed-600-african-noto.woff2') format('woff2');
+  unicode-range: U+0186, U+0190, U+0254, U+025B;
 }
 
 /* ============ STUDIO (light) ============ */
@@ -74,7 +103,7 @@
   :root:not([data-theme=light]) .teamscope { --t1:var(--t1-d, var(--t1-l, var(--green))); --t2:var(--t2-d, var(--t2-l, var(--muted))); --on-t1:var(--on-t1-d, #fff); }
 }
 
-/* ============ legacy aliases (older selectors on not-yet-restructured pages) ============ */
+/* ============ legacy aliases (v1 selectors on not-yet-restructured pages) ============ */
 :root, :root[data-theme=dark] {
   --bg:var(--field); --fg:var(--ink); --card:var(--surface);
   --accent:var(--green); --chipbg:var(--surface2);
@@ -87,9 +116,9 @@
 
 /* ============ card state-shine intensity ============
    How strongly finished (green) / live (red) cards tint vs the surface.
-   Defaults: light = level 8, dark = level 5 (dark surfaces mute tints, so they
-   need less). User can override via the Contrast picker, which sets
-   --shine-top/--shine-bd inline (absolute, wins over these). */
+   Owner-tuned defaults: light = level 8, dark = level 5 (dark surfaces mute
+   tints, so it needs less). User can override via the Contrast picker, which
+   sets --shine-top/--shine-bd inline (absolute, wins over these). */
 :root { --shine-top:48%; --shine-bd:76%; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme=light]) { --shine-top:24%; --shine-bd:52%; } }
 :root[data-theme=dark] { --shine-top:24%; --shine-bd:52%; }
