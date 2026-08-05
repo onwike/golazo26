@@ -1,5 +1,5 @@
-/* Golazo 26 — styles.
-   Live-baker contracts the markup depends on: #stale-banner (an unobtrusive footer
+/* Golazo 26 - styles v2.00.00.
+   Frozen live-baker contracts preserved: #stale-banner (now an unobtrusive footer
    note), .pill.live, .pill.warn, [data-match] .score, schedule filter ids.
    Tokens live in /brand/tokens.css. */
 
@@ -52,9 +52,11 @@ nav.main a:hover { color:var(--ink); }
 #theme-btn:hover { color:var(--green); border-color:var(--green); }
 .hdr-ctrls { display:flex; align-items:center; gap:.5rem; flex-shrink:0; }
 #contrast-sel {
+  display:none; /* hidden from public view; owner reveals it for visual debugging via ?contrast (site/app.js) */
   background:none; border:1px solid var(--line); border-radius:999px; color:var(--muted); white-space:nowrap;
   padding:.35rem .55rem; font:600 11.5px/1 var(--font-d); letter-spacing:.06em; text-transform:uppercase; cursor:pointer;
 }
+html[data-cdbg] #contrast-sel { display:inline-block; }
 #contrast-sel:hover { color:var(--green); border-color:var(--green); }
 
 /* ============ hero ============ */
@@ -63,6 +65,12 @@ nav.main a:hover { color:var(--ink); }
 .hero h1 { font:600 clamp(44px, 5.2vw, 66px)/0.98 var(--font-d); margin:.2rem 0 .55rem; letter-spacing:.005em; }
 .hero h1 em { font-style:normal; color:var(--green); }
 .hero .sub { color:var(--muted); margin:0 0 1.2rem; font-size:16.5px; max-width:60ch; }
+/* compact hero (homepage) — ~half the footprint so the Bar Talk teaser sits high (the maintainer 2026-06-23) */
+.hero.compact { padding:1.3rem 0 .7rem; }
+.hero.compact h1 { font-size:clamp(30px, 3.6vw, 42px); margin:.1rem 0 .4rem; }
+.hero.compact .sub { margin:0 0 .7rem; font-size:15px; }
+.hero.compact .free-callout { font-size:14px; padding:.55rem .85rem; }
+.hero.compact .hero-art { opacity:.6; }
 .hero-art {
   position:absolute; right:-30px; top:0; height:100%; width:min(58%, 700px);
   color:var(--ink); pointer-events:none; background:none;
@@ -75,6 +83,157 @@ nav.main a:hover { color:var(--ink); }
   border-radius:var(--r-sm); box-shadow:var(--shadow); font-size:15px; position:relative; flex-wrap:wrap;
 }
 .callout a, .free-callout a { color:var(--green); font-weight:600; }
+
+/* Bar Talk front-page teaser (greenlit 2026-06-23) — rotating band just below the compact hero. The
+   .bt-art chip is a PLACEHOLDER (the persona initial) until G&D's custom character art lands. */
+.bartalk-teaser { margin:.1rem 0 1.5rem; padding:.8rem 1.05rem .7rem; border:1px solid var(--line); border-radius:var(--r); background:var(--surface2); }
+.bt-head { display:flex; align-items:center; gap:.55rem; text-decoration:none; margin-bottom:.55rem; flex-wrap:wrap; }
+.bt-badge { font:800 11px/1 var(--font-d); letter-spacing:.12em; color:#06281a; background:var(--green); padding:.4em .55em; border-radius:.35em; }
+.bt-tag { font-size:13px; color:var(--muted); }
+.bt-tag b { color:var(--green); }
+.bt-track { position:relative; min-height:2.8em; }
+.bt-slot { display:none; align-items:center; gap:.8rem; }
+.bt-slot.is-active { display:flex; animation:btfade .42s ease both; }
+@keyframes btfade { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:none; } }
+.bt-persona { display:inline-flex; align-items:center; gap:.45rem; flex:none; }
+.bt-art { display:grid; place-items:center; width:2.2em; height:2.2em; border-radius:50%; background:var(--surface); border:1px solid var(--line); font:800 .95em/1 var(--font-d); color:var(--muted); }
+.bt-name { font-weight:700; font-size:14px; white-space:nowrap; }
+/* Attribution pill (Phase 2 teaser, the maintainer pick C): leading "M<match_no>" chip linking to the episode. */
+.bt-src { flex:none; align-self:center; font:700 10px/1 var(--font-d); letter-spacing:.05em; color:var(--amber); border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:4px 8px; text-decoration:none; }
+.bt-src:hover, .bt-src:focus-visible { border-color:var(--amber); }
+.bt-line { font-size:15px; line-height:1.4; }
+.bt-dots { display:flex; gap:.42rem; margin-top:.6rem; }
+.bt-dot { width:8px; height:8px; padding:0; border:0; border-radius:50%; background:var(--line); cursor:pointer; transition:background .2s; }
+.bt-dot.is-active { background:var(--green); }
+.bt-dot:focus-visible { outline:2px solid var(--green); outline-offset:2px; }
+@media (max-width:560px) { .bt-slot { flex-wrap:wrap; gap:.45rem .8rem; } .bt-line { flex-basis:100%; } }
+@media (prefers-reduced-motion: reduce) { .bt-slot.is-active { animation:none; } }
+
+/* Bar Talk episode render — the match-page section + the /bar-talk hub. Basic, on-brand structure;
+   G&D's per-episode visual treatment (the four characters' dialogue styling) layers on later. */
+.bartalk-ep .bt-ep-more, .bt-ep-h a { font-size:.7em; font-weight:400; margin-left:.5rem; }
+.bt-ep-body { font-size:15px; line-height:1.55; }
+.bt-ep-body p { margin:.5rem 0; }
+.bt-ep-body p:first-child { margin-top:.2rem; }
+.bt-ep-body strong { color:var(--green); }   /* the speaker label (e.g. GROK:) */
+/* match-page Bar Talk window = a CONTAINED, scrollable box (mirrors the blow-by-blow .cmt-list) so a long
+   episode transcript doesn't clutter the match page (the maintainer 2026-06-23). Scoped to .bartalk-ep — the
+   /bar-talk hub (.bt-episode) shows full episodes. */
+.bartalk-ep .bt-ep-body { max-height:24rem; overflow-y:auto; border:1px solid var(--line); border-radius:var(--r); background:var(--surface); padding:.1rem .9rem; margin:.6rem 0 .3rem; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+.bt-ep-note { font-size:13px; margin-top:.6rem; }
+.bt-episode { padding:1rem 0; border-top:1px solid var(--line); scroll-margin-top:5rem; }
+/* /bar-talk hub "Load more episodes" pager (injected by bartalk.js; hidden when has_more=false). */
+.bt-more { display:block; margin:1.2rem auto .4rem; padding:.6rem 1.4rem; font:inherit; font-weight:600; color:var(--ink); background:var(--surface2); border:1px solid var(--line); border-radius:var(--r); cursor:pointer; }
+.bt-more:hover { background:var(--surface); border-color:var(--green); }
+.bt-more:disabled { opacity:.6; cursor:default; }
+.bt-more[hidden] { display:none; }
+.bt-episode:first-child { border-top:0; }
+.bt-ep-h { font-size:1.05rem; margin:0 0 .5rem; }
+:target.bt-episode { background:var(--surface2); border-radius:var(--r); padding:1rem; }  /* highlight a teaser-deep-linked episode */
+
+/* ============ Bar Talk redesign (feat/bartalk-redesign) ============ */
+/* Persona accent CSS vars */
+:root { --bt-grok:#0b7c38; --bt-claude:#c0533a; --bt-gemini:#4285f4; --bt-gpt:#19c37d; --bt-burst:#f5c518; }
+:root[data-theme=dark], @media (prefers-color-scheme:dark) { :root:not([data-theme=light]) { --bt-grok:#2ee06f; --bt-burst:#f5c518; } }
+
+/* B6 masthead frame */
+.bt-b6 { background:linear-gradient(135deg,var(--green) 0%,#064a20 100%); color:#fff; border-radius:var(--r); padding:1rem 1.2rem .9rem; margin-bottom:1.2rem; }
+.bt-b6-label { font:800 10px/1 var(--font-d); letter-spacing:.18em; opacity:.75; margin-bottom:.35rem; }
+.bt-b6-headline { font:900 clamp(22px,3.5vw,34px)/1.05 var(--font-d); letter-spacing:.01em; margin:0 0 .3rem; }
+.bt-b6-sub { font-size:14px; opacity:.82; margin:0; }
+
+/* "The Regulars" row */
+.bt-regulars { display:flex; gap:.9rem; align-items:flex-start; flex-wrap:wrap; margin-bottom:1.1rem; }
+.bt-regular { display:flex; flex-direction:column; align-items:center; gap:.3rem; text-align:center; cursor:default; }
+.bt-regular-avatar { width:56px; height:56px; border-radius:10px; overflow:hidden; background:var(--surface2); border:1px solid var(--line); flex:none; }
+.bt-regular-avatar img, .bt-regular-avatar .bt-art { width:100%; height:100%; object-fit:cover; display:block; }
+.bt-regular-name { font:700 11px/1.2 var(--font-d); letter-spacing:.04em; color:var(--ink); }
+
+/* Stage filter pills */
+.bt-filter { display:flex; gap:.4rem; flex-wrap:wrap; margin-bottom:.8rem; }
+.bt-filter-btn { font:600 12px/1 var(--font-b); padding:.35rem .75rem; border:1px solid var(--line); border-radius:999px; background:var(--surface2); color:var(--muted); cursor:pointer; transition:background .15s,color .15s,border-color .15s; }
+.bt-filter-btn:hover { border-color:var(--green); color:var(--green); }
+.bt-filter-btn.is-active { background:var(--green); border-color:var(--green); color:#fff; }
+:root[data-theme=dark] .bt-filter-btn.is-active, @media (prefers-color-scheme:dark) { :root:not([data-theme=light]) .bt-filter-btn.is-active { color:#062812; } }
+
+/* Two-column layout: guide (left) + reading column (right) */
+.bt-layout { display:grid; grid-template-columns:300px 1fr; gap:1rem; align-items:start; }
+@media (max-width:820px) { .bt-layout { grid-template-columns:1fr; } }
+
+/* Episode guide rail */
+.bt-guide { border:1px solid var(--line); border-radius:var(--r); overflow:hidden; }
+.bt-guide-list { overflow-y:auto; max-height:75vh; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+.bt-guide-head { font:700 11px/1 var(--font-d); letter-spacing:.12em; color:var(--muted); padding:.55rem .75rem; border-bottom:1px solid var(--line); background:var(--surface2); }
+
+/* Guide row */
+.bt-gr { display:flex; align-items:flex-start; gap:.65rem; width:100%; border:0; border-bottom:1px solid var(--line); background:var(--surface); padding:.5rem .65rem; cursor:pointer; text-align:left; transition:background .12s; }
+.bt-gr:last-child { border-bottom:0; }
+.bt-gr:hover, .bt-gr.is-active { background:var(--surface2); }
+.bt-gr:focus-visible { outline:2px solid var(--green); outline-offset:-2px; }
+.bt-gr.is-active { border-left:3px solid var(--green); padding-left:.4rem; }
+.bt-gr-thumb { flex:none; width:72px; }
+.bt-gr-thumb .bt-clash { width:72px; height:40px; }
+.bt-gr-info { display:flex; flex-direction:column; gap:.2rem; min-width:0; }
+.bt-gr-teams { font:600 12.5px/1.3 var(--font-b); color:var(--ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.bt-gr-vs { font-weight:400; color:var(--muted); font-size:11px; }
+.bt-gr-meta { display:flex; gap:.4rem; align-items:center; flex-wrap:wrap; }
+.bt-gr-stage { font:500 10.5px/1 var(--font-b); color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+.bt-gr-score { font:700 11px/1 var(--font-d); color:var(--ink); }
+.bt-gr-syn { font-size:11.5px; color:var(--muted); line-height:1.35; margin:.1rem 0 0; font-style:italic; }
+
+/* Reading column */
+.bt-reading { border:1px solid var(--line); border-radius:var(--r); overflow:hidden; min-height:300px; }
+.bt-reading-empty { display:flex; align-items:center; justify-content:center; min-height:280px; color:var(--muted); font-size:14px; }
+
+/* Episode header: dramatic flag clash banner */
+.bt-ep-header { background:var(--surface2); border-bottom:1px solid var(--line); padding:.9rem 1.1rem .75rem; }
+.bt-ep-clash { margin:0 auto .65rem; max-width:340px; }
+.bt-ep-clash .bt-clash-lg { width:100%; height:auto; }
+.bt-ep-fix { text-align:center; font:600 15px/1.3 var(--font-d); color:var(--ink); display:flex; align-items:center; justify-content:center; gap:.5rem; flex-wrap:wrap; }
+.bt-ep-vs { font-weight:400; color:var(--muted); font-size:13px; }
+.bt-ep-score { font:800 18px/1 var(--font-d); color:var(--green); letter-spacing:.03em; }
+.bt-ep-stage { font:600 10px/1 var(--font-b); letter-spacing:.1em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:.2rem .5rem; }
+
+/* Flag-clash SVG */
+.bt-clash { display:block; overflow:visible; }
+.bt-clash-sm { width:72px; height:40px; }
+.bt-clash-lg { width:100%; height:auto; }
+
+/* Speech bubbles */
+.bt-transcript { padding:.8rem 1rem 1.2rem; display:flex; flex-direction:column; gap:.65rem; }
+.bt-bubble { background:var(--surface2); border:1px solid var(--line); border-radius:var(--r); padding:.6rem .8rem .55rem; border-left:3px solid var(--bt-accent,var(--line)); }
+.bt-bubble-head { display:flex; align-items:center; gap:.45rem; margin-bottom:.35rem; }
+.bt-bubble-name { font:700 12px/1 var(--font-d); letter-spacing:.04em; }
+.bt-bubble-text { font-size:14.5px; line-height:1.55; margin:0; color:var(--ink); }
+
+/* Avatar in bubble head (28px) and Regulars row (56px) */
+.bt-avatar { border-radius:7px; object-fit:cover; flex:none; display:block; }
+.bt-avatar-fallback { width:28px; height:28px; border-radius:7px; }
+
+/* Stage direction action beat: centered italic with hairline rules */
+.bt-beat { display:flex; align-items:center; gap:.6rem; margin:.3rem 0; padding:.15rem 0; }
+.bt-beat-rule { flex:1; height:1px; background:var(--line); }
+.bt-beat-text { font-size:13px; color:var(--muted); text-align:center; white-space:nowrap; flex:none; max-width:80%; overflow:hidden; text-overflow:ellipsis; }
+.bt-beat-actor { font-weight:700; font-size:12px; letter-spacing:.04em; }
+.bt-beat-text em { font-style:italic; }
+
+/* Ambient beat: centered italic, no actor */
+.bt-ambient { text-align:center; color:var(--muted); font-size:13px; font-style:italic; padding:.2rem 0; margin:.2rem 0; }
+
+/* Who-won poll */
+.bt-poll { border-top:1px solid var(--line); padding:.9rem 1rem; }
+.bt-poll-q { font:700 13px/1.3 var(--font-d); color:var(--muted); letter-spacing:.04em; text-transform:uppercase; margin-bottom:.6rem; }
+.bt-poll-opts { display:flex; gap:.5rem; flex-wrap:wrap; }
+.bt-poll-btn { font:inherit; font-size:13px; font-weight:600; padding:.4rem .9rem; border:1px solid var(--line); border-radius:999px; background:var(--surface2); color:var(--ink); cursor:pointer; transition:background .15s,border-color .15s; }
+.bt-poll-btn:hover { border-color:var(--green); }
+.bt-poll-note { font-size:12px; color:var(--muted); margin-top:.5rem; }
+
+/* Loading skeleton */
+.bt-skeleton { padding:1rem; display:flex; flex-direction:column; gap:.7rem; }
+.bt-skel-line { height:14px; border-radius:6px; background:var(--line); animation:btskel .9s ease-in-out infinite alternate; }
+@keyframes btskel { from { opacity:.5; } to { opacity:1; } }
+.bt-skel-line.w60 { width:60%; }
+.bt-skel-line.w80 { width:80%; }
 
 /* ============ headings / day sections ============ */
 h1 { font:600 clamp(30px, 4vw, 44px)/1.05 var(--font-d); letter-spacing:.005em; margin:.5rem 0 .6rem; }
@@ -136,9 +295,25 @@ a.team:hover { color:var(--green); }
 .when { font-size:.9rem; }
 .mc-chips .more, .more a { margin-left:auto; font:600 13px/1.5 var(--font-d); letter-spacing:.08em; text-transform:uppercase; color:var(--green); text-decoration:none; }
 .score { font-weight:700; font-size:1.08rem; font-variant-numeric:tabular-nums; }
+/* penalty-shootout badge on a level-score knockout tie (migration 0021): the score reads home–away,
+   mirroring the goal score orientation, with the flanking team names disambiguating the winner. */
+.pens { font:600 .78em/1 var(--font-d); letter-spacing:.04em; text-transform:uppercase; color:var(--warn-text); font-variant-numeric:tabular-nums; white-space:nowrap; }
+
+/* AI predicted-scoreline strip on a today card — enlarges the card to fit the league's four picks.
+   Clearly labelled as a PREDICTION; never confusable with the .mc-big live/final score above. */
+.mc-ai { margin:.75rem 0 .1rem; padding-top:.7rem; border-top:1px solid var(--line); }
+.mc-ai-h { display:flex; align-items:baseline; gap:.5rem; font:600 11px/1.2 var(--font-d); letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:.45rem; }
+.mc-ai-more { margin-left:auto; color:var(--green); font-weight:600; text-decoration:none; position:relative; z-index:2; }
+.mc-ai-more:hover { text-decoration:underline; }
+.mc-ai-row { display:flex; flex-wrap:wrap; gap:.4rem; }
+.mc-ai-pick { display:inline-flex; align-items:baseline; gap:.34rem; padding:.2rem .5rem; border:1px solid var(--line); border-radius:999px; background:var(--surface2); font-size:13px; }
+.mc-ai-name { color:var(--muted); font-weight:600; }
+.mc-ai-sc { font-variant-numeric:tabular-nums; font-weight:700; }
+.mc-ai-pick.hit { border-color:var(--green); box-shadow:inset 0 0 0 1px var(--green); }
+.mc-ai-pick.hit .mc-ai-name, .mc-ai-pick.hit .mc-ai-sc { color:var(--green); }
 .score-line { font:600 28px/1 var(--font-d); }
 
-/* state skins: scheduled = default white · live = red shine · finished = green shine */
+/* state skins (cert M2): scheduled = default white · live = red shine · finished = green shine */
 .mcard[data-state="live"], .match-card[data-state="live"] {
   border-color:var(--live);
   border-color:color-mix(in srgb, var(--line), var(--live) var(--shine-bd));
@@ -243,6 +418,31 @@ thead th {
 .standings tr.q td:first-child { box-shadow:inset 3px 0 var(--green); }
 .standings tr.q3 td { background:var(--amber-wash); background:color-mix(in srgb, var(--amber) 8%, transparent); }
 .standings tr.q3 td:first-child { box-shadow:inset 3px 0 var(--amber); }
+
+/* ── Standings/Bracket redesign (cert v3.09) ───────────────────────────── */
+/* Sub-view toggle: Bracket | Groups & tables */
+.sub-toggle { display:flex; gap:.5rem; margin:.1rem 0 1.2rem; flex-wrap:wrap; }
+.sub-toggle > * { font:600 12px/1 var(--font-d); letter-spacing:.05em; text-transform:uppercase; padding:8px 15px; border:1px solid var(--line); border-radius:999px; color:var(--muted); text-decoration:none; }
+.sub-toggle > .on { background:var(--ink); color:var(--field); border-color:var(--ink); }
+.sub-toggle > a:hover { border-color:var(--green); color:var(--ink); }
+/* Static knockout bracket — single-direction, scannable; the readable reference (vs. the home zoom). */
+.sbracket-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:.5rem; }
+.sbracket { display:flex; gap:14px; align-items:flex-start; min-width:min-content; }
+.sbk-col { flex:0 0 auto; width:182px; }
+.sbk-h { font:700 11px/1 var(--font-d); letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin:0 0 .55rem; padding-bottom:.35rem; border-bottom:1px solid var(--line); }
+.sbk-m { display:block; background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:6px 9px; margin-bottom:8px; text-decoration:none; color:var(--ink); transition:border-color .14s, transform .14s; }
+.sbk-m:hover { border-color:var(--green); transform:translateY(-1px); }
+.sbk-tm { display:flex; align-items:center; gap:6px; font:500 13px/1.55 var(--font-b); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sbk-tm .fchip { flex:none; }
+.sbk-tm .tbd { color:var(--muted); }
+.sbk-st { margin-top:3px; padding-top:3px; border-top:1px dashed var(--line); font:600 12px/1 var(--font-d); color:var(--muted); }
+.sbk-st .score { color:var(--ink); }
+@media (max-width:640px) { .sbracket { flex-direction:column; min-width:0; } .sbk-col { width:100%; } .sbk-m { padding:8px 11px; } }
+/* Third-place race table (reuses .standings .q green rail; adds the dimmed-out + dashed-cut rows). */
+.third-race { margin:1.4rem 0 1.9rem; }
+.third-tbl tr.qout td { opacity:.6; }
+.third-tbl tr.cut td { border-top:2px dashed var(--amber); }
+
 table.watch th { text-align:left; }
 table.watch th:first-child { width:9.5rem; }
 @media (max-width: 480px) { table.watch th:first-child { width:auto; } }
@@ -315,7 +515,7 @@ footer.site .links a:hover { color:var(--green); }
 footer.site p { margin:.2rem 0; color:var(--muted); font-size:12.5px; max-width:110ch; }
 footer.site a { color:var(--muted); }
 
-/* ============ lightbox ============ */
+/* ============ lightbox (Phase 2.5A, contract kept) ============ */
 #lightbox { position:fixed; inset:0; background:rgba(0,0,0,.86); display:flex; align-items:center; justify-content:center; z-index:var(--g26-z-modal, 50); padding:1rem; }
 #lightbox[hidden] { display:none; }
 .lb-inner { max-width:min(960px, 94vw); text-align:center; position:relative; }
@@ -366,7 +566,7 @@ a.pic { display:inline-flex; }
   .cl-team .fchip.lg { width:28px; height:28px; vertical-align:-6px; }
 }
 
-/* ============ History Hub ============ */
+/* ============ History Hub (v2.08.00) ============ */
 .hubhero { text-align:center; padding:2.2rem 1rem 1rem; }
 .hubhero h1 { font-family:var(--font-d); font-size:clamp(2.1rem,6vw,3.4rem); line-height:.95; margin:.2rem 0; letter-spacing:-.01em; }
 .hubhero .sub { color:var(--muted); max-width:46ch; margin:.4rem auto 0; }
@@ -422,6 +622,21 @@ a.pic { display:inline-flex; }
 .mnode .ms { color:var(--muted); font-weight:400; font-variant-numeric:tabular-nums; }
 .rail-more { display:inline-block; margin-top:.5rem; color:var(--amber); font-weight:600; text-decoration:none; font-size:.9rem; }
 .rail-more:hover { text-decoration:underline; }
+
+/* Featured AI-prediction-league card — sits at the TOP of the today rail (above the fold). */
+.rail-ai { padding:.9rem 1.05rem 1rem; border:1px solid var(--line); border-top:3px solid var(--green); border-radius:var(--r); background:var(--surface2); margin-bottom:1.1rem; }
+.rail-ai .rail-h { display:flex; align-items:baseline; justify-content:space-between; gap:.6rem; margin-bottom:.55rem; }
+.rail-ai .rail-more { margin-top:0; font-size:.78rem; flex:none; }
+.rail-ai-sub { color:var(--muted); font-size:.78rem; line-height:1.4; margin:.65rem 0 0; }
+.ai-mini { list-style:none; margin:0; padding:0; counter-reset:airank; }
+.ai-mini li { display:flex; align-items:center; gap:.55rem; padding:.34rem 0; border-top:1px solid var(--line); counter-increment:airank; font-size:.92rem; }
+.ai-mini li:first-child { border-top:0; }
+.ai-mini li:before { content:counter(airank); flex:none; width:1.3em; text-align:center; color:var(--muted); font-variant-numeric:tabular-nums; font-size:.8rem; }
+.ai-mini .ai-mini-name { font-weight:600; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.ai-mini .ai-mini-pts { margin-left:auto; font-variant-numeric:tabular-nums; font-weight:700; }
+.ai-mini .ai-mini-pts small { color:var(--muted); font-weight:400; }
+.ai-mini li.lead .ai-mini-name, .ai-mini li.lead:before { color:var(--green); }
+.ai-mini li.lead:before { font-weight:700; }
 @media (max-width:880px) {
   .todaygrid { display:block; }
   .todayrail { margin:1.4rem 0; }
@@ -444,3 +659,642 @@ a.pic { display:inline-flex; }
   fill:currentColor;
 }
 .ai-logo use { color:inherit; fill:currentColor; }
+
+/* AI League v2 — in-depth "featured" pick cards (the next match, defended by each model). */
+.ai-featured { margin: 0 0 1.4rem; }
+.ai-featured > h3 { margin: 0 0 .6rem; font-size: 1.05rem; }
+.ai-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .7rem; }
+.ai-card { border: 1px solid var(--line); border-radius: var(--r, 10px); background: var(--surface); padding: .7rem .8rem; }
+.ai-card-h { display: flex; align-items: baseline; gap: .5rem; }
+.ai-card-h b { font-size: .92rem; }
+.ai-card-h .ai-score { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.15rem; }
+.ai-card-h .ai-conf { font-size: .72rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 0 .4em; }
+.ai-line { font-size: .82rem; margin-top: .4rem; }
+.ai-line .ai-tag { display: inline-block; font-size: .66rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin-right: .35em; }
+.ai-def { font-size: .84rem; color: var(--muted); margin: .55rem 0 0; line-height: 1.45; }
+.ai-star { color: var(--amber); font-size: .8em; margin-left: .15em; }
+.ai-standings tr.lead th { color: var(--green); }
+/* keep the brand mark + AI name on one line (its row in .tablewrap2 scrolls horizontally if too narrow) */
+.ai-standings th:first-child { white-space: nowrap; }
+
+/* Match lineups + key events (ESPN summary). */
+.lineups .xis { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
+.lineups .xi h3 { margin: 0 0 .4rem; font-size: .98rem; }
+.lineups ul.lineup { list-style: none; padding: 0; margin: 0 0 .5rem; }
+.lineups ul.lineup li { padding: .12rem 0; font-size: .9rem; }
+.lineups ul.lineup .num { display: inline-block; min-width: 1.5em; color: var(--muted); font-variant-numeric: tabular-nums; }
+.lineups ul.bench li { font-size: .84rem; color: var(--muted); }
+.lineups .kicker { margin: .35rem 0 .15rem; }
+
+/* ── Match page redesign · phase 1 (the design plan1) ─────────
+   All colors are existing tokens — the amber trio is the ".pill.warn" semantic. */
+/* key-moment chips under the score cluster (goals + cards, baked from ESPN match details) */
+.kmoments { display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; margin:.9rem 0 0; }
+.kmo-src { font:600 10px var(--font-d); letter-spacing:.07em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:.16em .6em; background:var(--surface); }
+.kmo-note { font-size:.78rem; font-style:italic; } /* staleness note appended by the match.js guard */
+/* in-page anchor chip strip (baked only for sections that rendered; omitted when <2) */
+.anchors { display:flex; flex-wrap:wrap; gap:.4rem; margin:.7rem 0 .3rem; }
+/* anchor landings clear the sticky header (precedent: .bt-episode) */
+#story, #lineups, #stats, #watch, #ai, #bartalk { scroll-margin-top:5rem; }
+.anchors .chip { text-decoration:none; color:inherit; min-height:36px; }
+.anchors .chip:hover { border-color:var(--green); color:var(--green); }
+/* narrative timeline ("The Story"): home events left, away right, center spine (timeline-view.mjs).
+   Wrapper is .mtl (match-timeline), NOT .tl — that name belongs to the History Hub (~:568; cert a later change).
+   max-width declared deliberately: pre-rename it was silently inherited from the History .tl. */
+.mtl { position:relative; padding:.2rem 0; margin:.4rem auto 1.1rem; max-width:720px; }
+.mtl::before { content:""; position:absolute; left:50%; top:0; bottom:0; width:2px; background:var(--line); transform:translateX(-1px); }
+.tl-row { display:grid; grid-template-columns:1fr 34px 1fr; align-items:center; margin-bottom:.65rem; }
+.tl-row:last-child { margin-bottom:0; }
+.tl-ico { display:flex; align-items:center; justify-content:center; width:30px; height:30px; margin:0 auto; border-radius:50%; font-size:13px; z-index:1; background:var(--record-wash); color:var(--record); }
+.tl-cell { min-width:0; }
+.tl-ev { background:var(--surface); border:1px solid var(--line); border-radius:var(--r-sm); padding:.5rem .7rem; font-size:13.5px; }
+.tl-row.home .tl-ev { text-align:right; }
+.tl-goal .tl-ev { border-color:var(--green); }
+.tl-goal .tl-ico { background:var(--green-wash); color:var(--green); }
+.tl-yellow .tl-ev { border-color:var(--amber); }
+.tl-yellow .tl-ico { background:var(--amber-wash); color:var(--warn-text); }
+.tl-red .tl-ev { border-color:var(--live); }
+.tl-red .tl-ico { background:var(--live-wash); color:var(--live-text); }
+.tl-sub .tl-ev { color:var(--muted); }
+/* match stats comparison bars (Phase 2.5) — hydrated from /api/v1/match-stats; prefixed .mst- to
+   stay collision-free from .mtl-/.tl- (the selector-uniqueness pin covers new redesign classes).
+   Home value — proportional bar — away value, label beneath; a null side renders "—", never NaN. */
+.mst-rows { margin:.5rem 0 .2rem; }
+.mst-row { display:grid; grid-template-columns:2.6em 1fr 2.6em; grid-template-areas:"hv bar av" "lbl lbl lbl"; gap:.1rem .5rem; align-items:center; margin-bottom:.55rem; }
+.mst-row:last-child { margin-bottom:0; }
+.mst-val { font:600 13.5px var(--font-d); font-variant-numeric:tabular-nums; }
+.mst-home { grid-area:hv; text-align:right; }
+.mst-away { grid-area:av; text-align:left; }
+.mst-bar { grid-area:bar; display:flex; height:8px; border-radius:999px; overflow:hidden; background:var(--surface2); }
+.mst-bar-h { background:var(--green); }
+.mst-bar-a { background:var(--line); }
+.mst-label { grid-area:lbl; font-size:.76rem; color:var(--muted); text-align:center; }
+/* NO-JS FLOOR: "not yet available" is the baked default (visible with JS off, or before hydration
+   runs) — the hydrator hides it only once real rows are actually rendered (.has-rows). */
+.mst.has-rows .mst-empty { display:none; }
+.mst-asof { font-size:.78rem; margin:.35rem 0 0; }
+/* collapsed how-to-watch: the free-OTA line is the always-visible <summary> */
+.watch-more summary { cursor:pointer; display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .6rem; padding:.35rem 0; font-size:14.5px; }
+.watch-more summary::after { content:"▾"; color:var(--muted); font-size:12px; } /* flex hides the native marker — restore the affordance */
+.watch-more[open] summary::after { content:"▴"; }
+.watch-more summary:hover { color:var(--green); }
+
+/* ESPN blow-by-blow commentary (v3.04.00) — hydrated; verbatim "via ESPN" text, key events accented.
+   .story h2 shares the muted badge (The Story is ESPN fact — same register as the blow-by-blow). */
+.commentary h2 .via-espn, .story h2 .via-espn, .mst h2 .via-espn { font-size:.58em; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); vertical-align:middle; border:1px solid var(--line); border-radius:999px; padding:.1em .5em; margin-left:.4rem; }
+/* Feed-sync toggle (match-time link of the blow-by-blow ↔ AI Watch-Along) — JS-injected under the header. */
+.feed-sync-btn { display:inline-flex; align-items:center; gap:6px; margin:.1rem 0 .5rem; font:600 12px/1 var(--font-d); letter-spacing:.03em; padding:.45rem .75rem; border:1px solid var(--line); border-radius:999px; background:transparent; color:var(--muted); cursor:pointer; transition:color .12s, border-color .12s, background .12s; }
+.feed-sync-btn i { font-size:15px; }
+.feed-sync-btn:hover { color:var(--ink); border-color:var(--green); }
+.feed-sync-btn.on { background:var(--green-wash); border-color:var(--green); color:var(--green); }
+.feed-sync-btn:focus-visible { outline:2px solid var(--green); outline-offset:2px; }
+.cmt-list { list-style:none; margin:.6rem 0 .3rem; padding:.1rem .8rem; max-height:24rem; overflow-y:auto; border:1px solid var(--line); border-radius:var(--r); background:var(--surface); overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+.cmt { display:flex; gap:.7rem; padding:.4rem .2rem .4rem .7rem; font-size:.92rem; border-bottom:1px solid var(--line); border-left:3px solid transparent; }
+.cmt:last-child { border-bottom:0; }
+.cmt-min { flex:none; min-width:2.8em; color:var(--muted); font-variant-numeric:tabular-nums; font-weight:600; }
+.cmt-text { min-width:0; }
+.cmt.key { border-left-color:var(--line); background:var(--surface2); }
+.cmt.key.goal { border-left-color:var(--green); }
+.cmt.key.yellow { border-left-color:var(--amber); }
+.cmt.key.red { border-left-color:#d33; }
+.cmt.key .cmt-text { font-weight:600; }
+.cmt-asof { font-size:.78rem; margin:.35rem 0 0; }
+
+/* AI Watch-Along (buildout track 3) — the four models' live banter beside the blow-by-blow. Two columns on
+   desktop, stacks on mobile (the factual feed is first in the DOM, so it stacks first). Capped scroll mirrors
+   .cmt-list; per-AI left accent; congrats=1 (the FT congratulation) → a green left-border. G&D owns the
+   prominent "AI comedy — not commentary" framing (B6). */
+.match-feeds { display:flex; flex-wrap:wrap; gap:1rem; align-items:flex-start; }
+.match-feeds > section { flex:1 1 18rem; min-width:0; margin:0; }
+.watchalong h2 .via-espn, .bartalk-ep h2 .via-espn { font-size:.58em; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--muted); vertical-align:middle; border:1px solid var(--line); border-radius:999px; padding:.1em .5em; margin-left:.4rem; }
+/* fact-vs-fiction (redesign Phase 1, item 1.2): AI-sourced badges take the existing amber ".pill.warn"
+   semantic ("heads up, not a hard fact") — the REAL ESPN badge (.commentary h2 .via-espn) stays muted gray. */
+.watchalong h2 .via-ai, .bartalk-ep h2 .via-ai { color:var(--warn-text); border-color:var(--amber); background:var(--amber-wash); }
+.wa-list { list-style:none; margin:.6rem 0 .3rem; padding:.1rem .8rem; max-height:24rem; overflow-y:auto; border:1px solid var(--line); border-radius:var(--r); background:var(--surface); overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
+.wa { display:flex; gap:.55rem; align-items:baseline; padding:.4rem .2rem .4rem .7rem; font-size:.92rem; border-bottom:1px solid var(--line); border-left:3px solid var(--prov, var(--line)); }
+.wa:last-child { border-bottom:0; }
+.wa-min { flex:none; min-width:2.6em; color:var(--muted); font-variant-numeric:tabular-nums; font-weight:600; }
+.wa-who { flex:none; font-weight:700; font-size:.74rem; letter-spacing:.02em; color:var(--prov, var(--muted)); }
+.wa-line { min-width:0; }
+.wa[data-provider="grok"] { --prov:#1d9bf0; }
+.wa[data-provider="claude"] { --prov:#d97757; }
+.wa[data-provider="gemini"] { --prov:#9168e8; }
+.wa[data-provider="gpt"] { --prov:#10a37f; }
+.wa.congrats { border-left-color:var(--green); background:var(--surface2); }
+.wa-note { font-size:.74rem; margin:.3rem 0 0; }
+
+/* ── Front page: Today strip + Knockout bracket (v3.09) ──────────────────────── */
+.sec-h { display:flex; align-items:baseline; justify-content:space-between; gap:.8rem; margin:0 0 .7rem; }
+.sec-h h2 { margin:0; }
+.sec-h a, .sec-h .muted { font:600 12px/1.5 var(--font-d); letter-spacing:.06em; text-transform:uppercase; color:var(--muted); text-decoration:none; }
+.sec-h a:hover { color:var(--green); }
+
+/* Today — a quick visual summary up top: horizontally scrollable result chips */
+.today-strip { margin:.2rem 0 1.6rem; }
+.ts-row { display:flex; gap:.7rem; overflow-x:auto; padding-bottom:.5rem; scroll-snap-type:x proximity; -webkit-overflow-scrolling:touch; }
+.tchip { flex:0 0 auto; width:210px; scroll-snap-align:start; display:block; padding:.5rem .65rem .55rem; border:1px solid var(--line); border-radius:var(--r); background:var(--surface); text-decoration:none; color:var(--ink); transition:border-color .15s; }
+.tchip:hover { border-color:var(--green); }
+
+/* Knockout bracket — TELESCOPING (bracket-zoom.js): zooming to a stage shows that stage + every later
+   stage; earlier stages fly off-screen and the rest expand to fill the window (no scrollbars), and it
+   re-lays-out at native size (via --bk-fs) so text stays crisp. Single heat gradient (cool flanks →
+   red-hot final); 5s hover reveals match detail; the final fires a random capped climax ramp. */
+.bracket-wrap { margin:.2rem 0 1.8rem; position:relative; }
+/* (mobile bracket): when a focused stage overflows on a narrow screen, the window becomes a
+   SWIPEABLE strip (bk-swipe, toggled by bracket-zoom.js AFTER the fly-off settles so the telescope
+   clip is untouched during transitions and on desktop). Column snap + edge fades say "more here". */
+@media (max-width: 640px){
+  /* visible columns must NOT shrink below card width — shrink was painting cards outside their
+     columns where no scroll could ever reach them (the actual mechanism). Real overflow instead. */
+  .bracket-window .bcol:not(.off) { flex-shrink:0; }
+  .bracket-window.bk-swipe { overflow-x:auto; overscroll-behavior-x:contain; -webkit-overflow-scrolling:touch; scroll-snap-type:x proximity; scrollbar-width:thin; }
+  .bracket-window.bk-swipe .bracket { justify-content:flex-start; } /* centered flex hides left overflow from scroll */
+  .bracket-window.bk-swipe .bcol:not(.off) { scroll-snap-align:start; }
+}
+.bracket-wrap::before, .bracket-wrap::after { content:""; position:absolute; top:0; bottom:0; width:34px; pointer-events:none; opacity:0; transition:opacity .25s; z-index:4; border-radius:12px; }
+.bracket-wrap::before { left:0; background:linear-gradient(90deg, rgba(6,10,18,.65), transparent); }
+.bracket-wrap::after { right:0; background:linear-gradient(270deg, rgba(6,10,18,.65), transparent); }
+.bracket-wrap.bk-more-l::before { opacity:1; }
+.bracket-wrap.bk-more-r::after { opacity:1; }
+.bk-hint { font:600 11px/1.5 var(--font-d); letter-spacing:.04em; text-transform:uppercase; color:var(--muted); }
+.bk-hint a { color:var(--muted); text-decoration:none; }
+.bk-hint a:hover { color:var(--green); }
+.bracket-stages { display:flex; align-items:center; flex-wrap:wrap; gap:.4rem; margin:0 0 .7rem; }
+.bk-stages-lbl { font:600 10px/1 var(--font-d); letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-right:.2rem; }
+.bk-stage { font:600 11px/1 var(--font-d); letter-spacing:.04em; text-transform:uppercase; padding:.4rem .7rem; border:1px solid var(--line); border-radius:999px; background:transparent; color:var(--muted); cursor:pointer; transition:color .12s, border-color .12s, background .12s; }
+.bk-stage:hover { color:var(--ink); border-color:var(--green); }
+.bk-stage.on { background:var(--green-wash); border-color:var(--green); color:var(--green); }
+
+/* ============ Bracket "Terminus Night" (adversarial-search winner 2026-07-14; the Wall stays certified) ============ */
+.bracket-nightmap { position:relative; overflow:hidden; border-radius:14px; height:clamp(520px, 78vh, 720px);
+  color:#e8ecef; font-family:-apple-system,'Segoe UI',system-ui,'Helvetica Neue',sans-serif;
+  background:
+    radial-gradient(120% 90% at 50% 116%, rgba(18,35,58,.75), transparent 55%),
+    radial-gradient(80% 55% at 62% -6%, rgba(23,42,70,.8), transparent 60%),
+    linear-gradient(180deg,#050a11 0%, #0a101a 48%, #0a1322 100%); }
+.bracket-nightmap a { color:inherit; text-decoration:none; }
+.bracket-nightmap * { box-sizing:border-box; }
+.bnm-beams { position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden; }
+.bnm-beam { position:absolute; width:490px; height:250vmax; margin-left:-245px;
+  transform-origin:50% 0; mix-blend-mode:screen; filter:blur(12px);
+  background:linear-gradient(to right, transparent 4%, rgba(158,190,255,.15) 38%, rgba(178,205,255,.19) 50%, rgba(158,190,255,.15) 62%, transparent 96%);
+  -webkit-mask-image:linear-gradient(to bottom, rgba(0,0,0,.95), rgba(0,0,0,.4) 52%, transparent 80%);
+  mask-image:linear-gradient(to bottom, rgba(0,0,0,.95), rgba(0,0,0,.4) 52%, transparent 80%);
+  transition:transform 1.15s cubic-bezier(.3,.7,.25,1), opacity 1.15s ease; }
+.bnm-beam.bnm-amber { width:360px; margin-left:-180px;
+  background:linear-gradient(to right, transparent 6%, rgba(232,198,122,.12) 40%, rgba(232,198,122,.16) 50%, rgba(232,198,122,.12) 60%, transparent 94%); }
+.bnm-efade { position:absolute; top:0; bottom:0; width:90px; z-index:5; pointer-events:none; }
+.bnm-efade.l { left:0; background:linear-gradient(to right, rgba(5,9,16,.88), rgba(5,9,16,.35) 45%, transparent); }
+.bnm-efade.r { right:0; background:linear-gradient(to left, rgba(5,9,16,.7), transparent); }
+.bnm-efade.b { top:auto; left:0; right:0; width:auto; height:76px; bottom:0;
+  background:linear-gradient(to top, rgba(5,9,16,.85), transparent); }
+.bnm-efade.t { bottom:auto; left:0; right:0; width:auto; height:64px; top:0;
+  background:linear-gradient(to bottom, rgba(5,9,16,.82), transparent); }
+.bnm-vig { position:absolute; inset:0; z-index:3; pointer-events:none;
+  background:radial-gradient(135% 105% at 50% 44%, rgba(0,0,0,0) 55%, rgba(2,5,10,.62) 100%); }
+.bnm-banner { position:absolute; left:0; right:0; top:0; z-index:6; display:flex; align-items:center;
+  padding:6px 18px 5px; min-height:38px; pointer-events:none;
+  background:linear-gradient(180deg, rgba(8,13,22,.72), rgba(8,13,22,0)); }
+.bnm-banner .bn-in { display:flex; align-items:baseline; gap:16px; padding:2px 16px 3px 14px;
+  border-left:4px solid #ff5a4d; animation:bnmin .8s cubic-bezier(.2,.8,.25,1) both; }
+.bnm-banner.amber .bn-in { border-left-color:#e8c67a; }
+.bnm-banner .bn-t { font-weight:800; font-size:17px; letter-spacing:.15em; color:#fff;
+  display:flex; align-items:center; gap:11px; white-space:nowrap; text-shadow:0 2px 22px rgba(90,150,235,.35); }
+.bnm-banner.amber .bn-t { color:#e8c67a; text-shadow:0 2px 24px rgba(232,198,122,.35); }
+.bnm-banner .bn-now { font-size:10px; font-weight:900; letter-spacing:.16em; color:#0a101a;
+  background:#ff5a4d; border-radius:4px; padding:2px 7px; box-shadow:0 0 12px rgba(255,90,77,.5); }
+.bnm-banner .bn-s { font-weight:600; font-size:10px; letter-spacing:.24em; color:#8fa6c4; white-space:nowrap; }
+@keyframes bnmin { from { opacity:0; transform:translateX(-30px); } to { opacity:1; transform:none; } }
+.bnm-vp { position:absolute; inset:0; z-index:4; overflow:hidden; }
+.bnm-map { position:absolute; top:0; left:0; transform-origin:0 0;
+  transition:transform 1.05s cubic-bezier(.22,.9,.25,1); will-change:transform; }
+.bnm-map.noanim { transition:none; }
+.bnm-map text { font-variant-numeric:tabular-nums; }
+.bnm-map a { cursor:pointer; }
+.bnm-map a { transition:filter .25s ease; }
+.bnm-map a:hover { filter:brightness(1.25) saturate(1.08); }
+.bnm-map a.bnm-st { transition:opacity .7s ease, filter .25s ease; }
+.bnm-map[data-focus="r32"] a.bnm-st:not(.st-r32):not(.st-final),
+.bnm-map[data-focus="r16"] a.bnm-st:not(.st-r16):not(.st-final),
+.bnm-map[data-focus="qf"] a.bnm-st:not(.st-qf):not(.st-final),
+.bnm-map[data-focus="sf"] a.bnm-st:not(.st-sf):not(.st-final),
+.bnm-map[data-focus="final"] a.bnm-st:not(.st-final) { opacity:.5; }
+.bnm-map a.bnm-st:hover { opacity:1 !important; }
+.bnm-band rect.bg { pointer-events:all; }
+.bnm-band:not(.on) rect.bg { cursor:pointer; }
+.bnm-band:not(.on):hover rect.bg { opacity:.065; }
+.bnm-band:not(.on):hover .h1 { fill:#a9bdd8; }
+.bnm-caul3d { position:absolute; z-index:3; pointer-events:none; opacity:.88; }
+.bnm-caul3d canvas { width:100%; height:100%; display:block; }
+.bnm-c3d #bnm-cauldron { opacity:0 !important; } /* the painted cauldron yields to the 3D one */
+.bnm-map .bnm-hoodpipe { opacity:0; transition:opacity .8s; }
+.bnm-c3d .bnm-map .bnm-hoodpipe { opacity:.9; }
+.bnm-trophy { position:absolute; z-index:4; pointer-events:none; }
+.bnm-trophy canvas { width:100%; height:100%; display:block; }
+.bnm-tip { position:absolute; z-index:7; max-width:min(72%, 560px); pointer-events:none;
+  background:rgba(7,12,21,.95); border:1px solid rgba(143,166,196,.35); border-radius:8px;
+  padding:.5rem .7rem; font:600 11.5px/1.45 -apple-system,'Segoe UI',system-ui,sans-serif;
+  color:#c9d6e8; letter-spacing:.04em; box-shadow:0 14px 34px -12px rgba(0,0,0,.85); }
+.bnm-band rect.bg { fill:#8fa6c4; opacity:.03; transition:opacity .7s; }
+.bnm-band.on rect.bg { opacity:.075; }
+.bnm-band .h1 { fill:#7d93b4; transition:fill .7s; }
+.bnm-band .h2 { fill:#516b8e; transition:fill .7s; }
+.bnm-band.on .h1 { fill:#e9eff8; }
+.bnm-band.on .h2 { fill:#8fa6c4; }
+.bnm-glow-g { filter:drop-shadow(0 0 6px rgba(46,224,111,.55)); }
+.bnm-glow-r { filter:drop-shadow(0 0 7px rgba(255,90,77,.6)); }
+.bnm-glow-a { filter:drop-shadow(0 0 10px rgba(232,198,122,.5)); }
+.bnm-flow { stroke-dasharray:4 16; animation:bnmflow 1.05s linear infinite; }
+@keyframes bnmflow { to { stroke-dashoffset:-20; } }
+.bnm-blink { animation:bnmpulse 1.15s ease-in-out infinite; }
+@keyframes bnmpulse { 0%,100% { opacity:1; } 50% { opacity:.35; } }
+.bnm-legend { position:absolute; left:14px; bottom:10px; z-index:6; display:flex; gap:14px; align-items:center;
+  font-size:10px; font-weight:700; letter-spacing:.16em; color:#5f7492;
+  padding:6px 12px; border-radius:999px; background:rgba(8,13,22,.66); }
+.bnm-flowseg { display:flex; gap:6px; align-items:center; margin-left:6px; padding-left:12px;
+  border-left:1px solid rgba(143,166,196,.25); color:#46618c; }
+.bnm-flowseg button { background:none; border:1px solid rgba(143,166,196,.3); border-radius:999px;
+  color:#8fa6c4; font:700 9px/1 inherit; letter-spacing:.12em; padding:3px 8px; cursor:pointer;
+  font-family:inherit; }
+.bnm-flowseg button.on { color:#0a101a; background:#e8c67a; border-color:#e8c67a; }
+/* the cauldron breathes; the earth turns; embers rise; a launch flares the brew */
+.bnm-cfire { animation:bnmflick 1.7s ease-in-out infinite alternate; transform-origin:center; transform-box:fill-box; }
+@keyframes bnmflick { from { opacity:.75; transform:scaleY(.94); } to { opacity:1; transform:scaleY(1.06); } }
+.bnm-cearth { animation:bnmearth 26s linear infinite; transform-box:fill-box; transform-origin:center; }
+@keyframes bnmearth { to { transform:rotate(360deg); } }
+.bnm-cembers circle { animation:bnmember 3.2s ease-out infinite; transform-box:fill-box; }
+.bnm-cembers .e2 { animation-delay:1.1s; }
+.bnm-cembers .e3 { animation-delay:2.2s; }
+@keyframes bnmember { 0% { opacity:0; transform:translateY(0); } 12% { opacity:.9; } 100% { opacity:0; transform:translateY(-150px); } }
+#bnm-cauldron { transition:opacity .5s; }
+#bnm-cauldron.brewing { opacity:.95; }
+#bnm-cauldron.brewing .bnm-cfire { animation-duration:.45s; }
+#bnm-findot { transition:filter .25s; }
+.bnm-arrive #bnm-findot { filter:brightness(2) drop-shadow(0 0 14px rgba(232,198,122,.9)); }
+.bnm-legend span { display:flex; align-items:center; gap:6px; white-space:nowrap; }
+.bnm-legend i { width:9px; height:9px; border-radius:50%; display:block; }
+.bnm-legend .l i { background:#ff5a4d; box-shadow:0 0 6px #ff5a4d; }
+.bnm-legend .w i { background:#2ee06f; box-shadow:0 0 6px rgba(46,224,111,.6); }
+.bnm-legend .s i { background:#35507b; }
+.bnm-mob { display:none; }
+@media (max-width:700px) {
+  .bracket-nightmap { height:auto; max-height:none; }
+  .bnm-vp, .bnm-banner, .bnm-legend { display:none; }
+  .bnm-beam { width:220px; margin-left:-110px; }
+  .bnm-mob { display:block; position:relative; z-index:4; padding:14px 12px 20px; }
+  .bnm-mob .msec { margin-bottom:9px; border:1px solid rgba(143,166,196,.16); border-radius:14px;
+    background:rgba(11,18,31,.78); overflow:hidden; box-shadow:0 14px 30px -18px rgba(0,0,0,.7); }
+  .bnm-mob .msec.open { border-color:rgba(143,166,196,.3); }
+  .bnm-mob .msec.fsec { border-color:rgba(232,198,122,.32); }
+  .bnm-mob .mh { width:100%; display:flex; align-items:center; gap:9px; padding:12px 12px;
+    background:none; border:0; color:#c6d3e4; cursor:pointer; text-align:left;
+    font-weight:800; font-size:13.5px; letter-spacing:.12em; text-transform:uppercase; font-family:inherit; }
+  .bnm-mob .msec.open .mh { color:#fff; }
+  .bnm-mob .mh .pin { width:11px; height:11px; border-radius:50%; flex:0 0 auto; border:3px solid #46618c; background:#060b13; }
+  .bnm-mob .msec.open .mh .pin { border-color:#fff; box-shadow:0 0 8px rgba(255,255,255,.35); }
+  .bnm-mob .fsec .mh .pin { border-color:#e8c67a; }
+  .bnm-mob .mh .nowb { font-size:9px; font-weight:900; letter-spacing:.14em; color:#0a101a;
+    background:#ff5a4d; border-radius:4px; padding:2px 6px; box-shadow:0 0 12px rgba(255,90,77,.5); }
+  .bnm-mob .mh .cnt { margin-left:auto; font-size:9px; font-weight:600; letter-spacing:.1em; color:#5f7492; white-space:nowrap;
+    overflow:hidden; text-overflow:ellipsis; max-width:40%; }
+  .bnm-mob .mh .chev { flex:0 0 auto; color:#5f7492; font-size:10px; transition:transform .4s; }
+  .bnm-mob .msec.open .chev { transform:rotate(180deg); }
+  .bnm-mob .mbody { display:grid; grid-template-rows:0fr; transition:grid-template-rows .55s cubic-bezier(.3,.7,.25,1); }
+  .bnm-mob .msec.open .mbody { grid-template-rows:1fr; }
+  .bnm-mob .mbi { overflow:hidden; min-height:0; }
+  .bnm-mob .mrail { position:relative; padding:2px 11px 13px 34px; }
+  .bnm-mob .mrail::before { content:''; position:absolute; left:19px; top:0; bottom:10px; width:3px; border-radius:2px;
+    background:linear-gradient(180deg, rgba(70,97,140,.55), rgba(70,97,140,.25)); }
+  .bnm-mob .mgh { margin:10px 0 2px; font-size:9.5px; font-weight:800; letter-spacing:.24em; color:#5f7492; text-transform:uppercase; }
+  .bnm-mob .mgh-live { color:#ff9188; }
+  .bnm-mob .mgh-ft { color:rgba(46,224,111,.8); }
+  .bnm-mob .mcard { position:relative; display:block; margin:7px 0; padding:8px 10px 7px; border-radius:11px;
+    background:linear-gradient(180deg,#111d31,#0c1424); border:1px solid rgba(143,166,196,.22);
+    box-shadow:0 10px 24px -14px rgba(0,0,0,.8); }
+  .bnm-mob .mcard::before { content:''; position:absolute; left:-21px; top:50%; margin-top:-5px;
+    width:10px; height:10px; border-radius:50%; background:#eef2f6; border:3px solid #46618c; }
+  .bnm-mob .mcard.ft { border-color:rgba(46,224,111,.35); }
+  .bnm-mob .mcard.ft::before { border-color:#2ee06f; box-shadow:0 0 8px rgba(46,224,111,.6); }
+  .bnm-mob .mcard.live { border-color:rgba(255,90,77,.65); box-shadow:0 0 18px rgba(255,90,77,.18),0 10px 24px -14px rgba(0,0,0,.8); }
+  .bnm-mob .mcard.live::before { border-color:#ff5a4d; box-shadow:0 0 9px rgba(255,90,77,.85); animation:bnmpulse 1.3s ease-in-out infinite; }
+  .bnm-mob .mch { display:flex; align-items:center; gap:8px; margin-bottom:4px;
+    font-weight:700; font-size:9px; letter-spacing:.2em; color:#5f7492; text-transform:uppercase; }
+  .bnm-mob .mtag { margin-left:auto; font-weight:800; font-size:9px; letter-spacing:.14em; padding:2px 8px; border-radius:4px;
+    text-transform:uppercase; font-variant-numeric:tabular-nums; }
+  .bnm-mob .mtag.ft { color:#07130c; background:#2ee06f; }
+  .bnm-mob .mtag.sched { color:#9fb4d2; background:rgba(143,166,196,.13); border:1px solid rgba(143,166,196,.28); }
+  .bnm-mob .mtag.onair { color:#fff; background:linear-gradient(180deg,#ff6a5e,#e33a2e); display:flex; align-items:center; gap:5px;
+    animation:bnmpulse 1.3s ease-in-out infinite; }
+  .bnm-mob .mtag.onair i { width:5px; height:5px; border-radius:50%; background:#fff; display:inline-block; }
+  .bnm-mob .mtr { display:flex; align-items:center; gap:9px; padding:2px 0; }
+  .bnm-mob .mtc { font-weight:800; font-size:16px; letter-spacing:.04em; width:46px; flex:0 0 46px; color:#c3cfdf; }
+  .bnm-mob .mtn { flex:1 1 auto; min-width:0; font-size:9.5px; font-weight:600; letter-spacing:.07em; color:#5f7492;
+    text-transform:uppercase; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .bnm-mob .mts { font-weight:800; font-size:15px; font-variant-numeric:tabular-nums; width:28px; flex:0 0 28px;
+    text-align:center; border-radius:5px; padding:2px 0; color:#5f7492; }
+  .bnm-mob .mtr.win .mtc { color:#fff; }
+  .bnm-mob .mtr.win .mtn { color:#a9bdd8; }
+  .bnm-mob .mtr.win .mts { background:rgba(46,224,111,.16); color:#2ee06f; box-shadow:inset 0 0 0 1px rgba(46,224,111,.35); }
+  .bnm-mob .mtr.loser { opacity:.48; }
+  .bnm-mob .mcard.live .mtc { color:#fff; }
+  .bnm-mob .mcard.live .mts { background:rgba(255,90,77,.13); color:#ffd9d5; box-shadow:inset 0 0 0 1px rgba(255,90,77,.32); }
+  .bnm-mob .mtr.slotr .mtc { width:auto; flex:0 0 auto; font-size:12px; color:#7d92ad; letter-spacing:.08em; }
+  .bnm-mob .mtr.slotr .mtn { color:#55677f; }
+  .bnm-mob .mwt { color:#2ee06f; font-size:9px; margin-left:8px; letter-spacing:.12em; }
+  .bnm-mob .mcf { margin-top:3px; padding-top:4px; border-top:1px solid rgba(255,255,255,.06);
+    font-weight:600; font-size:8.5px; letter-spacing:.18em; color:#5f7492; text-transform:uppercase; }
+  .bnm-mob .mcf.adv { color:rgba(46,224,111,.85); }
+  .bnm-mob .mcf.lv { color:rgba(255,143,133,.85); }
+  .bnm-mob .mgrid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:4px 12px 14px; }
+  .bnm-mob .mg { display:flex; flex-direction:column; align-items:center; gap:1px; padding:10px 4px; border-radius:10px;
+    border:1px solid rgba(143,166,196,.2); background:linear-gradient(180deg,#111d31,#0c1424); }
+  .bnm-mob .mg b { font-weight:800; font-size:18px; }
+  .bnm-mob .mg span { font-weight:700; font-size:6.5px; letter-spacing:.28em; color:#5f7492; }
+  .bnm-mob .mmarq { display:block; margin:6px 12px 14px; padding:16px 14px 14px; text-align:center; border-radius:13px;
+    border:1px solid rgba(232,198,122,.4); background:linear-gradient(165deg, rgba(232,198,122,.08), rgba(12,20,36,.4) 55%); }
+  .bnm-mob .mmarq .fk { font-weight:700; font-size:9px; letter-spacing:.4em; color:#e8c67a; text-transform:uppercase; }
+  .bnm-mob .mmarq .fv { display:flex; align-items:center; justify-content:center; gap:14px; margin:11px 0 4px; }
+  .bnm-mob .mmarq .fv .t { font-weight:800; font-size:13px; letter-spacing:.06em; color:#c6d3e4; }
+  .bnm-mob .mmarq .fv .x { font-weight:700; font-size:11px; color:#5f7492; letter-spacing:.2em; }
+  .bnm-mob .mmarq .fw { margin-top:8px; font-weight:700; font-size:11px; letter-spacing:.2em; color:#e8ecef; text-transform:uppercase; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bracket-nightmap *, .bracket-nightmap *::before, .bracket-nightmap *::after { animation:none !important; transition:none !important; }
+  .bnm-map { transition:none !important; }
+}
+
+/* Bracket 3D scene (the design plan3DScene) — JS-injected [2D|3D] toggle + fresh non-clipped scene
+   container. The 2D telescope (.bracket-window) is the certified floor; in 3D mode JS display:none's it. */
+.bk-viewseg { display:inline-flex; margin-left:auto; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+.bk-view { font:600 11px/1 var(--font-d); letter-spacing:.04em; text-transform:uppercase; padding:.4rem .7rem; border:0; border-left:1px solid var(--line); background:transparent; color:var(--muted); cursor:pointer; transition:color .12s, background .12s; }
+.bk-view:first-child { border-left:0; }
+.bk-view:hover { color:var(--ink); }
+.bk-view.on { background:var(--green-wash); color:var(--green); }
+.bk-view:focus-visible { outline:2px solid var(--green); outline-offset:2px; }
+/* cert fix-before-promote (item 2) — the [2D|3D] toggle carries `bk-btn kr-view`, so its active
+   `.on` state was styled by nothing (state lived only in aria-pressed). Give it a visible active
+   state matching the .bracket-stages stage stepper (.bk-stage.on), and a matching focus ring so the
+   focus returned on exit-to-2D (item 3) is visible. */
+.kr-view.on { background:var(--green-wash); border-color:var(--green); color:var(--green); }
+.kr-view:focus-visible { outline:2px solid var(--green); outline-offset:2px; }
+.bracket-scene {
+  /* Broadcast dark wall — the SAME scoped tokens as the Monument .bracket-window (A1), so the cloned
+     .bbox cards render in the Broadcast register (dark surfaces, gold, live-red) matching the approved
+     mockup, without touching the page theme. */
+  --field:#0b0e14; --surface:#131720; --surface2:#1a1f2b;
+  --ink:#e9ecf1; --muted:#9aa4b1; --line:#242c3a;
+  --green:#2ee06f; --green-wash:#13261b;
+  --live:#ff5a4d; --live-wash:#2b1714; --live-text:#ff5a4d;
+  --record:#97a1ae; --record-wash:#171b23;
+  --amber:#e8b34b; --amber-wash:#2a2210; --warn-text:#e8b34b;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3);
+  position:relative; height:clamp(380px,62vh,540px); border:1px solid var(--line); border-radius:12px; background:var(--field); overflow:hidden;
+}
+.bracket-scene-ph { position:absolute; inset:0; display:grid; place-items:center; text-align:center; padding:1rem; }
+/* Hybrid layers: WebGL tubes below (pointer-events:none), CSS3D cards above (interactive). */
+.b3d-gl { position:absolute; inset:0; pointer-events:none; }
+.b3d-css { position:absolute; inset:0; }
+.b3d-css > div { pointer-events:none; } /* the CSS3DRenderer transform layer — cards re-enable below */
+/* A floating card = a cloned .bbox given an explicit width (it's out of normal flow in CSS3D). */
+.b3d-card { width:210px; pointer-events:auto; cursor:pointer; box-shadow:0 10px 30px -12px rgba(0,0,0,.7); }
+/* Hero Final (folds in #342): gold border + red heat glow so the climax anchors the scene (P1). */
+.b3d-card.b3d-final { border-color:var(--amber); background:linear-gradient(180deg, color-mix(in srgb, var(--live) 14%, var(--surface)), var(--surface)); box-shadow:0 0 30px -2px var(--live), 0 10px 30px -12px rgba(0,0,0,.8), inset 0 0 22px -8px var(--live); }
+/* Round labels — in-scene wayfinding (2D has column headers; 3D dropped them). */
+.b3d-rlabel { font:700 12px/1 system-ui,sans-serif; letter-spacing:.14em; color:var(--muted); text-transform:uppercase; white-space:nowrap; pointer-events:none; text-shadow:0 1px 3px rgba(0,0,0,.9); user-select:none; }
+/* Overview toggle — the full constellation as opt-in spectacle, not the landing state. */
+.b3d-overview { position:absolute; top:10px; right:10px; z-index:5; font:600 12px/1 system-ui,sans-serif; letter-spacing:.02em; color:var(--ink); background:color-mix(in srgb, var(--surface2) 82%, transparent); border:1px solid var(--line); border-radius:999px; padding:7px 13px; cursor:pointer; backdrop-filter:blur(4px); }
+.b3d-overview:hover { border-color:var(--muted); color:#fff; }
+/* Free-look (the maintainer 0673): a subtle inset ring while WASD is engaged so keys-drive-the-camera is legible. */
+.bracket-scene.b3d-engaged { outline:2px solid color-mix(in srgb, var(--green) 55%, transparent); outline-offset:-2px; }
+/* Dev-only mobility slider — physically absent from prod (gated on __G26_DEV__ in JS, not just hidden). */
+.b3d-mob { position:absolute; left:10px; bottom:10px; z-index:6; display:flex; align-items:center; gap:.5rem; font:600 11px/1 system-ui,sans-serif; letter-spacing:.02em; color:var(--muted); background:color-mix(in srgb, var(--surface2) 82%, transparent); border:1px solid var(--line); border-radius:999px; padding:6px 12px; backdrop-filter:blur(4px); }
+.b3d-mob input { width:96px; accent-color:var(--green); }
+/* Mobile card reader — a readable full-width bottom sheet (the floating cards are small on a phone). */
+.b3d-reader { position:absolute; left:0; right:0; bottom:0; z-index:200; background:var(--surface2); border-top:1px solid var(--line); border-radius:12px 12px 0 0; padding:1.1rem 1rem 1.3rem; max-height:72%; overflow:auto; box-shadow:0 -8px 30px -8px rgba(0,0,0,.7); }
+.b3d-reader .bbox { width:auto; transform:none; box-shadow:none; font-size:13px; }
+.b3d-reader .bk-detail { display:block; position:static; opacity:1; margin-top:.5rem; }
+.b3d-reader-x { position:absolute; top:.5rem; right:.6rem; width:2rem; height:2rem; border:1px solid var(--line); border-radius:50%; background:var(--surface); color:var(--ink); font-size:1.2rem; line-height:1; cursor:pointer; }
+/* Height is DYNAMIC (the maintainer): the window grows to fit its tallest VISIBLE column instead of a fixed
+   clamp — so no view ever clips its bottom leaves. overflow:hidden still clips the HORIZONTAL telescope
+   fly-off (columns slide out sideways); with height:auto there is nothing to clip vertically. A modest
+   min-height keeps short focused stages (Final) from collapsing. */
+.bracket-window { position:relative; min-height:clamp(300px,44vh,420px); height:auto; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--surface2); transition:height .5s cubic-bezier(.5,.05,.2,1); }
+.bracket { position:relative; display:flex; justify-content:center; width:100%; height:auto; min-height:inherit;
+  background:linear-gradient(90deg, rgba(120,120,145,.05), rgba(245,180,70,.09) 20%, rgba(232,95,35,.17) 38%, rgba(224,30,28,.38) 50%, rgba(232,95,35,.17) 62%, rgba(245,180,70,.09) 80%, rgba(120,120,145,.05)); }
+.bracket::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; background:radial-gradient(120% 105% at 50% 50%, rgba(224,40,28,.20), transparent 55%); animation:bk-pulse 2.6s ease-in-out infinite; }
+@keyframes bk-pulse { 0%,100% { opacity:.45; } 50% { opacity:1; } }
+.bcol { flex:1 1 0; min-width:0; display:flex; flex-direction:column; overflow:hidden; max-width:600px; transition:flex-grow .55s cubic-bezier(.5,.05,.2,1), max-width .55s cubic-bezier(.5,.05,.2,1), opacity .4s, transform .55s cubic-bezier(.5,.05,.2,1); }
+.bcol.off { flex-grow:0; max-width:0; max-height:0; opacity:0; } /* max-height:0 (with overflow:hidden) so an off column contributes NO height → the window fits the tallest VISIBLE column, not the tallest overall */
+.bcol.off.side-l { transform:translateX(-110px); }
+.bcol.off.side-r { transform:translateX(110px); }
+.bcol-h { font:600 10px/1 var(--font-d); letter-spacing:.08em; text-transform:uppercase; color:var(--muted); text-align:center; padding:.45rem .2rem .4rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.bcol-in { flex:1; min-height:0; display:flex; flex-direction:column; justify-content:space-around; align-items:center; }
+.b-final .bcol-in { justify-content:center; gap:1em; }
+.bbox { position:relative; z-index:1; display:block; width:clamp(54px, 92%, 360px); margin:.18rem auto; padding:.4rem .55rem; border:1px solid var(--line); border-radius:8px; background:var(--surface); text-decoration:none; color:var(--ink); font-size:calc(10.5px * var(--bk-fs,1)); transition:transform .14s ease, box-shadow .14s, border-color .14s; }
+.side-l .bbox { transform-origin:left center; } .side-r .bbox { transform-origin:right center; } .b-final .bbox { transform-origin:center; }
+/* v3.09.01 hover-clip fix: the focused stage is already zoomed to native size via --bk-fs, so the extra
+   per-box scale(1.35) was redundant — and because .bcol AND .bracket-window are overflow:hidden (load-bearing
+   for the telescoping fly-off) the scaled box + its detail popover were CLIPPED, hiding neighbours and half
+   the tooltip. Drop the scale; keep the hover affordance via border+shadow+z-index (no geometry change, so
+   nothing overflows the clip). The popover is re-anchored below to stay inside the window. */
+.bbox:hover, .bbox:focus-visible { z-index:30; box-shadow:0 4px 16px rgba(0,0,0,.3); border-color:var(--green); outline:none; }
+.bbox .bbdate { display:none; }
+.bbox:hover .bbdate, .bbox:focus-visible .bbdate { display:inline; }
+.bbh { display:flex; align-items:center; justify-content:flex-end; gap:.4rem; font:600 .72em/1.3 var(--font-d); letter-spacing:.04em; text-transform:uppercase; color:var(--muted); margin-bottom:.25rem; }
+.bbox:hover .bbh, .bbox:focus-visible .bbh { justify-content:space-between; }
+.tchip .bbh { font-size:10px; margin-bottom:.4rem; justify-content:space-between; }
+.bbst { display:inline-flex; align-items:center; gap:.3rem; flex:none; }
+.bbst .score { font-size:.95em; color:var(--ink); }
+.bbst .pill { font-size:.62em; padding:.18em .42em; }
+.bbst .pill.live::before { width:5px; height:5px; }
+.bbrow { display:flex; align-items:center; gap:.4rem; padding:.08rem 0; font:600 1.05em/1.25 var(--font-b); color:var(--muted); }
+.bbrow .bbnm { flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.bbrow .bbnm.tbd { font-weight:500; font-style:italic; }
+.bbrow.w { color:var(--ink); }
+/* ============ Bracket Monument (A1) — the Broadcast wall ============
+   The bracket is the tournament's emotional centrepiece; it renders in the BROADCAST register on
+   BOTH themes (the "monument wall"). Implementation = a scoped token layer (the .teamscope pattern):
+   the values below are tokens.css's Broadcast-theme values VERBATIM — no new colors — so every
+   existing bracket rule (surfaces, borders, pills, pens strip, live glow, bk-detail) follows
+   automatically, and in dark mode the remap is a no-op (same values). Scope is the WALL
+   (.bracket-window) only: the section heading + stage buttons above it stay in the page register. */
+.bracket-window {
+  --field:#0b0e14; --surface:#131720; --surface2:#1a1f2b;
+  --ink:#e9ecf1; --muted:#9aa4b1; --line:#242c3a;
+  --green:#2ee06f; --green-wash:#13261b;
+  --live:#ff5a4d; --live-wash:#2b1714; --live-text:#ff5a4d;
+  --record:#97a1ae; --record-wash:#171b23;
+  --amber:#e8b34b; --amber-wash:#2a2210; --warn-text:#e8b34b;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 6px 18px rgba(0,0,0,.3);
+  background:var(--field);
+}
+/* gold round headers + pipes — the material of stakes (amber IS gold in the Broadcast register) */
+.bracket-window .bcol-h { color:var(--amber); }
+.bracket-window .bk-conn .bk-line { stroke:var(--amber); opacity:.45; }
+/* A3: the trophy crowns the centre column — the destination the composition converges on */
+.bracket-window .b-final > .bcol-h { font-size:12px; }
+.bracket-window .b-final > .bcol-h .ti-trophy { display:block; font-size:2em; margin:0 auto .12rem; }
+/* scoreboard voice: condensed names + score weight (A1 typography) */
+.bracket-window .bbrow { font-family:var(--font-d); font-size:1.18em; letter-spacing:.03em; }
+.bracket-window .bbst .score { font-weight:700; }
+/* A2: kit-color winner edge — --bkw is baked inline per-leaf from the audited kit palette
+   (edgeColors, clash-rule applied at bake); loser rows stay muted. Wash via color-mix (pattern
+   already used by header.site). No --bkw baked → plain .w treatment, unchanged. */
+.bbrow.w[style*="--bkw"] { box-shadow:inset 3px 0 var(--bkw); padding-left:.3rem;
+  background:linear-gradient(to right, color-mix(in srgb, var(--bkw) 16%, transparent), transparent 70%); }
+/* A5: face-visible day + network on unplayed leaves (hover is invisible on touch) */
+.bk-when { margin-top:.2rem; padding-top:.18rem; border-top:1px solid var(--line); font:600 .78em/1.3 var(--font-d); letter-spacing:.06em; text-transform:uppercase; color:var(--muted); }
+/* A4: penalties-tie resolution strip — names the advancing side on the leaf face (koWin can't fire
+   on a level score). Amber = "heads-up, not a plain result". Sits INSIDE the Monument block so the selector-uniqueness scan (anchored at the block marker above) covers it (an internal review M2). */
+.bk-pens { margin-top:.2rem; padding-top:.18rem; border-top:1px solid var(--line); font:600 .82em/1.25 var(--font-d); letter-spacing:.05em; text-transform:uppercase; color:var(--warn-text); }
+/* B1: today-green (class set CLIENT-SIDE by app.js on the tick — a baked class would rot at ET
+   midnight). B3 precedence: .bk-today is declared BEFORE .bk-live so live wins at equal
+   specificity — and the JS only sets bk-today on scheduled matches anyway. */
+.bbox.bk-today { border-color:var(--green); box-shadow:0 0 0 1px color-mix(in srgb, var(--green) 35%, transparent); }
+.bbox.bk-today .bk-when { color:var(--green); border-top-color:color-mix(in srgb, var(--green) 40%, var(--line)); }
+.bbox.bk-today .bk-when::before { content:"TODAY · "; }
+/* B2 (live box-glow): the .bbox base rule already transitions border-color + box-shadow, so this
+   animates in. The tick's leaf toggle sets `.bk-live` (integration point documented in app.js).
+   Declared AFTER .bk-today: live > today (B3). */
+.bbox.bk-live { border-color:var(--live); box-shadow:0 0 10px -1px var(--live); }
+/* A6: the expanded tie card opens INWARD on the half columns — side-l anchors to the box's left
+   edge (extends right), side-r anchors right (extends left), centre stays centred — so an edge
+   column's card can never clip against the window's overflow:hidden (the 0437/0439 residual). */
+.side-l .bbox .bk-detail { left:0; right:auto; transform:none; }
+.side-r .bbox .bk-detail { left:auto; right:0; transform:none; }
+/* A6 trigger: no extra element (a button inside the .bbox anchor would be invalid HTML) —
+   touch: first tap expands, second tap navigates; desktop: short dwell. Keyboard: bracket-zoom.js
+   adds .bk-reveal on :focus-visible so focus gets the SAME clip-drop (.bcol:has(.bk-reveal)) +
+   z-index as hover/tap. (an internal review M1: a CSS-only :focus-visible .bk-detail{display:block} showed
+   the card but .bcol overflow:hidden CLIPPED it — .bk-reveal is what drops that clip.) */
+/* A6 tie card content rows (inside .bk-detail, which inherits the wall register) */
+.bkd-t { display:flex; align-items:center; gap:.4rem; font:600 12px/1.5 var(--font-d); letter-spacing:.03em; color:var(--ink); }
+.bkd-t .fchip { width:1.2em; height:1.2em; }
+.bkd-t .bkd-sc { margin-left:auto; font-weight:700; font-variant-numeric:tabular-nums; }
+.bkd-pens { font:600 10px/1.4 var(--font-d); letter-spacing:.05em; text-transform:uppercase; color:var(--warn-text); }
+.bbsh { color:var(--muted); }
+.bbox .fchip { width:1.3em; height:1.3em; vertical-align:-.2em; }
+.tchip .fchip { width:18px; height:18px; vertical-align:-3px; }
+/* 5-second hover → match-detail popover.
+   v3.09.01 hover-clip fix: the popover is wider than a narrow column and sat below the box, so .bcol's
+   load-bearing overflow:hidden (kept for the telescoping fly-off) clipped it left/right, and boxes low in
+   a column had it clipped by the window bottom. Fix without touching the fly-off:
+   1. only the column that actually holds the revealed box drops its clip (:has(.bk-reveal) → overflow
+      visible); collapsing/off columns never hold a reveal, so the fly-off is unaffected.
+   2. boxes in the lower half of a column open the popover UPWARD (bottom-anchored) so it never runs past
+      the window's bottom edge. */
+.bk-detail { display:none; position:absolute; left:50%; top:calc(100% + 6px); transform:translateX(-50%); width:max(160px,100%); background:var(--surface2); border:1px solid var(--line); border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,.32); padding:.5rem .65rem; font:500 11px/1.5 var(--font-b); color:var(--muted); z-index:50; text-align:left; white-space:normal; }
+.bcol:has(.bk-reveal), .bcol-in:has(.bk-reveal) { overflow:visible; }
+/* bottom-half boxes (last two in a column) + the third-place box flip the popover above the box to stay
+   inside the window */
+.bcol-in > .bbox:nth-last-child(-n+2) .bk-detail, .bracket-third .bbox .bk-detail { top:auto; bottom:calc(100% + 6px); }
+.bbox.bk-reveal { z-index:40; }
+.bbox.bk-reveal .bk-detail { display:block; }
+.bkd-r { font:700 9px/1 var(--font-d); letter-spacing:.06em; text-transform:uppercase; color:var(--green); margin-bottom:3px; }
+.bkd-link { color:var(--green); margin-top:3px; }
+/* zoom-out control (bottom-centre) */
+.bracket-ctrls { position:absolute; left:50%; bottom:10px; transform:translateX(-50%); z-index:45; }
+.bk-btn { display:inline-flex; align-items:center; gap:6px; font:600 11px/1 var(--font-d); letter-spacing:.04em; text-transform:uppercase; padding:.5rem .8rem; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--ink); cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,.2); }
+.bk-btn:hover { border-color:var(--green); }
+.bk-btn[disabled] { opacity:.4; cursor:default; }
+.bk-btn .ti { font-size:14px; }
+/* Knockout Room [2D|3D] toggle (site/knockout-room.js). The JS injects a segmented control
+   `<div class="bk-viewseg kr-viewseg"><button class="bk-btn kr-view on">2D</button>…` into
+   .bracket-stages (OUTSIDE .bracket-window so it survives the 3D display:none — an earlier fix). Buttons
+   take their base look from .bk-btn above; .kr-view adds a visible active/focus state matching the
+   .bracket-stages stage stepper (.bk-stage.on) — a review item 2. The 3D scene chrome (.kr-root/.khud/
+   .kpanel) is styled by the module's own inline KR_CSS. */
+.bk-viewseg { display:inline-flex; margin-left:auto; border:1px solid var(--line); border-radius:999px; overflow:hidden; }
+.kr-view.on { background:var(--green-wash); border-color:var(--green); color:var(--green); }
+.kr-view:focus-visible { outline:2px solid var(--green); outline-offset:2px; }
+/* Connector layer (bracket-connectors.js): elbow arrows, coloured by the feeder match's state of play. */
+.bk-conn { position:absolute; top:0; left:0; z-index:0; pointer-events:none; overflow:visible; }
+.bk-conn .bk-line { fill:none; stroke:var(--line); stroke-width:1.5; }
+.bk-conn .bk-ft { stroke:var(--green); stroke-width:2; }
+.bk-conn .bk-live { stroke:var(--live); stroke-width:2.5; animation:bk-connpulse 1.4s ease-in-out infinite; }
+/* cert v3.09 P-d: pulse via stroke-width + opacity, NOT a drop-shadow() filter — SVG filter
+   re-rasterization is a low-end-mobile GPU cost while a knockout match is live. */
+@keyframes bk-connpulse { 0%,100% { stroke-width:2.2; opacity:.65; } 50% { stroke-width:3.4; opacity:1; } }
+/* The Final is the amber centrepiece. */
+.bracket .b-final .bcol-h { color:var(--amber); }
+.bracket .b-final .bcol-in > .bbox { border:2px solid var(--amber); }
+.bracket .b-final .bcol-in > .bbox.bk-ramp { animation:bk-climax 1.35s forwards; }
+@keyframes bk-climax {
+  0%  { background:var(--surface); animation-timing-function:steps(1,end); }
+  9%  { background:#8d0e0e; animation-timing-function:steps(1,end); }
+  18% { background:#ad110f; animation-timing-function:steps(1,end); }
+  27% { background:#cf1611; animation-timing-function:steps(1,end); }
+  36% { background:#e62a12; animation-timing-function:steps(1,end); }
+  45% { background:#f8501a; animation-timing-function:ease-in; }
+  60% { background:#fb8e28; }
+  72% { background:#ffce72; box-shadow:0 0 26px 6px rgba(255,205,130,.8); }
+  84% { background:#fdf4ff; box-shadow:0 0 44px 12px rgba(222,236,255,.95); border-color:#fff; }
+  90% { background:#dce8ff; box-shadow:0 0 64px 22px rgba(150,200,255,1); border-color:#eef4ff; }
+  100% { background:var(--surface); box-shadow:none; }
+}
+/* Group stage — compact cards (letter + 4 teams) that hover-expand.
+   SCOPED to .b-group: the bare `.gcard` class is ALSO the standings-page group
+   table-card (styles.css:422), so these bracket-only rules must not bleed onto /standings. */
+.b-group .gcard { position:relative; z-index:1; display:block; width:clamp(62px, 94%, 210px); margin:.18rem auto; border:1px solid var(--line); border-radius:8px; background:var(--surface); overflow:hidden; text-decoration:none; color:var(--ink); font-size:calc(9.5px * var(--bk-fs,1)); transition:transform .14s ease, box-shadow .14s, border-color .14s; transform-origin:center; }
+.b-group .gcard:hover, .b-group .gcard:focus-visible { transform:scale(1.5); z-index:30; box-shadow:0 4px 16px rgba(0,0,0,.28); border-color:var(--green); outline:none; }
+.b-group .gcard .gh { font:700 .85em/1 var(--font-d); letter-spacing:.05em; text-transform:uppercase; color:var(--muted); padding:3px 6px; border-bottom:1px solid var(--line); }
+.b-group .gcard .grow { display:flex; align-items:center; gap:5px; font:600 1em/1.4 var(--font-b); color:var(--ink); padding:1px 6px; white-space:nowrap; }
+.b-group .gcard .grow .bbnm { overflow:hidden; text-overflow:ellipsis; }
+.b-group .fchip { width:1.3em; height:1.3em; vertical-align:-.2em; }
+.bracket-third { width:clamp(54px, 92%, 360px); margin:.6em auto 0; }
+.bracket-third > .bbox { width:100%; }
+@media (prefers-reduced-motion:reduce) {
+  .bracket::before, .bracket .b-final .bcol-in > .bbox.bk-ramp, .bk-conn .bk-live { animation:none; }
+  .bcol { transition:none; }
+}
+.bracket-third .bcol-h { display:block; text-align:center; color:var(--muted); padding:0 0 .35rem; }
+/* MOBILE: 9 telescoping columns won't fit a phone, so make them readable-width and scroll horizontally
+   (the fly-off still collapses earlier stages → less to scroll; the stepper scrolls to the focus). */
+@media (max-width:640px) {
+  .bracket-window { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .bracket { width:max-content; min-width:100%; justify-content:center; }
+  .bcol { flex:0 0 auto; width:56vw; max-width:56vw; }
+  .bcol.b-final { width:82vw; max-width:82vw; }
+  .bcol.off { width:0; max-width:0; }
+  .bbox { font-size:13px; }
+  .b-group .gcard { font-size:11.5px; }
+}
+/* The free-OTA band that survives the retired hero. */
+.free-callout.solo { display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .8rem; margin:0 0 1.5rem; padding:.7rem .9rem; border:1px solid var(--line); border-radius:var(--r); background:var(--surface2); font-size:14.5px; }
+@media (max-width:760px){ .tchip { width:190px; } }
+
+/* ── Site-wide goal celebration (goal-celebration.js) ─────────────────────────── */
+.goalcel { position:fixed; left:0; right:0; bottom:0; z-index:9000; pointer-events:none; }
+.gc-band { position:relative; height:118px; background:var(--surface2); border-top:2px solid var(--green); box-shadow:0 -8px 28px rgba(0,0,0,.28); overflow:hidden; transform:translateY(104%); }
+.goalcel.go .gc-band { animation:gc-band 6.2s ease forwards; }
+@keyframes gc-band { 0%{transform:translateY(104%)} 6%{transform:translateY(0)} 92%{transform:translateY(0)} 100%{transform:translateY(104%)} }
+.gc-tick { position:absolute; top:0; left:0; right:0; height:24px; overflow:hidden; background:var(--green); }
+.gc-tickin { position:absolute; white-space:nowrap; font:700 12px/24px var(--font-d); letter-spacing:.06em; color:#06281a; }
+.goalcel.go .gc-tickin { animation:gc-ticka 6.2s linear; }
+@keyframes gc-ticka { from{transform:translateX(30%)} to{transform:translateX(-80%)} }
+.gc-track { position:absolute; left:0; right:0; bottom:14px; height:64px; }
+.gc-runner { position:absolute; bottom:0; left:var(--start); opacity:0; }
+.goalcel.go .gc-runner { animation:gc-run 6.2s cubic-bezier(.22,.6,.3,1) forwards; }
+@keyframes gc-run { 0%{opacity:0; transform:translateX(0)} 7%{opacity:1} 88%{opacity:1} 100%{opacity:0; transform:translateX(var(--dist))} }
+.gc-chip { display:flex; align-items:center; gap:5px; padding:5px 9px; border-radius:8px; background:var(--surface); border:1px solid var(--line); font:600 13px/1 var(--font-d); color:var(--ink); box-shadow:0 2px 8px rgba(0,0,0,.2); white-space:nowrap; }
+.gc-fl { width:20px; height:13px; border-radius:2px; flex:none; }
+.gc-scorer .gc-chip { border-color:var(--amber); }
+.gc-opp .gc-chip { border-color:var(--live); }
+.gc-trophy { color:#caa53a; font-size:18px; }
+.goalcel.go .gc-scorer .gc-trophy { animation:gc-bob .45s ease-in-out infinite; }
+@keyframes gc-bob { 0%,100%{transform:translateY(0) rotate(-7deg)} 50%{transform:translateY(-5px) rotate(7deg)} }
+.goalcel.go .gc-opp .gc-chip, .goalcel.go .gc-runner:not(.gc-scorer):not(.gc-opp) .gc-chip { animation:gc-jostle .26s ease-in-out infinite; }
+@keyframes gc-jostle { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+.gc-tag { font:700 8px/1 var(--font-d); letter-spacing:.06em; text-transform:uppercase; padding:2px 5px; border-radius:4px; margin-left:3px; }
+.gc-tag-scorer { background:var(--amber); color:#3a2a00; }
+.gc-tag-opp { background:var(--live); color:#fff; }
+.gc-conf { position:absolute; inset:0; pointer-events:none; }
+.gc-confp { position:absolute; bottom:18px; width:7px; height:11px; border-radius:1px; opacity:0; }
+.goalcel.go .gc-confp { animation:gc-conf 2.1s ease-out forwards; }
+@keyframes gc-conf { 0%{opacity:1; transform:translate(0,0) rotate(0)} 100%{opacity:0; transform:translate(var(--tx),var(--ty)) rotate(var(--r))} }
+@media (prefers-reduced-motion:reduce) {
+  .goalcel { display:none; }
+  .goalcel.go { display:block; }
+  .goalcel.go .gc-band { transform:translateY(0); animation:none; }
+  .goalcel.go .gc-tickin, .goalcel.go .gc-runner, .goalcel.go .gc-confp, .goalcel.go .gc-trophy { animation:none; }
+}

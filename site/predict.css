@@ -1,4 +1,4 @@
-/* predictions box (match pages only) */
+/* V2 predictions box (match pages only) */
 #predict-box .btn { background:var(--chipbg); border:1px solid var(--accent); color:var(--accent); border-radius:.5rem; padding:.4rem .9rem; font:inherit; cursor:pointer; }
 #predict-box .btn:hover { filter:brightness(1.1); }
 .predict-form { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
