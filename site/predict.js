@@ -1,4 +1,4 @@
-// Golazo 26 — match predictions. Loads ONLY on match pages that carry a
+// Golazo 26 — match predictions (V2). Loads ONLY on match pages that carry a
 // #predict-box (baked when data/clerk-public.json exists at build time).
 // Auth: Clerk (email magic link/code). Predictions lock at kickoff, editable
 // until then. API: golazo26-api worker; the identity mirror keeps accounts
@@ -11,8 +11,8 @@
   const matchNo = Number(box.dataset.match);
   const kickoff = Date.parse(box.dataset.kickoff);
   const el = (html) => { box.innerHTML = html; };
-  // SECURITY: escape any user-derived value (e.g. the viewer's Clerk email) before it
-  // enters the innerHTML template, closing the self-XSS reflection.
+  // SECURITY (cert hardening): escape any user-derived value (e.g. the viewer's Clerk email)
+  // before it enters the innerHTML template, closing the self-XSS reflection.
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   if (Date.now() >= kickoff) { el('<p class="muted">Predictions for this match are locked (kicked off).</p>'); return; }

@@ -1,8 +1,8 @@
-// Goal celebration — team-coloured ticker-tape burst on the match page.
+// Goal celebration — team-coloured ticker-tape burst on the match page (v2.06.00).
 // Zero-dep. Pure helpers are exported for `node --test`; the DOM/canvas layer is
 // guarded so importing this module under Node never touches a browser API.
 //
-// Behaviour:
+// Locked decisions (owner 2026-06-14):
 //   • force  = floor + |goal difference|  (every goal pops; a lead amplifies)
 //   • origin = left=home / right=away on ALL devices (matches the wrapping header)
 //   • length = 5–10s by the SCORING TEAM'S running tally

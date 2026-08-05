@@ -10,16 +10,39 @@ if (hdr) {
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(setH);
 }
 
-// 1) visitor-local kickoff times — tz + formatter hoisted out of the loop (was
-// one Intl.DateTimeFormat construction per element); skip entirely for ET visitors
-const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-if (tz !== 'America/New_York') {
-  const fmt = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
-  for (const el of document.querySelectorAll('.local-time[data-utc]')) {
-    el.title = el.textContent;
-    el.textContent = fmt.format(new Date(el.dataset.utc)) + ' (' + el.textContent + ')';
+// 1) visitor-local kickoff times — idempotent + re-invocable (i18n re-enhancement contract,
+// v3.14 a later change): the ORIGINAL baked ET text lives in el.title (the same slot the old one-shot
+// pass used, so the en/unset output stays byte-identical to the old behavior) and every run
+// recomputes from data-utc + that stored original — re-running on an i18n-swapped subtree can
+// never nest wrappers. data-lang ≠ en runs REGARDLESS of visitor timezone and formats with the
+// mapped SITE locale (tw→ak: ICU carries Akan, not Twi); en/unset keeps the old behavior — ET
+// visitors keep the baked ET text, everyone else gets browser-locale local time + ET original.
+const I18N_LOCALES = { es: 'es', fr: 'fr', de: 'de', ig: 'ig', tw: 'ak' };
+function localizeKickoffTimes(root) {
+  const lang = document.documentElement.dataset.lang;
+  const locale = I18N_LOCALES[lang]; // undefined for en/unset → browser locale + the old ET skip
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  if (!locale && tz === 'America/New_York') {
+    // en/unset for an ET visitor: the baked ET text is already right — undo any prior lang pass
+    for (const el of root.querySelectorAll('.local-time[data-utc]')) {
+      if (el.title) { el.textContent = el.title; el.removeAttribute('title'); }
+    }
+    return;
+  }
+  const fmt = new Intl.DateTimeFormat(locale, { hour: 'numeric', minute: '2-digit' });
+  for (const el of root.querySelectorAll('.local-time[data-utc]')) {
+    const orig = el.title || el.textContent;
+    el.title = orig;
+    el.textContent = fmt.format(new Date(el.dataset.utc)) + ' (' + orig + ')';
   }
 }
+localizeKickoffTimes(document); // app.js is deferred, so this IS the DOMContentLoaded pass
+document.addEventListener('g26:lang', () => localizeKickoffTimes(document)); // re-enhance swapped subtrees
+// (a later review round): a client re-render (today.js's async home-card render lands AFTER the
+// synchronous g26:lang pass above, and again on initial load) replaces .local-time nodes with fresh
+// raw-ET cards this never re-localized. today.js fires g26:rerender after each render so we re-enhance
+// the new subtree; distinct from g26:lang (today.js listens to that — re-firing it would self-loop).
+document.addEventListener('g26:rerender', () => localizeKickoffTimes(document));
 
 // 2) schedule filters — v2 day-grouped rows; count derived, day sections collapse when empty
 const srows = document.querySelectorAll('[data-srow]');
@@ -60,10 +83,51 @@ function matchMinute(kISO) {
   if (e < 108) return '≈' + Math.min(90, 46 + Math.floor(e - 63)) + "'";
   return "90+'";
 }
+// ESPN's REAL clock (dc, e.g. "47'"), observed at the bake's as_of and ticked forward.
+// Anchored to ESPN's actual minute so it can't drift when a match kicks off late (the
+// scheduled-kickoff estimate above was ~8 min off once). Stoppage/HT shown verbatim.
+function liveMin(dc, asofMs) {
+  if (!dc) return null;
+  if (/half|^ht$/i.test(dc)) return 'HT';
+  if (dc.indexOf('+') >= 0) return dc.replace(/\s/g, ''); // stoppage ("90'+5'"): show ESPN's value as-is
+  const m = /^(\d+)/.exec(dc);
+  if (!m) return dc;
+  const base = +m[1];
+  const ticked = base + Math.max(0, Math.floor((Date.now() - asofMs) / 60000));
+  if (base < 45 && ticked >= 45) return "45+'";
+  if (base < 90 && ticked >= 90) return "90+'";
+  return ticked + "'";
+}
+// SECURITY (cert SIG-1, defense-in-depth): the score-tick below assigns el.innerHTML from a
+// string that interpolates remote /api/v1/live fields (m.status, m.k, m.dc). It's mitigated
+// upstream (D1 status CHECK-enum + poll-side displayClock allowlist), so this is not an open
+// XSS — but the identity-heal path already keeps textContent-only discipline and this path
+// didn't. esc() applies the same escape the bakers use (render.mjs) to any remote field before
+// it enters the innerHTML string, so a malformed field can never inject markup. Mirrors
+// render.mjs's esc exactly (app.js has no build-time import).
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 function tickClocks() {
   for (const el of document.querySelectorAll('.match-min[data-k]')) {
-    const t = matchMinute(el.dataset.k);
+    const t = el.dataset.dc ? liveMin(el.dataset.dc, +el.dataset.asof) : matchMinute(el.dataset.k);
     if (el.textContent !== t) el.textContent = t;
+  }
+}
+
+// v3.08.02 / v3.09.01 — self-heal a baked knockout placeholder leaf to a live-resolved team name.
+// `container[data-match-teams=N]` holds a placeholder leaf `.tbd[data-side=home|away]` — the DOM the
+// bakers emit (scripts/lib/render.mjs sideHTML uses `.team.tbd`; the front-page bracket / Today strip /
+// static /standings bracket / match-page h1 mark up their own leaf spans the same way). The match is
+// keyed on `.tbd[data-side]` (NOT `.team.tbd`) so all five surfaces share ONE heal path without forcing
+// the `.team` class onto spans that must not inherit its styling. Only a `.tbd` placeholder is rewritten,
+// only when `name` is a non-empty resolved identity, and only via textContent — so a real (already-
+// resolved) leaf and its flag-chip/link survive, and there is no HTML-injection surface. Idempotent:
+// once the class is dropped the leaf is no longer `.tbd`, so subsequent ticks skip it.
+function healIdentity(side, name, n) {
+  if (!name) return; // payload carries no resolved name for this side → baked placeholder is still truth
+  for (const c of document.querySelectorAll('[data-match-teams="' + n + '"]')) {
+    for (const leaf of c.querySelectorAll('.tbd[data-side="' + side + '"]')) {
+      if (leaf.textContent !== name) { leaf.textContent = name; leaf.classList.remove('tbd'); }
+    }
   }
 }
 
@@ -71,20 +135,74 @@ function tickClocks() {
 // that opted in AND only when a match could plausibly be live (±3h window).
 if (document.body.hasAttribute('data-live')) {
   const banner = document.getElementById('stale-banner'); // unobtrusive footer note
+  // v3 dynamic delivery: prefer the live data API (scores update with no rebuild);
+  // fall back to the baked static snapshot so a cutover — or a worker hiccup / the
+  // 100k/day cap — never breaks the page. Same {as_of, matches:[…]} shape either way.
+  const API = self.__G26_API__ || 'https://golazo26-data.onwike.workers.dev';
+  // cert SIG-7 (Silver code-review): show a visible staleness signal whenever the displayed
+  // scores are NOT current. Two triggers: (a) the live API failed and we're serving the baked
+  // /data/live.json snapshot (up to ~24h old — the exact CRIT-2 cron-outage scenario), OR (b)
+  // live.as_of is > STALE_MIN old while a match is in_play. STALE_MIN=5: the architecture's own
+  // worst-case freshness bound is ~4–5 min (upstream ESPN poll ~1–3 min + our ~60s tick, additive),
+  // so >5 min during an active match means the pipeline is genuinely behind, not mid-cycle jitter.
+  const STALE_MIN = 5;
+  const fetchLive = async () => {
+    try { const r = await fetch(API + '/api/v1/live', { cache: 'no-cache' }); if (r.ok) { const j = await r.json(); j._fellBack = false; return j; } } catch (e) { /* fall through */ }
+    const r = await fetch('/data/live.json', { cache: 'no-cache' }); // baked static snapshot (SIG-7 trigger a)
+    const j = await r.json();
+    j._fellBack = true;
+    return j;
+  };
   const tick = async () => {
     try {
-      const res = await fetch('/data/live.json', { cache: 'no-cache' });
-      const live = await res.json();
+      const live = await fetchLive();
       if (banner) {
         const ageMin = (Date.now() - new Date(live.as_of).getTime()) / 60000;
         const anyLive = live.matches.some((m) => m.status === 'in_play');
-        banner.hidden = !(anyLive && ageMin > 10);
+        // (a) serving the baked fallback → always signal (the live feed is down); (b) as_of stale during an active match.
+        banner.hidden = !(live._fellBack || (anyLive && ageMin > STALE_MIN));
         const asof = document.getElementById('stale-asof');
         if (asof) asof.textContent = new Date(live.as_of).toLocaleTimeString();
       }
       for (const m of live.matches) {
+        // v3.08.02 — knockout identity self-heal (runs BEFORE the score gate below: identity
+        // resolves while a match is still `scheduled`). Rewrite a baked "Winner Match N"
+        // placeholder from the live payload's resolved team name so the page corrects on the
+        // 60s tick without a rebake, mirroring the certified score path. Guards:
+        //  - only act when the payload actually carries a resolved name for that side (else the
+        //    baked placeholder is still the truth — never blank a real slot);
+        //  - only overwrite a `.team.tbd` placeholder leaf (a resolved leaf is left untouched, so
+        //    the next bake's flag-chip + /teams/ link are never clobbered by this text-only heal);
+        //  - textContent only (no innerHTML) → zero XSS surface even though names are trusted.
+        healIdentity('home', m.home, m.n);
+        healIdentity('away', m.away, m.n);
+        // v3.09.01 — match-page <title> heal. A <title> has no child leaf to rewrite via healIdentity,
+        // so on the match page (its unique `h1.matchup[data-match-teams=N]` identifies which match this
+        // page is) set document.title from the resolved names once BOTH sides are known. Guarded on both
+        // names present so a half-resolved knockout tie ("Brazil vs Winner Match 77") never mislabels the
+        // tab; leaves the baked "Match N: … vs …" title untouched until identity fully resolves.
+        if (m.home && m.away) {
+          const h1 = document.querySelector('h1.matchup[data-match-teams="' + m.n + '"]');
+          if (h1) { const t = m.home + ' vs ' + m.away + ' · Golazo 26'; if (document.title !== t) document.title = t; }
+        }
+        // Bracket Monument B1 — today-green on the bracket leaf, computed CLIENT-SIDE (a baked
+        // is-today class would rot at ET midnight: the bake is content-triggered, not daily).
+        // Runs BEFORE the scheduled/score skip below so it covers EVERY status on every tick —
+        // incl. bk-live (an internal review NEW-1: keying B2 on status, not score, so a just-kicked-off
+        // in_play match with a null 0-0 score still glows immediately, not a tick late). B3
+        // precedence: in_play → bk-live, scheduled+today → bk-today, mutually exclusive by status.
+        // Class-only + idempotent; leaves that aren't .bbox (e.g. .tchip) simply don't match.
+        if (m.k) {
+          const etDay = (d) => new Date(d).toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+          const isToday = m.status === 'scheduled' && etDay(m.k) === etDay(Date.now());
+          const isLive = m.status === 'in_play';
+          for (const b of document.querySelectorAll('.bbox[data-mno="' + m.n + '"]')) {
+            b.classList.toggle('bk-live', isLive);
+            b.classList.toggle('bk-today', isToday);
+          }
+        }
         if (!m.score || m.status === 'scheduled') continue;
-        // goal detection: emit g26:goal on a live score increment — never on the
+        // goal detection (v2.06.00): emit g26:goal on a live score increment — never on the
         // first observed value (no replay on load), never on a revert (decrease = no emit).
         const prevG = tickClocks._g || (tickClocks._g = {});
         const was = prevG[m.n];
@@ -94,17 +212,20 @@ if (document.body.hasAttribute('data-live')) {
             n: m.n, side,
             teamGoals: side === 'home' ? m.score.home : m.score.away,
             goalDiff: Math.abs(m.score.home - m.score.away),
+            score: { home: m.score.home, away: m.score.away }, // for the site-wide goal-celebration ticker (pure g26:goal consumer)
           } }));
         }
         prevG[m.n] = { h: m.score.home, a: m.score.away };
-        // idempotent, structure-stable write: [data-match] containers hold ONLY the
-        // time/score cluster, so replacing el.innerHTML wholesale is safe on every tick
-        // and on baked mid-match pages alike — no nested re-injection.
+        // idempotent, structure-stable write (cert v2.00.00 C1): [data-match] containers
+        // hold ONLY the time/score cluster, so replacing el.innerHTML wholesale is safe on
+        // every tick and on baker-baked mid-match pages alike — no nested re-injection.
+        // remote fields (m.status/m.k/m.dc) are esc()'d before entering this innerHTML string (SIG-1);
+        // liveMin/matchMinute returns are esc()'d too since they carry m.dc through verbatim.
         const html = '<span class="score">' + m.score.home + '&nbsp;:&nbsp;' + m.score.away + '</span>' +
-          (m.status === 'finished_provisional' ? ' <span class="pill warn">FT (provisional)</span>' :
-           m.status === 'in_play' ? ' <span class="pill live"><span class="match-min" data-k="' + (m.k || '') + '">' + matchMinute(m.k) + '</span></span>' :
-           m.status === 'finished_confirmed' ? ' <span class="pill ft">FT ✓</span>' :
-           ' <span class="pill warn">' + m.status.replace(/_/g, ' ') + '</span>'); // suspended/postponed: honest neutral label
+          (m.status === 'in_play' ? ' <span class="pill live"><span class="match-min" data-k="' + esc(m.k || '') + '"' + (m.dc ? ' data-dc="' + esc(m.dc) + '" data-asof="' + new Date(live.as_of).getTime() + '"' : '') + '">' + esc(m.dc ? liveMin(m.dc, new Date(live.as_of).getTime()) : matchMinute(m.k)) + '</span></span>' :
+           (m.status === 'finished_provisional' || m.status === 'finished_confirmed') ? ' <span class="pill ft">FT ✓</span>' :
+           ' <span class="pill warn">' + esc(m.status.replace(/_/g, ' ')) + '</span>') + // suspended/postponed: honest neutral label
+          (m.so ? ' <span class="pens">' + m.so.home + '–' + m.so.away + '&nbsp;pens</span>' : (m.aet ? ' <span class="pens">aet</span>' : '')); // penalty-shootout / AET badge (migrations 0021/0022) — MUST stay byte-identical to render.mjs scoreHTML (cert OM2: baked == injected)
         for (const el of document.querySelectorAll('[data-match="' + m.n + '"]')) {
           if (el.innerHTML !== html) el.innerHTML = html;
           const host = el.closest('.mcard, .cluster');
@@ -115,10 +236,12 @@ if (document.body.hasAttribute('data-live')) {
             const bar = host.querySelector('.cl-bar');
             if (bar) bar.textContent = m.status === 'in_play'
               ? 'LIVE · SCORE AS OF ' + new Date(live.as_of).toLocaleTimeString()
-              : m.status === 'finished_provisional' ? 'FULL TIME — PROVISIONAL'
-              : m.status === 'finished_confirmed' ? 'FULL TIME ✓ CONFIRMED'
+              : (m.status === 'finished_provisional' || m.status === 'finished_confirmed') ? 'FULL TIME ✓'
               : m.status.replace(/_/g, ' ').toUpperCase() + ' — SCORE AS OF ' + new Date(live.as_of).toLocaleTimeString();
           }
+          // (Bracket Monument B2 bk-live toggle moved UP, before the score gate — an internal review NEW-1,
+          // so a scoreless just-kicked-off in_play match glows immediately. See the bk-today/bk-live
+          // block above.)
         }
       }
     } catch (e) { /* network hiccup: keep last render */ }
@@ -136,8 +259,8 @@ tickClocks();
 if (document.querySelector('.match-min[data-k]') || document.body.hasAttribute('data-live'))
   setInterval(tickClocks, 1000);
 
-// 4) photo lightbox with full attribution — required at detail size.
-// dialog semantics + focus moves to Close on open and returns to the opener on close.
+// 4) photo lightbox with full attribution (Phase 2.5A) — required at detail size.
+// v2.00.00 (cert M7): dialog semantics + focus moves to Close on open, returns on close.
 let lbOpener = null;
 document.addEventListener('click', (ev) => {
   const a = ev.target.closest('a.pic');
@@ -164,7 +287,7 @@ document.addEventListener('click', (ev) => {
   lb.querySelector('.lb-inner').setAttribute('aria-label', 'Photo: ' + a.dataset.name);
   lb.querySelector('img').src = a.getAttribute('href');
   lb.querySelector('img').alt = a.dataset.name;
-  // SECURITY (stored DOM-XSS): build attribution with textContent + createElement —
+  // SECURITY (cert MEDIUM, stored DOM-XSS): build attribution with textContent + createElement —
   // never innerHTML — and validate link schemes, so author/license/url data can never inject
   // markup or a javascript:/data: URL even if a manifest value is malicious.
   const safeHttp = (u) => { try { const x = new URL(u, location.origin); return (x.protocol === 'http:' || x.protocol === 'https:') ? x.href : '#'; } catch { return '#'; } };
@@ -196,9 +319,16 @@ if (themeBtn) {
   render();
 }
 
-// 6) card-shine contrast picker (persisted; 'auto' = my defaults, light 8 / dark 5)
+// 6) card-shine contrast picker (persisted; 'auto' = owner default light 8 / dark 5)
+// Hidden from public view (CSS display:none). The owner reveals it for visual debugging with
+// ?contrast (sticky in localStorage across pages); ?contrast=off hides it again. Saved values
+// still apply on every page (pre-paint script + apply() below) regardless of visibility.
 const contrastSel = document.getElementById('contrast-sel');
 if (contrastSel) {
+  const cdbg = new URLSearchParams(location.search).get('contrast');
+  if (cdbg === 'off') localStorage.removeItem('contrast-debug');
+  else if (cdbg !== null) localStorage.setItem('contrast-debug', '1');
+  if (localStorage.getItem('contrast-debug') === '1') document.documentElement.setAttribute('data-cdbg', '');
   const TOP = [6, 9, 13, 18, 24, 31, 39, 48, 58, 70], BD = [22, 29, 36, 44, 52, 60, 68, 76, 84, 92];
   const apply = (v) => {
     const d = document.documentElement, i = +v - 1;
