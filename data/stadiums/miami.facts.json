@@ -1,0 +1,147 @@
+{
+  "venue_id": "miami",
+  "stadium_current": "Hard Rock Stadium",
+  "stadium_historic": "Joe Robbie Stadium",
+  "fifa_name": "Miami Stadium",
+  "city": "Miami Gardens",
+  "country": "United States",
+  "opened": 1987,
+  "architect": "HOK Sport (now Populous)",
+  "primary_tenant": "Miami Dolphins (NFL); Miami Hurricanes (NCAA football)",
+  "capacity_regular": 64767,
+  "capacity_regular_source": {
+    "title": "Hard Rock Stadium - Wikipedia (oldid 1360727139)",
+    "url": "https://en.wikipedia.org/w/index.php?title=Hard_Rock_Stadium&oldid=1360727139"
+  },
+  "capacity_wc2026": 64478,
+  "capacity_wc2026_source": {
+    "title": "World Cup 2026: Miami Stadium - StadiumDB.com",
+    "url": "https://stadiumdb.com/tournaments/world_cup/2026/dolphins_stadium"
+  },
+  "field_type_2026": "natural grass (Bermuda; FIFA mandates natural grass; venue already uses Tifway 419 Bermuda and staged 2024 Copa America and 2025 Club World Cup on grass)",
+  "renovation_cost_2026": "NOT SPECIFIED IN SOURCES (no dedicated WC2026 renovation budget figure found in cited authoritative sources; venue already has natural grass and required no major capacity/structural rebuild)",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 7,
+  "iconic_games": [
+    {
+      "date": "2024-07-14",
+      "match": "Argentina 1-0 Colombia (AET)",
+      "event": "2024 Copa America Final",
+      "score": "1-0 (a.e.t.)",
+      "note": "Lautaro Martinez scored a 112th-minute extra-time winner to give Argentina a record 16th Copa America title; kickoff was delayed ~80 minutes after ticketless fans attempted to force entry, and Messi limped off injured in the 66th minute. Attendance 65,300.",
+      "source": {
+        "title": "Copa America 2024: Argentina 1-0 Colombia (AET) — Sky Sports",
+        "url": "https://www.skysports.com/football/news/11095/13178041/copa-america-2024-argentina-1-0-colombia-aet-lautaro-martinez-earns-victory-after-crowd-trouble-mars-final"
+      }
+    },
+    {
+      "date": "2025-06-14",
+      "match": "Al Ahly 0-0 Inter Miami",
+      "event": "2025 FIFA Club World Cup (group stage, opening match)",
+      "score": "0-0",
+      "note": "Hosted the opening match of the expanded 32-team 2025 FIFA Club World Cup on its natural-grass surface; Al Ahly 0-0 Inter Miami, 14 June 2025, attendance 65,326. Additional group-stage fixtures also staged here.",
+      "source": {
+        "title": "Hard Rock Stadium - Wikipedia (oldid 1360727139)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Hard_Rock_Stadium&oldid=1360727139"
+      }
+    }
+  ],
+  "iconic_games_note": "Hard Rock Stadium has a genuine top-flight football history (unlike pure-NFL bowls): it hosted the 2024 Copa America Final (Argentina 1-0 Colombia, a.e.t.) and 2025 FIFA Club World Cup group matches (incl. the Al Ahly 0-0 Inter Miami opener) on natural grass. It is also a major non-football venue, having hosted six Super Bowls (XXIII 1989, XXIX 1995, XXXIII 1999, XLI 2007, XLIV 2010, LIV 2020 — NON-association-football / American-football events) and multiple college football national championships (NON-association-football).",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Natural-grass (Tifway 419 Bermuda) playing surface for the World Cup; FIFA mandates natural grass and the venue already uses Bermuda, so grass was laid/regrown for the tournament. Installation video drew online skepticism but the venue had already staged the 2024 Copa America and 2025 Club World Cup on real grass.",
+      "value": "natural grass (Bermuda)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Hard Rock Stadium World Cup pitch installation — BroBible",
+        "url": "https://brobible.com/sports/article/hard-rock-stadium-world-cup-pitch-controversy/"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "World Cup configuration sets the FIFA-confirmed net capacity at 64,478, down from the regular football capacity of 64,767 (~65,000), to accommodate the wider FIFA pitch.",
+      "value": "64,478 (WC2026 config)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Miami Stadium - StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/dolphins_stadium"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "2003 (city of Miami Gardens incorporated 2003; Hard Rock Stadium opened 1987; within Greater Miami metro)",
+    "significance": "Miami Gardens is a city in Miami-Dade County, Florida, incorporated in 2003, and the home of Hard Rock Stadium (opened 1987); it sits within the Greater Miami metropolitan area, a major US gateway to Latin America and the Caribbean.",
+    "football_culture": "Football culture hangs on the Greater Miami metro rather than the suburban locality of Miami Gardens: Miami is one of the most football-passionate US markets, driven by its large Latin American and Caribbean diaspora. It is home to Inter Miami CF (Lionel Messi's club since 2023) and routinely hosts blockbuster internationals and tournaments — the 2024 Copa America Final and 2025 FIFA Club World Cup matches both at Hard Rock Stadium.",
+    "sources": [
+      {
+        "title": "Copa America 2024: Argentina wins Miami final — CNN",
+        "url": "https://www.cnn.com/2024/07/14/sport/copa-america-final-argentina-colombia-tickets-spt-intl-hnk"
+      },
+      {
+        "title": "Hard Rock Stadium - Wikipedia (oldid 1360727139)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Hard_Rock_Stadium&oldid=1360727139"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened August 16, 1987 (first preseason game); original name Joe Robbie Stadium (1987-1996), built at a construction cost of $115 million.",
+    "Designed by HOK Sport (now Populous).",
+    "Cycled through many naming-rights names: Pro Player Park/Stadium (1996-2005), Dolphins/Dolphin Stadium (2005-2009), Land Shark Stadium (2009-2010), Sun Life Stadium (2010-2016), New Miami Stadium (2016), then Hard Rock Stadium (2016-present).",
+    "Home of the NFL's Miami Dolphins since 1987; former home of MLB's Florida/Miami Marlins (1993-2011, who won the 1997 and 2003 World Series here); hosts the Miami Hurricanes (NCAA football, since 2008) and the Miami Open tennis tournament (since 2019).",
+    "Surface is Tifway 419 Bermuda grass.",
+    "2015-2016 renovation: privately funded by owner Stephen Ross; added corner video boards, additional suites, and an open-air canopy (anchored by four corner spires) covering most of the seating bowl; capacity reduced from the original ~75,000 to ~65,000 (64,767). Wikipedia (oldid 1360727139) states $350 million; some news sources state ~$500 million (contested).",
+    "Hosted six Super Bowls (XXIII, XXIX, XXXIII, XLI, XLIV, LIV) and multiple college football national-championship games.",
+    "Hosted the 2024 Copa America Final and 2025 FIFA Club World Cup matches (incl. the Al Ahly 0-0 Inter Miami opener); temporarily renamed 'Miami Stadium' for the 2026 FIFA World Cup under FIFA's clean-venue naming policy.",
+    "For the 2026 World Cup it hosts seven matches: four group-stage games, one Round of 32, one quarter-final, and the third-place (Bronze) match on July 18, 2026."
+  ],
+  "sources": [
+    {
+      "title": "Hard Rock Stadium - Wikipedia (oldid 1360727139)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Hard_Rock_Stadium&oldid=1360727139"
+    },
+    {
+      "title": "World Cup 2026: Miami Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/dolphins_stadium"
+    },
+    {
+      "title": "World Cup 2026 | Miami to host seven matches - FIFA",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/miami-stadium-host-seven-matches"
+    },
+    {
+      "title": "FIFA World Cup 2026 - Hard Rock Stadium (official venue page)",
+      "url": "https://www.hardrockstadium.com/events/fifa-world-cup-2026/"
+    },
+    {
+      "title": "Copa America 2024: Argentina 1-0 Colombia (AET) - Sky Sports",
+      "url": "https://www.skysports.com/football/news/11095/13178041/copa-america-2024-argentina-1-0-colombia-aet-lautaro-martinez-earns-victory-after-crowd-trouble-mars-final"
+    },
+    {
+      "title": "2024 Copa America final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica_final"
+    },
+    {
+      "title": "Copa America 2024: Argentina wins Miami final - CNN",
+      "url": "https://www.cnn.com/2024/07/14/sport/copa-america-final-argentina-colombia-tickets-spt-intl-hnk"
+    },
+    {
+      "title": "Hard Rock Stadium World Cup pitch installation controversy - BroBible",
+      "url": "https://brobible.com/sports/article/hard-rock-stadium-world-cup-pitch-controversy/"
+    },
+    {
+      "title": "2026 World Cup Host Cities: All 16 Stadiums & Capacities - MyFootballFacts",
+      "url": "https://www.myfootballfacts.com/articles/2026-world-cup-host-cities-stadiums/"
+    }
+  ],
+  "gaps": [
+    "renovation_cost_2026: NOT SPECIFIED IN SOURCES — no dedicated WC2026 renovation/preparation budget figure found in cited authoritative sources.",
+    "2015-2016 renovation cost is CONTESTED: Wikipedia (oldid 1360727139) states $350 million while some news/guide sources state ~$500 million; not shipped as a single figure.",
+    "capacity_wc2026 vs press: early/general sources round to 65,000 (MyFootballFacts, FIFA host-city framing); FIFA-config net capacity per StadiumDB is 64,478, used as the authoritative WC2026 value. FIFA's JS-rendered article page returned no static text and could not be parsed directly.",
+    "Exact full slate of 2025 FIFA Club World Cup match scores beyond the verified Al Ahly 0-0 Inter Miami opener: NOT SPECIFIED in cited sources.",
+    "wc_matches_2026 detailed pairings beyond those on the FIFA suites page (Scotland v Brazil 24 Jun confirmed by Yahoo Sports; full four-group-game slate not all individually enumerated in cited sources)."
+  ],
+  "confidence": "high on identity, location, tenants, opening year, architect, capacities (regular 64,767 and FIFA WC2026 64,478, independently sourced and not conflated), Super Bowls, and football events (2024 Copa America Final, 2025 Club World Cup opener verified); medium on WC2026 renovation specifics (no dedicated cost figure) and the contested 2016 renovation cost",
+  "_as_of": "2026-06-23"
+}

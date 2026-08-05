@@ -1,0 +1,215 @@
+{
+  "venue_id": "boston",
+  "stadium_current": "Gillette Stadium",
+  "stadium_historic": "CMGI Field",
+  "fifa_name": "Boston Stadium",
+  "city": "Foxborough",
+  "country": "United States",
+  "opened": 2002,
+  "primary_tenant": "New England Patriots (NFL); New England Revolution (MLS)",
+  "architect": "HOK Sport (now Populous)",
+  "capacity_regular": 64628,
+  "capacity_regular_source": {
+    "title": "Gillette Stadium - Wikipedia (oldid 1360794413), infobox capacity 'American football: 64,628 (2023-present)'",
+    "url": "https://en.wikipedia.org/w/index.php?title=Gillette_Stadium&oldid=1360794413"
+  },
+  "capacity_wc2026": 64146,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (FIFA official, 10 June 2026) - Boston Stadium 64,146",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass (ryegrass / Kentucky bluegrass sod) — artificial FieldTurf CORE torn out and converted to grass for the World Cup",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 7,
+  "renovation_cost_2026": "NOT SPECIFIED IN SOURCES (no cost figure for the WC2026-specific grass/seating work was published in cited sources; a separate $250M stadium renovation completed in fall 2023 predates and is unrelated to FIFA requirements)",
+  "iconic_games": [
+    {
+      "date": "2002-10-20",
+      "match": "New England Revolution 0-1 LA Galaxy",
+      "event": "2002 MLS Cup Final",
+      "score": "0-1 (a.e.t., golden goal)",
+      "note": "Carlos Ruiz scored the golden-goal winner; attendance 61,316. Source does not pin the exact day-level date.",
+      "source": {
+        "title": "Five of the biggest football matches ever staged at Gillette Stadium - Football Ground Guide",
+        "url": "https://footballgroundguide.com/news/gillette-stadium-biggest-football-matches.html"
+      }
+    },
+    {
+      "date": "2003-10-01",
+      "match": "United States 1-0 Norway",
+      "event": "2003 FIFA Women's World Cup, Quarter-final",
+      "score": "1-0",
+      "note": "Abby Wambach scored in the 24th minute; Gillette hosted four matches of the 2003 Women's World Cup. Exact day-level date approximate within the tournament window.",
+      "source": {
+        "title": "Five of the biggest football matches ever staged at Gillette Stadium - Football Ground Guide",
+        "url": "https://footballgroundguide.com/news/gillette-stadium-biggest-football-matches.html"
+      }
+    },
+    {
+      "date": "2016-06-18",
+      "match": "Argentina 4-1 Venezuela",
+      "event": "Copa America Centenario, Quarter-final",
+      "score": "4-1",
+      "note": "Lionel Messi inspired Argentina before 59,000+; Gillette hosted three Copa America Centenario matches. Exact day-level date approximate within the tournament window.",
+      "source": {
+        "title": "Gillette Stadium to Host Matches in Copa America Centenario - New England Revolution",
+        "url": "https://www.revolutionsoccer.net/news/gillette-stadium-host-matches-copa-america-centenario"
+      }
+    },
+    {
+      "date": "2024-04-27",
+      "match": "New England Revolution 1-4 Inter Miami",
+      "event": "MLS regular season",
+      "score": "1-4",
+      "note": "Lionel Messi scored twice; attendance 65,612 — described by the cited Football Ground Guide source as the stadium's all-time soccer attendance record AT TIME OF WRITING. NOTE: the 26 March 2026 France-Brazil crowd of 66,215 post-dates and exceeds this, so the 'all-time record' characterization is the source's, not an independently-verified current fact.",
+      "source": {
+        "title": "Five of the biggest football matches ever staged at Gillette Stadium - Football Ground Guide",
+        "url": "https://footballgroundguide.com/news/gillette-stadium-biggest-football-matches.html"
+      }
+    },
+    {
+      "date": "2026-03-26",
+      "match": "France 2-1 Brazil",
+      "event": "International friendly (World Cup tune-up)",
+      "score": "2-1",
+      "note": "Kylian Mbappe scored as France beat Brazil before 66,215. ESPN lists the fixture as Brazil 1-2 France (same result, France won; Mbappe 32', Ekitike 65', Bremer 78'). The 'second-largest soccer crowd in stadium history' claim was REMOVED: it is unsupported by any cited source and contradicted the 65,612 'all-time record' claim above (66,215 > 65,612).",
+      "source": {
+        "title": "Brazil 1-2 France (Mar 26, 2026) Game Analysis - ESPN",
+        "url": "https://www.espn.com/soccer/report/_/gameId/762452"
+      }
+    }
+  ],
+  "iconic_games_note": "Gillette Stadium has a genuine football (soccer) history beyond the NFL, so iconic_games is populated rather than empty. It is the home of the New England Revolution (MLS); the predecessor Foxboro Stadium hosted 1994 FIFA World Cup and 1999 Women's World Cup matches. Gillette has staged the 2003 FIFA Women's World Cup (4 matches), Copa America Centenario 2016 (3 matches), multiple CONCACAF Gold Cups, MLS Cup finals, and high-profile friendlies. Non-football note: nationally best known as an NFL stadium (six Patriots Super Bowl championship banners hang inside) but has hosted no Super Bowl. CAUTION on superlatives: the two cited attendance figures conflict in ranking — 65,612 (Inter Miami, 2024) is called the all-time record by Football Ground Guide, but the later 66,215 (France-Brazil, Mar 2026) exceeds it; neither ranking is independently confirmed and 'second-largest' was struck. Day-level dates for the 2003 WWC QF and 2016 Copa QF are approximate within the cited tournament windows.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Artificial FieldTurf CORE torn out and replaced with natural grass (ryegrass / Kentucky bluegrass blend) to meet FIFA's grass-surface requirement. Crews removed the turf and gravel beginning the day after the Patriots' 2025 NFL season ended, rebuilt the base with sand and porous ceramic, then laid sod (sourced from a New Jersey farm). Original early-2000s irrigation, heating and drainage systems beneath the field were found intact and reused.",
+      "value": "Natural grass, cut to nine-tenths of an inch",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Gillette Stadium - or Boston Stadium - underwent major changes ahead of FIFA World Cup. - Boston.com (11 June 2026)",
+        "url": "https://www.boston.com/sports/world-cup/2026/06/11/gillette-stadium-boston-nfl-football-world-cup-soccer-grass-field/"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Temporary removal of corner seats (committed in Gillette's World Cup bid) to accommodate FIFA's wider pitch, reducing capacity from the regular 64,628 to the FIFA-confirmed World Cup configuration of 64,146.",
+      "value": "64,146 (WC config)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+        "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+      }
+    },
+    {
+      "category": "facade",
+      "change": "Concealment of non-World-Cup sponsor branding: Gillette branding tarped over, blotted out or removed throughout the venue under FIFA's 'clean stadium' policy; venue operates as 'Boston Stadium' for the tournament. Tom Brady statue and the Patriots' six championship banners remain.",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Gillette Stadium - or Boston Stadium - underwent major changes ahead of FIFA World Cup. - Boston.com (11 June 2026)",
+        "url": "https://www.boston.com/sports/world-cup/2026/06/11/gillette-stadium-boston-nfl-football-world-cup-soccer-grass-field/"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "Settled 1704; incorporated as a town 1778",
+    "significance": "Foxborough, Massachusetts is a town in the Greater Boston metropolitan area, roughly 22 miles (35 km) southwest of downtown Boston and about 18 miles (29 km) northeast of Providence, Rhode Island. It was named for Charles James Fox, a British Whig MP who supported the American colonies. It is best known today as the home of Gillette Stadium, the sports and entertainment complex (with the adjacent Patriot Place) owned by the Kraft Group.",
+    "football_culture": "Football culture hangs on the Greater Boston metro rather than the small town of Foxborough. Boston is a deep American sports market; the New England Patriots (NFL) and New England Revolution (MLS) both play at Gillette Stadium, and the Revolution were one of MLS's ten charter clubs, founded by Robert Kraft in 1996 and named for the region's role in the American Revolution. The region also carries deep soccer roots: Boston's Oneida Football Club (1862) is cited as the first organized football/soccer club in the United States. The predecessor, Foxboro Stadium, hosted matches at the 1994 FIFA World Cup and the 1999 Women's World Cup; Gillette has since staged the 2003 Women's World Cup, Copa America Centenario 2016, and multiple Gold Cups.",
+    "sources": [
+      {
+        "title": "Foxborough, Massachusetts - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Foxborough,_Massachusetts"
+      },
+      {
+        "title": "New England Revolution - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/New_England_Revolution"
+      },
+      {
+        "title": "Gillette Stadium - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Gillette_Stadium"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Broke ground 24 March 2000; opened 11 May 2002. Privately financed by Robert Kraft at a cost of $325 million.",
+    "Opened as CMGI Field (11 May - 4 August 2002) before being renamed Gillette Stadium under a naming-rights deal; the FIFA neutral name for 2026 is 'Boston Stadium'.",
+    "Designed by HOK Sport (now Populous). Owned and operated by the Kraft Group.",
+    "Replaced the adjacent Foxboro Stadium (1971-2002), which hosted 1994 FIFA World Cup and 1999 FIFA Women's World Cup matches.",
+    "Home of the New England Patriots (NFL) and the New England Revolution (MLS) since 2002.",
+    "Playing surface was natural grass 2002-2006, then FieldTurf CORE artificial turf from 2006; converted back to natural grass for the 2026 World Cup (per Boston.com; the pinned Wikipedia oldid still lists FieldTurf CORE 2006-present).",
+    "Regular American-football capacity has changed over time: 68,756 (2002-2014), 65,878 (2015-2023), 64,628 (2023-present).",
+    "A separate $250 million renovation completed in fall 2023 added the 22-story Gillette Stadium Lighthouse tower with a 360-degree observation deck and a large curved outdoor video board.",
+    "Will host seven 2026 World Cup matches: five group-stage, one Round of 32, and one quarter-final (the first quarter-final, 9 July 2026)."
+  ],
+  "sources": [
+    {
+      "title": "Gillette Stadium - Wikipedia (pinned oldid 1360794413)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Gillette_Stadium&oldid=1360794413"
+    },
+    {
+      "title": "FIFA - final stadium capacities confirmed (official, 10 June 2026) - Boston Stadium 64,146",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "World Cup 2026: Boston Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/gillette_stadium"
+    },
+    {
+      "title": "Gillette Stadium - StadiumDB.com (regular capacity 65,878, 2015-2023 figure)",
+      "url": "https://stadiumdb.com/stadiums/usa/gillette_stadium"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "Gillette Stadium underwent major changes ahead of FIFA World Cup - Boston.com (11 June 2026)",
+      "url": "https://www.boston.com/sports/world-cup/2026/06/11/gillette-stadium-boston-nfl-football-world-cup-soccer-grass-field/"
+    },
+    {
+      "title": "Five of the biggest football matches ever staged at Gillette Stadium - Football Ground Guide",
+      "url": "https://footballgroundguide.com/news/gillette-stadium-biggest-football-matches.html"
+    },
+    {
+      "title": "Gillette Stadium to Host Matches in Copa America Centenario - New England Revolution",
+      "url": "https://www.revolutionsoccer.net/news/gillette-stadium-host-matches-copa-america-centenario"
+    },
+    {
+      "title": "Brazil 1-2 France (Mar 26, 2026) Game Analysis - ESPN",
+      "url": "https://www.espn.com/soccer/report/_/gameId/762452"
+    },
+    {
+      "title": "Kylian Mbappe, France put on a show at Gillette Stadium World Cup preview - The Boston Globe (26 Mar 2026)",
+      "url": "https://www.bostonglobe.com/2026/03/26/sports/brazil-france-friendly-gillette-stadium/"
+    },
+    {
+      "title": "Boston to host seven matches - FIFA official",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/boston-host-seven-matches-stadium"
+    },
+    {
+      "title": "Boston hosts seven 2026 World Cup games at Gillette Stadium - CBS Boston",
+      "url": "https://www.cbsnews.com/boston/news/world-cup-schedule-2026-boston-gillette-stadium-foxboro/"
+    },
+    {
+      "title": "Foxborough, Massachusetts - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Foxborough,_Massachusetts"
+    },
+    {
+      "title": "New England Revolution - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/New_England_Revolution"
+    }
+  ],
+  "gaps": [
+    "ATTENDANCE RANKING CONFLICT: The two cited soccer-attendance superlatives are mutually inconsistent. Football Ground Guide calls the 2024 Inter Miami crowd (65,612) the stadium's all-time soccer attendance record, but the later 26 Mar 2026 France-Brazil crowd (66,215) exceeds it. No cited source ranks the France crowd as 'second-largest' (that unsupported clause was struck). Neither the 'all-time record' nor any 'Nth-largest' ranking is independently confirmed; only the raw figures (65,612 and 66,215) are sourced.",
+    "renovation_cost_2026: NOT SPECIFIED IN SOURCES — no published cost figure for the WC2026-specific grass conversion and corner-seat removal. (The unrelated $250M fall-2023 renovation is documented but predates FIFA requirements.)",
+    "capacity_regular: 64,628 (2023-present) is the value in the shipped Wikipedia infobox (oldid 1360794413); StadiumDB's 65,878 is the stale 2015-2023 figure that Wikipedia supersedes. Shipped 64,628 as current; this is a stale-vs-current resolution rather than a live disagreement.",
+    "Exact day-level dates for the 2003 Women's World Cup quarter-final (early October) and the 2016 Copa America Centenario quarter-final are approximate within the cited tournament windows; not pinned to a single authoritative match-date source.",
+    "WC2026 group-stage participating teams cited in secondary press (Haiti, Scotland, Norway, Morocco, England, Ghana, France) are not individually confirmed per-fixture in the cited authoritative sources and are omitted from the structured fields.",
+    "Precise total square footage of grass installed and number of corner seats removed: NOT SPECIFIED IN SOURCES."
+  ],
+  "confidence": "High on core identity, FIFA WC2026 capacity (64,146, FIFA-confirmed 10 June 2026), regular capacity (64,628, current Wikipedia infobox), match allocation (7: 5 group + 1 R32 + 1 QF on 9 July 2026), opened/architect/cost/tenants (Wikipedia oldid verified), and grass conversion (Boston.com/ESPN). Iconic-games scores/dates/teams/competitions all individually source-verified. The ONLY correction is striking the unsupported 'second-largest soccer crowd' superlative on the France-Brazil match, which contradicted the 65,612 'all-time record' claim — both attendance rankings are now flagged as unverified in gaps. Low/None on WC2026 renovation cost (unpublished — null and flagged).",
+  "_as_of": "2026-06-23"
+}

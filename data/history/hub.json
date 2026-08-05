@@ -1,0 +1,19 @@
+{
+  "title": "History of the FIFA World Cup",
+  "prose": "The FIFA World Cup began in 1930, when Uruguay hosted and won the inaugural tournament, defeating neighbouring Argentina 4–2 in the final at Montevideo to become football's first world champions. That first edition gathered just thirteen teams, several of them invited, and the long transatlantic voyage kept many European sides at home. From those modest origins the competition grew into the most widely watched sporting event on earth, contested every four years apart from a gap in 1942 and 1946 owing to the Second World War.\n\nThe tournament's format evolved across distinct eras. Through much of the twentieth century the finals settled into a sixteen-team structure, the standard from 1934 onward and used consistently from 1954 until 1978. As the global game spread, the field expanded: to twenty-four teams in 1982, then to thirty-two in 1998, a size that endured for seven editions. The 2026 edition, co-hosted by Canada, Mexico and the United States, expands the finals to forty-eight teams — the largest in the competition's history and the first hosted by three nations together.\n\nHosting has rotated across continents, reflecting football's deepening reach. The early World Cups alternated between South America and Europe, the two heartlands of the sport. The tournament reached new ground in the twenty-first century, with the 2002 finals co-hosted by South Korea and Japan as the first held in Asia, and the 2010 finals in South Africa as the first staged on the African continent. Mexico, which hosted in 1970 and 1986, becomes the first country to host or co-host the men's finals three times in 2026.\n\nA handful of powerhouse nations have defined the competition's honours. Brazil leads with five titles, the only side to have appeared at every finals. Germany and Italy have each lifted the trophy four times, and Argentina three, most recently as champions in 2022. France and Uruguay have won twice apiece, while England and Spain have each claimed a single title. In all, eight nations have been crowned world champions across the tournament's history — a concentration that underscores how demanding the path to the title has remained even as the field has widened.\n\nBeyond the results, the World Cup occupies a singular place in global culture. It draws audiences in the billions, briefly aligns the calendars of nations across every continent, and turns individual matches into shared reference points that outlast the tournaments themselves. For many countries the finals are a rare stage on which a small footballing nation can stand level with the established giants, and for the host cities they bring a month-long convergence of supporters from around the world. Nearly a century after Montevideo, the World Cup remains both a sporting championship and a recurring moment of collective global attention.",
+  "sources": [
+    {
+      "title": "FIFA World Cup — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/FIFA_World_Cup"
+    },
+    {
+      "title": "1930 FIFA World Cup — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/1930_FIFA_World_Cup"
+    },
+    {
+      "title": "2026 FIFA World Cup — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup"
+    }
+  ],
+  "model": "opus (history)"
+}

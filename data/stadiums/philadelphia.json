@@ -1,0 +1,37 @@
+{
+  "venue_id": "philadelphia",
+  "title": "Lincoln Financial Field",
+  "prose": "Lincoln Financial Field opened in August 2003 as a purpose-built football venue, replacing Veterans Stadium in the city's South Philadelphia sports-complex district at 1020 Pattison Avenue. It was built at an original construction cost of US$512 million and designed by NBBJ with Agoos Lovera Architects, with structural engineering by Ove Arup & Partners.\n\nFrom its opening it has served as the home of the Philadelphia Eagles in the NFL and the Temple Owls in NCAA football, while also hosting soccer fixtures. The dual role as a gridiron home and an occasional football ground has shaped the venue's identity across more than two decades, anchoring it as one of the marquee stadiums of its city.\n\nA defining chapter in the stadium's story is its sustainability programme. A 2013 renovation, costing roughly US$125 million, added about 11,000 solar panels and 14 wind turbines, together generating around a third — 30% — of the stadium's energy. That installation made the venue a notable example of large-scale on-site renewable power among major American stadiums.\n\nThe ground also carries a substantial international football record, having staged Copa America Centenario group matches and the 2015 CONCACAF Gold Cup final, in which Mexico beat Jamaica 3-1 on July 26, 2015. For the 2026 World Cup the venue is renamed Philadelphia Stadium and hosts six matches, including a Round of 16 tie on July 4 — a tournament chapter that places a stadium first conceived for the gridiron at the centre of the global game, with a confirmed World Cup configuration capacity of 68,324.",
+  "sources": [
+    {
+      "title": "Lincoln Financial Field - Wikipedia (oldid 1360689298)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Lincoln_Financial_Field&oldid=1360689298"
+    },
+    {
+      "title": "FIFA World Cup 26 Philadelphia: Your Complete Guide - Visit Philadelphia",
+      "url": "https://www.visitphilly.com/things-to-do/events/world-cup/"
+    },
+    {
+      "title": "World Cup 2026: Philadelphia Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/lincoln_financial_field"
+    },
+    {
+      "title": "Lincoln Financial Field - StadiumDB.com",
+      "url": "https://stadiumdb.com/stadiums/usa/lincoln_financial_field"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Inside Lincoln Financial Field's transformation into 'Philadelphia Stadium' for the World Cup - Philadelphia Inquirer",
+      "url": "https://www.inquirer.com/soccer/world-cup-philadelphia-stadium-lincoln-financial-field-20260513.html"
+    },
+    {
+      "title": "2015 CONCACAF Gold Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2015_CONCACAF_Gold_Cup_final"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

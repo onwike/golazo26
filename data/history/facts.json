@@ -1,0 +1,225 @@
+{
+  "_note": "Structured facts for the History Hub timeline + edition facts-rail. Every field is extracted verbatim from the certified prose in data/history/<year>.json; provenance for each row is that edition's own `sources` array. null = not stated in the certified prose (renders as '—', never guessed). No field here may be filled from memory.",
+  "editions": [
+    {
+      "year": 1930,
+      "host": "Uruguay",
+      "champion": "Uruguay",
+      "runner_up": "Argentina",
+      "third": "United States",
+      "final_score": "4-2",
+      "top_scorer": "Guillermo Stábile (8)",
+      "best_player": null
+    },
+    {
+      "year": 1934,
+      "host": "Italy",
+      "champion": "Italy",
+      "runner_up": "Czechoslovakia",
+      "third": "Germany",
+      "final_score": "2-1 (After Extra Time)",
+      "top_scorer": "Oldřich Nejedlý (5)",
+      "best_player": null
+    },
+    {
+      "year": 1938,
+      "host": "France",
+      "champion": "Italy",
+      "runner_up": "Hungary",
+      "third": "Brazil",
+      "final_score": "4-2",
+      "top_scorer": "Leônidas (7)",
+      "best_player": null
+    },
+    {
+      "year": 1950,
+      "host": "Brazil",
+      "champion": "Uruguay",
+      "runner_up": "Brazil",
+      "third": "Sweden",
+      "final_score": "2-1 (deciding match)",
+      "top_scorer": "Ademir (9)",
+      "best_player": null
+    },
+    {
+      "year": 1954,
+      "host": "Switzerland",
+      "champion": "West Germany",
+      "runner_up": "Hungary",
+      "third": "Austria",
+      "final_score": "3-2",
+      "top_scorer": "Sándor Kocsis (11)",
+      "best_player": null
+    },
+    {
+      "year": 1958,
+      "host": "Sweden",
+      "champion": "Brazil",
+      "runner_up": "Sweden",
+      "third": "France",
+      "final_score": "5-2",
+      "top_scorer": "Just Fontaine (13)",
+      "best_player": null
+    },
+    {
+      "year": 1962,
+      "host": "Chile",
+      "champion": "Brazil",
+      "runner_up": "Czechoslovakia",
+      "third": "Chile",
+      "final_score": "3-1",
+      "top_scorer": "Garrincha, Vavá, Leonel Sánchez, Flórián Albert, Valentin Ivanov, Dražan Jerković (4 each)",
+      "best_player": null
+    },
+    {
+      "year": 1966,
+      "host": "England",
+      "champion": "England",
+      "runner_up": "West Germany",
+      "third": "Portugal",
+      "final_score": "4-2 (After Extra Time)",
+      "top_scorer": "Eusébio (9)",
+      "best_player": null
+    },
+    {
+      "year": 1970,
+      "host": "Mexico",
+      "champion": "Brazil",
+      "runner_up": "Italy",
+      "third": "West Germany",
+      "final_score": "4-1",
+      "top_scorer": "Gerd Müller (10)",
+      "best_player": null
+    },
+    {
+      "year": 1974,
+      "host": "West Germany",
+      "champion": "West Germany",
+      "runner_up": "Netherlands",
+      "third": "Poland",
+      "final_score": "2-1",
+      "top_scorer": "Grzegorz Lato (7)",
+      "best_player": null
+    },
+    {
+      "year": 1978,
+      "host": "Argentina",
+      "champion": "Argentina",
+      "runner_up": "Netherlands",
+      "third": "Brazil",
+      "final_score": "3-1 (After Extra Time)",
+      "top_scorer": "Mario Kempes (6)",
+      "best_player": null
+    },
+    {
+      "year": 1982,
+      "host": "Spain",
+      "champion": "Italy",
+      "runner_up": "West Germany",
+      "third": "Poland",
+      "final_score": "3-1",
+      "top_scorer": "Paolo Rossi (6)",
+      "best_player": "Paolo Rossi"
+    },
+    {
+      "year": 1986,
+      "host": "Mexico",
+      "champion": "Argentina",
+      "runner_up": "West Germany",
+      "third": "France",
+      "final_score": "3-2",
+      "top_scorer": "Gary Lineker (6)",
+      "best_player": "Diego Maradona"
+    },
+    {
+      "year": 1990,
+      "host": "Italy",
+      "champion": "West Germany",
+      "runner_up": "Argentina",
+      "third": "Italy",
+      "final_score": "1-0",
+      "top_scorer": "Salvatore Schillaci (6)",
+      "best_player": "Salvatore Schillaci"
+    },
+    {
+      "year": 1994,
+      "host": "United States",
+      "champion": "Brazil",
+      "runner_up": "Italy",
+      "third": "Sweden",
+      "final_score": "0-0 (3-2 pens)",
+      "top_scorer": "Oleg Salenko & Hristo Stoichkov (6)",
+      "best_player": "Romário"
+    },
+    {
+      "year": 1998,
+      "host": "France",
+      "champion": "France",
+      "runner_up": "Brazil",
+      "third": "Croatia",
+      "final_score": "3-0",
+      "top_scorer": "Davor Šuker (6)",
+      "best_player": "Ronaldo"
+    },
+    {
+      "year": 2002,
+      "host": "South Korea and Japan",
+      "champion": "Brazil",
+      "runner_up": "Germany",
+      "third": "Turkey",
+      "final_score": "2-0",
+      "top_scorer": "Ronaldo (8)",
+      "best_player": "Oliver Kahn"
+    },
+    {
+      "year": 2006,
+      "host": "Germany",
+      "champion": "Italy",
+      "runner_up": "France",
+      "third": "Germany",
+      "final_score": "1-1 (5-3 pens)",
+      "top_scorer": "Miroslav Klose (5)",
+      "best_player": "Zinedine Zidane"
+    },
+    {
+      "year": 2010,
+      "host": "South Africa",
+      "champion": "Spain",
+      "runner_up": "Netherlands",
+      "third": "Germany",
+      "final_score": "1-0 (After Extra Time)",
+      "top_scorer": "Thomas Müller (5)",
+      "best_player": "Diego Forlán"
+    },
+    {
+      "year": 2014,
+      "host": "Brazil",
+      "champion": "Germany",
+      "runner_up": "Argentina",
+      "third": "Netherlands",
+      "final_score": "1-0 (After Extra Time)",
+      "top_scorer": "James Rodríguez (6)",
+      "best_player": "Lionel Messi"
+    },
+    {
+      "year": 2018,
+      "host": "Russia",
+      "champion": "France",
+      "runner_up": "Croatia",
+      "third": "Belgium",
+      "final_score": "4-2",
+      "top_scorer": "Harry Kane (6)",
+      "best_player": "Luka Modrić"
+    },
+    {
+      "year": 2022,
+      "host": "Qatar",
+      "champion": "Argentina",
+      "runner_up": "France",
+      "third": "Croatia",
+      "final_score": "3-3 (4-2 pens)",
+      "top_scorer": "Kylian Mbappé (8)",
+      "best_player": "Lionel Messi"
+    }
+  ]
+}

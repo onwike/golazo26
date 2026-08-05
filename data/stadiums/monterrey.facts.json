@@ -1,0 +1,188 @@
+{
+  "venue_id": "monterrey",
+  "stadium_current": "Estadio BBVA",
+  "stadium_historic": null,
+  "fifa_name": "Monterrey Stadium (Estadio Monterrey)",
+  "city": "Monterrey (Guadalupe)",
+  "country": "Mexico",
+  "opened": 2015,
+  "primary_tenant": "C.F. Monterrey (Rayados)",
+  "architect": "Populous with VFO (Federico Velasco, lead designer)",
+  "capacity_regular": 53529,
+  "capacity_regular_source": {
+    "title": "Estadio BBVA — Wikipedia (rev. 1360440989, 21 June 2026)",
+    "url": "https://en.wikipedia.org/w/index.php?title=Estadio_BBVA&oldid=1360440989"
+  },
+  "capacity_wc2026": 51243,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (FIFA, 10 June 2026) — Monterrey Stadium: 51,243",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass (hybrid; aggregator sources describe a GrassMaster-type system with under-turf ventilation — exact natural/synthetic split and drainage mechanism NOT SPECIFIED IN AUTHORITATIVE SOURCES)",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 4,
+  "renovation_cost_2026": null,
+  "iconic_games": [
+    {
+      "date": "2015-08-02",
+      "match": "Monterrey vs Benfica",
+      "score": "3-0",
+      "event": "Eusébio Cup (inaugural match of the stadium)",
+      "note": "Opening match; stadium inaugurated on this date, coinciding with C.F. Monterrey's 70th anniversary.",
+      "source": {
+        "title": "Estadio BBVA — Wikipedia (rev. 1360440989)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_BBVA&oldid=1360440989"
+      }
+    },
+    {
+      "date": "2019-05-01",
+      "match": "Monterrey vs Tigres UANL",
+      "score": "1-1 (Monterrey won 2-1 on aggregate)",
+      "event": "2019 CONCACAF Champions League final, second leg",
+      "note": "Verified: 2nd leg at Estadio BBVA, att. 52,229; Monterrey won 2-1 agg (1st leg 1-0 at Estadio Universitario, 23 Apr 2019). Monterrey's fourth CONCACAF Champions League title; an all-Monterrey 'Clásico Regiomontano' final.",
+      "source": {
+        "title": "2019 CONCACAF Champions League final — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2019_CONCACAF_Champions_League_final"
+      }
+    },
+    {
+      "date": "2021-10-28",
+      "match": "Monterrey vs Club América",
+      "score": "1-0",
+      "event": "2021 CONCACAF Champions League final (single match)",
+      "note": "Verified: goal by Rogelio Funes Mori (9'), att. 40,170, ref Fernando Hernández; Monterrey's fifth CONCACAF Champions League title.",
+      "source": {
+        "title": "2021 CONCACAF Champions League final — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2021_CONCACAF_Champions_League_final"
+      }
+    }
+  ],
+  "iconic_games_note": "Estadio BBVA is a modern (2015) club ground with a substantial football history as the home of C.F. Monterrey: it hosted the second leg of the 2019 CONCACAF Champions League final and the 2021 CONCACAF Champions League final (both Monterrey titles). It also HOSTED — but Monterrey did not win — the 2016 Clausura final (won by Pachuca 2-1 on aggregate; 2nd leg at Estadio BBVA 1-1, att. 50,302) and the 2019 Apertura final vs América (which drew a near-capacity crowd, ~52,929 expected/reported). The 2026 World Cup will be the venue's first men's World Cup matches.",
+  "renovations": [
+    {
+      "category": "tech",
+      "change": "Installed a Musco Lighting LED sports-lighting system upgrading the stadium to FIFA Lighting Standard A, with dimming/colour-changing capability and a stated >40% reduction in energy consumption.",
+      "value": "FIFA Lighting Standard A; >40% energy reduction",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Estadio Monterrey — StadiumDB.com (LED lighting confirmed verbatim on page)",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_bbva_bancomer"
+      }
+    },
+    {
+      "category": "pitch",
+      "change": "Tournament playing surface reported as a hybrid natural-grass pitch (GrassMaster-type: natural grass stitched with synthetic fibres) with under-turf ventilation, sized for the wider FIFA pitch. NOTE: corroborated only by venue-guide aggregators, NOT by a FIFA/primary source; the StadiumDB tournament page (originally cited) does NOT mention the pitch.",
+      "value": "Hybrid natural grass pitch (aggregator-level)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Estadio BBVA, Monterrey: World Cup 2026 Guide — meetstadium.com",
+        "url": "https://meetstadium.com/stadiums/estadio-bbva/"
+      }
+    },
+    {
+      "category": "other",
+      "change": "General pre-tournament upgrades to meet FIFA requirements: per StadiumDB, FIFA states changes 'could include' pitch surface, seating improvements, improved accessibility, and updates to stadium technology and security systems. Operates near full capacity with only minor seating adjustments for the wider FIFA pitch.",
+      "value": "NOT SPECIFIED IN SOURCES (itemised scope/cost; FIFA language is 'could include', not confirmed completed)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Estadio Monterrey — StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_bbva_bancomer"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "1596 (founded 20 September 1596 by Diego de Montemayor as 'Ciudad Metropolitana de Nuestra Señora de Monterrey')",
+    "significance": "Capital and largest city of the state of Nuevo León in northeastern Mexico, at the foothills of the Sierra Madre Oriental. It anchors Mexico's second-largest metropolitan area (Monterrey metro pop. ~5.3 million as of 2026; city proper 1,142,194 per the 2020 census) and is the country's leading industrial and business hub — steel, cement, glass, auto parts and brewing — often described as among the wealthiest cities in Latin America. Nicknamed 'La Sultana del Norte'. The Cerro de la Silla ('Saddle Mountain', ~1,820 m) is its defining landmark and is visible from inside Estadio BBVA, whose jagged roofline echoes the mountain's profile.",
+    "football_culture": "Monterrey is one of Mexico's most intense football cities, defined by the Clásico Regiomontano derby between C.F. Monterrey (Rayados), who play at Estadio BBVA, and Tigres UANL. Rayados are one of Liga MX's most successful and best-supported clubs and are CONCACAF's most decorated Champions League/Champions Cup side, giving the metro a deep top-flight pedigree even though Estadio BBVA itself only opened in 2015.",
+    "sources": [
+      {
+        "title": "Monterrey — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Monterrey"
+      },
+      {
+        "title": "Monterrey | History, Map, Economy, Population, & Facts — Britannica",
+        "url": "https://www.britannica.com/place/Monterrey-Mexico"
+      },
+      {
+        "title": "Estadio BBVA — Wikipedia (rev. 1360440989)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_BBVA&oldid=1360440989"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Inaugurated on 2 August 2015 (verified vs cited Wikipedia rev.), coinciding with C.F. Monterrey's 70th anniversary; opening match Monterrey 3-0 Benfica (Eusébio Cup).",
+    "Construction ran 2011–2015 at a cost of US$200 million (verified vs cited Wikipedia rev.), making it the most expensive stadium in Mexico at the time.",
+    "Designed by Populous together with Mexican firm VFO (lead designer Federico Velasco) — verified.",
+    "Owned and operated by FEMSA (verified); home of C.F. Monterrey (Rayados), who moved from the 63-year-old Estadio Tecnológico.",
+    "First football stadium in North America to earn LEED Silver certification (verified vs cited Wikipedia rev.).",
+    "Nicknamed 'El Gigante de Acero' (The Steel Giant) — verified; grandstand inclination of 34 degrees with field-to-seat distance at the FIFA minimum, and the Cerro de la Silla mountain framed by the open northern end.",
+    "Hosted the 2019 (second leg) and 2021 CONCACAF Champions League finals, both won by Monterrey (verified vs the two CCL-final Wikipedia articles).",
+    "Regular configuration ~53,500 seats: roughly 43,000 general, ~5,000 club seats, and 324 luxury suites (per Goal.com); Wikipedia rev. gives precise 53,529."
+  ],
+  "sources": [
+    {
+      "title": "Estadio BBVA — Wikipedia (pinned rev. 1360440989, 21 June 2026)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_BBVA&oldid=1360440989"
+    },
+    {
+      "title": "FIFA — Final stadium capacities confirmed (10 June 2026): Monterrey Stadium 51,243",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "FIFA World Cup 2026 — Monterrey Stadium venue page (Guadalupe, Mexico; four matches incl. Round of 32)",
+      "url": "https://fifaworldcup26.suites.fifa.com/venues/monterrey-stadium/"
+    },
+    {
+      "title": "FIFA — Monterrey to host four matches",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/monterrey-host-four-matches-stadium-estadio"
+    },
+    {
+      "title": "World Cup 2026: Estadio Monterrey — StadiumDB.com (LED lighting + FIFA 'could include' upgrades)",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_bbva_bancomer"
+    },
+    {
+      "title": "Estadio BBVA (Estadio de Futbol de Monterrey) — StadiumDB.com",
+      "url": "https://stadiumdb.com/stadiums/mex/estadio_bbva_bancomer"
+    },
+    {
+      "title": "Estadio BBVA, Monterrey: World Cup 2026 Guide — meetstadium.com (hybrid pitch corroboration)",
+      "url": "https://meetstadium.com/stadiums/estadio-bbva/"
+    },
+    {
+      "title": "2019 CONCACAF Champions League final — Wikipedia (verified)",
+      "url": "https://en.wikipedia.org/wiki/2019_CONCACAF_Champions_League_final"
+    },
+    {
+      "title": "2021 CONCACAF Champions League final — Wikipedia (verified)",
+      "url": "https://en.wikipedia.org/wiki/2021_CONCACAF_Champions_League_final"
+    },
+    {
+      "title": "Monterrey — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Monterrey"
+    },
+    {
+      "title": "Monterrey | History, Map, Economy, Population, & Facts — Britannica",
+      "url": "https://www.britannica.com/place/Monterrey-Mexico"
+    },
+    {
+      "title": "World Cup 2026 Monterrey Tickets Guide: Estadio BBVA schedule & history — Goal.com",
+      "url": "https://www.goal.com/en-us/lists/estadio-bbva-stadium-guide-history-stay/blt97d127638d6fc159"
+    },
+    {
+      "title": "Estadio BBVA capacity expansion to 53,500 — WorldCupRadar",
+      "url": "https://worldcupradar.com/stadiums/estadio-bbva-stadium-capacity-location/"
+    }
+  ],
+  "gaps": [
+    "renovation_cost_2026: NOT SPECIFIED IN SOURCES — no authoritative figure found for the value of Estadio BBVA's WC2026 upgrades.",
+    "Exact itemised scope of 2026 renovations beyond the Musco LED lighting (the only renovation verbatim-confirmed on its cited StadiumDB page) is NOT SPECIFIED IN SOURCES; FIFA's generic seating/accessibility/tech upgrades are framed as 'could include', not confirmed completed.",
+    "field_type_2026 / pitch: the hybrid-grass spec (95% natural + synthetic fibre, GrassMaster, underground ventilation/vacuum drainage) is corroborated ONLY by venue-guide aggregators (e.g. meetstadium.com), NOT by FIFA or a primary source; the originally-cited StadiumDB tournament page does NOT contain it, and the FIFAWorldCupNews page is HTTP 403 / unverifiable. Exact split and drainage mechanism = NOT SPECIFIED IN AUTHORITATIVE SOURCES.",
+    "capacity_regular: minor source discrepancy — Wikipedia gives 53,529 while several secondary sources round to 53,500 (and one Spanish source cites 51,348 for the WC config vs FIFA's 51,243); the precise 53,529 figure is pinned only to Wikipedia.",
+    "Exact WC2026 match dates/kickoff times vary across aggregators; only the count (3 group + 1 R32 = 4) is firmly sourced.",
+    "The gross-to-net capacity drop (53,529 regular → 51,243 WC) mechanism is NOT SPECIFIED IN SOURCES; described only as 'minor seating adjustments' for the wider FIFA pitch."
+  ],
+  "confidence": "High on identity, ownership, opening (2015), $200M cost, architects, tenant, FIFA-confirmed WC2026 capacity (51,243, properly separated from regular 53,529), neutral FIFA name (Estadio Monterrey / Monterrey Stadium), 4 matches incl. Round of 32, both iconic CONCACAF finals (independently verified), and the Musco LED lighting renovation. Medium on exact regular capacity (53,500–53,529 spread). Low/aggregator-only on the hybrid pitch spec (mis-sourced in original sheet; re-pointed and downgraded). Unsourced on WC2026 renovation cost (null) and exact fixture dates/times.",
+  "_as_of": "2026-06-23"
+}

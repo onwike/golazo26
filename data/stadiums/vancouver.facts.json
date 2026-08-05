@@ -1,0 +1,191 @@
+{
+  "venue_id": "vancouver",
+  "stadium_current": "BC Place",
+  "stadium_historic": null,
+  "fifa_name": "BC Place Vancouver",
+  "city": "Vancouver",
+  "country": "Canada",
+  "opened": 1983,
+  "architect": "Studio Phillips Barratt (original); Stantec Architecture (2011 retractable-roof revitalization)",
+  "primary_tenant": "Vancouver Whitecaps FC (MLS) and BC Lions (CFL)",
+  "capacity_regular": 54500,
+  "capacity_regular_source": {
+    "title": "BC Place — Wikipedia (oldid 1360620880)",
+    "url": "https://en.wikipedia.org/w/index.php?title=BC_Place&oldid=1360620880"
+  },
+  "capacity_wc2026": 52497,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 stadium capacities confirmed (FIFA, 10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass (hybrid sod), custom Kentucky bluegrass / perennial ryegrass blend grown in the Fraser Valley; installed over BC Place's normal FieldTurf synthetic surface for the tournament",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 7,
+  "renovation_cost_2026": "PavCo estimates BC Place upgrades plus World Cup operating costs at CA$171 million–CA$181 million; the broader province/city hosting-cost estimate is CA$483 million–CA$581 million (net projected cost CA$100M–CA$145M after revenue). No single isolated 'renovation only' figure is confirmed across sources; the 2026-05-12 BC government release explicitly declined to disclose upgrade-specific dollar amounts ('within the capital budget estimate shown in Budget 2026').",
+  "iconic_games": [
+    {
+      "date": "2015-07-05",
+      "match": "United States vs Japan",
+      "score": "5–2",
+      "event": "2015 FIFA Women's World Cup Final",
+      "note": "Carli Lloyd scored a hat-trick (the fastest in a World Cup final, within 16 minutes; also the first ever in a Women's World Cup final), including a goal from the halfway line; USA's third WWC title. Attendance 53,341. Verified against the cited Wikipedia source.",
+      "source": {
+        "title": "2015 FIFA Women's World Cup final — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2015_FIFA_Women%27s_World_Cup_final"
+      }
+    },
+    {
+      "date": "2026-06-21",
+      "match": "New Zealand vs Egypt",
+      "score": "1–3",
+      "event": "2026 FIFA World Cup — Group stage (Group G)",
+      "note": "VERIFIED New Zealand 1–3 Egypt (FIFA + ESPN). One of five group-stage matches BC Place hosts at the 2026 World Cup; Egypt featured Mohamed Salah.",
+      "source": {
+        "title": "New Zealand 1–3 Egypt — 2026 FIFA World Cup, Group G (ESPN)",
+        "url": "https://www.espn.com/soccer/match/_/gameId/760452"
+      }
+    }
+  ],
+  "iconic_games_note": "BC Place has a genuine major-football pedigree: it was a principal venue of the 2015 FIFA Women's World Cup, hosting the Final (USA 5–2 Japan, 5 July 2015, attendance 53,341) plus multiple group/knockout matches. It is the first Canadian venue confirmed for a men's World Cup (2026), hosting 7 matches: 5 group-stage (incl. host nation Canada), one Round of 32 (July 2) and one Round of 16 (July 7). Non-football landmark events also include serving as the main stadium for the 2010 Winter Olympics and Paralympics (opening/closing ceremonies). 2026 knockout opponents are TBD pending group results.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Installed a natural-grass (hybrid sod) pitch for the tournament, replacing BC Place's usual FieldTurf synthetic surface as mandated by FIFA. Custom Kentucky bluegrass / perennial ryegrass blend, cultivated in the Fraser Valley and laid on a specialized base. Pitch built toward FIFA 2-star certification. Confirmed installed per BC government release.",
+      "value": "Hybrid natural-grass pitch",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Unveiling BC Place Vancouver upgrades ahead of FIFA World Cup 2026 — Government of BC (2026TACS0022)",
+        "url": "https://news.gov.bc.ca/releases/2026TACS0022-000545"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "New high-definition centre-hung video boards and upgraded stadium-wide Wi-Fi.",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Unveiling BC Place Vancouver upgrades ahead of FIFA World Cup 2026 — Government of BC (2026TACS0022)",
+        "url": "https://news.gov.bc.ca/releases/2026TACS0022-000545"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Accessibility upgrades: three new passenger elevators to increase capacity for fans with accessibility needs; washrooms renovated with several new gender-neutral facilities added.",
+      "value": "3 new elevators",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Unveiling BC Place Vancouver upgrades ahead of FIFA World Cup 2026 — Government of BC (2026TACS0022)",
+        "url": "https://news.gov.bc.ca/releases/2026TACS0022-000545"
+      }
+    },
+    {
+      "category": "other",
+      "change": "New premium hospitality and media spaces created: the Corner Club (floor-to-ceiling views of False Creek), Field Club (field-level reception/lounge), Edgewater Lounge (premium bar and fan zone), and The Tribune (newly renovated suites with private washrooms). All four confirmed in BC government release.",
+      "value": "4 new premium spaces",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Unveiling BC Place Vancouver upgrades ahead of FIFA World Cup 2026 — Government of BC (2026TACS0022)",
+        "url": "https://news.gov.bc.ca/releases/2026TACS0022-000545"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "FIFA tournament configuration reduces the regular 54,500 seating to the World-Cup capacity of 52,497, FIFA-confirmed in the 10 June 2026 capacities release. (Earlier third-party figures had varied — a FIFA ticketing-support listing showed 48,821 and some aggregators repeated the regular 54,500 — but FIFA official confirmation settles the WC-config figure at 52,497.)",
+      "value": "52,497 (FIFA WC-config)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "FIFA World Cup 2026 stadium capacities confirmed (FIFA, 10 June 2026)",
+        "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "1886",
+    "significance": "Vancouver is the largest city in British Columbia and the third-largest metropolitan area in Canada — a major Pacific port and gateway on Canada's west coast, ringed by the North Shore Mountains and the Pacific Ocean. It was the host city of the 2010 Winter Olympic and Paralympic Games, whose ceremonies were staged at BC Place.",
+    "football_culture": "Vancouver has one of Canada's deepest soccer roots. Organized association football was played in British Columbia from the early 1900s (the Pacific Coast Association Football League formed in 1908, first pro game 1910). The Vancouver Whitecaps won the NASL's Soccer Bowl in 1979, drawing roughly 100,000 fans to a Robson Street victory parade; the 86ers (named for 1886, the city's founding) carried the lineage through the 1980s–90s, and the modern Whitecaps FC joined MLS in 2011, playing at BC Place. Vancouver also hosted the 2015 FIFA Women's World Cup Final at BC Place, cementing the city as a major Canadian football hub.",
+    "sources": [
+      {
+        "title": "History of Vancouver Whitecaps FC — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/History_of_Vancouver_Whitecaps_FC"
+      },
+      {
+        "title": "The 86ers Story — Vancouver Whitecaps FC",
+        "url": "https://www.whitecapsfc.com/news/the-86ers-story"
+      },
+      {
+        "title": "BC Place — Wikipedia (oldid 1360620880)",
+        "url": "https://en.wikipedia.org/w/index.php?title=BC_Place&oldid=1360620880"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened 19 June 1983; originally the world's largest air-supported domed stadium, with an inflatable fabric roof.",
+    "Original construction cost CA$126.1 million (~CA$356M in 2025 dollars).",
+    "Owned by the Province of British Columbia and operated by the BC Pavilion Corporation (PavCo).",
+    "Underwent a ~16-month, ~CA$514 million revitalization completed in 2011 that replaced the inflated dome with a retractable cable-supported roof — the largest of its kind in the world.",
+    "Home of the BC Lions (CFL) since 1983 and Vancouver Whitecaps FC (MLS) since 2011; also hosts Canada Sevens rugby and the BC Sports Hall of Fame.",
+    "Served as the main stadium for the 2010 Winter Olympic and Paralympic Games (opening/closing ceremonies).",
+    "Hosted the 2015 FIFA Women's World Cup Final (USA 5–2 Japan, 5 July 2015, attendance 53,341), among other WWC matches.",
+    "Soccer pitch dimensions 117 × 75 yards (107 × 69 m); targeting FIFA 2-star certification.",
+    "Features the second-largest centrally-hung high-resolution scoreboard in North America (after AT&T Stadium)."
+  ],
+  "sources": [
+    {
+      "title": "BC Place — Wikipedia (pinned oldid 1360620880, 2026-06-22)",
+      "url": "https://en.wikipedia.org/w/index.php?title=BC_Place&oldid=1360620880"
+    },
+    {
+      "title": "World Cup 2026: BC Place Vancouver — StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/bc_place"
+    },
+    {
+      "title": "BC Place Vancouver — FIFA World Cup 2026 official venue page",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/vancouver"
+    },
+    {
+      "title": "Official addresses, stadium capacities and maps of the FIFA World Cup 2026 stadiums — FIFA ticketing support (lists BC Place at 48,821)",
+      "url": "https://gpcustomersupportfwc2026.tickets.fifa.com/hc/en-gb/articles/28784010437021"
+    },
+    {
+      "title": "Unveiling BC Place Vancouver upgrades ahead of FIFA World Cup 2026 — Government of BC (2026TACS0022, 2026-05-12)",
+      "url": "https://news.gov.bc.ca/releases/2026TACS0022-000545"
+    },
+    {
+      "title": "Province, Vancouver, PavCo provide updated costs for FIFA World Cup 26 — Government of BC (2025TACS0003)",
+      "url": "https://news.gov.bc.ca/releases/2025TACS0003-000614"
+    },
+    {
+      "title": "Excitement tempered by concern as aging B.C. Place prepares to host World Cup games — CBC News",
+      "url": "https://www.cbc.ca/news/canada/british-columbia/aging-b-c-place-prepares-to-host-fifa-world-cup-9.6935992"
+    },
+    {
+      "title": "2015 FIFA Women's World Cup final — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2015_FIFA_Women%27s_World_Cup_final"
+    },
+    {
+      "title": "History of Vancouver Whitecaps FC — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Vancouver_Whitecaps_FC"
+    },
+    {
+      "title": "The 86ers Story — Vancouver Whitecaps FC",
+      "url": "https://www.whitecapsfc.com/news/the-86ers-story"
+    },
+    {
+      "title": "BC Place Capacity: Can Vancouver's Stadium Handle 7 World Cup Matches? — Surprise Sports",
+      "url": "https://surprisesports.com/football/fifa-world-cup/bc-place-capacity/"
+    },
+    {
+      "title": "2026 FIFA World Cup group G match: New Zealand vs. Egypt — Global Times",
+      "url": "https://www.globaltimes.cn/page/202606/1364111.shtml"
+    }
+  ],
+  "gaps": [
+    "renovation_cost_2026: no single isolated 'stadium renovation only' dollar figure is confirmed; sources give a PavCo upgrade+operations range (CA$171M–181M) and a broader province/city hosting range (CA$483M–581M). The 2026-05-12 BC government release explicitly declined to disclose specific upgrade dollar amounts ('within the capital budget estimate shown in Budget 2026'). Exact renovation-only spend NOT SPECIFIED IN SOURCES.",
+    "field_type_2026: sources describe it variously as 'natural grass' and as a 'hybrid sod' pitch; whether it is pure-natural or a reinforced/hybrid system is not stated with full precision (NOT SPECIFIED IN SOURCES).",
+    "2026 knockout-round opponents (Round of 32 on July 2; Round of 16 on July 7) are TBD pending group results — NOT SPECIFIED (undetermined)."
+  ],
+  "confidence": "High on identity, opening year (1983), architect, tenants, regular capacity (54,500), original/2011 costs, scoreboard claim, 7-match allocation, the 2015 WWC Final, the NZ vs Egypt group-stage fixture (New Zealand 1–3 Egypt, FIFA/ESPN-verified), and the WC2026-config capacity (52,497, FIFA-confirmed in the 10 June 2026 release). Renovation cost remains range-only (no isolated figure), as the BC government release declined to disclose it.",
+  "_as_of": "2026-06-23"
+}

@@ -1593,11 +1593,13 @@
       "venue_id": "los-angeles",
       "home": {
         "placeholder": "2A",
-        "placeholder_text": "Runner-up Group A"
+        "placeholder_text": "Runner-up Group A",
+        "team": "South Africa"
       },
       "away": {
         "placeholder": "2B",
-        "placeholder_text": "Runner-up Group B"
+        "placeholder_text": "Runner-up Group B",
+        "team": "Canada"
       },
       "score": null,
       "status": "scheduled",
@@ -1615,11 +1617,13 @@
       "venue_id": "boston",
       "home": {
         "placeholder": "1E",
-        "placeholder_text": "Winner Group E"
+        "placeholder_text": "Winner Group E",
+        "team": "Germany"
       },
       "away": {
         "placeholder": "3A/B/C/D/F",
-        "placeholder_text": "Third place, Group A/B/C/D/F"
+        "placeholder_text": "Third place, Group A/B/C/D/F",
+        "team": "Paraguay"
       },
       "score": null,
       "status": "scheduled",
@@ -1637,11 +1641,13 @@
       "venue_id": "monterrey",
       "home": {
         "placeholder": "1F",
-        "placeholder_text": "Winner Group F"
+        "placeholder_text": "Winner Group F",
+        "team": "Netherlands"
       },
       "away": {
         "placeholder": "2C",
-        "placeholder_text": "Runner-up Group C"
+        "placeholder_text": "Runner-up Group C",
+        "team": "Morocco"
       },
       "score": null,
       "status": "scheduled",
@@ -1659,11 +1665,13 @@
       "venue_id": "houston",
       "home": {
         "placeholder": "1C",
-        "placeholder_text": "Winner Group C"
+        "placeholder_text": "Winner Group C",
+        "team": "Brazil"
       },
       "away": {
         "placeholder": "2F",
-        "placeholder_text": "Runner-up Group F"
+        "placeholder_text": "Runner-up Group F",
+        "team": "Japan"
       },
       "score": null,
       "status": "scheduled",
@@ -1681,11 +1689,13 @@
       "venue_id": "new-york-nj",
       "home": {
         "placeholder": "1I",
-        "placeholder_text": "Winner Group I"
+        "placeholder_text": "Winner Group I",
+        "team": "France"
       },
       "away": {
         "placeholder": "3C/D/F/G/H",
-        "placeholder_text": "Third place, Group C/D/F/G/H"
+        "placeholder_text": "Third place, Group C/D/F/G/H",
+        "team": "Sweden"
       },
       "score": null,
       "status": "scheduled",
@@ -1703,11 +1713,13 @@
       "venue_id": "dallas",
       "home": {
         "placeholder": "2E",
-        "placeholder_text": "Runner-up Group E"
+        "placeholder_text": "Runner-up Group E",
+        "team": "Côte d'Ivoire"
       },
       "away": {
         "placeholder": "2I",
-        "placeholder_text": "Runner-up Group I"
+        "placeholder_text": "Runner-up Group I",
+        "team": "Norway"
       },
       "score": null,
       "status": "scheduled",
@@ -1725,11 +1737,13 @@
       "venue_id": "mexico-city",
       "home": {
         "placeholder": "1A",
-        "placeholder_text": "Winner Group A"
+        "placeholder_text": "Winner Group A",
+        "team": "Mexico"
       },
       "away": {
         "placeholder": "3C/E/F/H/I",
-        "placeholder_text": "Third place, Group C/E/F/H/I"
+        "placeholder_text": "Third place, Group C/E/F/H/I",
+        "team": "Ecuador"
       },
       "score": null,
       "status": "scheduled",
@@ -1747,11 +1761,13 @@
       "venue_id": "atlanta",
       "home": {
         "placeholder": "1L",
-        "placeholder_text": "Winner Group L"
+        "placeholder_text": "Winner Group L",
+        "team": "England"
       },
       "away": {
         "placeholder": "3E/H/I/J/K",
-        "placeholder_text": "Third place, Group E/H/I/J/K"
+        "placeholder_text": "Third place, Group E/H/I/J/K",
+        "team": "Congo DR"
       },
       "score": null,
       "status": "scheduled",
@@ -1769,11 +1785,13 @@
       "venue_id": "sf-bay-area",
       "home": {
         "placeholder": "1D",
-        "placeholder_text": "Winner Group D"
+        "placeholder_text": "Winner Group D",
+        "team": "USA"
       },
       "away": {
         "placeholder": "3B/E/F/I/J",
-        "placeholder_text": "Third place, Group B/E/F/I/J"
+        "placeholder_text": "Third place, Group B/E/F/I/J",
+        "team": "Bosnia and Herzegovina"
       },
       "score": null,
       "status": "scheduled",
@@ -1791,11 +1809,13 @@
       "venue_id": "seattle",
       "home": {
         "placeholder": "1G",
-        "placeholder_text": "Winner Group G"
+        "placeholder_text": "Winner Group G",
+        "team": "Belgium"
       },
       "away": {
         "placeholder": "3A/E/H/I/J",
-        "placeholder_text": "Third place, Group A/E/H/I/J"
+        "placeholder_text": "Third place, Group A/E/H/I/J",
+        "team": "Senegal"
       },
       "score": null,
       "status": "scheduled",
@@ -1813,11 +1833,13 @@
       "venue_id": "toronto",
       "home": {
         "placeholder": "2K",
-        "placeholder_text": "Runner-up Group K"
+        "placeholder_text": "Runner-up Group K",
+        "team": "Portugal"
       },
       "away": {
         "placeholder": "2L",
-        "placeholder_text": "Runner-up Group L"
+        "placeholder_text": "Runner-up Group L",
+        "team": "Croatia"
       },
       "score": null,
       "status": "scheduled",
@@ -1835,11 +1857,13 @@
       "venue_id": "los-angeles",
       "home": {
         "placeholder": "1H",
-        "placeholder_text": "Winner Group H"
+        "placeholder_text": "Winner Group H",
+        "team": "Spain"
       },
       "away": {
         "placeholder": "2J",
-        "placeholder_text": "Runner-up Group J"
+        "placeholder_text": "Runner-up Group J",
+        "team": "Austria"
       },
       "score": null,
       "status": "scheduled",
@@ -1857,11 +1881,13 @@
       "venue_id": "vancouver",
       "home": {
         "placeholder": "1B",
-        "placeholder_text": "Winner Group B"
+        "placeholder_text": "Winner Group B",
+        "team": "Switzerland"
       },
       "away": {
         "placeholder": "3E/F/G/I/J",
-        "placeholder_text": "Third place, Group E/F/G/I/J"
+        "placeholder_text": "Third place, Group E/F/G/I/J",
+        "team": "Algeria"
       },
       "score": null,
       "status": "scheduled",
@@ -1879,11 +1905,13 @@
       "venue_id": "miami",
       "home": {
         "placeholder": "1J",
-        "placeholder_text": "Winner Group J"
+        "placeholder_text": "Winner Group J",
+        "team": "Argentina"
       },
       "away": {
         "placeholder": "2H",
-        "placeholder_text": "Runner-up Group H"
+        "placeholder_text": "Runner-up Group H",
+        "team": "Cabo Verde"
       },
       "score": null,
       "status": "scheduled",
@@ -1901,11 +1929,13 @@
       "venue_id": "kansas-city",
       "home": {
         "placeholder": "1K",
-        "placeholder_text": "Winner Group K"
+        "placeholder_text": "Winner Group K",
+        "team": "Colombia"
       },
       "away": {
         "placeholder": "3D/E/I/J/L",
-        "placeholder_text": "Third place, Group D/E/I/J/L"
+        "placeholder_text": "Third place, Group D/E/I/J/L",
+        "team": "Ghana"
       },
       "score": null,
       "status": "scheduled",
@@ -1923,11 +1953,13 @@
       "venue_id": "dallas",
       "home": {
         "placeholder": "2D",
-        "placeholder_text": "Runner-up Group D"
+        "placeholder_text": "Runner-up Group D",
+        "team": "Australia"
       },
       "away": {
         "placeholder": "2G",
-        "placeholder_text": "Runner-up Group G"
+        "placeholder_text": "Runner-up Group G",
+        "team": "Egypt"
       },
       "score": null,
       "status": "scheduled",
@@ -1945,11 +1977,13 @@
       "venue_id": "philadelphia",
       "home": {
         "placeholder": "W74",
-        "placeholder_text": "Winner Match 74"
+        "placeholder_text": "Winner Match 74",
+        "team": "Paraguay"
       },
       "away": {
         "placeholder": "W77",
-        "placeholder_text": "Winner Match 77"
+        "placeholder_text": "Winner Match 77",
+        "team": "France"
       },
       "score": null,
       "status": "scheduled",
@@ -1967,11 +2001,13 @@
       "venue_id": "houston",
       "home": {
         "placeholder": "W73",
-        "placeholder_text": "Winner Match 73"
+        "placeholder_text": "Winner Match 73",
+        "team": "Canada"
       },
       "away": {
         "placeholder": "W75",
-        "placeholder_text": "Winner Match 75"
+        "placeholder_text": "Winner Match 75",
+        "team": "Morocco"
       },
       "score": null,
       "status": "scheduled",
@@ -1989,11 +2025,13 @@
       "venue_id": "new-york-nj",
       "home": {
         "placeholder": "W76",
-        "placeholder_text": "Winner Match 76"
+        "placeholder_text": "Winner Match 76",
+        "team": "Brazil"
       },
       "away": {
         "placeholder": "W78",
-        "placeholder_text": "Winner Match 78"
+        "placeholder_text": "Winner Match 78",
+        "team": "Norway"
       },
       "score": null,
       "status": "scheduled",
@@ -2011,11 +2049,13 @@
       "venue_id": "mexico-city",
       "home": {
         "placeholder": "W79",
-        "placeholder_text": "Winner Match 79"
+        "placeholder_text": "Winner Match 79",
+        "team": "Mexico"
       },
       "away": {
         "placeholder": "W80",
-        "placeholder_text": "Winner Match 80"
+        "placeholder_text": "Winner Match 80",
+        "team": "England"
       },
       "score": null,
       "status": "scheduled",
@@ -2033,11 +2073,13 @@
       "venue_id": "dallas",
       "home": {
         "placeholder": "W83",
-        "placeholder_text": "Winner Match 83"
+        "placeholder_text": "Winner Match 83",
+        "team": "Portugal"
       },
       "away": {
         "placeholder": "W84",
-        "placeholder_text": "Winner Match 84"
+        "placeholder_text": "Winner Match 84",
+        "team": "Spain"
       },
       "score": null,
       "status": "scheduled",
@@ -2055,11 +2097,13 @@
       "venue_id": "seattle",
       "home": {
         "placeholder": "W81",
-        "placeholder_text": "Winner Match 81"
+        "placeholder_text": "Winner Match 81",
+        "team": "USA"
       },
       "away": {
         "placeholder": "W82",
-        "placeholder_text": "Winner Match 82"
+        "placeholder_text": "Winner Match 82",
+        "team": "Belgium"
       },
       "score": null,
       "status": "scheduled",

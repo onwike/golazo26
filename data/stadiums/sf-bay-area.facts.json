@@ -1,0 +1,200 @@
+{
+  "venue_id": "sf-bay-area",
+  "stadium_current": "Levi's Stadium",
+  "stadium_historic": null,
+  "fifa_name": "San Francisco Bay Area Stadium",
+  "city": "San Francisco Bay Area (Santa Clara)",
+  "country": "United States",
+  "opened": 2014,
+  "primary_tenant": "San Francisco 49ers (NFL)",
+  "architect": "HNTB",
+  "capacity_regular": 68500,
+  "capacity_regular_source": {
+    "title": "Levi's Stadium - Wikipedia (oldid 1360724068)",
+    "url": "https://en.wikipedia.org/w/index.php?title=Levi%27s_Stadium&oldid=1360724068"
+  },
+  "capacity_wc2026": 68827,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed - inside.fifa.com (official)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass (hybrid) — natural turf reinforced with stitched-in synthetic fibres for FIFA consistency/durability; FIFA-spec surface installed for the 2026 World Cup (reported installed March 2026)",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 6,
+  "renovation_cost_2026": "Contested / not a single agreed figure. Two distinct sourced numbers exist: (1) a $120 million package (49ers borrowed/invested via the NFL stadium fund, reported 2023) targeting premium-seating remodels and new 4K video scoreboards ahead of the 2025 season [KNBR/StadiumDB]; (2) a broader \"$200 million\" total renovation figure cited for the venue's 2025-2026 upgrades preparing it to host both Super Bowl LX and the World Cup [Yardbarker]. The $200M is a press characterization of overall investment, not an itemized World-Cup-specific cost. World-Cup-specific pitch-conversion cost is NOT SPECIFIED IN SOURCES.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "FIFA-spec natural grass (hybrid, with stitched-in synthetic fibres) playing surface installed for the 2026 World Cup. Note: the prior NFL-config surface is disputed across sources (Wikipedia infobox: Bermuda grass; MartinCid: synthetic) — the 'swapped from artificial turf' framing is NOT reliably supported.",
+      "as_of": "2026-06-23",
+      "value": "natural grass (hybrid), reported installed March 2026",
+      "source": {
+        "title": "From gridiron to pitch: How NFL stadiums transformed for the 2026 World Cup - ESPN",
+        "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Permanent corner seating replaced with modular seats that can be removed to open space for the wider/longer regulation FIFA pitch",
+      "as_of": "2026-06-23",
+      "value": null,
+      "source": {
+        "title": "From gridiron to pitch: How NFL stadiums transformed for the 2026 World Cup - ESPN",
+        "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "Two new 4K video boards installed (billed as the NFL's largest 4K display) ahead of the 2025 season as part of the $120M premium-seating/scoreboard upgrade",
+      "as_of": "2026-06-23",
+      "value": "$120 million package (premium seating + scoreboards)",
+      "source": {
+        "title": "What to Expect from the 49ers' $200 Million Levi's Stadium Upgrades - Yardbarker",
+        "url": "https://www.yardbarker.com/nfl/articles/what_to_expect_from_the_49ers_200_million_levis_stadium_upgrades/s1_16712_42560523"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Over 120 luxury suites remodeled with modern furnishings/technology as part of the pre-2026 venue upgrade program",
+      "as_of": "2026-06-23",
+      "value": null,
+      "source": {
+        "title": "What to Expect from the 49ers' $200 Million Levi's Stadium Upgrades - Yardbarker",
+        "url": "https://www.yardbarker.com/nfl/articles/what_to_expect_from_the_49ers_200_million_levis_stadium_upgrades/s1_16712_42560523"
+      }
+    }
+  ],
+  "iconic_games": [
+    {
+      "date": "2016-06-03",
+      "match": "United States 0–2 Colombia",
+      "score": "0–2",
+      "event": "Copa América Centenario — opening match (Group A)",
+      "note": "Tournament-opening match of the 2016 Copa América Centenario at Levi's Stadium; Cristián Zapata and James Rodríguez (pen.) scored for Colombia. Attendance 67,439. VERIFIED via Wikipedia (date, teams, score, venue, attendance all confirmed).",
+      "source": {
+        "title": "2016 Copa América Centenario - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2016_Copa_Am%C3%A9rica_Centenario"
+      }
+    },
+    {
+      "date": "2016-06-18",
+      "match": "Mexico 0–7 Chile",
+      "score": "0–7",
+      "event": "Copa América Centenario — quarter-final",
+      "note": "Historic rout at Levi's Stadium: Eduardo Vargas four, Edson Puch two, Alexis Sánchez one; ended Mexico's unbeaten run. VERIFIED via ESPN match report (date, teams, 0–7 score, venue, QF all confirmed).",
+      "source": {
+        "title": "Mexico 0-7 Chile (Jun 18, 2016) Game Analysis - ESPN",
+        "url": "https://www.espn.com/soccer/report/_/gameId/444701"
+      }
+    },
+    {
+      "date": "2016-06-13",
+      "match": "Uruguay 3–0 Jamaica",
+      "score": "3–0",
+      "event": "Copa América Centenario — Group C",
+      "note": "Goals from Abel Hernández, an own goal, and Mathías Corujo. Attendance 40,166. VERIFIED via Wikipedia (date, teams, score, venue, attendance all confirmed).",
+      "source": {
+        "title": "2016 Copa América Centenario - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2016_Copa_Am%C3%A9rica_Centenario"
+      }
+    },
+    {
+      "date": "2017-07-26",
+      "match": "United States 2–1 Jamaica",
+      "score": "2–1",
+      "event": "CONCACAF Gold Cup 2017 — final",
+      "note": "USMNT won its sixth Gold Cup at Levi's Stadium; Altidore (FK) and Morris (88') scored, Watson equalized for Jamaica. VERIFIED via Wikipedia 2017 CONCACAF Gold Cup final (date, teams, 2–1 score, venue all confirmed).",
+      "source": {
+        "title": "2017 CONCACAF Gold Cup final - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2017_CONCACAF_Gold_Cup_final"
+      }
+    }
+  ],
+  "iconic_games_note": "Levi's Stadium has a genuine top-level football history, unlike most pure-NFL World Cup venues: it hosted four matches at the 2016 Copa América Centenario (including the tournament-opening USA–Colombia match and the Mexico 0–7 Chile quarter-final) and the 2017 CONCACAF Gold Cup final, plus Gold Cup group games and major international friendlies. ALL FOUR iconic games above were individually source-verified (dates, teams, scores, competitions, venue). Non-football events for context: Super Bowl 50 (Feb 7 2016), Super Bowl LX (Feb 8 2026), WrestleMania 31 (2015) — clearly labeled as non-football. In 2026 it becomes the first venue to host a Super Bowl and FIFA World Cup matches in the same calendar year.",
+  "city_history": {
+    "founded": "Santa Clara was founded in 1777 (Mission Santa Clara de Asís); incorporated as a city in 1852. The wider San Francisco metro dates to the 1776 Spanish presidio/mission and boomed with the 1849 Gold Rush.",
+    "significance": "Levi's Stadium sits in Santa Clara, at the southern edge of Silicon Valley roughly 40 miles south of downtown San Francisco. Santa Clara is a tech-industry hub; the venue anchors the Bay Area's bid as a 2026 host region. The 'San Francisco Bay Area' host designation spans Santa Clara/San Jose and the wider Bay metropolitan area.",
+    "football_culture": "Football (soccer) culture is hung on the San Francisco Bay Area metro, not the small city of Santa Clara: the region is one of the most soccer-engaged in the US, with the San Jose Earthquakes (MLS, two-time MLS Cup champions) playing nearby at PayPal Park, a large and diverse fan base (notably strong Mexican-American support for El Tri friendlies and Copa América/Gold Cup matches), and a track record of hosting major international tournaments (Copa América Centenario 2016, Gold Cup 2017). The Bay Area also has deep general sports culture across the 49ers, Giants, Warriors and A's.",
+    "sources": [
+      {
+        "title": "San Francisco Bay Area | FIFA World Cup 2026 Host City (official)",
+        "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/usa/san-francisco-bay-area"
+      },
+      {
+        "title": "Levi's Stadium - Wikipedia (oldid 1360724068)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Levi%27s_Stadium&oldid=1360724068"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened July 17, 2014 as home of the San Francisco 49ers (NFL). VERIFIED (Wikipedia, HNTB).",
+    "Design architect / architect of record HNTB; built by Turner Construction. VERIFIED (HNTB, Architizer, Architect Magazine).",
+    "Construction cost approximately $1.3 billion (Wikipedia; ~$1.2 billion per some sources).",
+    "Named after Levi Strauss & Co., which acquired naming rights in 2013.",
+    "Regular seating capacity 68,500, expandable to roughly 75,000 for major events.",
+    "FIFA-confirmed 2026 World Cup configuration capacity: 68,827 (per FIFA official capacities announcement).",
+    "Hosted Super Bowl 50 (Feb 7, 2016) and Super Bowl LX (Feb 8, 2026).",
+    "Hosted four 2016 Copa América Centenario matches (incl. the opening game and Mexico 0–7 Chile QF) and the 2017 CONCACAF Gold Cup final (USA 2–1 Jamaica). All venue-verified.",
+    "Hosted WrestleMania 31 (2015) and the 2019 College Football Playoff National Championship.",
+    "Temporarily renamed 'San Francisco Bay Area Stadium' for the 2026 FIFA World Cup per FIFA's clean-venue/neutral-naming policy.",
+    "For 2026 it becomes the first venue to host a Super Bowl and FIFA World Cup matches in the same calendar year."
+  ],
+  "sources": [
+    {
+      "title": "Levi's Stadium - Wikipedia (oldid 1360724068)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Levi%27s_Stadium&oldid=1360724068"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed - inside.fifa.com (official)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "San Francisco Bay Area Stadium | FIFA World Cup 2026 (official stadium page)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/san-francisco-bay-area"
+    },
+    {
+      "title": "San Francisco Bay Area | FIFA World Cup 2026 Host City (official)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/usa/san-francisco-bay-area"
+    },
+    {
+      "title": "World Cup 2026: San Francisco Bay Area Stadium – StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/levis_stadium"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums transformed for the 2026 World Cup - ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "What to Expect from the 49ers' $200 Million Levi's Stadium Upgrades - Yardbarker",
+      "url": "https://www.yardbarker.com/nfl/articles/what_to_expect_from_the_49ers_200_million_levis_stadium_upgrades/s1_16712_42560523"
+    },
+    {
+      "title": "2016 Copa América Centenario - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2016_Copa_Am%C3%A9rica_Centenario"
+    },
+    {
+      "title": "Mexico 0-7 Chile (Jun 18, 2016) Game Analysis - ESPN",
+      "url": "https://www.espn.com/soccer/report/_/gameId/444701"
+    },
+    {
+      "title": "2017 CONCACAF Gold Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2017_CONCACAF_Gold_Cup_final"
+    },
+    {
+      "title": "Levi's Stadium - HNTB (project page)",
+      "url": "https://www.hntb.com/projects/levis-stadium/"
+    }
+  ],
+  "gaps": [
+    "capacity_wc2026: FIFA-confirmed figure is 68,827 (inside.fifa.com official announcement, corroborated by StadiumDB). The sheet's previously-stated 68,743 could NOT be found in any source and was mis-attributed to FIFA — corrected. Aggregator/press figures of ~69,391 (fwclive) and ~71,000 (beIN, soccergraph) are NOT FIFA-confirmed and are not used.",
+    "renovation_cost_2026: no single agreed number — $120M (premium seating + scoreboards, 2023 NFL-fund report) vs $200M (broad press total). World-Cup-specific pitch-conversion cost NOT SPECIFIED IN SOURCES.",
+    "Prior (NFL-config) playing surface is disputed: Wikipedia infobox lists Bermuda grass (natural); MartinCid frames it as synthetic→grass. The 'swapped from artificial turf' renovation framing is NOT reliably supported. The confirmed fact is a natural-grass (hybrid) FIFA-spec surface for the 2026 World Cup.",
+    "Exact World Cup pitch dimensions and precise count of corner seats removed: NOT SPECIFIED IN SOURCES.",
+    "Confirmed 2026 match fixtures/opponents at this venue depend on the draw and are NOT authoritatively confirmed in cited sources (draft schedule circulates; dates June 13/16/19/22/25 group + July 1 R32 are reported).",
+    "The cited FIFA official stadium page is JS-rendered and did not return an extractable capacity number on fetch; the authoritative figure was instead taken from FIFA's official capacities announcement."
+  ],
+  "confidence": "high on core identity (city, country, opened 2014, HNTB, 49ers tenant, FIFA name, 6 matches, regular capacity 68,500, FIFA WC capacity 68,827 [corrected from 68,743], all four football iconic games venue-verified). Medium on renovation cost (contested $120M vs $200M) and on the prior-surface characterization (disputed). Low on exact 2026 fixture assignments (draw-dependent).",
+  "_as_of": "2026-06-23"
+}

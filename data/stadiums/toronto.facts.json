@@ -1,0 +1,222 @@
+{
+  "venue_id": "toronto",
+  "stadium_current": "BMO Field",
+  "stadium_historic": null,
+  "fifa_name": "Toronto Stadium",
+  "city": "Toronto",
+  "country": "Canada",
+  "opened": 2007,
+  "primary_tenant": "Toronto FC (MLS)",
+  "architect": "Brisbin Brooks Beynon Architects (BBB Architects); Gensler (2014–2016 expansion)",
+  "capacity_regular": 28180,
+  "capacity_regular_source": {
+    "title": "BMO Field — Wikipedia (oldid 1360783660), infobox seating_capacity 28,180 (2025)",
+    "url": "https://en.wikipedia.org/w/index.php?title=BMO_Field&oldid=1360783660"
+  },
+  "capacity_wc2026": 43036,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 stadium capacities confirmed (FIFA, 10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass — SISGrass hybrid (Kentucky bluegrass reinforced with stitched synthetic fibres); FIFA-standard pitch installed during Phase 2 renovations (Dec 2025–Mar 2026)",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 6,
+  "renovation_cost_2026": "CA$157.9 million final cost (CA$132.9M from City of Toronto + CA$25M from MLSE), per City of Toronto completion release (2026-03-24). Initial March 2025 announcement budgeted CA$146M (CA$123M City + CA$23M MLSE); the very first 2024 plan was a CA$37M temporary-seating contract.",
+  "renovations": [
+    {
+      "category": "capacity",
+      "change": "17,756 temporary seats added to reach the FIFA-required ~45,000+ tournament capacity (45,736). Initial March 2025 plan specified 10,000 temporary seats on the north grandstand + 7,000 on the south grandstand.",
+      "value": "45,736 (WC config); +17,756 temporary seats",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "BMO Field — Wikipedia (oldid 1360783660)",
+        "url": "https://en.wikipedia.org/w/index.php?title=BMO_Field&oldid=1360783660"
+      }
+    },
+    {
+      "category": "pitch",
+      "change": "Playing surface replaced with a new FIFA-standard pitch during Phase 2 (Dec 2025–Mar 2026): natural Kentucky bluegrass reinforced with stitched SISGrass synthetic fibres, served by under-field heating, irrigation and grow lights.",
+      "value": "SISGrass hybrid natural grass",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Globe and Mail — BMO Field groundskeeper 'thrilled' at state of pitch ahead of World Cup (SISGrass hybrid install)",
+        "url": "https://www.theglobeandmail.com/sports/soccer/article-bmo-field-groundskeeper-thrilled-at-state-of-pitch-ahead-of-world-cup/"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "Four new LED videoboards added to the stadium's corner columns; upgraded broadcast infrastructure for international TV coverage; stadium-wide Wi-Fi upgraded; new sound system.",
+      "value": "4 corner LED videoboards",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "City of Toronto — City and MLSE announce enhancements to BMO Field (Toronto Stadium)",
+        "url": "https://www.toronto.ca/news/city-of-toronto-and-mlse-announce-enhancements-to-bmo-field-toronto-stadium-setting-the-stage-for-the-fifa-world-cup-26-and-beyond/"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Player spaces and locker rooms enhanced to accommodate international teams; new West Suites renovation + new North Suites; new centre-field lounge on the west side; new west-side kitchen; post-tournament a 1,000-capacity ticketed rooftop patio. Work delivered in two phases (Phase 1 began Aug 2025; Phase 2 Dec 2025–Mar 2026).",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "City of Toronto — City and MLSE announce enhancements to BMO Field (Toronto Stadium)",
+        "url": "https://www.toronto.ca/news/city-of-toronto-and-mlse-announce-enhancements-to-bmo-field-toronto-stadium-setting-the-stage-for-the-fifa-world-cup-26-and-beyond/"
+      }
+    }
+  ],
+  "iconic_games": [
+    {
+      "date": "2026-06-12",
+      "match": "Canada 1–1 Bosnia and Herzegovina",
+      "score": "1–1",
+      "event": "2026 FIFA World Cup, Group B — first World Cup match ever played on Canadian soil; tournament opener for Canada",
+      "note": "Bosnia and Herzegovina scored the first World Cup goal in Canada; Canada equalised in the second half. Independently corroborated by CBC/Globe and Mail live coverage and the pinned Wikipedia revision.",
+      "source": {
+        "title": "BMO Field — Wikipedia (oldid 1360783660)",
+        "url": "https://en.wikipedia.org/w/index.php?title=BMO_Field&oldid=1360783660"
+      }
+    },
+    {
+      "date": "2026-06-20",
+      "match": "Germany 2–1 Ivory Coast",
+      "score": "2–1",
+      "event": "2026 FIFA World Cup, Group E — Germany won with a final-minute goal before a Toronto crowd",
+      "note": "Score/date verified against the pinned Wikipedia revision (lists Germany 2-1 Ivory Coast, June 20 2026, attendance 43,036); CBC URL carries the same result but returns HTTP 403 to fetchers (not directly verifiable, but corroborated).",
+      "source": {
+        "title": "CBC News — Germany's final-minute goal against Ivory Coast thrills Toronto crowd",
+        "url": "https://www.cbc.ca/news/canada/toronto/germany-victory-toronto-stadium-9.7243323"
+      }
+    },
+    {
+      "date": "2017-12-09",
+      "match": "Toronto FC 2–0 Seattle Sounders FC",
+      "score": "2–0",
+      "event": "MLS Cup 2017 final (hosted at BMO Field)",
+      "note": "Toronto FC became the first Canadian team to win MLS Cup and the first MLS club to complete a domestic treble; attendance 30,584; Jozy Altidore opened the scoring.",
+      "source": {
+        "title": "MLS Cup 2017 — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/MLS_Cup_2017"
+      }
+    },
+    {
+      "date": "2007-07-22",
+      "match": "Argentina U-20 2–1 Czech Republic U-20",
+      "score": "2–1",
+      "event": "2007 FIFA U-20 World Cup final (venue branded 'National Soccer Stadium')",
+      "note": "Score independently confirmed (Agüero 62', Zárate 86') via 2007 FIFA U-20 World Cup final Wikipedia article, ESPN gameId 221253, and CBC. The first major football tournament held at the stadium.",
+      "source": {
+        "title": "2007 FIFA U-20 World Cup final — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2007_FIFA_U-20_World_Cup_final"
+      }
+    },
+    {
+      "date": "2009-08-07",
+      "match": "Real Madrid 5–1 Toronto FC",
+      "score": "5–1",
+      "event": "Club friendly (temporary grass laid for the match)",
+      "note": "Attendance 22,089; one of the marquee club friendlies that pushed BMO Field's switch from FieldTurf to natural grass. Verified against pinned Wikipedia revision.",
+      "source": {
+        "title": "BMO Field — Wikipedia (oldid 1360783660)",
+        "url": "https://en.wikipedia.org/w/index.php?title=BMO_Field&oldid=1360783660"
+      }
+    }
+  ],
+  "iconic_games_note": "BMO Field has genuine, deep football history: home of MLS club Toronto FC since 2007 and an intermittent home of the Canada men's national team; it hosted the 2007 FIFA U-20 World Cup (incl. the final, Argentina 2–1 Czech Republic) and the 2014 FIFA U-20 Women's World Cup, MLS Cup finals in 2010, 2016 and 2017, and high-profile club friendlies (Real Madrid 2009). The June 12, 2026 Canada–Bosnia match was the first men's World Cup match ever played in Canada. The curated 2026 World Cup scores above are for matches already played as of the 2026-06-23 snapshot; the remaining group games (e.g. Panama–Croatia June 23, Senegal–Iraq June 26) and the July 2 Round of 32 match were upcoming/unplayed and so are not listed with scores. Non-football events of note (clearly NOT football): the venue also hosts the CFL's Toronto Argonauts and staged the 104th Grey Cup (Nov 27, 2016) and the NHL Centennial Classic outdoor hockey game (Jan 1, 2017, attendance 40,148).",
+  "city_history": {
+    "founded": "Incorporated as the City of Toronto on March 6, 1834 (the restored Indigenous-derived name replacing 'York', the settlement founded 1793 by Lt.-Gov. John Graves Simcoe as the capital of Upper Canada)",
+    "significance": "Toronto is the most populous city in Canada and the capital of Ontario, with a 2021 census population of 2,794,356 (4th-most-populous city in North America after Mexico City, New York and Los Angeles). It is Canada's financial and cultural centre and one of the most multicultural cities in the world. BMO Field sits at Exhibition Place on the Lake Ontario waterfront. Toronto is one of only two Canadian 2026 World Cup host cities, the other being Vancouver.",
+    "football_culture": "Toronto has a deep, established football (soccer) culture anchored at BMO Field itself: it is the home of MLS side Toronto FC (founded 2007), whose treble-winning 2017 MLS Cup victory at the ground drew a passionate sellout, and an intermittent home of the Canada men's national team. The venue's purpose-built soccer pedigree (2007 FIFA U-20 World Cup, 2014 FIFA U-20 Women's World Cup, marquee club friendlies vs Real Madrid and others) and the city's large immigrant communities give the host its football identity directly — no metro-proxy needed (this is a genuine soccer-specific venue, not a suburban NFL site).",
+    "sources": [
+      {
+        "title": "History of Toronto / Toronto — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/History_of_Toronto"
+      },
+      {
+        "title": "Toronto — Wikipedia (population, status)",
+        "url": "https://en.wikipedia.org/wiki/Toronto"
+      },
+      {
+        "title": "BMO Field — Wikipedia (oldid 1360783660): Toronto FC home, Canada national team, U-20 tournaments",
+        "url": "https://en.wikipedia.org/w/index.php?title=BMO_Field&oldid=1360783660"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Broke ground March 29, 2006; opened April 28, 2007, built as a soccer-specific stadium for the 2007 FIFA U-20 World Cup and as the first home of Toronto FC; original construction cost CA$62.9 million (confirmed in pinned Wikipedia infobox).",
+    "Originally surfaced with FieldTurf (2007–2009), which drew player criticism; converted to natural Kentucky bluegrass before the 2010 season, then to a hybrid-grass system from 2019.",
+    "Underwent a major 2014–2016 expansion (~CA$120M, designed by Gensler): added an east-grandstand upper deck (Phase 1, ~8,400 seats, completed May 2015) and a canopy roof over east/west/south stands plus a lengthened field for Canadian football, raising soccer capacity from ~21,566 to ~30,000 (confirmed via Gensler project page and press).",
+    "The CFL's Toronto Argonauts moved in for the 2016 season; BMO Field hosted the 104th Grey Cup (Nov 27, 2016).",
+    "Hosted the NHL Centennial Classic outdoor game on Jan 1, 2017 (attendance 40,148).",
+    "Hosted MLS Cup finals in 2010 (neutral site), 2016 and 2017 (Toronto FC as host); the 2017 final delivered Toronto FC the title and a domestic treble.",
+    "Bank of Montreal (BMO) holds naming rights; the stadium is temporarily renamed 'Toronto Stadium' for the 2026 World Cup under FIFA's clean-venue/anti-sponsor policy (it was likewise 'National Soccer Stadium' for the 2007 and 2014 FIFA youth tournaments).",
+    "For the 2026 World Cup it hosts six matches — five group-stage games plus one Round of 32 (July 2, 2026) — including Canada's opener on June 12, 2026."
+  ],
+  "sources": [
+    {
+      "title": "BMO Field — Wikipedia (pinned revision, oldid 1360783660, 2026-06-23)",
+      "url": "https://en.wikipedia.org/w/index.php?title=BMO_Field&oldid=1360783660"
+    },
+    {
+      "title": "2007 FIFA U-20 World Cup final — Wikipedia (Argentina 2–1 Czech Republic)",
+      "url": "https://en.wikipedia.org/wiki/2007_FIFA_U-20_World_Cup_final"
+    },
+    {
+      "title": "FIFA — Toronto Stadium, FIFA World Cup 2026 (official stadium page)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/toronto"
+    },
+    {
+      "title": "World Cup 2026: Toronto Stadium — StadiumDB.com (gives 43,036 minority figure)",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/bmo_field"
+    },
+    {
+      "title": "BMO Field | Projects — Gensler (2014–2016 expansion, ~CA$120M)",
+      "url": "https://www.gensler.com/projects/bmo-field"
+    },
+    {
+      "title": "City of Toronto — City and MLSE announce enhancements to BMO Field (Toronto Stadium) (initial March 2025 release)",
+      "url": "https://www.toronto.ca/news/city-of-toronto-and-mlse-announce-enhancements-to-bmo-field-toronto-stadium-setting-the-stage-for-the-fifa-world-cup-26-and-beyond/"
+    },
+    {
+      "title": "City of Toronto — City and MLSE complete Toronto Stadium upgrades for FIFA World Cup 2026 (completion release, 2026-03-24, final CA$157.9M)",
+      "url": "https://www.toronto.ca/news/city-of-toronto-and-mlse-complete-toronto-stadium-upgrades-for-fifa-world-cup-2026-2/"
+    },
+    {
+      "title": "BMO Field — FIFA26 official events page (capacity 45,736)",
+      "url": "https://www.bmofield.com/events/fifa26"
+    },
+    {
+      "title": "CBC News — Canada draws opening World Cup match with Bosnia-Herzegovina in Toronto (June 12 2026)",
+      "url": "https://www.cbc.ca/sports/livestory/fifa-world-cup-2026-canada-vs-bosnia-and-herzegovina-june-12-live-updates-9.7222390"
+    },
+    {
+      "title": "CBC News — Germany's final-minute goal against Ivory Coast thrills Toronto crowd",
+      "url": "https://www.cbc.ca/news/canada/toronto/germany-victory-toronto-stadium-9.7243323"
+    },
+    {
+      "title": "MLS Cup 2017 — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/MLS_Cup_2017"
+    },
+    {
+      "title": "Globe and Mail — BMO Field groundskeeper 'thrilled' at state of pitch ahead of World Cup opener (SISGrass hybrid pitch)",
+      "url": "https://www.theglobeandmail.com/sports/soccer/article-bmo-field-groundskeeper-thrilled-at-state-of-pitch-ahead-of-world-cup/"
+    },
+    {
+      "title": "History of Toronto — Wikipedia (founding/York, incorporation 1834)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Toronto"
+    },
+    {
+      "title": "Toronto — Wikipedia (population 2,794,356; capital of Ontario)",
+      "url": "https://en.wikipedia.org/wiki/Toronto"
+    }
+  ],
+  "gaps": [
+    "The Germany 2–1 Ivory Coast (June 20, 2026) source URL (CBC) returns HTTP 403 to fetchers and is not directly verifiable; the carried score/date/competition are corroborated by the pinned Wikipedia revision and web search, so the claim is retained as supported.",
+    "Exact official renovation-cost split nuance: initial announcement CA$146M (CA$123M City + CA$23M MLSE) vs final CA$157.9M (CA$132.9M City + CA$25M MLSE). Both sourced; the final figure is used. The ~CA$300M / CA$340M / CA$520M / CA$940M figures seen in press refer to Toronto's broader hosting costs or GTA economic-output projections, NOT the stadium renovation.",
+    "Precise scores/line-ups for 2026 World Cup matches scheduled AFTER the 2026-06-23 snapshot (Panama–Croatia June 23, Senegal–Iraq June 26, and the July 2 Round of 32 fixture) are NOT SPECIFIED IN SOURCES as they were unplayed/undetermined at snapshot time.",
+    "Exact attendance figures for the 2026 World Cup matches at the venue are NOT SPECIFIED IN SOURCES at snapshot time beyond the figures carried in the pinned Wikipedia revision (Canada–Bosnia 43,002; Germany–Ivory Coast 43,036), which themselves are press-sourced and may be revised."
+  ],
+  "confidence": "high",
+  "_as_of": "2026-06-23"
+}

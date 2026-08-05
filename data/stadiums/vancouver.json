@@ -1,0 +1,25 @@
+{
+  "venue_id": "vancouver",
+  "title": "BC Place",
+  "prose": "BC Place opened on 19 June 1983 as the world's largest air-supported domed stadium, crowned by an inflatable fabric roof that became one of Vancouver's defining landmarks. Designed by Studio Phillips Barratt, it was built at an original construction cost of CA$126.1 million — roughly CA$356 million in 2025 dollars. Owned by the Province of British Columbia and operated by the BC Pavilion Corporation (PavCo), the venue was conceived as a multipurpose home for the city's major sporting and civic events.\n\nFrom the outset it served as the home of the BC Lions of the CFL, a tenancy that has run since 1983. Its identity broadened over the decades: BC Place became the main stadium for the 2010 Winter Olympic and Paralympic Games, hosting the opening and closing ceremonies, and it remains home to Canada Sevens rugby and the BC Sports Hall of Fame.\n\nThe stadium was transformed by a roughly 16-month, approximately CA$514 million revitalization completed in 2011. Designed by Stantec Architecture, the project replaced the original inflated dome with a retractable cable-supported roof — the largest of its kind in the world — modernizing the venue while preserving its place at the heart of the city. That same year, Vancouver Whitecaps FC arrived as a tenant, joining MLS in 2011 and making BC Place its home.\n\nAmong its distinguishing features, BC Place carries the second-largest centrally-hung high-resolution scoreboard in North America, behind only AT&T Stadium. Its soccer pitch is laid out at 117 by 75 yards (107 by 69 m), targeting FIFA 2-star certification. From an inflatable-domed multipurpose arena to a retractable-roof landmark on Canada's Pacific coast, BC Place has continually reinvented itself while remaining one of the country's most prominent stadiums.",
+  "sources": [
+    {
+      "title": "BC Place — Wikipedia (pinned oldid 1360620880, 2026-06-22)",
+      "url": "https://en.wikipedia.org/w/index.php?title=BC_Place&oldid=1360620880"
+    },
+    {
+      "title": "History of Vancouver Whitecaps FC — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Vancouver_Whitecaps_FC"
+    },
+    {
+      "title": "The 86ers Story — Vancouver Whitecaps FC",
+      "url": "https://www.whitecapsfc.com/news/the-86ers-story"
+    },
+    {
+      "title": "2015 FIFA Women's World Cup final — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2015_FIFA_Women%27s_World_Cup_final"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

@@ -1,0 +1,21 @@
+{
+  "venue_id": "houston",
+  "title": "NRG Stadium",
+  "prose": "Houston Stadium — known as NRG Stadium, and originally as Reliant Stadium — was conceived as much for the rodeo as for football. Groundbreaking came on March 9, 2000, the building was topped off in October 2001, and construction was completed in 30 months at a cost of US$352 million. It opened on August 24, 2002 with a preseason game, the Miami Dolphins defeating the Houston Texans 24–3; the first regular-season NFL game followed on September 8, 2002, the Texans beating the Dallas Cowboys 19–10.\n\nThe venue's signature feat was engineering: it was the first NFL facility built with a retractable roof. Two fabric panels split at the 50-yard line and open in as little as 7 minutes, designed using kinetic-architecture principles by Populous (HOK Sport) together with Walter P Moore and Uni-Systems. The dual-purpose brief was no afterthought — co-tenant the Houston Livestock Show and Rodeo, RodeoHouston, was integral to the design, the building shaped to serve both audiences.\n\nAs the primary home of the Houston Texans, the stadium offers over 7,000 club seats and 186 luxury suites, with a regular capacity of 72,220 that can expand to roughly 80,000 for special events. Its field has changed over the years, from a natural-grass tray system at opening to permanent artificial turf installed in 2015. The naming has shifted too: opened as Reliant Stadium, it became NRG Stadium in 2014 under NRG Energy naming rights, then took the name Houston Stadium for the 2026 World Cup, with the Reliant name set to return afterward.\n\nBeyond football and the rodeo, the building has hosted some of the country's largest events: Super Bowls XXXVIII and LI, the 2024 College Football Playoff National Championship, and WrestleMania 25. The 2026 World Cup marks its first men's World Cup, the latest chapter for a venue long defined by versatility and scale.",
+  "sources": [
+    {
+      "title": "NRG Stadium — Wikipedia (pinned revision oldid 1360802485, 2026-06-23)",
+      "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+    },
+    {
+      "title": "The Allen Brothers and the Founding of Houston — Texapedia",
+      "url": "https://texapedia.info/history-houston-founding/"
+    },
+    {
+      "title": "Augustus Chapman Allen — Texas State Historical Association Handbook of Texas",
+      "url": "https://www.tshaonline.org/handbook/entries/allen-augustus-chapman"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

@@ -1,0 +1,29 @@
+{
+  "venue_id": "los-angeles",
+  "title": "SoFi Stadium",
+  "prose": "SoFi Stadium opened on 8 September 2020 in Inglewood, California, rising on the former Hollywood Park Racetrack site within the Hollywood Park development. Designed by HKS, Inc., it carried a cost estimated at roughly $5.5 billion by May 2020, placing it among the most expensive stadiums ever built. Ownership rests with StadCo LA and the Hollywood Park Land Company, tied to Stan Kroenke.\n\nThe venue was conceived as a home for two NFL franchises, the Los Angeles Rams and the Los Angeles Chargers, both resident since 2020. Its most distinctive feature is a freestanding translucent ETFE canopy spanning about one million square feet across 302 panels, beneath which hangs the dual-sided oval 4K Infinity Screen video board.\n\nFrom its earliest seasons the stadium drew the biggest events in American sport. It hosted Super Bowl LVI in February 2022, where the Rams beat the Bengals 23-20, and staged the 2023 College Football Playoff National Championship. Its football pedigree began to build alongside, with top-tier CONCACAF and CONMEBOL fixtures bringing international crowds to Inglewood.\n\nFor the World Cup the stadium is officially branded \"Los Angeles Stadium\" under FIFA's clean-venue, neutral-naming policy, and its regular capacity of 70,240 was set at a FIFA-confirmed 70,492 for the tournament. Its artificial turf was lifted and replaced with a natural-grass pitch, a hybrid Kentucky bluegrass surface grown over a layered drainage and ventilation structure with grow lighting to sustain living grass beneath the canopy.\n\nLooking ahead, SoFi Stadium is set to host the opening and closing ceremonies of the 2028 Summer Olympics, cementing its place as one of the defining venues of its era. In a remarkably short span it moved from a horse-racing site to one of the most recognizable stadiums in the world, equally at home staging an NFL season, a Super Bowl, and now the global game.",
+  "sources": [
+    {
+      "title": "SoFi Stadium - Wikipedia (oldid 1360498175)",
+      "url": "https://en.wikipedia.org/w/index.php?title=SoFi_Stadium&oldid=1360498175"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "World Cup 2026: Los Angeles Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/sofi_stadium"
+    },
+    {
+      "title": "How stadiums transformed turf fields to grass for 2026 World Cup - NBC Los Angeles",
+      "url": "https://www.nbclosangeles.com/world-cup/how-stadiums-transformed-turf-fields-grass/3902476/"
+    },
+    {
+      "title": "2023 CONCACAF Gold Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2023_CONCACAF_Gold_Cup_final"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

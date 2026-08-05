@@ -1,0 +1,194 @@
+{
+  "venue_id": "dallas",
+  "stadium_current": "AT&T Stadium",
+  "stadium_historic": "Cowboys Stadium",
+  "fifa_name": "Dallas Stadium",
+  "city": "Arlington (Dallas metroplex)",
+  "country": "United States",
+  "opened": 2009,
+  "primary_tenant": "Dallas Cowboys (NFL)",
+  "architect": "HKS, Inc.",
+  "capacity_regular": 80000,
+  "capacity_regular_source": {
+    "title": "AT&T Stadium - Wikipedia",
+    "url": "https://en.wikipedia.org/w/index.php?title=AT%26T_Stadium&oldid=1360651168"
+  },
+  "capacity_wc2026": 70649,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+    "url": "https://inside.fifa.com/organisation/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass (Kentucky bluegrass and ryegrass blend, sod-grown in Colorado and trucked to Arlington; installed on a raised temporary platform with underground irrigation, ventilation/temperature control and retractable grow lights) — replacing the stadium's normal artificial turf",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 9,
+  "renovation_cost_2026": "Approximately $295 million (WFAA/StadiumDB reporting; ESPN reports a reported total close to $300 million). Covers the broader World Cup reconfiguration — raising/re-orienting the field and seating, natural-grass pitch system, and interior/facility upgrades — not the grass alone. Reported/estimated figure; exact audited total NOT SPECIFIED IN SOURCES.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Artificial turf replaced with a natural-grass pitch (Kentucky bluegrass + ryegrass blend) sod-grown in Colorado and installed by Precision Turf; supported by underground irrigation, ventilation/temperature control and retractable grow lights, to meet FIFA's natural-grass requirement.",
+      "value": "Natural grass",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "AT&T Stadium unveils new World Cup grass pitch - CBS Texas (14 May 2026)",
+        "url": "https://www.cbsnews.com/texas/news/att-stadium-world-cup-2026-new-grass-pitch-transformation/"
+      }
+    },
+    {
+      "category": "pitch",
+      "change": "Playing surface raised approximately four feet above the original field and expanded at both ends to meet FIFA pitch dimensions, using ~15,000 tons of material (confirmed by ESPN).",
+      "value": "~4 feet (raised), ~15,000 tons",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+        "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Lower-level seats removed to accommodate the raised, widened pitch; FIFA-confirmed World Cup configuration capacity (70,649) is below the venue's normal ~80,000 seated capacity as a result.",
+      "value": "70,649 (WC config)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "FIFA World Cup 2026 final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+        "url": "https://inside.fifa.com/organisation/news/fifa-world-cup-stadium-capacities-confirmed"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Broader World Cup reconfiguration (field raising/re-orienting, seating changes and facility/interior upgrades) reported at approximately $295 million.",
+      "value": "~$295 million",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "2026 World Cup: $295M renovations coming to AT&T Stadium - WFAA",
+        "url": "https://www.wfaa.com/article/sports/soccer/world-cup/att-stadium-2026-world-cup-renovations/287-4329b080-48c7-4054-8d62-49377c1de7ff"
+      }
+    }
+  ],
+  "iconic_games": [
+    {
+      "date": "2013-07-24",
+      "match": "United States vs Honduras",
+      "score": "3-1",
+      "event": "2013 CONCACAF Gold Cup semifinal (first USMNT match at the stadium)",
+      "note": "First-ever United States men's national team match at AT&T Stadium. Goals: E. Johnson 11', Donovan 27' & 53'; Honduras scored once. Verified against ESPN (gameId 375655) and US Soccer.",
+      "source": {
+        "title": "USA 3-1 Honduras (Jul 24, 2013) Final Score - ESPN",
+        "url": "https://www.espn.com/soccer/match/_/gameId/375655/honduras-united-states"
+      }
+    },
+    {
+      "date": "2017-07-22",
+      "match": "United States vs Costa Rica",
+      "score": "2-0",
+      "event": "2017 CONCACAF Gold Cup semifinal",
+      "note": "Goals: Jozy Altidore 72', Clint Dempsey 82'; attendance 45,516. Verified against ESPN (gameId 475850) and MLSSoccer.",
+      "source": {
+        "title": "2017 CONCACAF Gold Cup - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2017_CONCACAF_Gold_Cup"
+      }
+    },
+    {
+      "date": "2024-07-05",
+      "match": "Venezuela vs Canada",
+      "score": "1-1 (Canada won 4-3 on penalties)",
+      "event": "2024 Copa América quarterfinal",
+      "note": "Shaffelburg 13' for Canada, Rondon equalised for Venezuela; Canada advanced 4-3 on penalties (Crepeau saved, Kone scored winner). Verified against ESPN (gameId 703947).",
+      "source": {
+        "title": "2024 Copa América - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica"
+      }
+    },
+    {
+      "date": "2023-07-29",
+      "match": "Barcelona vs Real Madrid",
+      "score": "3-0",
+      "event": "El Clásico pre-season club friendly (Soccer Champions Tour)",
+      "note": "Barcelona won 3-0 (Dembele, Fermin Lopez, Ferran Torres) before 82,026 fans — a US club-match attendance record at the venue. Score IS supported by the cited Wikipedia revision ('Barcelona defeated Real Madrid 3-0 in front of 82,026 fans') and corroborated by ESPN (gameId 669001). [CORRECTED from null during fact-check.]",
+      "source": {
+        "title": "AT&T Stadium - Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?title=AT%26T_Stadium&oldid=1360651168"
+      }
+    }
+  ],
+  "iconic_games_note": "AT&T Stadium has a genuine top-level football history as a repeat Concacaf Gold Cup and 2024 Copa América neutral host — the listed matches are individually sourced and verified. It is also a major non-football (American-football) venue: it hosted Super Bowl XLV (2011) and the College Football Playoff / Cotton Bowl, clearly labelled as non-soccer events and not counted as soccer lore.",
+  "city_history": {
+    "founded": "Arlington was incorporated in 1884; the metroplex anchor city of Dallas was founded in 1841.",
+    "significance": "AT&T Stadium sits in Arlington, Texas, a city of roughly 390,000 between Dallas and Fort Worth that is the metroplex's sports/entertainment hub (also home to the Texas Rangers' Globe Life Field and Six Flags Over Texas). The Dallas-Fort Worth metroplex is one of the largest US metro areas (over 7 million people).",
+    "football_culture": "Football (soccer) culture is hung on the Dallas-Fort Worth metroplex rather than suburban Arlington: the metroplex hosts MLS side FC Dallas (Frisco), has a large and growing Hispanic/Latin American community driving strong support for Mexican and South American national teams, and AT&T Stadium has been a repeat neutral host for Concacaf Gold Cup and Copa América matches drawing large crowds.",
+    "sources": [
+      {
+        "title": "AT&T Stadium - Wikipedia",
+        "url": "https://en.wikipedia.org/w/index.php?title=AT%26T_Stadium&oldid=1360651168"
+      },
+      {
+        "title": "AT&T Stadium Dallas: 2026 World Cup Guide - Sofascore",
+        "url": "https://www.sofascore.com/news/usa-world-cup-stadiums-everthing-to-know-about-the-att-stadium-in-dallas-tx"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened May 27, 2009 as Cowboys Stadium; renamed AT&T Stadium in 2013 (naming-rights deal announced 25 July 2013).",
+    "Designed by HKS, Inc. at a construction cost of about $1.3 billion.",
+    "Home of the NFL's Dallas Cowboys; the largest NFL stadium by seating capacity (~80,000, reconfigurable past 100,000).",
+    "Features a retractable roof and one of the largest center-hung video boards in sports.",
+    "Hosted Super Bowl XLV (February 2011) and is a regular Concacaf Gold Cup and 2024 Copa América host venue.",
+    "For the 2026 World Cup it is FIFA-renamed 'Dallas Stadium' and converted to natural grass on a raised, widened pitch."
+  ],
+  "sources": [
+    {
+      "title": "AT&T Stadium - Wikipedia (oldid 1360651168)",
+      "url": "https://en.wikipedia.org/w/index.php?title=AT%26T_Stadium&oldid=1360651168"
+    },
+    {
+      "title": "FIFA World Cup 2026 final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+      "url": "https://inside.fifa.com/organisation/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "World Cup 2026: Dallas Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/cowboys_stadium"
+    },
+    {
+      "title": "AT&T Stadium unveils new World Cup grass pitch - CBS Texas (14 May 2026)",
+      "url": "https://www.cbsnews.com/texas/news/att-stadium-world-cup-2026-new-grass-pitch-transformation/"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "2026 World Cup: $295M renovations coming to AT&T Stadium - WFAA",
+      "url": "https://www.wfaa.com/article/sports/soccer/world-cup/att-stadium-2026-world-cup-renovations/287-4329b080-48c7-4054-8d62-49377c1de7ff"
+    },
+    {
+      "title": "USA 3-1 Honduras (Jul 24, 2013) Final Score - ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/375655/honduras-united-states"
+    },
+    {
+      "title": "USA 2-0 Costa Rica (Jul 22, 2017) Final Score - ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/475850"
+    },
+    {
+      "title": "Venezuela 1-1 Canada (Jul 5, 2024) Final Score - ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/703947/canada-venezuela"
+    },
+    {
+      "title": "Barcelona 3-0 Real Madrid (Jul 29, 2023) Game Analysis - ESPN",
+      "url": "https://www.espn.com/soccer/report/_/gameId/669001"
+    },
+    {
+      "title": "Dallas Stadium (AT&T Stadium) at FIFA World Cup 2026 - fwcumc.com",
+      "url": "https://fwcumc.com/venues/dallas-stadium/"
+    }
+  ],
+  "gaps": [
+    "CONTESTED capacity_wc2026: FIFA's 10 June 2026 confirmation gives 70,649 (used here as authoritative). A venue guide (fwcumc) lists 70,122 and earlier press (Wikipedia, Sofascore, beIN) cite ~92,967/94,000 NFL-maximum figures; these are NOT used. Exact reconciliation NOT SPECIFIED IN SOURCES.",
+    "Pitch elevation: most sources (ESPN, Hoodline, NBCDFW) say ~4 feet; CBS Texas (14 May 2026) said ~2 feet. Used ~4 feet (majority + ESPN); exact final height not definitively reconciled.",
+    "Renovation cost reported as ~$295 million (WFAA/StadiumDB) and 'close to $300 million' (ESPN); reported/estimated figures, exact audited total NOT SPECIFIED IN SOURCES.",
+    "Exact start date of renovations reported as 'January 2026' but not pinned to a precise calendar date in cited sources.",
+    "Official FIFA street address of Dallas Stadium NOT retrieved (FIFA ticket-support page returned HTTP 403)."
+  ],
+  "confidence": "High on identity, regular capacity (80,000), architect, opening year, tenant, natural-grass conversion, match count (9), and all four iconic football matches (each individually re-verified against ESPN/Wikipedia, including the El Clásico 3-0 score that the original sheet had erroneously left null despite its cited source supporting it). High on capacity_wc2026 = 70,649 via FIFA's official June 2026 confirmation (conflicting press figures flagged in gaps). Medium on the exact renovation total (~$295-300M, reported estimates) and the 2-vs-4-foot pitch-raise detail.",
+  "_as_of": "2026-06-23"
+}

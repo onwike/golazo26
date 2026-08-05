@@ -1,0 +1,29 @@
+{
+  "venue_id": "new-york-nj",
+  "title": "MetLife Stadium",
+  "prose": "MetLife Stadium opened on April 10, 2010 as New Meadowlands Stadium, taking its place on the Meadowlands Sports Complex where it replaced Giants Stadium, which had stood from 1976 to 2010. Built at roughly US$1.6 billion and privately financed by the ownership of the New York Giants and New York Jets, it was the most expensive stadium in the United States at the time of its completion. The following year a naming-rights agreement reshaped its identity: under a 25-year deal signed on August 23, 2011, New Meadowlands Stadium became MetLife Stadium.\n\nThe venue was conceived as a shared home for two NFL franchises, the Giants and the Jets — an unusual arrangement reflected in its design. The lead architect was 360 Architecture, working with EwingCole, Rockwell Group and Bruce Mau Design, and the building's neutral exterior was lit in each home team's colors so that it could belong to whichever club was playing. Ownership traces through the New Jersey Sports and Exposition Authority lineage.\n\nFrom the outset MetLife was built to host events on the grandest scale, and its milestones span codes. In American football it staged Super Bowl XLVIII on February 2, 2014, where Seattle beat Denver 43–8 — the first cold-weather, open-air Super Bowl, with kickoff temperatures around 49°F. In international football it hosted the 2016 Copa América Centenario final, in which Chile beat Argentina 4–2 on penalties.\n\nIts place in the global game culminates with the 2026 World Cup. FIFA selected the stadium to host the tournament's final on July 19, 2026, and it will stage eight matches in all. To meet the demands of the event, the playing surface was converted from artificial turf to natural Bermudagrass — a transformation that turned a purpose-built gridiron venue into a stage fit for the world's biggest football match.",
+  "sources": [
+    {
+      "title": "MetLife Stadium - Wikipedia (pinned rev. 1360702806)",
+      "url": "https://en.wikipedia.org/w/index.php?title=MetLife_Stadium&oldid=1360702806"
+    },
+    {
+      "title": "East Rutherford, New Jersey - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/East_Rutherford,_New_Jersey"
+    },
+    {
+      "title": "Meadowlands Sports Complex - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meadowlands_Sports_Complex"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "MetLife Stadium architects (360 Architecture, EwingCole, Thornton Tomasetti) - Architizer",
+      "url": "https://architizer.com/projects/new-meadowlands-stadium/"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

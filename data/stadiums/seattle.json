@@ -1,0 +1,37 @@
+{
+  "venue_id": "seattle",
+  "title": "Lumen Field",
+  "prose": "Lumen Field opened on 28 July 2002, built on the site of the demolished Kingdome at a total complex cost of about $430 million, roughly $770 million in 2025 dollars. It debuted as Seahawks Stadium, the new home of the NFL's Seattle Seahawks, who have played there since 2002.\n\nThe venue's name has changed several times across its life. It became Qwest Field in 2004, CenturyLink Field in 2011, and Lumen Field in November 2020 after Lumen Technologies. For the FIFA World Cup, FIFA's corporate-name policy sets the sponsor name aside, and the ground is branded Seattle Stadium for the tournament.\n\nThe stadium is owned by the Washington State Public Stadium Authority and was designed by Ellerbe Becket in association with LMN Architects, together with Streeter & Associates. It stands at 800 Occidental Avenue South in Seattle's SoDo neighborhood, just south of downtown.\n\nThough conceived as a football and soccer venue, Lumen Field grew into one of the busiest grounds in American sport. Beyond the Seahawks, it became home to MLS's Seattle Sounders FC from 2009 and to NWSL's Seattle Reign FC from 2022, giving a single stadium three major professional tenants. Its configurations flex to match: about 68,740 for NFL and expandable to roughly 72,000 for special events, about 37,722 for MLS, and about 10,000 for NWSL.\n\nThe playing surface has its own history. Outside the World Cup the ground uses a FieldTurf CORE artificial surface, installed in March 2024. For the 2026 tournament it was converted to a temporary natural and hybrid grass pitch, grown in Moses Lake, WA, and laid over the existing turf.\n\nFrom a name that shifts with its sponsors to a field that changes with its calendar, Lumen Field has remained a fixture of Seattle's sporting identity for more than two decades, a multi-purpose venue purpose-built to host the city's biggest occasions.",
+  "sources": [
+    {
+      "title": "Lumen Field - Wikipedia (oldid 1360343031)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Lumen_Field&oldid=1360343031"
+    },
+    {
+      "title": "History of Seattle - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Seattle"
+    },
+    {
+      "title": "Seattle Sounders FC supporters - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Seattle_Sounders_FC_supporters"
+    },
+    {
+      "title": "Seattle Sounders set Leagues Cup, club attendance records vs. Inter Miami - MLSSoccer.com",
+      "url": "https://www.mlssoccer.com/news/seattle-sounders-set-leagues-cup-club-attendance-records-vs-inter-miami"
+    },
+    {
+      "title": "Seattle Reign FC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Seattle_Reign_FC"
+    },
+    {
+      "title": "$19M World Cup upgrade, and a different name, for Lumen Field - Seattle DJC",
+      "url": "https://www.djc.com/news/ae/12170222.html"
+    },
+    {
+      "title": "FieldTurf Installs New FieldTurf CORE Playing Surface at Lumen Field - FieldTurf",
+      "url": "https://fieldturf.com/en/articles/detail/lumen-field-2024/"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

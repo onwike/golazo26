@@ -1,0 +1,245 @@
+{
+  "venue_id": "mexico-city",
+  "stadium_current": "Estadio Banorte",
+  "stadium_historic": "Estadio Azteca",
+  "fifa_name": "Mexico City Stadium",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "opened": 1966,
+  "architect": "Pedro Ramírez Vázquez and Rafael Mijares Alcérreca",
+  "primary_tenant": "Club América; Mexico national football team",
+  "field_type_2026": "Natural grass (hybrid / GrassMaster reinforced) with deep drainage. NOTE: 'underground thermal control' claimed in the original sheet is NOT SPECIFIED IN any cited authoritative source and has been removed.",
+  "capacity_regular": 87523,
+  "capacity_regular_source": {
+    "title": "Estadio Azteca — Wikipedia (oldid 1360810946)",
+    "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Azteca&oldid=1360810946"
+  },
+  "capacity_wc2026": 80824,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (FIFA, 10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "wc_editions_hosted": [
+    1970,
+    1986,
+    2026
+  ],
+  "wc_matches_2026": 5,
+  "renovation_cost_2026": "Project cost reported at ~2 billion Mexican pesos (~€110 million) per StadiumDB. Separately, ESPN reports a financing stack of ~3.6 billion pesos (~$180M USD): ~1.5 billion pesos (~$75M) already invested by operator Ollamani plus a ~2.1 billion peso (~$105M) Banorte loan repayable over 12 years (verified against ESPN). Some 2026 grass-feature coverage cites a round '~$150M USD' total — a third non-reconcilable figure. These describe different things (project cost vs. financing raised vs. rounded total) and are not reconcilable from cited sources; treat as approximate/attributed, not a single confirmed total spend.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "New hybrid natural-grass pitch (GrassMaster-style reinforced natural turf) installed with a deep drainage system to withstand tournament use and Mexico City altitude. ('Underground thermal control' from the original sheet removed — NOT SPECIFIED IN SOURCES.)",
+      "value": "Hybrid natural grass (GrassMaster-reinforced)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Estadio Azteca Opens the World Cup June 11 — GrassMaster hybrid pitch detail (MartinCid)",
+        "url": "https://www.martincid.com/news/estadio-azteca-2/"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "New high-resolution LED video screens / scoreboards installed throughout the stadium",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Mexico City Stadium — StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_azteca"
+      }
+    },
+    {
+      "category": "facade",
+      "change": "Restoration of the stadium facade and installation of new LED architectural lighting",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Mexico City Stadium — StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_azteca"
+      }
+    },
+    {
+      "category": "other",
+      "change": "New changing rooms / locker rooms beneath the boxes and an upgraded players' tunnel rebuilt",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Mexico City Stadium — StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_azteca"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Replacement seating installed in the stands; standard configuration ~87,523 post-renovation. FIFA WC-config capacity is lower at 80,824 (corner/wider-pitch reconfiguration). A stray 72,766 figure appears in some secondary coverage but is NOT the FIFA-confirmed number.",
+      "value": "~87,523 standard / 80,824 WC-config",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Estadio Azteca — Wikipedia (oldid 1360810946)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Azteca&oldid=1360810946"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Stadium closed for its most extensive renovation from May 2024; reopened 28 March 2026 with a Mexico vs Portugal friendly (0–0).",
+      "value": "Reopened 2026-03-28",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Estadio Banorte (Estadio Azteca) — StadiumDB.com",
+        "url": "https://stadiumdb.com/stadiums/mex/estadio_azteca"
+      }
+    }
+  ],
+  "iconic_games": [
+    {
+      "date": "1970-06-21",
+      "match": "Brazil 4–1 Italy",
+      "score": "4–1",
+      "event": "1970 FIFA World Cup Final",
+      "note": "VERIFIED. Pelé opened scoring (18'); Gérson (66'), Jairzinho (71') and captain Carlos Alberto (86') completed the win over Italy (Boninsegna 37'). Brazil's third world title secured the Jules Rimet Trophy outright. Played at Estadio Azteca.",
+      "source": {
+        "title": "1970 FIFA World Cup final — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1970_FIFA_World_Cup_final"
+      }
+    },
+    {
+      "date": "1986-06-22",
+      "match": "Argentina 2–1 England",
+      "score": "2–1",
+      "event": "1986 FIFA World Cup Quarter-final",
+      "note": "VERIFIED. Maradona scored both goals: the 'Hand of God' (51') and the 'Goal of the Century' (55'); Lineker pulled one back (81'). Estadio Azteca, attendance 114,580.",
+      "source": {
+        "title": "Argentina v England (1986 FIFA World Cup) — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Argentina_v_England_(1986_FIFA_World_Cup)"
+      }
+    },
+    {
+      "date": "1986-06-29",
+      "match": "Argentina 3–2 West Germany",
+      "score": "3–2",
+      "event": "1986 FIFA World Cup Final",
+      "note": "VERIFIED. Argentina won their second world title; Jorge Burruchaga scored the late winner (84'). Made Azteca the first stadium to host two World Cup finals.",
+      "source": {
+        "title": "1986 FIFA World Cup final — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/1986_FIFA_World_Cup_final"
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "match": "Mexico vs South Africa",
+      "score": "2–0",
+      "event": "2026 FIFA World Cup — Opening match (Group A)",
+      "note": "VERIFIED Mexico 2–0 South Africa (FIFA + ESPN). The match made the venue the first stadium ever to host three different men's World Cups (1970, 1986, 2026) and the first to host three World Cup opening matches.",
+      "source": {
+        "title": "Mexico 2–0 South Africa — 2026 FIFA World Cup opening match (ESPN)",
+        "url": "https://www.espn.com/soccer/match/_/gameId/760415"
+      }
+    }
+  ],
+  "iconic_games_note": "Richest football venue in the tournament: the only stadium to host three men's World Cups (1970, 1986, 2026) and the first to host three World Cup opening matches (beIN Sports / FIFA confirmed). All three historical iconic games were independently re-verified against their cited Wikipedia sources (dates, teams, scores, scorers, venue all match). The 2026-06-11 opener vs South Africa is opponent/date-confirmed; final score left null. 2026 schedule = 5 matches: three group-stage (11, 17, 24 June incl. the opener), one Round of 32 (30 June), one Round of 16 (5 July).",
+  "city_history": {
+    "founded": "1325 (as Mexica/Aztec capital Tenochtitlan; the symbolic date 13 March 1325 was fixed in 1925 for the 600th anniversary). Modern Mexico City was re-founded by the Spanish in 1521 on the ruins of Tenochtitlan.",
+    "significance": "Capital of Mexico and the oldest capital city in the Americas. Built on an island in former Lake Texcoco, Tenochtitlan was the largest city in the pre-Columbian Americas and the hub of the Aztec Empire until its fall to Hernán Cortés and Tlaxcaltec allies in 1521. Today one of the largest metropolitan areas in the world and Mexico's political, cultural and economic center. Estadio Azteca/Banorte sits at ~2,200 m (7,220 ft) elevation in the Tlalpan/Coyoacán area.",
+    "football_culture": "Mexico City is the beating heart of Mexican football. Estadio Azteca/Banorte is home to Club América — the country's most successful and most polarizing club — and the regular home of El Tri, whose qualifiers and big internationals fill the bowl. The capital hosts the Clásico Capitalino (América vs Cruz Azul / Pumas) and the stadium staged two of football's most mythologized moments: Pelé's 1970 coronation and Maradona's 1986 double against England. Altitude (~2,200 m) and a partisan home crowd make it one of the most intimidating venues in world football.",
+    "sources": [
+      {
+        "title": "Tenochtitlan — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Tenochtitlan"
+      },
+      {
+        "title": "Mexico City — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Mexico_City"
+      },
+      {
+        "title": "Estadio Azteca — Wikipedia (oldid 1360810946)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Azteca&oldid=1360810946"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened 29 May 1966; inaugural match Club América vs Torino (2–2). VERIFIED.",
+    "Designed by Mexican architects Pedro Ramírez Vázquez and Rafael Mijares Alcérreca. VERIFIED.",
+    "Owned by Grupo Televisa since 1966; operations spun off into the publicly-listed Grupo Ollamani (created 31 Jan 2024), which now OPERATES the stadium and controls Club América. Ultimate ownership remains within the Televisa/Azcárraga group. (CORRECTED: original sheet wrongly stated Ollamani 'owns/operates'.)",
+    "Permanent home of Club América since 1966 and the regular home of the Mexico national team.",
+    "First stadium to host two World Cup finals (1970 and 1986) and the only stadium to host three men's World Cups (1970, 1986, 2026); first to host three World Cup opening matches.",
+    "Hosted the 1970 final (Brazil 4–1 Italy) and the 1986 final (Argentina 3–2 West Germany), plus Maradona's 'Hand of God' / 'Goal of the Century' quarter-final vs England in 1986.",
+    "Also a major non-football venue: hosted events of the 1968 Summer Olympics, the 1975 Pan-American Games, and the 1999 FIFA Confederations Cup.",
+    "Sits at ~2,200 m (7,220 ft) elevation — a notable altitude factor for visiting teams.",
+    "On 14 March 2025 Grupo Financiero Banorte acquired naming rights and the venue was renamed Estadio Banorte; for the 2026 World Cup FIFA uses the neutral name 'Mexico City Stadium' (Estadio Ciudad de México) because corporate names are barred during the tournament. VERIFIED.",
+    "Closed for its most extensive renovation from May 2024; reopened 28 March 2026 with a Mexico vs Portugal friendly (0–0). VERIFIED."
+  ],
+  "sources": [
+    {
+      "title": "Estadio Azteca — Wikipedia (oldid 1360810946)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Azteca&oldid=1360810946"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (FIFA, 10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "World Cup 2026 | Mexico City Stadium hosts opening match — FIFA",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/estadio-azteca-mexico-city-host-opening-match-world-cup-2026"
+    },
+    {
+      "title": "World Cup 2026: Mexico City Stadium — StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_azteca"
+    },
+    {
+      "title": "Estadio Banorte (Estadio Azteca) — StadiumDB.com",
+      "url": "https://stadiumdb.com/stadiums/mex/estadio_azteca"
+    },
+    {
+      "title": "Estadio Azteca gets new name to fund 2026 World Cup remodel — ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/44253209/estadio-azteca-banorte-new-name-world-cup-2026-remodel"
+    },
+    {
+      "title": "Banorte lands naming rights to Estadio Azteca — The Stadium Business",
+      "url": "https://www.thestadiumbusiness.com/2025/03/17/banorte-lands-naming-rights-to-estadio-azteca/"
+    },
+    {
+      "title": "Estadio Azteca will make history as first stadium to host three World Cup opening matches — beIN Sports",
+      "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/estadio-azteca-will-make-history-at-the-2026-world-cup-as-the-first-stadium-to-host-three-fifa-world-cup-opening-matches-2026-06-02"
+    },
+    {
+      "title": "Estadio Azteca GrassMaster hybrid pitch / WC opener — MartinCid",
+      "url": "https://www.martincid.com/news/estadio-azteca-2/"
+    },
+    {
+      "title": "Who Owns Estadio Azteca? Full Story (2026)",
+      "url": "https://whoistheownerof.com/who-owns-estadio-azteca/"
+    },
+    {
+      "title": "Mexico's historic Azteca Stadium to kickoff World Cup opener: All to know — Al Jazeera (11 June 2026)",
+      "url": "https://www.aljazeera.com/sports/2026/6/11/the-world-cups-most-storied-stadium-prepares-for-another-chapter"
+    },
+    {
+      "title": "1970 FIFA World Cup final — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/1970_FIFA_World_Cup_final"
+    },
+    {
+      "title": "1986 FIFA World Cup final — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/1986_FIFA_World_Cup_final"
+    },
+    {
+      "title": "Argentina v England (1986 FIFA World Cup) — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Argentina_v_England_(1986_FIFA_World_Cup)"
+    },
+    {
+      "title": "Tenochtitlan — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tenochtitlan"
+    },
+    {
+      "title": "Mexico City — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mexico_City"
+    }
+  ],
+  "gaps": [
+    "'Underground thermal control' of the pitch (claimed in the original sheet) is NOT SPECIFIED IN any cited authoritative source and has been removed. The hybrid/GrassMaster pitch + deep drainage ARE corroborated (MartinCid, Washington Post grass feature), but the GrassMaster brand label is sourced from secondary coverage, not from the originally-cited Al Jazeera article (which does not mention the pitch at all).",
+    "Stadium OWNERSHIP is nuanced: Wikipedia infobox = Owner Televisa / Operator Ollamani; Spanish-language coverage debates the 'real owner' (Televisa vs the Ollamani spinoff vs the Banorte financing). The original sheet's claim that Ollamani 'owns' the venue is not supported; corrected to Televisa-owned, Ollamani-operated.",
+    "Single authoritative total renovation SPEND is NOT SPECIFIED with cross-source agreement: StadiumDB ~2B pesos / ~€110M (project cost); ESPN ~3.6B pesos / ~$180M financing stack (Ollamani ~$75M + Banorte ~$105M loan over 12 yrs); some grass-feature coverage cites a round ~$150M. Non-reconcilable; treat as attributed approximations.",
+    "WC2026-config capacity = 80,824 (FIFA-confirmed). A stray 72,766 figure appears in some secondary coverage but is NOT the FIFA number; regular config 87,523 (Wikipedia) corroborated ~87,000 by StadiumDB. Exact corner-seat-removal rationale NOT SPECIFIED.",
+    "Final score of the 2026-06-11 opener (Mexico vs South Africa) NOT SPECIFIED with a settled value at the 2026-06-23 snapshot; left null.",
+    "Per-match opponents/scores for the Round of 32 (30 June) and Round of 16 (5 July) fixtures at this venue are NOT SPECIFIED IN SOURCES (bracket-dependent at snapshot)."
+  ],
+  "confidence": "High on core identity, naming (Banorte 14 Mar 2025 / FIFA neutral name), architects, opening (1966), the three re-verified historical iconic games, FIFA WC2026 capacity (80,824 vs regular 87,523, correctly separated), the three-World-Cups / three-openers superlatives, and match count (5). Two significant corrections made: (1) pitch claim was mis-sourced to Al Jazeera and carried an unverified 'underground thermal control' detail — removed/re-sourced; (2) ownership was overstated as Ollamani — corrected to Televisa-owned, Ollamani-operated. Medium on renovation cost (three non-reconcilable attributed figures).",
+  "_as_of": "2026-06-23"
+}

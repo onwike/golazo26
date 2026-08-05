@@ -1,0 +1,29 @@
+{
+  "venue_id": "monterrey",
+  "title": "Estadio BBVA",
+  "prose": "Estadio BBVA rose from construction that ran from 2011 to 2015 at a cost of US$200 million, a price tag that made it the most expensive stadium in Mexico at the time. It was inaugurated on 2 August 2015, a date chosen to coincide with C.F. Monterrey's 70th anniversary. The design came from Populous working alongside the Mexican firm VFO, with Federico Velasco as lead designer. The result earned the nickname El Gigante de Acero, the Steel Giant, a fitting label for a venue whose grandstand rises at an inclination of 34 degrees and whose field-to-seat distance sits at the FIFA minimum. Through the open northern end, the Cerro de la Silla mountain is framed like a picture.\n\nThe stadium was built as the home of C.F. Monterrey, the club known as Rayados, who moved here from the 63-year-old Estadio Tecnológico. Owned and operated by FEMSA, it broke new ground beyond Mexico as well: it became the first football stadium in North America to earn LEED Silver certification. In its regular configuration the ground seats roughly 53,500, with about 43,000 general seats, some 5,000 club seats, and 324 luxury suites, a precise count of 53,529 in the fullest tally. For the 2026 World Cup the venue carries a capacity of 51,243 and will stage four matches, marking the first time it hosts men's World Cup football.",
+  "sources": [
+    {
+      "title": "Estadio BBVA — Wikipedia (pinned rev. 1360440989, 21 June 2026)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_BBVA&oldid=1360440989"
+    },
+    {
+      "title": "FIFA — Final stadium capacities confirmed (10 June 2026): Monterrey Stadium 51,243",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Monterrey — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Monterrey"
+    },
+    {
+      "title": "Monterrey | History, Map, Economy, Population, & Facts — Britannica",
+      "url": "https://www.britannica.com/place/Monterrey-Mexico"
+    },
+    {
+      "title": "World Cup 2026 Monterrey Tickets Guide: Estadio BBVA schedule & history — Goal.com",
+      "url": "https://www.goal.com/en-us/lists/estadio-bbva-stadium-guide-history-stay/blt97d127638d6fc159"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

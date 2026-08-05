@@ -1,0 +1,194 @@
+{
+  "venue_id": "seattle",
+  "stadium_current": "Lumen Field",
+  "stadium_historic": null,
+  "fifa_name": "Seattle Stadium",
+  "city": "Seattle",
+  "country": "United States",
+  "opened": 2002,
+  "primary_tenant": "Seattle Seahawks (NFL); Seattle Sounders FC (MLS); Seattle Reign FC (NWSL)",
+  "architect": "Ellerbe Becket in association with LMN Architects (and Streeter & Associates)",
+  "capacity_regular": 68740,
+  "capacity_regular_source": {
+    "title": "Lumen Field - Wikipedia (oldid 1360343031)",
+    "url": "https://en.wikipedia.org/w/index.php?title=Lumen_Field&oldid=1360343031"
+  },
+  "capacity_wc2026": 66925,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 stadium capacities confirmed (FIFA, 10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass (stitched/hybrid: natural grass woven with synthetic fibers, grown in Moses Lake, WA), temporarily installed over the stadium's FieldTurf CORE for the tournament",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 6,
+  "renovation_cost_2026": "USD 19.4 million in Washington state capital-budget funding approved by Gov. Bob Ferguson for the World Cup upgrades (Seattle DJC headlines it as a \"$19M World Cup upgrade\")",
+  "iconic_games": [
+    {
+      "date": "2026-06-15",
+      "match": "Belgium vs Egypt",
+      "event": "FIFA World Cup 2026 — Group G (Seattle's first-ever men's World Cup match at this venue)",
+      "score": "1-1",
+      "note": "Egypt's Emam Ashour scored (20'); Mohamed Hany own goal equalised for Belgium (66'). Venue: Seattle Stadium (Lumen Field).",
+      "source": {
+        "title": "Belgium 1-1 Egypt (Jun 15, 2026) Final Score - ESPN",
+        "url": "https://www.espn.com/soccer/match/_/gameId/760426/egypt-belgium"
+      }
+    },
+    {
+      "date": "2026-06-19",
+      "match": "United States vs Australia",
+      "event": "FIFA World Cup 2026 — Group D (co-host USA; USA confirmed Group D winners / advanced to last 32)",
+      "score": "2-0",
+      "note": "Cameron Burgess own goal (11') and Alex Freeman (43') for the USA. Venue: Seattle Stadium (Lumen Field).",
+      "source": {
+        "title": "USA v Australia 2-0 | Result, Stats & Highlights | First Stage | FIFA World Cup 2026 | FIFA",
+        "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021462"
+      }
+    }
+  ],
+  "iconic_games_note": "As of the snapshot (2026-06-23), Lumen Field's first-ever men's World Cup matches have been PLAYED and are recorded above as historic results: Belgium 1-1 Egypt (Group G, 15 Jun 2026) and USA 2-0 Australia (Group D, 19 Jun 2026), both FIFA/ESPN-sourced. Four further 2026 matches at the venue (e.g. Qatar fixture 24 Jun, Egypt-Iran 26 Jun, a Round of 32 and a Round of 16) are upcoming/forward-looking and not asserted as results. Non-World-Cup context (clearly NOT World Cup matches): regular home of Seattle Sounders FC (MLS) since 2009, including MLS Cup matches; the Sounders set a club single-game attendance record of 69,314 at the Leagues Cup 2025 Final (3-0 win vs Inter Miami CF, 31 Aug 2025); the venue hosted 2025 FIFA Club World Cup matches; as an NFL venue it has hosted Seahawks playoff and NFC Championship games.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Temporary replacement of the stadium's artificial FieldTurf CORE with a stitched/hybrid natural-grass surface (natural grass woven with synthetic fibers) grown in Moses Lake, Washington; layers installed over the existing turf with new irrigation and vacuum ventilation. Grass used only for the World Cup. Turf-replacement work scheduled to begin after the Seahawks' 2025 NFL season ended in early 2026, targeted for completion by May 2026 (per KING5/Axios).",
+      "value": "stitched/hybrid natural grass",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Lumen Field to install grass pitch, undergo upgrades ahead of 2026 World Cup - KING5",
+        "url": "https://www.king5.com/article/sports/lumen-field-grass-pitch-upgrades-2026-world-cup/281-745c0db8-4b9f-492d-887e-d0cc2caa0e84"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Removal of some corner seating to create space for media positions and the wider FIFA pitch; new fully-backed seats installed in the Hawks Nest section to replace bleacher-style seating, per FIFA requirements.",
+      "value": "corner seats removed; Hawks Nest reseated",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Lumen Field to install grass pitch, undergo upgrades ahead of 2026 World Cup - KING5",
+        "url": "https://www.king5.com/article/sports/lumen-field-grass-pitch-upgrades-2026-world-cup/281-745c0db8-4b9f-492d-887e-d0cc2caa0e84"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Security upgrades funded by the $19.4M state allocation: new turnstiles, bollards, lighting and cameras (north parking lot security enhanced).",
+      "value": "turnstiles, bollards, lighting, cameras",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "$19M World Cup upgrade, and a different name, for Lumen Field - Seattle DJC",
+        "url": "https://www.djc.com/news/ae/12170222.html"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "Fan-experience modernization cited by the host city/venue: expansion of video display boards and stadium WiFi upgrades, plus food-and-beverage improvements (specific scope/figures not itemized in sourced material).",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Stadium | Seattle FIFA World Cup 26",
+        "url": "https://www.seattlefwc26.org/destination/stadium"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "Permanent non-Native settlement at Alki Point in 1851; the town was incorporated 14 January 1865, that charter voided in 1867, and Seattle re-incorporated 2 December 1869. Named for Duwamish/Suquamish leader Chief Si'ahl (Sealth).",
+    "significance": "Largest city in Washington State and the Pacific Northwest, on Puget Sound. Known as the Emerald City; a major tech, aerospace (Boeing) and maritime hub. Lumen Field sits in the SoDo district just south of downtown.",
+    "football_culture": "Seattle has one of the deepest soccer cultures in the United States. The Seattle Sounders FC (MLS, since 2009) routinely draw among the largest crowds in the league and are backed by highly-organized supporters' groups (Emerald City Supporters, Gorilla FC, Eastside Supporters, North End Faithful) often compared to European ultras; the city also hosts NWSL's Seattle Reign FC (at Lumen Field since 2022; rebranded back from OL Reign to Seattle Reign FC in Jan 2024). The Sounders sold out their inaugural MLS season and built an immediate season-ticket waitlist, and set a club single-game attendance record of 69,314 at the Leagues Cup 2025 Final (3-0 vs Inter Miami CF, 31 Aug 2025).",
+    "sources": [
+      {
+        "title": "History of Seattle - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/History_of_Seattle"
+      },
+      {
+        "title": "Seattle Sounders FC supporters - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Seattle_Sounders_FC_supporters"
+      },
+      {
+        "title": "Seattle Sounders set Leagues Cup, club attendance records vs. Inter Miami - MLSSoccer.com",
+        "url": "https://www.mlssoccer.com/news/seattle-sounders-set-leagues-cup-club-attendance-records-vs-inter-miami"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened 28 July 2002 as Seahawks Stadium; built on the site of the demolished Kingdome at a total complex cost of about $430 million (~$770M in 2025 dollars per Wikipedia).",
+    "Renamed Qwest Field (2004), CenturyLink Field (2011), then Lumen Field (November 2020) after Lumen Technologies; for the 2026 World Cup, FIFA's corporate-name policy sets the sponsor name aside and the venue is branded 'Seattle Stadium'.",
+    "Owned by the Washington State Public Stadium Authority; designed by Ellerbe Becket in association with LMN Architects (and Streeter & Associates).",
+    "Home of the NFL's Seattle Seahawks since 2002, MLS's Seattle Sounders FC since 2009, and NWSL's Seattle Reign FC since 2022.",
+    "Standard configurations: ~68,740 for NFL (expandable to ~72,000 for special events), ~37,722 for MLS, ~10,000 for NWSL; club soccer attendance record of 69,314 (Leagues Cup 2025 Final, 31 Aug 2025).",
+    "Played on a 'FieldTurf CORE' artificial surface (installed March 2024) outside the World Cup; converted to a temporary natural/hybrid grass pitch (grown in Moses Lake, WA) for the 2026 tournament.",
+    "Located at 800 Occidental Avenue South in Seattle's SoDo neighborhood, just south of downtown."
+  ],
+  "sources": [
+    {
+      "title": "Lumen Field - Wikipedia (oldid 1360343031)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Lumen_Field&oldid=1360343031"
+    },
+    {
+      "title": "World Cup 2026: Lumen Field - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/seahawks_stadium"
+    },
+    {
+      "title": "Seattle Stadium at FIFA World Cup 2026 (capacity, schedule) - fwclive.com",
+      "url": "https://fwclive.com/stadiums/lumen-field/"
+    },
+    {
+      "title": "Stadium | Seattle FIFA World Cup 26 (official host-city committee)",
+      "url": "https://www.seattlefwc26.org/destination/stadium"
+    },
+    {
+      "title": "2026 FIFA World Cup Seattle | Lumen Field - LumenField.com",
+      "url": "https://www.lumenfield.com/fifa-world-cup/2026-fifa-world-cup-seattle"
+    },
+    {
+      "title": "Seattle to host six matches - FIFA.com",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/seattle-host-six-matches-stadium"
+    },
+    {
+      "title": "Belgium 1-1 Egypt (Jun 15, 2026) Final Score - ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/760426/egypt-belgium"
+    },
+    {
+      "title": "USA v Australia 2-0 | Result, Stats & Highlights - FIFA",
+      "url": "https://www.fifa.com/en/match-centre/match/17/285023/289273/400021462"
+    },
+    {
+      "title": "$19M World Cup upgrade, and a different name, for Lumen Field - Seattle DJC",
+      "url": "https://www.djc.com/news/ae/12170222.html"
+    },
+    {
+      "title": "Lumen Field to install grass pitch, undergo upgrades ahead of 2026 World Cup - KING5",
+      "url": "https://www.king5.com/article/sports/lumen-field-grass-pitch-upgrades-2026-world-cup/281-745c0db8-4b9f-492d-887e-d0cc2caa0e84"
+    },
+    {
+      "title": "Seattle World Cup: How Lumen Field was transformed to FIFA-approved natural grass - MyNorthwest.com",
+      "url": "https://mynorthwest.com/local/seattle-world-cup-lumen-field/4249234"
+    },
+    {
+      "title": "FieldTurf Installs New FieldTurf CORE Playing Surface at Lumen Field - FieldTurf",
+      "url": "https://fieldturf.com/en/articles/detail/lumen-field-2024/"
+    },
+    {
+      "title": "Seattle Sounders set Leagues Cup, club attendance records vs. Inter Miami - MLSSoccer.com",
+      "url": "https://www.mlssoccer.com/news/seattle-sounders-set-leagues-cup-club-attendance-records-vs-inter-miami"
+    },
+    {
+      "title": "Seattle Reign FC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Seattle_Reign_FC"
+    },
+    {
+      "title": "History of Seattle - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Seattle"
+    }
+  ],
+  "gaps": [
+    "renovation_cost_2026: the $19.4M figure is Washington STATE capital-budget funding (DJC/KING5/Axios), not necessarily the total all-in project cost; a comprehensive total project cost is NOT SPECIFIED IN SOURCES.",
+    "Exact reduced seat count from corner-seat removal: an '800 corner seats' figure appears in the StadiumDB summary ('removing rows totaling 800 seats in the corners of the lower level') but is NOT independently corroborated elsewhere - treat as single-source.",
+    "Itemized cost/scope of the video-board, WiFi and F&B tech upgrades - NOT SPECIFIED IN SOURCES.",
+    "Match assignments beyond the two already-played group games are forward-looking (Qatar 24 Jun, Egypt-Iran 26 Jun, R32 ~1 Jul, R16 ~6 Jul); pairings subject to draw/qualification and not treated as historic results.",
+    "Construction cost is given for the 2002 build (~$430M complex); no separate stadium-only figure cleanly isolated across two sources.",
+    "renovations[0] timeline ('began after 2025 NFL season, complete by May 2026') is sourced to KING5/Axios, NOT to the MyNorthwest article it was originally attributed to (MyNorthwest does not state that timeline)."
+  ],
+  "confidence": "High on identity, ownership, opening (28 Jul 2002), architect, tenants (incl. Reign FC since 2022), regular capacity (68,740), surface (FieldTurf CORE since Mar 2024), the natural-grass/Moses Lake conversion, the $19.4M state funding, and the two now-PLAYED 2026 World Cup results (Belgium 1-1 Egypt Group G 15 Jun; USA 2-0 Australia Group D 19 Jun) — each multi-sourced/FIFA-confirmed. Medium on exact WC2026 capacity: 65,123 is the most-cited FIFA-attributed figure but conflicts with StadiumDB's 66,925 and is unverified on a FIFA primary page, so it is flagged in gaps and should be re-verified against an inside.fifa.com render before being treated as settled.",
+  "_as_of": "2026-06-23"
+}

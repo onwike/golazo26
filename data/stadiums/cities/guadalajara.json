@@ -1,0 +1,29 @@
+{
+  "city_id": "guadalajara",
+  "title": "Guadalajara (Zapopan, Jalisco)",
+  "prose": "Guadalajara, capital and most populous city of the Mexican state of Jalisco, was founded on 14 February 1542 in the Atemajac Valley — the last of several relocations that began in 1532. In 1560 it became the capital of Nueva Galicia, cementing an importance it has carried ever since. Its metropolitan area, home to roughly 5.3 million people as of 2020, ranks as the third-largest in Mexico.\n\nThe city is often called the \"most Mexican of Mexican cities,\" and the description is earned: Guadalajara is a heartland of mariachi, tequila, charrería and Ballet Folklórico, traditions that have shaped the national image of Mexico itself.\n\nFootball runs just as deep. The city's identity is woven around C.D. Guadalajara — better known as Chivas — founded in 1906 and one of Mexico's two most popular and successful clubs, famous for fielding only Mexican players. Chivas is the tenant of Estadio Akron, the stadium it built in 2010 in the suburb of Zapopan, part of the Guadalajara metropolitan area and the site of the 2026 World Cup venue. The metro is also home to Liga MX side Atlas, giving the city a second top-flight club. Before Chivas built its own ground, Guadalajara staged matches at the historic Estadio Jalisco, a venue of both the 1970 and 1986 World Cups — a lineage that places the city firmly among the homes of Mexican football.",
+  "sources": [
+    {
+      "title": "Estadio Akron — Wikipedia (pinned revision, oldid 1360713645)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+    },
+    {
+      "title": "Guadalajara — Wikipedia (city history)",
+      "url": "https://en.wikipedia.org/wiki/Guadalajara"
+    },
+    {
+      "title": "C.D. Guadalajara (Chivas) — Wikipedia (football culture)",
+      "url": "https://en.wikipedia.org/wiki/C.D._Guadalajara"
+    },
+    {
+      "title": "World Cup 2026: Estadio Guadalajara — StadiumDB.com (WC capacity 45,664; 4 matches)",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_omnilife"
+    },
+    {
+      "title": "Guadalajara Stadium — FIFA official stadium page (WC name 'Estadio Guadalajara', capacity 45,664, 4 matches)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/guadalajara"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

@@ -1,0 +1,21 @@
+{
+  "city_id": "houston",
+  "title": "Houston",
+  "prose": "Houston was founded on August 30, 1836 by New York real-estate speculators Augustus C. and John K. Allen on land along Buffalo Bayou. They named it for the Texas Revolution hero and later Republic of Texas president, General Sam Houston, and the young settlement briefly served as capital of the Republic of Texas.\n\nFrom those bayou-side origins, Houston grew into the fourth-largest city in the United States, its population exceeding 2.3 million and its metropolitan area surpassing 7 million. It became the global capital of the energy and oil-and-gas industry, home to NASA's Johnson Space Center — the source of its nickname, \"Space City\" — and to the Texas Medical Center. It ranks among the most ethnically diverse major cities in America.\n\nThat diversity shapes the city's football culture. Houston is a strong soccer market, anchored by MLS side Houston Dynamo FC and NWSL's Houston Dash, both playing at Shell Energy Stadium. A large and passionate Mexican-American fan base has made the city a frequent host for the Mexico national team, El Tri, and for CONCACAF events. NRG Stadium — long known as Reliant Stadium — has served as a go-to United States venue for USMNT–Mexico fixtures, the Gold Cup, and Copa América Centenario matches, regularly drawing crowds of 68,000 and above. It is that deep, demonstrated appetite for the international game, as much as the city's scale and global outlook, that frames Houston as a fitting stage among the 2026 host cities.",
+  "sources": [
+    {
+      "title": "NRG Stadium — Wikipedia (pinned revision oldid 1360802485, 2026-06-23)",
+      "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+    },
+    {
+      "title": "The Allen Brothers and the Founding of Houston — Texapedia",
+      "url": "https://texapedia.info/history-houston-founding/"
+    },
+    {
+      "title": "Augustus Chapman Allen — Texas State Historical Association Handbook of Texas",
+      "url": "https://www.tshaonline.org/handbook/entries/allen-augustus-chapman"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

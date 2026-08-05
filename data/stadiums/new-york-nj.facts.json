@@ -1,0 +1,189 @@
+{
+  "venue_id": "new-york-nj",
+  "stadium_current": "MetLife Stadium",
+  "stadium_historic": null,
+  "fifa_name": "New York New Jersey Stadium",
+  "city": "East Rutherford, New Jersey (New York/New Jersey metro)",
+  "country": "United States",
+  "opened": 2010,
+  "primary_tenant": "New York Giants and New York Jets (NFL)",
+  "architect": "360 Architecture (lead); EwingCole (per Wikipedia rev 1360702806, listed alongside Rockwell Group and Bruce Mau Design)",
+  "capacity_regular": 82500,
+  "capacity_regular_source": {
+    "title": "MetLife Stadium - Wikipedia (rev. 1360702806)",
+    "url": "https://en.wikipedia.org/w/index.php?title=MetLife_Stadium&oldid=1360702806"
+  },
+  "capacity_wc2026": 80663,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 stadium capacities confirmed (FIFA, 10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass (Bermudagrass) installed on modular trays over existing FieldTurf infrastructure; sand base, irrigation, and ventilation layers topped by ~600 rolls of turf to form a 105 x 68 m FIFA pitch. Converted from artificial turf specifically for the World Cup; Bermudagrass first installed early May 2026 (per ESPN).",
+  "renovation_cost_2026": "Over US$100 million in World Cup-readiness upgrades, privately funded by Giants/Jets ownership, on top of the original ~US$1.6 billion construction cost; per meetstadium.com (single outlet, not an itemized/FIFA-audited figure).",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 8,
+  "iconic_games": [
+    {
+      "date": "2016-06-26",
+      "match": "Argentina vs Chile",
+      "score": "0–0 (Chile won 4–2 on penalties)",
+      "event": "2016 Copa América Centenario Final",
+      "note": "Chile retained the Copa América on penalties (attendance 82,026 per Wikipedia). Lionel Messi missed his penalty and subsequently announced a (temporary) retirement from international football. Score, teams and shootout result confirmed against the cited Wikipedia revision.",
+      "source": {
+        "title": "MetLife Stadium - Wikipedia (rev. 1360702806)",
+        "url": "https://en.wikipedia.org/w/index.php?title=MetLife_Stadium&oldid=1360702806"
+      }
+    },
+    {
+      "date": "2012-06-09",
+      "match": "Argentina vs Brazil",
+      "score": "4–3",
+      "event": "International friendly (Superclásico de las Américas)",
+      "note": "Lionel Messi scored a hat-trick including the late winner. 4–3 Argentina, Messi hat-trick confirmed against Wikipedia rev and ESPN match report (gameId 337320).",
+      "source": {
+        "title": "MetLife Stadium - Wikipedia (rev. 1360702806)",
+        "url": "https://en.wikipedia.org/w/index.php?title=MetLife_Stadium&oldid=1360702806"
+      }
+    },
+    {
+      "date": "2014-06-10",
+      "match": "Republic of Ireland vs Portugal",
+      "score": "1–5",
+      "event": "International friendly (pre-2014 World Cup)",
+      "note": "Portugal beat Ireland 5–1 (listed Ireland-first as 1–5). Cristiano Ronaldo started in Portugal's final World Cup warm-up. Confirmed against Wikipedia rev ('Portugal beating Ireland 5–1') and ESPN match report (gameId 364825).",
+      "source": {
+        "title": "MetLife Stadium - Wikipedia (rev. 1360702806)",
+        "url": "https://en.wikipedia.org/w/index.php?title=MetLife_Stadium&oldid=1360702806"
+      }
+    }
+  ],
+  "iconic_games_note": "MetLife has genuine top-tier football history: it hosted the 2016 Copa América Centenario final (Chile beat Argentina 4–2 on penalties after 0–0) and numerous marquee international friendlies — Argentina 4–3 Brazil (2012, Messi hat-trick, ESPN gameId 337320); Portugal 5–1 Ireland (2014, ESPN gameId 364825); Brazil 1–0 Ecuador (Sep 9 2014, ESPN gameId 405991, Willian goal — independently verified by this fact-check). NON-football note (clearly labelled): it hosted Super Bowl XLVIII (Feb 2, 2014, Seattle 43, Denver 8) — the first cold-weather, open-air Super Bowl (game-time temp ~49°F); East Rutherford is the smallest municipality ever to host a Super Bowl. In 2026 it hosts the World Cup final (July 19, 2026).",
+  "renovations": [
+    {
+      "category": "capacity",
+      "change": "Two-phase lower-bowl renovation: the four corners of the precast concrete seating bowl were demolished and rebuilt with a new modular steel-composite seating system; an additional 1,740 permanent corner seats were replaced with the modular system (removable for the wider FIFA pitch). Wikipedia indicates NFL capacity was maintained. Phase I completed May 2024; Phase II completed May 2025. The 1,740 figure is corroborated by ESPN ('a total of 1,740 seats from the corners had to be removed').",
+      "value": "1,740 corner seats convertible/removable",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "MetLife Stadium - Wikipedia (rev. 1360702806)",
+        "url": "https://en.wikipedia.org/w/index.php?title=MetLife_Stadium&oldid=1360702806"
+      }
+    },
+    {
+      "category": "pitch",
+      "change": "Conversion from artificial turf to natural Bermudagrass on modular trays for the World Cup. Build-up over existing turf infrastructure includes a sand base, permeable cloth and ventilation layers, topped by ~600 rolls of turf to form a 105 x 68 m FIFA-regulation pitch. Bermudagrass first installed early May 2026. Confirmed against ESPN (600 rolls, Bermuda grass, 105x68m, early-May install).",
+      "value": "~600 turf rolls; 105 x 68 m pitch",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+        "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Broader World Cup-readiness upgrades (over US$100M, privately funded, single-outlet): concourse, WiFi/cellular, broadcast/media, accessibility, exterior arrival areas, and FIFA-required security/technology/branding changes (corporate name suspended to 'New York New Jersey Stadium' during the tournament).",
+      "value": "over US$100 million (single outlet, not FIFA-audited)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "MetLife Stadium World Cup Final 2026: What to Expect - meetstadium.com",
+        "url": "https://meetstadium.com/journal/metlife-stadium-world-cup-final-preparations/"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "East Rutherford, NJ incorporated as a borough March 28, 1894 (from Boiling Springs Township). The Meadowlands Sports Complex opened in 1976; MetLife Stadium opened in 2010.",
+    "significance": "East Rutherford is a small Bergen County borough (~7 miles west of Midtown Manhattan) anchored by the Meadowlands Sports Complex — home to MetLife Stadium, the Meadowlands Racetrack and the American Dream mega-mall. It is the smallest municipality ever to host a Super Bowl (XLVIII, 2014) and hosts the 2026 World Cup final.",
+    "football_culture": "Hung on the New York/New Jersey metropolitan area, not the borough. The NY/NJ metro is one of the largest, most football-passionate U.S. markets: New York Red Bulls and NYCFC (MLS), the historic 1970s-80s New York Cosmos (Pelé, Beckenbauer), and vast Latino, European and African diaspora fanbases. MetLife/Giants Stadium has a long record of selling out marquee internationals (Copa América Centenario final, Argentina–Brazil superclásicos). The 'New York New Jersey' WC branding reflects the bi-state market. Correctly attributed to the metro, not the small borough.",
+    "sources": [
+      {
+        "title": "East Rutherford, New Jersey - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/East_Rutherford,_New_Jersey"
+      },
+      {
+        "title": "Meadowlands Sports Complex - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Meadowlands_Sports_Complex"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened April 10, 2010 as New Meadowlands Stadium; renamed MetLife Stadium under a 25-year naming-rights deal signed August 23, 2011 (per Wikipedia rev 1360702806).",
+    "Built at ~US$1.6 billion, privately financed by the Giants and Jets ownership — the most expensive stadium in the U.S. at the time of completion.",
+    "Owned via the New Jersey Sports and Exposition Authority lineage; replaced Giants Stadium (1976–2010) on the Meadowlands Sports Complex.",
+    "Shared home of two NFL teams, the New York Giants and New York Jets.",
+    "Designed by 360 Architecture (lead), with EwingCole, Rockwell Group and Bruce Mau Design; neutral exterior lighting in each home team's colors.",
+    "Hosted Super Bowl XLVIII (Feb 2, 2014, Seattle 43 Denver 8) — the first cold-weather, open-air Super Bowl (~49°F at kickoff).",
+    "Hosted the 2016 Copa América Centenario final (Chile beat Argentina 4–2 on penalties).",
+    "Selected by FIFA to host the 2026 World Cup final on July 19, 2026; hosts 8 matches total (5 group, 1 R32, 1 R16, the final) — schedule independently confirmed.",
+    "Playing surface converted from artificial turf to natural Bermudagrass for the 2026 World Cup."
+  ],
+  "sources": [
+    {
+      "title": "MetLife Stadium - Wikipedia (pinned rev. 1360702806)",
+      "url": "https://en.wikipedia.org/w/index.php?title=MetLife_Stadium&oldid=1360702806"
+    },
+    {
+      "title": "World Cup 2026: New York New Jersey Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/meadowlands_stadium"
+    },
+    {
+      "title": "FIFA World Cup 2026 Stadium Capacity Statistics (citing PBS News/AP, June 9 2026) - The World Data",
+      "url": "https://theworlddata.com/fifa-world-cup-stadium-capacity-statistics/"
+    },
+    {
+      "title": "2026 FIFA World Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_final"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "Inside FIFA's huge engineering effort to build a World Cup pitch at MetLife Stadium - CBS Sports",
+      "url": "https://www.cbssports.com/soccer/news/fifas-engineering-world-cup-pitch-metlife-stadium-north-america/"
+    },
+    {
+      "title": "MetLife Stadium World Cup Final 2026: What to Expect - meetstadium.com",
+      "url": "https://meetstadium.com/journal/metlife-stadium-world-cup-final-preparations/"
+    },
+    {
+      "title": "Argentina 4-3 Brazil (Jun 9, 2012) - ESPN (gameId 337320)",
+      "url": "https://www.espn.com/soccer/match/_/gameId/337320/brazil-argentina"
+    },
+    {
+      "title": "Portugal 5-1 Rep Ireland (Jun 10, 2014) - ESPN (gameId 364825)",
+      "url": "https://www.espn.com/soccer/match/_/gameId/364825/portugal-republic-of-ireland"
+    },
+    {
+      "title": "Brazil 1-0 Ecuador (Sep 9, 2014) - ESPN (gameId 405991)",
+      "url": "https://www.espn.com/soccer/match/_/gameId/405991/ecuador-brazil"
+    },
+    {
+      "title": "East Rutherford, New Jersey - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/East_Rutherford,_New_Jersey"
+    },
+    {
+      "title": "Meadowlands Sports Complex - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Meadowlands_Sports_Complex"
+    },
+    {
+      "title": "MetLife Stadium architects (360 Architecture, EwingCole, Thornton Tomasetti) - Architizer",
+      "url": "https://architizer.com/projects/new-meadowlands-stadium/"
+    },
+    {
+      "title": "World Cup 2026 NYC Schedule — All 8 MetLife Matches",
+      "url": "https://www.worldcup.nyc/world-cup-nyc-schedule"
+    }
+  ],
+  "gaps": [
+    "Itemized renovation cost breakdown NOT SPECIFIED IN SOURCES; only an aggregate 'over US$100 million' from a single outlet (meetstadium.com, not FIFA-audited).",
+    "Pitch raised-height / total material tonnage for MetLife specifically: NOT SPECIFIED IN SOURCES. The widely-quoted 'raised 4 feet / 15,000 tons' figure was confirmed by this fact-check to refer to AT&T Stadium (Dallas) per ESPN — correctly excluded here.",
+    "Exact final per-match WC2026 attendance caps after FIFA broadcast/perimeter deductions: NOT SPECIFIED IN SOURCES.",
+    "Brazil 1–0 Ecuador (Sep 9 2014) is mentioned in iconic_games_note but was shipped without an inline citation in the prose; independently verified TRUE via ESPN gameId 405991 by this fact-check.",
+    "EwingCole's precise role ('associate architect') is more specific than the cited sources state (Wikipedia lists it without that qualifier).",
+    "Renovation work was mid-flight as of the 2026-06-23 snapshot; final delivered specs may differ from sourced figures."
+  ],
+  "confidence": "High on identity, location, tenants, opening year/date, original cost, lead architect, 2026 match allocation (8: 5 group + R32 + R16 + final, independently confirmed), the final date (July 19 2026), iconic football matches (all three cross-verified against Wikipedia + ESPN), Super Bowl XLVIII history, and the 82,500 capacity (multi-source). Medium on the exact net WC2026/final-config capacity (FIFA's 82,500 shipped; lower final-specific figures reported by single outlets, flagged in gaps) and on renovation cost (single-outlet, mid-flight). No critical or significant fabrications found; the sheet's own gaps/hedging are accurate, including the correct exclusion of the AT&T-Stadium raised-height figure.",
+  "_as_of": "2026-06-23"
+}

@@ -1,0 +1,25 @@
+{
+  "city_id": "miami",
+  "title": "Miami Gardens",
+  "prose": "Miami Gardens is a city in Miami-Dade County, Florida, incorporated in 2003 and home to Hard Rock Stadium, which had opened years earlier in 1987. The young municipality sits within the Greater Miami metropolitan area, one of the United States' major gateways to Latin America and the Caribbean.\n\nFootball culture in this corner of Florida hangs not on the suburban locality of Miami Gardens but on the Greater Miami metro that surrounds it. Miami ranks among the most football-passionate markets in the United States, a fervor driven by its large Latin American and Caribbean diaspora. The city is home to Inter Miami CF, the club Lionel Messi joined in 2023, and it routinely draws blockbuster internationals and tournaments. That pedigree has been written largely at Hard Rock Stadium, where both the 2024 Copa America Final and matches of the 2025 FIFA Club World Cup were staged. Few American host cities bring this depth of top-flight football heritage to the 2026 World Cup, and fewer still channel it through a fan base so closely woven into the football traditions of the Americas. In Miami Gardens, a city barely two decades old, the global game finds one of its most natural homes.",
+  "sources": [
+    {
+      "title": "Hard Rock Stadium - Wikipedia (oldid 1360727139)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Hard_Rock_Stadium&oldid=1360727139"
+    },
+    {
+      "title": "World Cup 2026: Miami Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/dolphins_stadium"
+    },
+    {
+      "title": "World Cup 2026 | Miami to host seven matches - FIFA",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/miami-stadium-host-seven-matches"
+    },
+    {
+      "title": "Copa America 2024: Argentina wins Miami final - CNN",
+      "url": "https://www.cnn.com/2024/07/14/sport/copa-america-final-argentina-colombia-tickets-spt-intl-hnk"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

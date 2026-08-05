@@ -1,0 +1,33 @@
+{
+  "city_id": "toronto",
+  "title": "Toronto",
+  "prose": "Toronto is the most populous city in Canada and the capital of Ontario. Its roots reach back to 1793, when the settlement of York was founded as the capital of Upper Canada. On March 6, 1834, that settlement was incorporated as the City of Toronto, taking up a restored Indigenous-derived name in place of York.\n\nToday Toronto stands as Canada's financial and cultural centre and one of the most multicultural cities in the world. Its 2021 census population of 2,794,356 makes it the fourth-most-populous city in North America, after Mexico City, New York and Los Angeles. The city is one of only two Canadian host cities for the 2026 World Cup, the other being Vancouver. Its tournament venue, BMO Field, sits at Exhibition Place on the Lake Ontario waterfront.\n\nToronto's football culture is deep and established, and it is anchored at BMO Field itself. The ground is the home of MLS side Toronto FC, founded in 2007, whose treble-winning 2017 MLS Cup triumph at the stadium drew a passionate sellout. It is also an intermittent home of the Canada men's national team. The venue carries a purpose-built soccer pedigree, having staged the 2007 FIFA U-20 World Cup, the 2014 FIFA U-20 Women's World Cup and marquee club friendlies against opponents such as Real Madrid.\n\nTogether with the city's large immigrant communities, that soccer-specific heritage gives Toronto its football identity directly — this is a genuine football venue rather than a borrowed one.",
+  "sources": [
+    {
+      "title": "BMO Field — Wikipedia (pinned revision, oldid 1360783660, 2026-06-23)",
+      "url": "https://en.wikipedia.org/w/index.php?title=BMO_Field&oldid=1360783660"
+    },
+    {
+      "title": "BMO Field | Projects — Gensler (2014–2016 expansion, ~CA$120M)",
+      "url": "https://www.gensler.com/projects/bmo-field"
+    },
+    {
+      "title": "FIFA World Cup 2026 stadium capacities confirmed (FIFA, 10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "History of Toronto — Wikipedia (founding/York, incorporation 1834)",
+      "url": "https://en.wikipedia.org/wiki/History_of_Toronto"
+    },
+    {
+      "title": "Toronto — Wikipedia (population 2,794,356; capital of Ontario)",
+      "url": "https://en.wikipedia.org/wiki/Toronto"
+    },
+    {
+      "title": "MLS Cup 2017 — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/MLS_Cup_2017"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

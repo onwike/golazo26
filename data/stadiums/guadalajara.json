@@ -1,0 +1,29 @@
+{
+  "venue_id": "guadalajara",
+  "title": "Estadio Akron",
+  "prose": "The stadium known for the 2026 World Cup as Estadio Guadalajara — and through most of its life as Estadio Akron — was conceived as a new home for C.D. Guadalajara, who intended to leave the historic Estadio Jalisco. Construction was announced in February 2004, but financing delays meant ground was not broken until May 2007. The venue opened on 30 July 2010.\n\nIts design is distinctive. Concept work came from Jean-Marie Massaud and Daniel Pouzet, with sports architecture by Populous, formerly HOK Sport, and VFO as architect of record. The result is a spherical, coliseum-like form built into a raised, grass-covered artificial hill, or berm, that wraps the back of the stands. Wikipedia reports the original construction cost at US$200 million, though the figure is contested across sources.\n\nThe stadium opened with artificial turf, which drew heavy criticism from players and was replaced with natural grass in mid-2012. Its name has changed several times: it began as Estadio Omnilife from 2010 to 2016, became Estadio Chivas from 2016 to 2017, and took the name Estadio Akron from December 2017 under a deal with the lubricants firm Grupo Akron.\n\nSince opening in 2010 it has served as the home of C.D. Guadalajara and has staged selected Mexico national team matches. For the 2026 World Cup it was temporarily renamed Estadio Guadalajara under FIFA's clean-venue policy, hosting four group-stage matches as the only 2026 venue with no knockout games.",
+  "sources": [
+    {
+      "title": "Estadio Akron — Wikipedia (pinned revision, oldid 1360713645)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+    },
+    {
+      "title": "Guadalajara — Wikipedia (city history)",
+      "url": "https://en.wikipedia.org/wiki/Guadalajara"
+    },
+    {
+      "title": "C.D. Guadalajara (Chivas) — Wikipedia (football culture)",
+      "url": "https://en.wikipedia.org/wiki/C.D._Guadalajara"
+    },
+    {
+      "title": "World Cup 2026: Estadio Guadalajara — StadiumDB.com (WC capacity 45,664; 4 matches)",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_omnilife"
+    },
+    {
+      "title": "Guadalajara Stadium — FIFA official stadium page (WC name 'Estadio Guadalajara', capacity 45,664, 4 matches)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/guadalajara"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

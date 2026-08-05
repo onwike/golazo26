@@ -1,0 +1,212 @@
+{
+  "venue_id": "atlanta",
+  "stadium_current": "Mercedes-Benz Stadium",
+  "stadium_historic": null,
+  "fifa_name": "Atlanta Stadium",
+  "city": "Atlanta",
+  "country": "United States",
+  "opened": 2017,
+  "primary_tenant": "Atlanta Falcons (NFL) and Atlanta United FC (MLS)",
+  "architect": "360 Architecture (HOK), tvsdesign, Goode Van Slyke Architecture, Stanley Beaman & Sears",
+  "capacity_regular": 71000,
+  "capacity_regular_source": {
+    "title": "Mercedes-Benz Stadium — Wikipedia (oldid 1360507185)",
+    "url": "https://en.wikipedia.org/w/index.php?title=Mercedes-Benz_Stadium&oldid=1360507185"
+  },
+  "capacity_wc2026": 68239,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass hybrid (natural grass interwoven with synthetic fibers grown for the indoor venue), over a rebuilt sub-surface with new sand layer, irrigation and aeration; replaces the stadium's permanent FieldTurf CORE artificial surface",
+  "renovation_cost_2026": "Approximately US$200 million staged upgrade program for Mercedes-Benz Stadium reported ahead of the World Cup (per StadiumDB and aggregated reporting), described as multi-year work not fully completed until summer 2026; this figure is an estimate for the broader upgrade program and is NOT cleanly isolated to WC2026-specific work in cited sources",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 8,
+  "iconic_games": [
+    {
+      "date": "2024-06-20",
+      "match": "Argentina vs Canada",
+      "score": "2-0",
+      "event": "Copa America 2024 opening match (group stage)",
+      "note": "Tournament opener; attendance 70,564. Argentina players publicly criticized the Mercedes-Benz Stadium pitch afterward, an episode that foreshadowed the venue's natural-grass conversion for the 2026 World Cup. Score, teams and date verified via ESPN, FOX Sports and CONMEBOL Copa America.",
+      "source": {
+        "title": "Mercedes-Benz Stadium — Wikipedia (oldid 1360507185)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Mercedes-Benz_Stadium&oldid=1360507185"
+      }
+    },
+    {
+      "date": "2024-06-27",
+      "match": "United States vs Panama",
+      "score": "1-2",
+      "event": "Copa America 2024 (group stage)",
+      "note": "Attendance 59,145; USMNT defeat (Panama 2-1 USA; Balogun scored for the USA, which played most of the match down a man after Tim Weah's 18th-minute red card) that contributed to the USA's group-stage exit on home soil. Result verified via ESPN, FOX Sports and U.S. Soccer.",
+      "source": {
+        "title": "Mercedes-Benz Stadium — Wikipedia (oldid 1360507185)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Mercedes-Benz_Stadium&oldid=1360507185"
+      }
+    },
+    {
+      "date": "2018-12-08",
+      "match": "Atlanta United FC vs Portland Timbers",
+      "score": "2-0",
+      "event": "MLS Cup 2018 Final",
+      "note": "Atlanta United won its first MLS Cup before 73,019 spectators, setting an MLS Cup (championship-final) attendance record (breaking the prior MLS Cup mark of 61,316 from 2002). Verified via Wikipedia and MLSSoccer.com. NOTE: this was the MLS Cup attendance record, NOT an all-time MLS single-game record.",
+      "source": {
+        "title": "Mercedes-Benz Stadium — Wikipedia (oldid 1360507185)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Mercedes-Benz_Stadium&oldid=1360507185"
+      }
+    }
+  ],
+  "iconic_games_note": "Mercedes-Benz Stadium has a genuine top-flight football history: it hosted the 2024 Copa America opening match (Argentina 2-0 Canada) plus USA 1-2 Panama, the 2018 MLS Cup Final (a record MLS Cup crowd of 73,019), and is the home of Atlanta United, which has led MLS in average attendance every year since 2017. Major NON-football events at the venue (clearly labeled as non-football) include Super Bowl LIII (Feb 2019), the 2018 and 2025 College Football Playoff National Championships, and the upcoming Super Bowl LXII (2028).",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Replaced the permanent FieldTurf CORE artificial surface with a FIFA-compliant natural-grass hybrid pitch (natural grass interwoven with synthetic fibers). Original grass field torn out in early May 2026 and replaced with a fresh World Cup pitch; grow-lights used to maintain grass indoors under the closed roof.",
+      "value": "Natural grass hybrid, FIFA-standard 105m x 68m pitch",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Stadium Wonders: How Atlanta's Mercedes-Benz Stadium Became World Cup-Ready (SI.com)",
+        "url": "https://www.si.com/soccer/stadium-wonders-atlanta-mercedes-benz-world-cup-ready-digital-cover"
+      }
+    },
+    {
+      "category": "pitch",
+      "change": "Complete sub-surface overhaul beneath the playing field, begun roughly two years prior and finalized in February 2026: new irrigation and aeration system plus a thick sand layer to support indoor grass growth.",
+      "value": "New irrigation/aeration + sand base",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Stadium Wonders: How Atlanta's Mercedes-Benz Stadium Became World Cup-Ready (SI.com)",
+        "url": "https://www.si.com/soccer/stadium-wonders-atlanta-mercedes-benz-world-cup-ready-digital-cover"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Retractable corner seating deployed to widen the field to the FIFA-standard pitch, reducing the World Cup net seating capacity relative to the regular NFL/MLS configuration. FIFA-confirmed WC2026 net capacity is 68,239 (vs 71,000 regular football config). Both figures separately verified (FIFA/StadiumDB for 68,239; Wikipedia for 71,000).",
+      "value": "68,239 (WC2026 net) vs 71,000 (regular)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "FIFA World Cup 2026 final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+        "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+      }
+    },
+    {
+      "category": "facade",
+      "change": "FIFA neutral-naming: the venue operates as 'Atlanta Stadium' during the World Cup, with roughly 2,000 non-World-Cup sponsor logos concealed throughout the facility (an exception was granted for the large Mercedes-Benz roof logo due to the difficulty of covering it).",
+      "value": "~2,000 logos covered; renamed Atlanta Stadium",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup (ESPN)",
+        "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "1837 (as 'Terminus', the end of the Western & Atlantic Railroad line; renamed Marthasville 1843, then Atlanta 1845)",
+    "significance": "Atlanta grew from a railroad terminus into the commercial and transportation capital of the U.S. Southeast. It was a key city in the American Civil War (burned during Sherman's 1864 campaign) and rebuilt as a 'New South' metropolis. It is a global center of the civil rights movement — birthplace and base of Dr. Martin Luther King Jr., whose Southern Christian Leadership Conference and Ebenezer Baptist Church on 'Sweet Auburn' anchored the movement — and hosted the 1996 Summer Olympics.",
+    "football_culture": "Atlanta is one of MLS's flagship soccer markets. Atlanta United FC (founded 2017) plays at Mercedes-Benz Stadium and has led MLS in average attendance every season since its debut, set the MLS Cup attendance record (73,019, 2018 MLS Cup, which it won), and built a raucous supporter culture — the '17s', Footie Mob, La Doce, All Stripes and others — that drew Bleacher Report's 2018 'Black Soccer Capital of America' label. The metro previously hosted the 2024 Copa America opener and now stages eight 2026 World Cup matches including a semi-final.",
+    "sources": [
+      {
+        "title": "History of Atlanta — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/History_of_Atlanta"
+      },
+      {
+        "title": "Atlanta | History, Population, Facts — Britannica",
+        "url": "https://www.britannica.com/place/Atlanta-Georgia"
+      },
+      {
+        "title": "Atlanta United FC — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Atlanta_United_FC"
+      },
+      {
+        "title": "How Atlanta United turned a football town into a soccer capital — Atlanta Magazine",
+        "url": "https://www.atlantamagazine.com/news-culture-articles/how-atlanta-united-turned-a-football-town-into-a-soccer-capital/"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Broke ground May 19, 2014; opened August 26, 2017, in downtown Atlanta, replacing the Georgia Dome.",
+    "Construction cost approximately US$1.6 billion (2016 estimate per Wikipedia oldid 1360507185).",
+    "Owned by the Georgia World Congress Center Authority; operated by AMB Sports and Entertainment Group (owner Arthur Blank).",
+    "Architects: 360 Architecture (an HOK subsidiary that led the design), tvsdesign, Goode Van Slyke Architecture, and Stanley Beaman & Sears.",
+    "Signature feature: a retractable roof with eight translucent triangular 'pinwheel'/camera-aperture panels; permanent surface is FieldTurf CORE artificial turf (converted to natural grass for the 2026 World Cup).",
+    "Home of the NFL's Atlanta Falcons and MLS's Atlanta United FC since 2017; an Atlanta NWSL team is slated to begin play in 2028.",
+    "Hosted Super Bowl LIII (Feb 3, 2019, Patriots 13-3 Rams), the 2018 and 2025 College Football Playoff National Championships, the 2018 MLS Cup, and two 2024 Copa America matches; will host Super Bowl LXII (2028).",
+    "For the 2026 World Cup it hosts 8 matches: five group-stage matches (Jun 15/18/21/24/27), one Round of 32 (Jul 1), one Round of 16 (Jul 7), and a semi-final on July 15, 2026 — breakdown confirmed via StadiumDB and the official Atlanta host-city schedule."
+  ],
+  "sources": [
+    {
+      "title": "FIFA World Cup 2026 final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Mercedes-Benz Stadium — Wikipedia (pinned oldid 1360507185)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Mercedes-Benz_Stadium&oldid=1360507185"
+    },
+    {
+      "title": "World Cup 2026: Atlanta Stadium — StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/mercedes_benz_stadium"
+    },
+    {
+      "title": "Stadium Wonders: How Atlanta's Mercedes-Benz Stadium Became World Cup-Ready — SI.com",
+      "url": "https://www.si.com/soccer/stadium-wonders-atlanta-mercedes-benz-world-cup-ready-digital-cover"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup — ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "Atlanta Stadium | FIFA World Cup 26 Atlanta (host city site)",
+      "url": "https://atlantafwc26.com/stadium/"
+    },
+    {
+      "title": "Official capacities of FIFA World Cup 2026 stadia revealed — Coliseum",
+      "url": "https://www.coliseum-online.com/official-capacities-of-fifa-world-cup-2026-stadia-revealed/"
+    },
+    {
+      "title": "Panama 2-1 USA (Jun 27, 2024) Final Score — ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/690717/united-states-panama"
+    },
+    {
+      "title": "Argentina 2-0 Canada (Jun 20, 2024) Final Score — ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/690705/canada-argentina"
+    },
+    {
+      "title": "2018 MLS Cup shatters previous MLS Cup attendance record — MLSSoccer.com",
+      "url": "https://www.mlssoccer.com/news/2018-mls-cup-atlanta-shatters-previous-mls-cup-attendance-record"
+    },
+    {
+      "title": "WSB-TV: 2026 FIFA World Cup Atlanta match schedule",
+      "url": "https://www.wsbtv.com/news/local/2026-fifa-world-cup-atlanta-match-schedule-which-countries-will-play-mercedes-benz-stadium/2HYNPLL32FDSZMMSCVCREYPVZU/"
+    },
+    {
+      "title": "History of Atlanta — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Atlanta"
+    },
+    {
+      "title": "Atlanta | History, Population, Facts — Britannica",
+      "url": "https://www.britannica.com/place/Atlanta-Georgia"
+    },
+    {
+      "title": "Atlanta United FC — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Atlanta_United_FC"
+    },
+    {
+      "title": "How Atlanta United turned a football town into a soccer capital — Atlanta Magazine",
+      "url": "https://www.atlantamagazine.com/news-culture-articles/how-atlanta-united-turned-a-football-town-into-a-soccer-capital/"
+    },
+    {
+      "title": "Why is Mercedes-Benz Stadium now Atlanta Stadium? — 11Alive",
+      "url": "https://www.11alive.com/article/sports/soccer/world-cup/why-is-mercedes-benz-stadium-now-atlanta-stadium/85-30493642-053b-4968-b833-023899faae0f"
+    }
+  ],
+  "gaps": [
+    "Exact WC2026-isolated renovation cost: NOT SPECIFIED IN SOURCES. The ~US$200M figure is described as a multi-year staged upgrade program (StadiumDB/aggregated reporting), not cleanly attributed to World-Cup-specific work by a single authoritative figure with two independent confirmations; shipped as a labeled estimate only.",
+    "Precise as-built completion date of the final World Cup pitch and all venue conversions: NOT SPECIFIED IN SOURCES (work described as completing 'summer 2026'; pitch torn out/relaid early May 2026).",
+    "Exact number of standing/retractable corner seats removed to reach the 68,239 WC config: NOT SPECIFIED IN SOURCES (only the net before/after capacities are confirmed; one outlier source cited 67,382 from FIFA ticketing, but 68,239 is the FIFA/StadiumDB-corroborated figure).",
+    "Confirmed teams/fixtures for the Round of 32, Round of 16, and semi-final at Atlanta were not fully specified in cited sources at the as-of date (group-stage pairings listed by StadiumDB/host-city schedule; knockout participants depend on results)."
+  ],
+  "confidence": "High on identity, capacities (regular 71,000 and FIFA-confirmed WC 68,239, separately sourced and verified — no conflation), opening/cost/architect, tenants, natural-grass conversion, 8-match schedule with a July 15 semifinal, and the three iconic football games (each individually re-verified: Argentina 2-0 Canada, Panama 2-1 USA, Atlanta 2-0 Portland). One significant correction applied: the 2018 MLS Cup crowd of 73,019 was an MLS CUP attendance record, not an all-time MLS single-game record (corrected in two fields). Medium on the exact WC2026-specific renovation cost (labeled estimate; flagged in gaps) and on knockout-stage fixture specifics.",
+  "_as_of": "2026-06-23"
+}

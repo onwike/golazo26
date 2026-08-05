@@ -1,0 +1,29 @@
+{
+  "city_id": "los-angeles",
+  "title": "Inglewood (Los Angeles metro)",
+  "prose": "SoFi Stadium sits in Inglewood, California, a city incorporated in 1908 within the Los Angeles metropolitan area. Los Angeles itself was founded in 1781 as El Pueblo de Nuestra Senora la Reina de los Angeles, and the metro it anchors has grown into the second-largest in the United States and a global entertainment capital.\n\nThe stadium stands roughly 4.8 km from Los Angeles International Airport, on the former Hollywood Park Racetrack site, as the centerpiece of the Hollywood Park mixed-use development. Greater Los Angeles is also slated to host ceremonies for the 2028 Summer Olympics, with SoFi Stadium among the venues at the heart of that celebration.\n\nLos Angeles ranks among the strongest soccer markets in the United States. A large Mexican-American and broader Latino population gives CONCACAF and CONMEBOL fixtures a near-home-crowd atmosphere, and Mexico routinely sells out the Los Angeles area, as it did at the 2023 Gold Cup Final. The metro is home to two MLS clubs, LA Galaxy and LAFC, and carries a deep history of high-profile international matches, first at the Rose Bowl and now at SoFi Stadium.\n\nIt is worth noting that this football culture attaches to the Los Angeles metro as a whole rather than to the small city of Inglewood, where the stadium physically stands. The metro's scale, its passionate Latino fan base, and its long pedigree of staging marquee international football make it a fitting host within the wider tournament map.",
+  "sources": [
+    {
+      "title": "SoFi Stadium - Wikipedia (oldid 1360498175)",
+      "url": "https://en.wikipedia.org/w/index.php?title=SoFi_Stadium&oldid=1360498175"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "World Cup 2026: Los Angeles Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/sofi_stadium"
+    },
+    {
+      "title": "How stadiums transformed turf fields to grass for 2026 World Cup - NBC Los Angeles",
+      "url": "https://www.nbclosangeles.com/world-cup/how-stadiums-transformed-turf-fields-grass/3902476/"
+    },
+    {
+      "title": "2023 CONCACAF Gold Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2023_CONCACAF_Gold_Cup_final"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

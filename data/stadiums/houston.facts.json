@@ -1,0 +1,196 @@
+{
+  "venue_id": "houston",
+  "stadium_current": "NRG Stadium",
+  "stadium_historic": "Reliant Stadium",
+  "fifa_name": "Houston Stadium",
+  "city": "Houston",
+  "country": "United States",
+  "opened": 2002,
+  "primary_tenant": "Houston Texans (NFL)",
+  "architect": "Populous (HOK Sport) with Houston Stadium Consultants (Architect-of-Record; joint venture of Lockwood, Andrews & Newnam and Hermes Architects)",
+  "capacity_regular": 72220,
+  "capacity_regular_source": {
+    "title": "NRG Stadium — Wikipedia (oldid 1360802485), citing the Official 2018 NFL Record & Fact Book",
+    "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+  },
+  "capacity_wc2026": 68777,
+  "capacity_wc2026_source": {
+    "title": "World Cup 2026: Houston Stadium — StadiumDB.com (FIFA WC config capacity 68,777)",
+    "url": "https://stadiumdb.com/tournaments/world_cup/2026/reliant_stadium"
+  },
+  "field_type_2026": "Natural grass (temporary modular pitch) — approx. 81,000 sq ft of grass grown in Colorado, installed indoors over a shallow Permavoid water-storage/drainage cell system on the stadium's concrete floor, replacing the permanent Hellas Matrix synthetic turf for the tournament",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 7,
+  "renovation_cost_2026": "Two distinct figures, NOT to be conflated: (1) approx. US$15 million in World Cup-specific NRG Stadium upgrades, paid by Houston's World Cup host committee, per a Harris County-Houston Sports Authority spokesperson (Houston Public Media, Jan 2025) — the source itself hedges this as \"about $15 million\" (estimate). (2) A separate US$55 million Capital Improvement Project (CIP) approved Nov 2025 by the Harris County Sports & Convention Corp. covering NRG Stadium, NRG Center and NRG Arena infrastructure broadly (not solely World Cup pitch work).",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Replaced the permanent Hellas Matrix synthetic turf with a temporary natural-grass pitch for the tournament: ~81,000 sq ft of grass grown in Colorado, trucked to Houston in ~25 refrigerated trucks, kept alive indoors under grow lights (shipped from the Netherlands), laid over a shallow Permavoid water-storage/drainage cell system on the concrete floor. Field expected to be removed in under two weeks after the tournament to revert to NFL use.",
+      "value": "natural grass (~81,000 sq ft)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "How NFL Stadiums Are Converted for World Cup 2026 / US stadiums switch to grass (search-corroborated: LawnStarter, Click2Houston, ESPN)",
+        "url": "https://www.lawnstarter.com/blog/sports-turf/us-world-cup-cities-natural-grass/"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Pitch/field area expanded to meet FIFA standards by removing seats in the corners, reducing the World Cup configuration to 68,777 from the regular 72,220.",
+      "value": "68,777 (WC config)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Houston's NRG Stadium to receive upgrades ahead of 2026 FIFA World Cup — Houston Public Media",
+        "url": "https://www.houstonpublicmedia.org/articles/news/sports/world-cup/2025/01/27/511988/houstons-nrg-stadium-to-receive-upgrades-ahead-of-2026-fifa-world-cup/"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Infrastructure upgrades ahead of the World Cup including repairs to elevators and escalators; planned lighting-system and special drainage-system installation.",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Houston's NRG Stadium to receive upgrades ahead of 2026 FIFA World Cup — Houston Public Media",
+        "url": "https://www.houstonpublicmedia.org/articles/news/sports/world-cup/2025/01/27/511988/houstons-nrg-stadium-to-receive-upgrades-ahead-of-2026-fifa-world-cup/"
+      }
+    },
+    {
+      "category": "facade",
+      "change": "Commercial signage removed beginning April 2026 as part of FIFA's stadium 'neutralization'; venue temporarily renamed 'Houston Stadium' for the tournament per FIFA's clean-venue / no-corporate-name policy. NRG announced on April 15, 2026 that the Reliant Stadium / Reliant Park names will be restored after the tournament.",
+      "value": "renamed Houston Stadium (temporary)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "NRG Stadium — Wikipedia (oldid 1360802485), citing ABC13 Houston (Apr 17, 2026)",
+        "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+      }
+    }
+  ],
+  "iconic_games": [
+    {
+      "date": "2016-06-21",
+      "match": "Argentina 4–0 United States",
+      "score": "4–0",
+      "event": "Copa América Centenario, Semi-final",
+      "note": "Lionel Messi scored a free kick to become Argentina's all-time leading scorer at the time. Attendance 70,858. (Date corrected from an erroneous 2016-06-11; the semi-final was played June 21, 2016.)",
+      "source": {
+        "title": "NRG Stadium — Wikipedia (oldid 1360802485); corroborated by Bleacher Report, Sporting KC, Stars and Stripes FC",
+        "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+      }
+    },
+    {
+      "date": "2016-06-11",
+      "match": "Costa Rica 3–2 Colombia",
+      "score": "3–2",
+      "event": "Copa América Centenario, Group A",
+      "note": "One of two Copa América Centenario group-stage matches hosted at NRG. Date and score confirmed (MLSsoccer, RSSSF).",
+      "source": {
+        "title": "NRG Stadium — Wikipedia (oldid 1360802485)",
+        "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+      }
+    },
+    {
+      "date": "2016-06-13",
+      "match": "Mexico 1–1 Venezuela",
+      "score": "1–1",
+      "event": "Copa América Centenario, Group C",
+      "note": "Date and score confirmed (ESPN, MLSsoccer).",
+      "source": {
+        "title": "NRG Stadium — Wikipedia (oldid 1360802485)",
+        "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+      }
+    },
+    {
+      "date": "2008-02-06",
+      "match": "United States 2–2 Mexico",
+      "score": "2–2",
+      "event": "International friendly",
+      "note": "Capacity crowd of 70,103 — among the largest USMNT home crowds of the era. Score (2–2) filled from source; previously left null.",
+      "source": {
+        "title": "NRG Stadium — Wikipedia (oldid 1360802485), citing U.S. Soccer Federation",
+        "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+      }
+    },
+    {
+      "date": "2007-06-13",
+      "match": "Honduras 5–0 Cuba",
+      "score": "5–0",
+      "event": "2007 CONCACAF Gold Cup, Group C",
+      "note": "Attendance 68,417. Carlos Pavón scored four. Date and score confirmed (ESPN, Soccerway, worldfootball).",
+      "source": {
+        "title": "NRG Stadium — Wikipedia (oldid 1360802485)",
+        "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+      }
+    }
+  ],
+  "iconic_games_note": "NRG Stadium (opened as Reliant Stadium, 2002) has a genuine football (soccer) history as a regular USMNT and Mexico (El Tri) host venue: it hosted Copa América Centenario matches in June 2016 (the Argentina 4–0 USA semi-final on June 21, 2016, where Messi's free kick made him Argentina's all-time top scorer; plus group games), 2007 CONCACAF Gold Cup matches, and high-attendance USA–Mexico fixtures (70,103 in Feb 2008; a sellout 69,582 in May 2003). It is also a marquee non-football venue: NFL Super Bowls XXXVIII (2004) and LI (2017, Patriots 34–28 OT comeback over Atlanta), the 2024 College Football Playoff National Championship, WrestleMania 25 (2009), and the annual Houston Livestock Show and Rodeo. The 2026 World Cup is its first men's World Cup. NOTE: the original facts sheet mis-dated the Argentina–USA semi-final as June 11; the correct date is June 21, 2016.",
+  "city_history": {
+    "founded": "1836",
+    "significance": "Founded August 30, 1836 by New York real-estate speculators Augustus C. and John K. Allen on land along Buffalo Bayou, and named for Texas Revolution hero (and later Republic of Texas president) General Sam Houston. It briefly served as capital of the Republic of Texas. Houston grew into the fourth-largest city in the United States (population exceeding 2.3 million; metro over 7 million), the global capital of the energy/oil-and-gas industry, home of NASA's Johnson Space Center (earning the nickname 'Space City'), the Texas Medical Center, and one of America's most ethnically diverse major cities.",
+    "football_culture": "Houston is a strong soccer market anchored by MLS side Houston Dynamo FC (and NWSL's Houston Dash) at Shell Energy Stadium, and by a large, passionate Mexican-American fan base that has made the city a frequent host for the Mexico national team (El Tri) and CONCACAF events. NRG/Reliant Stadium has long been a go-to U.S. venue for USMNT–Mexico fixtures, Gold Cup, and Copa América Centenario matches, regularly drawing 68,000+ crowds.",
+    "sources": [
+      {
+        "title": "The Allen Brothers and the Founding of Houston — Texapedia",
+        "url": "https://texapedia.info/history-houston-founding/"
+      },
+      {
+        "title": "Augustus Chapman Allen — Texas State Historical Association Handbook of Texas",
+        "url": "https://www.tshaonline.org/handbook/entries/allen-augustus-chapman"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Groundbreaking March 9, 2000; topped off October 2001; construction completed in 30 months at a cost of US$352 million.",
+    "Opened August 24, 2002 with a preseason game (Miami Dolphins 24–3 over Houston Texans); first regular-season NFL game Sept 8, 2002 (Texans 19–10 over Dallas Cowboys).",
+    "First NFL facility with a retractable roof — two fabric panels split at the 50-yard line, openable in as little as 7 minutes; designed using kinetic-architecture principles by Populous (HOK Sport), Walter P Moore and Uni-Systems.",
+    "Co-tenant Houston Livestock Show and Rodeo (RodeoHouston) is integral to the design — the building was built 'as much for the rodeo as for the NFL.'",
+    "Originally named Reliant Stadium; became NRG Stadium in 2014 (NRG Energy naming rights). Renamed 'Houston Stadium' for the 2026 World Cup; Reliant name to be restored after the tournament.",
+    "Field surface history: natural-grass tray system at opening; permanent artificial turf installed 2015 (UBU Speed / Act Global), later Hellas Matrix Helix; temporary natural grass installed for the 2026 World Cup.",
+    "Has over 7,000 club seats, 186 luxury suites; regular capacity 72,220 (expandable to ~80,000 for special events).",
+    "Host venue for Super Bowls XXXVIII (2004) and LI (2017), 2024 College Football Playoff National Championship, and WrestleMania 25 (2009)."
+  ],
+  "sources": [
+    {
+      "title": "NRG Stadium — Wikipedia (pinned revision oldid 1360802485, 2026-06-23)",
+      "url": "https://en.wikipedia.org/w/index.php?title=NRG_Stadium&oldid=1360802485"
+    },
+    {
+      "title": "World Cup 2026: Houston Stadium — StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/reliant_stadium"
+    },
+    {
+      "title": "Houston Stadium | FIFA World Cup 2026 — official venue page",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/houston"
+    },
+    {
+      "title": "Copa América Centenario knockout stage — Wikipedia (semi-final date corroboration)",
+      "url": "https://en.wikipedia.org/wiki/Copa_Am%C3%A9rica_Centenario_knockout_stage"
+    },
+    {
+      "title": "Houston's NRG Stadium to receive upgrades ahead of 2026 FIFA World Cup — Houston Public Media (Jan 27, 2025)",
+      "url": "https://www.houstonpublicmedia.org/articles/news/sports/world-cup/2025/01/27/511988/houstons-nrg-stadium-to-receive-upgrades-ahead-of-2026-fifa-world-cup/"
+    },
+    {
+      "title": "Houston's NRG Park to put dent in $1 billion renovations ($55M CIP) — The Real Deal (Nov 12, 2025)",
+      "url": "https://therealdeal.com/texas/2025/11/12/houstons-nrg-park-to-put-dent-in-1-billion-renovations/"
+    },
+    {
+      "title": "Goal! U.S. Stadiums Switch to Grass for FIFA World Cup 2026 — LawnStarter",
+      "url": "https://www.lawnstarter.com/blog/sports-turf/us-world-cup-cities-natural-grass/"
+    },
+    {
+      "title": "The Allen Brothers and the Founding of Houston — Texapedia",
+      "url": "https://texapedia.info/history-houston-founding/"
+    }
+  ],
+  "gaps": [
+    "Argentina 4–0 USA semi-final date was wrong in the original sheet (2016-06-11); corrected to 2016-06-21 (verified across Wikipedia + multiple outlets).",
+    "Exact official FIFA-published WC2026 capacity could not be read directly off FIFA's JS-rendered venue page; 68,777 is taken from StadiumDB (confirmed '68 777'), Wikipedia's per-match infobox, and corroborating outlets. Some outlets list 68,311 (and 68,021 for an early Group E match) — treated as per-match/early figures, NOT the venue's confirmed capacity.",
+    "World Cup-specific stadium renovation cost is given by a single originating source (Houston Public Media, Jan 2025) as 'about $15 million' and is therefore an ESTIMATE, not a hard confirmed figure; the independently corroborated $55M is the broader NRG Park CIP, not the WC pitch work specifically.",
+    "Exact natural-grass pitch supplier/installer contract value and precise pitch dimensions for WC2026 NOT SPECIFIED IN SOURCES.",
+    "Whether NRG Stadium's retractable roof will be open or closed for matches, and any air-conditioning details for the tournament, NOT SPECIFIED IN SOURCES consulted.",
+    "Precise as-of-June-2026 completion status of the elevator/escalator, lighting and drainage upgrades NOT SPECIFIED IN SOURCES (announced but progress not confirmed)."
+  ],
+  "confidence": "High on identity, opening year, regular capacity (72,220), WC config capacity (68,777), 7 matches, natural-grass conversion, architect, and football history (all five iconic games verified date+score+competition; the one date error on the Argentina–USA semi-final has been corrected to 2016-06-21). Medium on the precise WC-specific renovation cost ($15M is a single-source estimate; $55M is the broader NRG Park CIP). Low/unknown on roof/AC operation and exact upgrade completion status as of June 2026.",
+  "_as_of": "2026-06-23"
+}

@@ -1,0 +1,33 @@
+{
+  "city_id": "mexico-city",
+  "title": "Mexico City",
+  "prose": "Mexico City is the capital of Mexico and the oldest capital city in the Americas. Its origins reach back to Tenochtitlan, the Mexica (Aztec) capital traditionally founded in 1325 — a symbolic date, 13 March 1325, fixed in 1925 for the city's 600th anniversary. Raised on an island in former Lake Texcoco, Tenochtitlan grew into the largest city in the pre-Columbian Americas and the hub of the Aztec Empire, until it fell to Hernán Cortés and his Tlaxcaltec allies in 1521. The Spanish re-founded the modern city that same year atop the ruins. Today it ranks among the largest metropolitan areas in the world and stands as Mexico's political, cultural and economic center, with its great stadium sitting at roughly 2,200 m (7,220 ft) elevation in the Tlalpan and Coyoacán area.\n\nThe capital is the beating heart of Mexican football. The home of Club América — the country's most successful and most polarizing club — it is also the regular home of El Tri, whose qualifiers and marquee internationals fill the bowl. The city stages the Clásico Capitalino, pitting América against Cruz Azul and Pumas, and its main arena has staged two of football's most mythologized moments: Pelé's coronation in 1970 and Maradona's double against England in 1986. Combined with the thin air at around 2,200 m and a fiercely partisan home crowd, all of this makes Mexico City one of the most intimidating settings in world football.",
+  "sources": [
+    {
+      "title": "Estadio Azteca — Wikipedia (oldid 1360810946)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Azteca&oldid=1360810946"
+    },
+    {
+      "title": "Tenochtitlan — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tenochtitlan"
+    },
+    {
+      "title": "Mexico City — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mexico_City"
+    },
+    {
+      "title": "Banorte lands naming rights to Estadio Azteca — The Stadium Business",
+      "url": "https://www.thestadiumbusiness.com/2025/03/17/banorte-lands-naming-rights-to-estadio-azteca/"
+    },
+    {
+      "title": "Estadio Azteca gets new name to fund 2026 World Cup remodel — ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/44253209/estadio-azteca-banorte-new-name-world-cup-2026-remodel"
+    },
+    {
+      "title": "Estadio Azteca will make history as first stadium to host three World Cup opening matches — beIN Sports",
+      "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/estadio-azteca-will-make-history-at-the-2026-world-cup-as-the-first-stadium-to-host-three-fifa-world-cup-opening-matches-2026-06-02"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

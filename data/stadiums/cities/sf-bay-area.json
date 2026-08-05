@@ -1,0 +1,29 @@
+{
+  "city_id": "sf-bay-area",
+  "title": "San Francisco Bay Area (Santa Clara)",
+  "prose": "The 2026 World Cup's San Francisco Bay Area matches are played in Santa Clara, a city at the southern edge of Silicon Valley roughly 40 miles south of downtown San Francisco. Santa Clara traces its origin to 1777, when Mission Santa Clara de Asís was established; it was incorporated as a city in 1852. The wider San Francisco metro reaches back further still, to the Spanish presidio and mission of 1776, before booming with the Gold Rush of 1849.\n\nToday Santa Clara is a tech-industry hub, and Levi's Stadium anchors the Bay Area's standing as a 2026 host region. FIFA's \"San Francisco Bay Area\" host designation is deliberately broad, spanning Santa Clara and San Jose as well as the wider Bay metropolitan area rather than a single municipality.\n\nBecause the venue sits in a small city, the region's football identity is best understood through the metro as a whole. The San Francisco Bay Area is one of the most soccer-engaged parts of the United States. The San Jose Earthquakes, two-time MLS Cup champions, play nearby at PayPal Park, and the area draws a large, diverse fan base — including notably strong Mexican-American support for El Tri friendlies and for Copa América and Gold Cup matches. That enthusiasm is matched by a track record of staging major international tournaments, among them the Copa América Centenario in 2016 and the CONCACAF Gold Cup in 2017.\n\nThe Bay Area's appetite for the game sits within an unusually deep general sports culture. Across the region, allegiances run through the 49ers, the Giants, the Warriors and the A's, giving Santa Clara's World Cup venue a metropolitan audience long accustomed to top-tier competition. It is that combination — a Silicon Valley setting, a broad multi-city host footprint, and one of the country's most committed soccer followings — that frames the San Francisco Bay Area as a 2026 host.",
+  "sources": [
+    {
+      "title": "Levi's Stadium - Wikipedia (oldid 1360724068)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Levi%27s_Stadium&oldid=1360724068"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed - inside.fifa.com (official)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "San Francisco Bay Area | FIFA World Cup 2026 Host City (official)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/usa/san-francisco-bay-area"
+    },
+    {
+      "title": "San Francisco Bay Area Stadium | FIFA World Cup 2026 (official stadium page)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/san-francisco-bay-area"
+    },
+    {
+      "title": "Levi's Stadium - HNTB (project page)",
+      "url": "https://www.hntb.com/projects/levis-stadium/"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

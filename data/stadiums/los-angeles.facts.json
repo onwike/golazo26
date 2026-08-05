@@ -1,0 +1,143 @@
+{
+  "venue_id": "los-angeles",
+  "stadium_current": "SoFi Stadium",
+  "stadium_historic": null,
+  "fifa_name": "Los Angeles Stadium",
+  "city": "Inglewood (Los Angeles metro)",
+  "country": "United States",
+  "opened": 2020,
+  "primary_tenant": "Los Angeles Rams (NFL) and Los Angeles Chargers (NFL)",
+  "architect": "HKS, Inc.",
+  "capacity_regular": 70240,
+  "capacity_regular_source": {
+    "title": "SoFi Stadium - Wikipedia (oldid 1360498175)",
+    "url": "https://en.wikipedia.org/w/index.php?title=SoFi_Stadium&oldid=1360498175"
+  },
+  "capacity_wc2026": 70492,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass — hybrid Kentucky bluegrass reinforced with woven synthetic fibers, installed over a layered drainage/ventilation structure with grow lighting (replacing the venue's normal artificial turf); reversible after the tournament",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 8,
+  "renovation_cost_2026": null,
+  "iconic_games": [],
+  "iconic_games_note": "SoFi Stadium opened in 2020 and has no prior men's World Cup history (2026 is its first). It is primarily an NFL venue, but has a short top-tier international football pedigree, clearly labelled here as non-World-Cup events: (1) 2023 CONCACAF Gold Cup Final, 16 Jul 2023 — Mexico 1-0 Panama (Santiago Gimenez 88'), att. 72,963, then the highest-attended football match at the stadium [VERIFIED: Wikipedia 2023 CONCACAF Gold Cup final + ESPN gameId 678990]; (2) 2024 CONMEBOL Copa America GROUP D, 24 Jun 2024 — Brazil 0-0 Costa Rica, att. 67,158 [CORRECTED from 'Group B' to 'Group D'; VERIFIED via Wikipedia 2024 Copa America, ESPN gameId 690712, CopaAmerica.com]; (3) 2024 CONMEBOL Copa America Group B, 26 Jun 2024 — Venezuela 1-0 Mexico (Salomon Rondon 57' pen.), att. 72,773 [VERIFIED: Wikipedia 2024 Copa America]. Major non-football events (clearly NON-football): Super Bowl LVI (13 Feb 2022, Rams 23-20 Bengals), 2023 College Football Playoff National Championship, WrestleMania 39 (2023); and the venue is set to host the 2028 Summer Olympics opening/closing ceremonies. The dedicated iconic_games list is intentionally left empty because these are tournament finals/group matches rather than historic men's World Cup lore.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Artificial turf removed and replaced with a natural-grass FIFA pitch: a hybrid Kentucky-bluegrass surface reinforced with woven synthetic fibers, grown over a layered structure with drainage, a vacuum-based ventilation layer, and grow lighting to sustain living grass inside the closed/canopied stadium. All modifications reversible to NFL configuration after the tournament.",
+      "value": "Hybrid natural grass (Kentucky bluegrass)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "How stadiums transformed turf fields to grass for 2026 World Cup - NBC Los Angeles",
+        "url": "https://www.nbclosangeles.com/world-cup/how-stadiums-transformed-turf-fields-grass/3902476/"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Corner seating reconfigured to widen the playing area to meet FIFA pitch-width / >73 m diagonal requirements; StadiumDB describes 'adding several new rows in each corner.' FIFA-confirmed tournament capacity is 70,492 (slightly HIGHER than the 70,240 NFL config). NOTE: the original facts-sheet claim of 'more than 400 seats removed' is inconsistent with the net +252-seat figure and is NOT cleanly supported — direction/magnitude of seat changes NOT SPECIFIED IN SOURCES. A competing 69,650 WC figure also circulates.",
+      "value": "70,492 (WC config, FIFA-confirmed)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Los Angeles Stadium - StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/sofi_stadium"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Phased modernization (pitch, expanded field, technical infrastructure, security and logistics) scheduled around the NFL calendar so the stadium stays operational until the final weeks before the tournament. Mid-flight as of mid-2026, with reported labor tensions (UNITE HERE Local 11). Renovation dollar cost NOT specified in cited sources.",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "WC 2026: Major overhaul of SoFi Stadium just for the World Cup - labor tensions rise - StadiumDB.com",
+        "url": "https://stadiumdb.com/news/2026/04/wc_2026_major_overhaul_of_sofi_stadium_just_for_the_world_cup_labor_tensions_rise"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "Inglewood incorporated 1908; Los Angeles founded 1781 (El Pueblo de Nuestra Senora la Reina de los Angeles)",
+    "significance": "SoFi Stadium sits in Inglewood, California, in the Los Angeles metropolitan area roughly 4.8 km from Los Angeles International Airport, built on the former Hollywood Park Racetrack site as the anchor of the Hollywood Park mixed-use development. Greater Los Angeles is the second-largest U.S. metro and a global entertainment capital; the stadium is also slated to host ceremonies for the 2028 Summer Olympics.",
+    "football_culture": "Los Angeles is one of the strongest soccer markets in the United States, anchored by a large Mexican-American and broader Latino population that gives CONCACAF and CONMEBOL fixtures near-home-crowd atmospheres (Mexico routinely sells out the LA area, as at the 2023 Gold Cup Final). The metro hosts two MLS clubs (LA Galaxy and LAFC) and a deep history of high-profile international matches at the Rose Bowl and now SoFi Stadium. Note: the football culture attaches to the Los Angeles metro, not the small city of Inglewood itself.",
+    "sources": [
+      {
+        "title": "SoFi Stadium - Wikipedia (oldid 1360498175)",
+        "url": "https://en.wikipedia.org/w/index.php?title=SoFi_Stadium&oldid=1360498175"
+      },
+      {
+        "title": "World Cup 2026: Los Angeles Stadium - StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/sofi_stadium"
+      },
+      {
+        "title": "2023 CONCACAF Gold Cup final - Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/2023_CONCACAF_Gold_Cup_final"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened 8 September 2020 in Inglewood, California, on the former Hollywood Park Racetrack site within the Hollywood Park development.",
+    "Designed by HKS, Inc.; total cost estimated at roughly $5.5 billion by May 2020, making it among the most expensive stadiums ever built.",
+    "Home to two NFL franchises, the Los Angeles Rams and Los Angeles Chargers, both since 2020.",
+    "Owned by StadCo LA / Hollywood Park Land Company (Rams owner Stan Kroenke).",
+    "Roofed by a freestanding translucent ETFE canopy spanning about one million square feet (302 panels) and features the dual-sided oval 4K 'Infinity Screen' video board.",
+    "Hosted Super Bowl LVI in February 2022 (Rams 23-20 Bengals) and the 2023 College Football Playoff National Championship.",
+    "Hosted the 2023 CONCACAF Gold Cup Final (Mexico 1-0 Panama), one 2024 Copa America Group D match (Brazil 0-0 Costa Rica), and one 2024 Copa America Group B match (Venezuela 1-0 Mexico).",
+    "Set to host opening and closing ceremonies of the 2028 Summer Olympics.",
+    "During the 2026 World Cup it is officially branded 'Los Angeles Stadium' under FIFA's clean-venue/neutral-naming policy."
+  ],
+  "sources": [
+    {
+      "title": "SoFi Stadium - Wikipedia (oldid 1360498175)",
+      "url": "https://en.wikipedia.org/w/index.php?title=SoFi_Stadium&oldid=1360498175"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "World Cup 2026: Los Angeles Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/sofi_stadium"
+    },
+    {
+      "title": "WC 2026: Major overhaul of SoFi Stadium just for the World Cup - labor tensions rise - StadiumDB.com",
+      "url": "https://stadiumdb.com/news/2026/04/wc_2026_major_overhaul_of_sofi_stadium_just_for_the_world_cup_labor_tensions_rise"
+    },
+    {
+      "title": "How stadiums transformed turf fields to grass for 2026 World Cup - NBC Los Angeles",
+      "url": "https://www.nbclosangeles.com/world-cup/how-stadiums-transformed-turf-fields-grass/3902476/"
+    },
+    {
+      "title": "2023 CONCACAF Gold Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2023_CONCACAF_Gold_Cup_final"
+    },
+    {
+      "title": "Mexico 1-0 Panama (Jul 16, 2023) Final Score - ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/678990/panama-mexico"
+    },
+    {
+      "title": "2024 Copa America - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2024_Copa_Am%C3%A9rica"
+    },
+    {
+      "title": "Brazil 0-0 Costa Rica (Jun 24, 2024) Final Score - ESPN (Group D)",
+      "url": "https://www.espn.com/soccer/match/_/gameId/690712/costa-rica-brazil"
+    },
+    {
+      "title": "SoFi Stadium to Host Two CONMEBOL Copa America Group Stage Matches - SoFi Stadium official",
+      "url": "https://www.sofistadium.com/news/detail/sofi-stadium-to-host-two-conmebol-copa-america-group-stage-matches"
+    }
+  ],
+  "gaps": [
+    "renovation_cost_2026: NOT SPECIFIED IN SOURCES — no dollar figure for the World Cup 2026 conversion/overhaul was given in any cited authoritative source.",
+    "WC2026 corner seat changes: direction and magnitude NOT cleanly supported. The 'more than 400 seats removed' claim conflicts with the net +252-seat difference between regular (70,240) and WC (70,492) capacity; StadiumDB describes ADDING corner rows. Treated as unspecified.",
+    "Competing WC capacity figure: 69,650 circulates in some reputable coverage (FourFourTwo/Wikipedia-derived) alongside the FIFA-confirmed 70,492. The 70,492 figure is retained as authoritative (FIFA 10 Jun 2026), but the discrepancy is unresolved.",
+    "Precise WC2026 match schedule/fixtures: cited sources confirm 8 matches (5 group, 2 Round of 32, 1 quarterfinal) and that USA group matches are included (one source names USA opening vs Paraguay), but full opponent pairings/dates are NOT fully specified.",
+    "field_type_2026 vendor/tray-system specifics and grass supplier: described in general terms but exact supplier/system name NOT SPECIFIED IN SOURCES.",
+    "Renovation completion percentage: qualitative only (mid-flight as of mid-2026); no quantified progress figure in sources."
+  ],
+  "confidence": "High on identity, opening (8 Sep 2020), architect (HKS), tenants (Rams + Chargers), ownership (Kroenke/StadCo LA), FIFA name (Los Angeles Stadium), match count (8), grass/pitch conversion, and both capacities (regular 70,240 Wikipedia; WC 70,492 FIFA-confirmed, kept distinct). The three football matches' scores/dates/attendances all verified. CRITICAL CORRECTION applied: Brazil 0-0 Costa Rica (24 Jun 2024) was COPA AMERICA GROUP D, not 'Group B' as originally stated — confirmed by Wikipedia, ESPN, CopaAmerica.com and Gametime. Medium on renovation seat-change scope (the '400 removed' figure is inconsistent with the higher WC capacity and was downgraded to gaps). Low/none on renovation dollar cost (gaps, null).",
+  "_as_of": "2026-06-23"
+}

@@ -1,0 +1,29 @@
+{
+  "venue_id": "kansas-city",
+  "title": "GEHA Field at Arrowhead Stadium",
+  "prose": "Known to its NFL tenant as GEHA Field at Arrowhead Stadium and rebranded \"Kansas City Stadium\" for the 2026 FIFA World Cup, the venue traces its origins to a groundbreaking on 11 July 1968. It opened on 12 August 1972, when the Kansas City Chiefs beat the St. Louis Cardinals 24–14 in the first preseason game. The stadium was built as part of the Truman Sports Complex, which it shares with Kauffman Stadium, home of MLB's Royals.\n\nThe original design was the work of the Kansas City firm Kivett and Myers; a later renovation between 2007 and 2010 was designed by Populous, formerly HOK Sport, at a cost of about US$375 million. The stadium opened with a capacity of 78,097, in use from 1972 to 1994, and the Chiefs-configuration capacity has stood at 76,416 from 2010 onward.\n\nThe venue has been the continuous home of the Chiefs since 1972, making it one of the most established stadiums in American professional sport. From 1996 to 2007 it also hosted the MLS charter club then known as the Kansas City Wiz and Wizards, the franchise that became Sporting Kansas City. Its playing surface is natural NorthBridge Bermudagrass, in use since 2013.\n\nIn March 2021 naming rights were sold to GEHA, establishing the official name GEHA Field at Arrowhead Stadium. The stadium holds the Guinness World Record for the loudest crowd roar at a sports stadium, 142.2 dBA, set on 29 September 2014.\n\nFor the 2026 FIFA World Cup, the venue hosts six matches: four group-stage games, one Round of 32 tie, and one quarterfinal.",
+  "sources": [
+    {
+      "title": "Arrowhead Stadium — Wikipedia (oldid 1360442411)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Arrowhead_Stadium&oldid=1360442411"
+    },
+    {
+      "title": "Kansas City Wiz / Kansas City Wizards — FunWhileItLasted",
+      "url": "https://funwhileitlasted.net/2019/11/09/1996-2010-kansas-city-wizards/"
+    },
+    {
+      "title": "History — Sporting Kansas City",
+      "url": "https://www.sportingkc.com/club/history/"
+    },
+    {
+      "title": "Loudest crowd roar at a sports stadium — Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/world-records/loudest-crowd-roar-at-a-sports-stadium"
+    },
+    {
+      "title": "Kansas City to host six matches — FIFA",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/kansas-city-host-six-matches-stadium"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

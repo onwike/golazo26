@@ -1,0 +1,186 @@
+{
+  "venue_id": "kansas-city",
+  "stadium_current": "GEHA Field at Arrowhead Stadium",
+  "stadium_historic": null,
+  "fifa_name": "Kansas City Stadium",
+  "city": "Kansas City",
+  "country": "United States",
+  "opened": 1972,
+  "primary_tenant": "Kansas City Chiefs (NFL)",
+  "architect": "Kivett and Myers (original 1972); Populous/HOK Sport (2007–2010 renovation)",
+  "capacity_regular": 76416,
+  "capacity_regular_source": {
+    "title": "Arrowhead Stadium — Wikipedia (oldid 1360442411)",
+    "url": "https://en.wikipedia.org/w/index.php?title=Arrowhead_Stadium&oldid=1360442411"
+  },
+  "capacity_wc2026": 69045,
+  "capacity_wc2026_source": {
+    "title": "FIFA's World Cup capacities make Arrowhead Stadium smaller than for Chiefs games — KCTV5 (11 Jun 2026)",
+    "url": "https://www.kctv5.com/2026/06/11/fifas-world-cup-capacities-make-arrowhead-stadium-smaller-than-chiefs-games/"
+  },
+  "field_type_2026": "Natural grass — NorthBridge Bermudagrass (hybrid), resodded for 2026 with a SubAir-style sub-surface air/ventilation and vacuum-drainage system installed beneath the pitch (drains storm water; pumps chilled air to the grass roots in extreme heat)",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 6,
+  "renovation_cost_2026": "Missouri allocated US$50M (May 2023), of which $42.5M is for Arrowhead Stadium World Cup prep (the other $7.5M to the KC2026 nonprofit for FIFA contractual obligations); $19.6M spent across the first two of five phases as of mid-2026, with ~$23.5M budgeted for the final three phases (per KSHB, June 2026). Turner Construction received >$17.1M and Populous >$1.73M as construction administrator.",
+  "iconic_games": [
+    {
+      "date": "2024-07-01",
+      "match": "United States vs Uruguay",
+      "score": "0–1",
+      "event": "2024 Copa América, Group C",
+      "note": "Mathías Olivera scored the lone goal (66'); a VAR-upheld, controversial offside call; attendance 55,460. The loss eliminated the USMNT at the group stage on home soil.",
+      "source": {
+        "title": "USMNT vs. Uruguay: Match Recap — U.S. Soccer (1 Jul 2024)",
+        "url": "https://www.ussoccer.com/stories/2024/07/usa-vs-uruguay-copa-america-2024-score-result-goals-stats-match-recap-july-1"
+      }
+    }
+  ],
+  "iconic_games_note": "Arrowhead is primarily an NFL stadium but has a genuine (if modest) association-football history: it was home to MLS charter club the Kansas City Wiz/Wizards (now Sporting Kansas City) from 1996 to 2007, and it hosted USMNT and CONCACAF Gold Cup fixtures over the years. Its most notable single football match is the 2024 Copa América Group C tie listed above (USA 0–1 Uruguay, 1 Jul 2024, att. 55,460), making it one of the venues to host both the Copa América and the FIFA World Cup. Its biggest events overall are NFL/Chiefs games — American football, not association football — including the Guinness-record crowd-noise game.",
+  "renovations": [
+    {
+      "category": "capacity",
+      "change": "FIFA-config capacity set at 69,045 — about 7,000 fewer than the ~76,416 Chiefs config; seats removed to fit the wider, regulation FIFA pitch and to make room for FIFA media/broadcast positions",
+      "value": "69,045",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "FIFA's World Cup capacities make Arrowhead Stadium smaller than for Chiefs games — KCTV5 (11 Jun 2026)",
+        "url": "https://www.kctv5.com/2026/06/11/fifas-world-cup-capacities-make-arrowhead-stadium-smaller-than-chiefs-games/"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "Phase-two work removed ~3,000 seats along the visiting sideline, replaced with modular/removable seating to accommodate FIFA's wider, perfectly leveled playing surface (KCTV5 reports ~3,500 seats removed overall for FIFA media/broadcast)",
+      "value": "~3,000 seats removed (visiting sideline)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Offseason renovation at Arrowhead cost more than $19.6 million — KSHB (Jun 2026)",
+        "url": "https://www.kshb.com/sports/world-cup/offseason-renovation-at-arrowhead-cost-more-than-19-6-million-remaining-phases-will-cost-more"
+      }
+    },
+    {
+      "category": "pitch",
+      "change": "Field resodded with NorthBridge Bermudagrass (hybrid) over a SubAir Sport sub-surface air/ventilation and vacuum-drainage system; later phases raise the field perimeter and eliminate the NFL center crown to deliver a perfectly level FIFA surface",
+      "value": "Hybrid Bermudagrass + SubAir sub-surface air/drainage system",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "FIFA World Cup 2026: How Kansas City Stadium Is Using Technology to Host the Tournament — ColombiaOne (7 May 2026)",
+        "url": "https://colombiaone.com/2026/05/07/kansas-city-stadium-technology-grass/"
+      }
+    },
+    {
+      "category": "other",
+      "change": "Removal of commercial/stadium branding to meet FIFA's 'clean site' requirement; post-tournament phases will restore permanent seating and NFL field features (temporary conversion, reverts after the World Cup)",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Offseason renovation at Arrowhead cost more than $19.6 million — KSHB (Jun 2026)",
+        "url": "https://www.kshb.com/sports/world-cup/offseason-renovation-at-arrowhead-cost-more-than-19-6-million-remaining-phases-will-cost-more"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "Operational upgrades for the World Cup including high-end LED lighting (anti-flicker for 4K/UHD broadcast) and sub-surface soil-temperature/ventilation control via the SubAir system",
+      "value": null,
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "FIFA World Cup 2026: How Kansas City Stadium Is Using Technology to Host the Tournament — ColombiaOne (7 May 2026)",
+        "url": "https://colombiaone.com/2026/05/07/kansas-city-stadium-technology-grass/"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "Incorporated as the Town of Kansas in 1850; reincorporated as the City of Kansas in 1853 and renamed Kansas City in 1889",
+    "significance": "Largest city in Missouri, on the Missouri–Kansas state line at the confluence of the Missouri and Kansas rivers. A historic rail, stockyard and commerce hub of the American Midwest, it is internationally known for its jazz heritage (the 18th & Vine district), Kansas City-style barbecue, and its fountains. The metro straddles two states (Missouri and Kansas).",
+    "football_culture": "Kansas City is a deep football (soccer) town for its size: it is the home of MLS's Sporting Kansas City — a charter MLS club (founded 1996 as the Kansas City Wiz/Wizards) that played at Arrowhead through 2007 before moving to its own soccer-specific stadium — and of the NWSL's Kansas City Current, who built the first stadium purpose-built for a women's professional team. The city hosted the 2024 Copa América and multiple USMNT and Gold Cup fixtures. (Separately, on the gridiron, the NFL's Chiefs make Arrowhead one of the loudest venues in sport.)",
+    "sources": [
+      {
+        "title": "Arrowhead Stadium — Wikipedia (oldid 1360442411)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Arrowhead_Stadium&oldid=1360442411"
+      },
+      {
+        "title": "Kansas City Wiz / Kansas City Wizards — FunWhileItLasted",
+        "url": "https://funwhileitlasted.net/2019/11/09/1996-2010-kansas-city-wizards/"
+      },
+      {
+        "title": "History — Sporting Kansas City",
+        "url": "https://www.sportingkc.com/club/history/"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Groundbreaking 11 July 1968; the stadium opened 12 August 1972 (Chiefs beat the St. Louis Cardinals 24–14 in the first preseason game) as part of the Truman Sports Complex, which it shares with Kauffman Stadium (home of MLB's Royals).",
+    "Originally designed by Kansas City firm Kivett and Myers; the 2007–2010 renovation was designed by Populous (formerly HOK Sport) at a cost of about US$375 million.",
+    "Original capacity was 78,097 (1972–1994); current Chiefs-configuration capacity is 76,416 (2010–present).",
+    "Home of the Kansas City Chiefs (NFL) continuously since 1972.",
+    "Naming rights sold to GEHA in March 2021, making the official name 'GEHA Field at Arrowhead Stadium'.",
+    "Was home to MLS charter club the Kansas City Wiz/Wizards (now Sporting Kansas City) from 1996 to 2007.",
+    "Playing surface is NorthBridge Bermudagrass (natural grass), in use since 2013.",
+    "Holds the Guinness World Record for loudest crowd roar at a sports stadium — 142.2 dBA, set 29 September 2014 (Chiefs 41, Patriots 14).",
+    "For the 2026 FIFA World Cup it is rebranded 'Kansas City Stadium' and hosts six matches: four group-stage games, one Round of 32, and one quarterfinal."
+  ],
+  "sources": [
+    {
+      "title": "Arrowhead Stadium — Wikipedia (oldid 1360442411)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Arrowhead_Stadium&oldid=1360442411"
+    },
+    {
+      "title": "FIFA's World Cup capacities make Arrowhead Stadium smaller than for Chiefs games — KCTV5 (11 Jun 2026)",
+      "url": "https://www.kctv5.com/2026/06/11/fifas-world-cup-capacities-make-arrowhead-stadium-smaller-than-chiefs-games/"
+    },
+    {
+      "title": "Offseason renovation at Arrowhead cost more than $19.6 million — KSHB (Jun 2026)",
+      "url": "https://www.kshb.com/sports/world-cup/offseason-renovation-at-arrowhead-cost-more-than-19-6-million-remaining-phases-will-cost-more"
+    },
+    {
+      "title": "FIFA World Cup 2026: How Kansas City Stadium Is Using Technology to Host the Tournament — ColombiaOne (7 May 2026)",
+      "url": "https://colombiaone.com/2026/05/07/kansas-city-stadium-technology-grass/"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup — ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "Kansas City to host six matches — FIFA",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/kansas-city-host-six-matches-stadium"
+    },
+    {
+      "title": "USMNT vs. Uruguay: Match Recap — U.S. Soccer (1 Jul 2024)",
+      "url": "https://www.ussoccer.com/stories/2024/07/usa-vs-uruguay-copa-america-2024-score-result-goals-stats-match-recap-july-1"
+    },
+    {
+      "title": "USA 0-1 Uruguay (Jul 1, 2024) Final Score — ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/690725/uruguay-united-states"
+    },
+    {
+      "title": "Loudest crowd roar at a sports stadium — Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/world-records/loudest-crowd-roar-at-a-sports-stadium"
+    },
+    {
+      "title": "Kansas, Missouri officials tout nonprofit to oversee 2026 World Cup preparations — Missouri Independent (18 May 2023)",
+      "url": "https://missouriindependent.com/2023/05/18/kansas-missouri-officials-tout-nonprofit-to-oversee-2026-world-cup-preparations/"
+    },
+    {
+      "title": "Missouri Allocated $42.5M for World Cup Fix-Up of Lame Duck Arrowhead — Sportico",
+      "url": "https://www.sportico.com/leagues/soccer/2026/missouri-allocated-millions-to-renovate-soon-to-be-dormant-arrowhead-stadium-1234909794/"
+    },
+    {
+      "title": "Kansas City Wiz / Kansas City Wizards — FunWhileItLasted",
+      "url": "https://funwhileitlasted.net/2019/11/09/1996-2010-kansas-city-wizards/"
+    },
+    {
+      "title": "History — Sporting Kansas City",
+      "url": "https://www.sportingkc.com/club/history/"
+    }
+  ],
+  "gaps": [
+    "Exact final total cost of the 2026 World Cup renovation is NOT SPECIFIED IN SOURCES as a single confirmed figure — work is mid-flight (June 2026); figures cited are the $50M Missouri allocation ($42.5M to the stadium), $19.6M spent across two of five phases, and ~$23.5M budgeted for the remaining three phases. A confirmed final actual is not yet available.",
+    "FIFA's own official capacity-information page for Kansas City Stadium could not be fetched directly; the 69,045 figure is taken from June 2026 reporting (KCTV5) of FIFA's confirmed-capacity announcement rather than from the FIFA page itself.",
+    "Exact end-config seat count per match/round is not specified; reporting cites ~3,000 seats removed along the visiting sideline (KSHB) and ~3,500 removed overall for FIFA media/broadcast (KCTV5) — the two figures describe different scopes and are not reconciled in sources.",
+    "Exact founding/incorporation specifics for the city beyond the 1850 Town of Kansas / 1853 / 1889 milestones were drawn from Wikipedia/general reference; a single authoritative municipal source was not separately fetched.",
+    "Precise architect-of-record for the 2026 World Cup modifications is Populous (construction administrator per KSHB) but the full scope of its design responsibility is not detailed in sources."
+  ],
+  "confidence": "High on all core facts after adversarial verification (opening 1972, groundbreaking 11 Jul 1968, regular capacity 76,416, FIFA WC capacity 69,045, primary tenant, six matches = 4 group + R32 + QF, NorthBridge Bermudagrass resod + SubAir sub-surface system, anti-flicker LED, $50M May-2023 Missouri allocation with the $42.5M/$7.5M split, $19.6M-spent/$23.5M-remaining, Guinness 142.2 dB record, Copa América 2024 USA 0–1 Uruguay att. 55,460). One sourcing defect found and FIXED: the tech-renovation citation was re-pointed from the KSHB 'transforms' article (which lacks the LED/ventilation detail) to ColombiaOne, which supports it. Medium only on the final total renovation cost (work mid-flight) and exact per-match seat counts.",
+  "_as_of": "2026-06-23"
+}

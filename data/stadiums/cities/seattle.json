@@ -1,0 +1,37 @@
+{
+  "city_id": "seattle",
+  "title": "Seattle",
+  "prose": "Seattle traces its permanent non-Native settlement to Alki Point in 1851. The town was incorporated on 14 January 1865, that charter was voided in 1867, and Seattle re-incorporated on 2 December 1869.\n\nToday Seattle is the largest city in Washington State and across the Pacific Northwest, set on Puget Sound. Known as the Emerald City, it is a major tech, aerospace and maritime hub, home to Boeing among its defining industries. Lumen Field sits in the SoDo district, just south of downtown.\n\nThe city carries one of the deepest soccer cultures in the United States. The Seattle Sounders FC have played in MLS since 2009 and routinely draw among the largest crowds in the league. They are backed by highly organized supporters' groups, the Emerald City Supporters, Gorilla FC, Eastside Supporters and North End Faithful, whose tifo and chant culture is often compared to European ultras. The Sounders sold out their inaugural MLS season and quickly built a season-ticket waitlist, a sign of demand that has rarely cooled since.\n\nThe professional game in Seattle is not the Sounders alone. The city is also home to NWSL side Seattle Reign FC, which has played at Lumen Field since 2022 and rebranded from OL Reign back to Seattle Reign FC in January 2024. That dual presence, men's and women's top-flight football sharing one ground, deepens a calendar of high-level matches few American cities can match.\n\nThe scale of that support shows in the record book. The Sounders set a club single-game attendance record of 69,314 at the Leagues Cup 2025 Final on 31 August 2025, a 3-0 win over Inter Miami CF. It is the kind of figure that explains why Seattle was entrusted with a share of the world's biggest tournament: a metro where football fills a major stadium not as a novelty but as routine, and where the supporters' culture has matured into one of the loudest and most committed in North American soccer.",
+  "sources": [
+    {
+      "title": "Lumen Field - Wikipedia (oldid 1360343031)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Lumen_Field&oldid=1360343031"
+    },
+    {
+      "title": "History of Seattle - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Seattle"
+    },
+    {
+      "title": "Seattle Sounders FC supporters - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Seattle_Sounders_FC_supporters"
+    },
+    {
+      "title": "Seattle Sounders set Leagues Cup, club attendance records vs. Inter Miami - MLSSoccer.com",
+      "url": "https://www.mlssoccer.com/news/seattle-sounders-set-leagues-cup-club-attendance-records-vs-inter-miami"
+    },
+    {
+      "title": "Seattle Reign FC - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Seattle_Reign_FC"
+    },
+    {
+      "title": "$19M World Cup upgrade, and a different name, for Lumen Field - Seattle DJC",
+      "url": "https://www.djc.com/news/ae/12170222.html"
+    },
+    {
+      "title": "FieldTurf Installs New FieldTurf CORE Playing Surface at Lumen Field - FieldTurf",
+      "url": "https://fieldturf.com/en/articles/detail/lumen-field-2024/"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

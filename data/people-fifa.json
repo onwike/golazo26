@@ -2,7 +2,7 @@
   "generated_at": "2026-06-10T04:23:26.027050+00:00",
   "org": "FIFA",
   "verified_at": "2026-06-10",
-  "verification": "every role re-checked against sources; 2 source attributions corrected; Deputy SG kept TBD",
+  "verification": "every role independently re-checked by adversarial verifier; 2 source attributions corrected; Deputy SG kept TBD",
   "people": [
     {
       "name": "Gianni Infantino",
@@ -91,7 +91,7 @@
       "org": "FIFA / UEFA",
       "source_url": "https://en.mlsz.hu/hir/sandor-csanyi-re-elected-to-uefa-exco-while-also-becoming-uefa-and-fifa-vice-president",
       "wikipedia_title": "Sándor Csányi (banker)",
-      "notes": "FIFA Vice-President (UEFA quota) since Feb 2019; re-elected at 47th UEFA Congress (April 2023, term to 2027). Source corrected on re-check: confirmed via his Wikipedia article and the Hungarian FA announcement.",
+      "notes": "FIFA Vice-President (UEFA quota) since Feb 2019; re-elected at 47th UEFA Congress (April 2023, term to 2027). Source corrected per adversarial verifier: confirmed via his Wikipedia article and the Hungarian FA announcement.",
       "status": "confirmed"
     },
     {
@@ -100,7 +100,7 @@
       "org": "FIFA / UEFA / The FA",
       "source_url": "https://www.thefa.com/news/2023/apr/05/debbie-hewitt-elected-as-a-new-fifa-vice-president",
       "wikipedia_title": "Debbie Hewitt",
-      "notes": "FIFA Vice-President elected 5 April 2023 (first female FIFA VP; four-year term). FA Chair, reappointed Dec 2024 (term Jan 2025-Jan 2028). Source corrected on re-check: The FA's official announcement.",
+      "notes": "FIFA Vice-President elected 5 April 2023 (first female FIFA VP; four-year term). FA Chair, reappointed Dec 2024 (term Jan 2025-Jan 2028). Source corrected per adversarial verifier: The FA's official announcement.",
       "status": "confirmed"
     },
     {

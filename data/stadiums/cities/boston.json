@@ -1,0 +1,29 @@
+{
+  "city_id": "boston",
+  "title": "Foxborough",
+  "prose": "Foxborough, Massachusetts sits in the Greater Boston metropolitan area, roughly 22 miles (35 km) southwest of downtown Boston and about 18 miles (29 km) northeast of Providence, Rhode Island. The town was settled in 1704 and incorporated in 1778, taking its name from Charles James Fox, a British Whig MP who had supported the American colonies. Today Foxborough is known above all as the home of Gillette Stadium, the sports and entertainment complex that, with the adjacent Patriot Place, is owned by the Kraft Group.\n\nThe football culture here belongs less to the small town of Foxborough than to the Greater Boston metro that surrounds it. Boston is a deep American sports market, and two of its tenants share the stadium: the New England Patriots of the NFL and the New England Revolution of MLS. The Revolution were among MLS's ten charter clubs, founded by Robert Kraft in 1996 and named for the region's role in the American Revolution.\n\nThe region's soccer roots run deeper still. Boston's Oneida Football Club, formed in 1862, is cited as the first organized football club in the United States. That heritage carried into the modern era through the venue's predecessor, Foxboro Stadium, which staged matches at the 1994 FIFA World Cup and the 1999 Women's World Cup. Gillette Stadium has since added to that lineage, hosting the 2003 Women's World Cup, the 2016 Copa America Centenario, and multiple Gold Cups — a record that makes this corner of New England one of the more storied football destinations in the country.",
+  "sources": [
+    {
+      "title": "Gillette Stadium - Wikipedia (pinned oldid 1360794413)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Gillette_Stadium&oldid=1360794413"
+    },
+    {
+      "title": "FIFA - final stadium capacities confirmed (official, 10 June 2026) - Boston Stadium 64,146",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Foxborough, Massachusetts - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Foxborough,_Massachusetts"
+    },
+    {
+      "title": "New England Revolution - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/New_England_Revolution"
+    },
+    {
+      "title": "Boston to host seven matches - FIFA official",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/boston-host-seven-matches-stadium"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

@@ -1,0 +1,33 @@
+{
+  "venue_id": "mexico-city",
+  "title": "Estadio Banorte",
+  "prose": "Estadio Azteca opened on 29 May 1966, its inaugural match a 2–2 draw between Club América and Torino. It was designed by the Mexican architects Pedro Ramírez Vázquez and Rafael Mijares Alcérreca, and from the start served as the permanent home of Club América and the regular home of the Mexico national team — a dual identity it has carried ever since.\n\nThe venue was owned by Grupo Televisa from 1966 onward. In a 2024 restructuring, operations were spun off into the publicly listed Grupo Ollamani, which now operates the stadium and controls Club América, while ultimate ownership remains within the Televisa group. The naming history shifted again on 14 March 2025, when Grupo Financiero Banorte acquired naming rights and the ground was renamed Estadio Banorte. For the 2026 World Cup, FIFA applies the neutral designation \"Mexico City Stadium\" (Estadio Ciudad de México), since corporate names are barred during the tournament.\n\nFew arenas carry such a record. It was the first stadium to host two World Cup finals and stands as the only one to host three men's World Cups, in 1970, 1986 and 2026 — and the first to host three World Cup opening matches. Its reach extends well beyond football: it hosted events of the 1968 Summer Olympics, the 1975 Pan-American Games and the 1999 FIFA Confederations Cup. Set at roughly 2,200 m (7,220 ft) above sea level, its altitude remains a defining challenge for visiting teams, a factor woven into its lore as much as the famous matches it has held. Through every change of name and ownership, the stadium has remained one of the great cathedrals of the global game.",
+  "sources": [
+    {
+      "title": "Estadio Azteca — Wikipedia (oldid 1360810946)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Azteca&oldid=1360810946"
+    },
+    {
+      "title": "Tenochtitlan — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Tenochtitlan"
+    },
+    {
+      "title": "Mexico City — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Mexico_City"
+    },
+    {
+      "title": "Banorte lands naming rights to Estadio Azteca — The Stadium Business",
+      "url": "https://www.thestadiumbusiness.com/2025/03/17/banorte-lands-naming-rights-to-estadio-azteca/"
+    },
+    {
+      "title": "Estadio Azteca gets new name to fund 2026 World Cup remodel — ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/44253209/estadio-azteca-banorte-new-name-world-cup-2026-remodel"
+    },
+    {
+      "title": "Estadio Azteca will make history as first stadium to host three World Cup opening matches — beIN Sports",
+      "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/estadio-azteca-will-make-history-at-the-2026-world-cup-as-the-first-stadium-to-host-three-fifa-world-cup-opening-matches-2026-06-02"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

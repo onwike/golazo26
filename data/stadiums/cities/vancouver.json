@@ -1,0 +1,25 @@
+{
+  "city_id": "vancouver",
+  "title": "Vancouver",
+  "prose": "Founded in 1886, Vancouver is the largest city in British Columbia and the third-largest metropolitan area in Canada — a major Pacific port and gateway on Canada's west coast, ringed by the North Shore Mountains and the Pacific Ocean. Its setting between sea and mountains gives the city a distinct identity among Canadian metropolises, and its standing as a world stage was confirmed when it served as host city of the 2010 Winter Olympic and Paralympic Games, whose ceremonies were staged at BC Place.\n\nVancouver also holds one of Canada's deepest soccer roots. Organized association football took hold in British Columbia early, with the Pacific Coast Association Football League formed in 1908 and the first professional game played in 1910. The modern era of fanfare arrived with the Vancouver Whitecaps, who captured the NASL's Soccer Bowl in 1979 — a triumph that drew roughly 100,000 fans to a victory parade on Robson Street. The lineage continued through the 86ers, named for 1886, the city's founding year, who carried the local game through the 1980s and 1990s. That thread runs unbroken to the present-day Vancouver Whitecaps FC, who joined MLS in 2011 and play their matches at BC Place.\n\nThe city's football pedigree extends well beyond its clubs. Vancouver hosted the 2015 FIFA Women's World Cup Final at BC Place, cementing its place as a major Canadian football hub and a fitting host on the international stage. From its founding port-city beginnings to its modern role as an MLS home and a World Cup venue, Vancouver pairs its dramatic Pacific geography with a soccer culture as established as any in the country.",
+  "sources": [
+    {
+      "title": "BC Place — Wikipedia (pinned oldid 1360620880, 2026-06-22)",
+      "url": "https://en.wikipedia.org/w/index.php?title=BC_Place&oldid=1360620880"
+    },
+    {
+      "title": "History of Vancouver Whitecaps FC — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Vancouver_Whitecaps_FC"
+    },
+    {
+      "title": "The 86ers Story — Vancouver Whitecaps FC",
+      "url": "https://www.whitecapsfc.com/news/the-86ers-story"
+    },
+    {
+      "title": "2015 FIFA Women's World Cup final — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2015_FIFA_Women%27s_World_Cup_final"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

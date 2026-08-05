@@ -1,0 +1,188 @@
+{
+  "venue_id": "philadelphia",
+  "stadium_current": "Lincoln Financial Field",
+  "stadium_historic": null,
+  "fifa_name": "Philadelphia Stadium",
+  "city": "Philadelphia",
+  "country": "United States",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "opened": 2003,
+  "architect": "NBBJ (with Agoos Lovera Architects)",
+  "primary_tenant": "Philadelphia Eagles (NFL); also Temple Owls (NCAA football)",
+  "capacity_regular": null,
+  "capacity_regular_source": null,
+  "capacity_wc2026": 68324,
+  "capacity_wc2026_source": {
+    "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+    "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+  },
+  "field_type_2026": "Natural grass — Kentucky bluegrass and perennial ryegrass blend knitted with HERO Hybrid Grass fibre, mowed to 22mm per FIFA spec (replacing the regular hybrid surface)",
+  "wc_matches_2026": 6,
+  "renovation_cost_2026": "Under USD $10 million for all stadium modifications (executive estimate, 'final costs still being worked out'), per Philadelphia host-city executive Meg Kane (Billy Penn, May 2026); costs shared by the Philadelphia Eagles, the Philadelphia host committee and FIFA.",
+  "iconic_games": [
+    {
+      "date": "2016-06-09",
+      "match": "Uruguay 0-1 Venezuela",
+      "score": "0-1",
+      "event": "2016 Copa America Centenario, Group C",
+      "note": "Attendance 23,002; Rondon 36'. Date corrected to June 9 per Wikipedia/Philadelphia Union (StadiumDB's June 10 is an off-by-one error).",
+      "source": {
+        "title": "Copa America 2016: Lincoln Financial Field - StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/copa_america/2016/lincoln_financial_field"
+      }
+    },
+    {
+      "date": "2016-06-11",
+      "match": "United States 1-0 Paraguay",
+      "score": "1-0",
+      "event": "2016 Copa America Centenario, Group A",
+      "note": "Attendance 51,041; Dempsey 27'; USMNT advanced from the group at the Linc",
+      "source": {
+        "title": "Copa America 2016: Lincoln Financial Field - StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/copa_america/2016/lincoln_financial_field"
+      }
+    },
+    {
+      "date": "2016-06-14",
+      "match": "Chile 4-2 Panama",
+      "score": "4-2",
+      "event": "2016 Copa America Centenario, Group D",
+      "note": "Attendance 27,260; Vargas x2, Sanchez; Chile advanced to QF (confirmed via ESPN/SI/MLS June 14)",
+      "source": {
+        "title": "Copa America 2016: Lincoln Financial Field - StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/copa_america/2016/lincoln_financial_field"
+      }
+    }
+  ],
+  "iconic_games_note": "Lincoln Financial Field has a genuine international football history: it hosted three 2016 Copa America Centenario group matches (above, each verified) and the 2015 CONCACAF Gold Cup final (Mexico 3-1 Jamaica, July 26, 2015, att. 68,930), plus CONCACAF Gold Cup quarterfinal doubleheaders (2017, 2019), 2003 FIFA Women's World Cup matches, and USMNT/club friendlies. The authoritative dates for the three Copa America Centenario fixtures are June 9 (Uruguay-Venezuela), June 11 (USA-Paraguay) and June 14 (Chile-Panama), per Wikipedia/ESPN/SI/MLS/Philadelphia Union; the cited StadiumDB tournament page mis-lists them as June 10/12/15 (off by one), so the dates here follow the authoritative sources, not StadiumDB. Only the three fully-scored Copa America fixtures are shipped in iconic_games; the 2015 Gold Cup final and 2017/2019 quarterfinals are noted but not pinned to a single authoritative source in this pass.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Regular hybrid surface replaced with FIFA-spec natural grass: a Kentucky bluegrass and perennial ryegrass blend grown at Tuckahoe Turf Farms in Hammonton, New Jersey, knitted with HERO Hybrid Grass fibre and mowed to 22mm. Installed approximately May 4-5, 2026.",
+      "value": "Kentucky bluegrass / perennial ryegrass on HERO Hybrid fibre, 22mm",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Lincoln Financial Field gets new grass and a new name ahead of the FIFA World Cup - Billy Penn",
+        "url": "https://billypenn.com/2026/05/13/lincoln-financial-field-fifa-world-cup-soccer-tournament-grass-turf-covered-signs-eagles/"
+      }
+    },
+    {
+      "category": "pitch",
+      "change": "Field widened to the FIFA-regulation pitch dimensions of 68m x 105m (from the standard 66m x 100m gridiron footprint), with corner seats removed plus added perimeter space for team staff and security.",
+      "value": "68m x 105m pitch (from 66m x 100m); a few hundred corner seats removed",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Lincoln Financial Field gets new grass and a new name ahead of the FIFA World Cup - Billy Penn",
+        "url": "https://billypenn.com/2026/05/13/lincoln-financial-field-fifa-world-cup-soccer-tournament-grass-turf-covered-signs-eagles/"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "A few hundred corner seats removed for the wider pitch and perimeter; FIFA confirmed the World Cup configuration capacity at 68,324 (June 10, 2026 release). Eagles officials had earlier estimated the summer configuration would land between 65,000 and 67,000.",
+      "value": "68,324 (FIFA-confirmed WC config)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "FIFA World Cup 2026 final stadium capacities confirmed - inside.fifa.com",
+        "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+      }
+    },
+    {
+      "category": "facade",
+      "change": "Lincoln Financial corporate naming and branded signage covered/removed; venue operates as 'Philadelphia Stadium' for the tournament. FIFA took formal operational control of the venue on May 15, 2026.",
+      "value": "Renamed Philadelphia Stadium for the tournament",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Inside Lincoln Financial Field's transformation into 'Philadelphia Stadium' for the World Cup - Philadelphia Inquirer",
+        "url": "https://www.inquirer.com/soccer/world-cup-philadelphia-stadium-lincoln-financial-field-20260513.html"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "1682",
+    "significance": "Philadelphia, founded by William Penn in 1682, was the largest city in the American colonies and served as the capital of the United States during much of the Revolutionary era. It is the birthplace of American independence: the Declaration of Independence (1776) and the U.S. Constitution (1787) were both signed at Independence Hall. The 2026 World Cup connection is symbolically charged, with Philadelphia hosting a Round of 16 match on July 4 — Independence Day — during the United States' 250th-anniversary year.",
+    "football_culture": "Philadelphia is one of America's most passionate sports cities, with a famously fervent fan base across the Eagles (NFL), Phillies (MLB), 76ers (NBA) and Flyers (NHL). On the soccer side, the metro is home to MLS side Philadelphia Union (since 2010, at Subaru Park in Chester), and Lincoln Financial Field itself has hosted Copa America Centenario, the 2015 CONCACAF Gold Cup final, and USMNT matches, giving the city a real top-flight international football pedigree.",
+    "sources": [
+      {
+        "title": "Lincoln Financial Field - Wikipedia (oldid 1360689298)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Lincoln_Financial_Field&oldid=1360689298"
+      },
+      {
+        "title": "FIFA World Cup 26 Philadelphia: Your Complete Guide - Visit Philadelphia",
+        "url": "https://www.visitphilly.com/things-to-do/events/world-cup/"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Opened August 2003 (Wikipedia: August 3, 2003; StadiumDB: August 9, 2003), replacing Veterans Stadium as a purpose-built football venue.",
+    "Original construction cost US$512 million (2003).",
+    "Designed by NBBJ with Agoos Lovera Architects; structural engineering by Ove Arup & Partners.",
+    "Home of the Philadelphia Eagles (NFL) and Temple Owls (NCAA football) since 2003; also hosts soccer fixtures.",
+    "Located at 1020 Pattison Avenue, South Philadelphia, in the city's sports-complex district.",
+    "2013 renovation (~US$125 million) added ~11,000 solar panels and 14 wind turbines, generating roughly a third (30%) of the stadium's energy.",
+    "Hosted three 2016 Copa America Centenario group matches (June 9/11/14) and the 2015 CONCACAF Gold Cup final (Mexico 3-1 Jamaica, July 26, 2015).",
+    "For the 2026 World Cup it is renamed 'Philadelphia Stadium' and hosts six matches including a Round of 16 tie on July 4."
+  ],
+  "sources": [
+    {
+      "title": "Lincoln Financial Field - Wikipedia (oldid 1360689298)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Lincoln_Financial_Field&oldid=1360689298"
+    },
+    {
+      "title": "World Cup 2026: Philadelphia Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/lincoln_financial_field"
+    },
+    {
+      "title": "Lincoln Financial Field - StadiumDB.com",
+      "url": "https://stadiumdb.com/stadiums/usa/lincoln_financial_field"
+    },
+    {
+      "title": "Copa America 2016: Lincoln Financial Field - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/copa_america/2016/lincoln_financial_field"
+    },
+    {
+      "title": "Copa America Centenario - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Copa_Am%C3%A9rica_Centenario"
+    },
+    {
+      "title": "Chile 4-2 Panama (Jun 14, 2016) Final Score - ESPN",
+      "url": "https://www.espn.com/soccer/match/_/gameId/444705/panama-chile"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Lincoln Financial Field gets new grass and a new name ahead of the FIFA World Cup - Billy Penn",
+      "url": "https://billypenn.com/2026/05/13/lincoln-financial-field-fifa-world-cup-soccer-tournament-grass-turf-covered-signs-eagles/"
+    },
+    {
+      "title": "Inside Lincoln Financial Field's transformation into 'Philadelphia Stadium' for the World Cup - Philadelphia Inquirer",
+      "url": "https://www.inquirer.com/soccer/world-cup-philadelphia-stadium-lincoln-financial-field-20260513.html"
+    },
+    {
+      "title": "FIFA World Cup 26 Philadelphia: Your Complete Guide - Visit Philadelphia",
+      "url": "https://www.visitphilly.com/things-to-do/events/world-cup/"
+    },
+    {
+      "title": "From gridiron to pitch: How NFL stadiums have transformed for the World Cup - ESPN",
+      "url": "https://www.espn.com/soccer/story/_/id/48939622/from-gridiron-pitch-how-nfl-stadiums-transformed-2026-fifa-world-cup"
+    },
+    {
+      "title": "2015 CONCACAF Gold Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2015_CONCACAF_Gold_Cup_final"
+    }
+  ],
+  "gaps": [
+    "capacity_regular: NOT SPECIFIED IN SOURCES at a confirmed single value — genuinely contested. Wikipedia (oldid 1360689298) lists 67,594; StadiumDB lists 69,879; other aggregators list 69,796; some list 68,532 (69,144 with SRO). No clean 2+ authoritative-source agreement on one number, so left null per honesty contract.",
+    "Opening date day-level discrepancy: Wikipedia says August 3, 2003; StadiumDB says August 9, 2003. Year (2003) is solid; exact day NOT SETTLED across sources.",
+    "Renovation_cost_2026 is an executive estimate ('under $10 million', final costs 'still being worked out'), NOT an audited/itemized figure — labelled as estimate.",
+    "Exact number of corner seats removed for the FIFA pitch: NOT SPECIFIED beyond 'a few hundred'.",
+    "2026 World Cup match fixtures: five group matches reported for June 14/19/22/25/27 plus a Round of 16 on July 4; specific pairings vary slightly across outlets and the Round of 16 opponent depends on results — NOT pinned as authoritative here.",
+    "Exact date and score of the 2017/2019 Gold Cup quarterfinals at this venue: NOT pinned to an authoritative source in this pass (the 2015 Gold Cup final IS confirmed: Mexico 3-1 Jamaica, July 26, 2015), so quarterfinals excluded from iconic_games (noted only).",
+    "No Super Bowl has been held at Lincoln Financial Field (outdoor cold-weather venue); none to report."
+  ],
+  "confidence": "High on WC2026 capacity (68,324, FIFA-confirmed verbatim on inside.fifa.com), tenants, architect, location, opening year, the 2026 grass conversion/renaming, and the three Copa America Centenario fixtures (teams/scores verified; Uruguay-Venezuela date corrected June 10->June 9). Medium on renovation cost (executive estimate, not audited) and the WC2026 fixture pairings (draw/bracket-dependent). Low/withheld on regular (non-WC) capacity — genuinely contested across sources, left null.",
+  "_as_of": "2026-06-23"
+}

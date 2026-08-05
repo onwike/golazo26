@@ -1,0 +1,25 @@
+{
+  "venue_id": "miami",
+  "title": "Hard Rock Stadium",
+  "prose": "Hard Rock Stadium opened on August 16, 1987, when it hosted its first preseason game. Built at a construction cost of $115 million and designed by HOK Sport, the firm now known as Populous, it began life as Joe Robbie Stadium, a name it carried until 1996. From the outset it was the home of the NFL's Miami Dolphins, a tenancy held since 1987.\n\nThe venue's identity has been remarkably fluid. Through naming-rights deals it became Pro Player Park and Pro Player Stadium, then Dolphins and Dolphin Stadium, Land Shark Stadium, Sun Life Stadium and briefly New Miami Stadium, before settling on Hard Rock Stadium in 2016. Its tenant roster has been equally broad: it served as home to MLB's Florida and Miami Marlins from 1993 to 2011, who won the 1997 and 2003 World Series there; it has hosted the Miami Hurricanes in college football since 2008 and the Miami Open tennis tournament since 2019. The playing surface is Tifway 419 Bermuda grass.\n\nThe stadium's character was reshaped by a 2015-2016 renovation, privately funded by owner Stephen Ross. The project added corner video boards and additional suites and crowned the venue with an open-air canopy, anchored by four corner spires, covering most of the seating bowl. The work reduced capacity from the original roughly 75,000 to about 65,000.\n\nBeyond its football tenants, the stadium has staged some of American sport's largest occasions, including six Super Bowls and multiple college football national-championship games. In recent years it has built a genuine association-football resume, hosting the 2024 Copa America Final and 2025 FIFA Club World Cup matches, among them the Al Ahly 0-0 Inter Miami opener. For the 2026 FIFA World Cup the stadium is temporarily renamed Miami Stadium under FIFA's clean-venue naming policy. It will host seven matches: four group-stage games, one Round of 32, one quarter-final, and the third-place match on July 18, 2026.",
+  "sources": [
+    {
+      "title": "Hard Rock Stadium - Wikipedia (oldid 1360727139)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Hard_Rock_Stadium&oldid=1360727139"
+    },
+    {
+      "title": "World Cup 2026: Miami Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/dolphins_stadium"
+    },
+    {
+      "title": "World Cup 2026 | Miami to host seven matches - FIFA",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/miami-stadium-host-seven-matches"
+    },
+    {
+      "title": "Copa America 2024: Argentina wins Miami final - CNN",
+      "url": "https://www.cnn.com/2024/07/14/sport/copa-america-final-argentina-colombia-tickets-spt-intl-hnk"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

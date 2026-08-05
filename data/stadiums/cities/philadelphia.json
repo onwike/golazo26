@@ -1,0 +1,37 @@
+{
+  "city_id": "philadelphia",
+  "title": "Philadelphia",
+  "prose": "Philadelphia was founded by William Penn in 1682 and grew into the largest city in the American colonies, serving as the capital of the United States through much of the Revolutionary era. It is the birthplace of American independence: both the Declaration of Independence in 1776 and the U.S. Constitution in 1787 were signed at Independence Hall. That heritage gives the city's place on the 2026 World Cup map a symbolic charge, as Philadelphia hosts a Round of 16 match on July 4 — Independence Day — during the United States' 250th-anniversary year.\n\nFew American cities wear their sporting allegiances as openly as Philadelphia. The metro carries a famously fervent fan base across the Eagles in the NFL, the Phillies in MLB, the 76ers in the NBA and the Flyers in the NHL, a devotion that runs through the whole region rather than any single team. On the soccer side, the metro is home to MLS side Philadelphia Union, who have played at Subaru Park in Chester since 2010, anchoring a top-flight professional presence for the game in the area.\n\nThe city's international football pedigree is real and earned at the venue itself. Lincoln Financial Field has staged Copa America Centenario fixtures, the 2015 CONCACAF Gold Cup final, and matches involving the USMNT, layering genuine top-flight football history onto a metro already steeped in big-event sport. Taken together — the founding story, the constitutional milestones, and a sporting culture as passionate as any in the country — Philadelphia arrives at the 2026 World Cup as a host city where civic identity and football fervour meet on the same ground.",
+  "sources": [
+    {
+      "title": "Lincoln Financial Field - Wikipedia (oldid 1360689298)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Lincoln_Financial_Field&oldid=1360689298"
+    },
+    {
+      "title": "FIFA World Cup 26 Philadelphia: Your Complete Guide - Visit Philadelphia",
+      "url": "https://www.visitphilly.com/things-to-do/events/world-cup/"
+    },
+    {
+      "title": "World Cup 2026: Philadelphia Stadium - StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/lincoln_financial_field"
+    },
+    {
+      "title": "Lincoln Financial Field - StadiumDB.com",
+      "url": "https://stadiumdb.com/stadiums/usa/lincoln_financial_field"
+    },
+    {
+      "title": "FIFA World Cup 2026 set to break historic attendance record as final stadium capacities confirmed (inside.fifa.com, 10 June 2026)",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Inside Lincoln Financial Field's transformation into 'Philadelphia Stadium' for the World Cup - Philadelphia Inquirer",
+      "url": "https://www.inquirer.com/soccer/world-cup-philadelphia-stadium-lincoln-financial-field-20260513.html"
+    },
+    {
+      "title": "2015 CONCACAF Gold Cup final - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/2015_CONCACAF_Gold_Cup_final"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

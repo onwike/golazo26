@@ -1,0 +1,37 @@
+{
+  "city_id": "atlanta",
+  "title": "Atlanta",
+  "prose": "Atlanta was founded in 1837 as Terminus, the end of the Western & Atlantic Railroad line. It was renamed Marthasville in 1843 and finally Atlanta in 1845, and from that railroad junction it grew into the commercial and transportation capital of the U.S. Southeast.\n\nThe city's history runs through the defining chapters of the American South. A key city in the American Civil War, it was burned during Sherman's 1864 campaign and rebuilt as a \"New South\" metropolis. It became a global center of the civil rights movement — the birthplace and base of Dr. Martin Luther King Jr., whose Southern Christian Leadership Conference and Ebenezer Baptist Church on \"Sweet Auburn\" anchored the cause. In 1996 the city hosted the Summer Olympics, cementing its place on the world stage.\n\nAtlanta is also one of MLS's flagship soccer markets. Atlanta United FC, founded in 2017, plays at Mercedes-Benz Stadium and has led MLS in average attendance every season since its debut. The club set the MLS Cup attendance record of 73,019 at the 2018 MLS Cup, which it won, and built a raucous supporter culture around groups such as Footie Mob, La Doce and All Stripes — a fervor that earned the metro Bleacher Report's 2018 label as the \"Black Soccer Capital of America.\"\n\nThe region's top-flight football pedigree extends beyond its own club. The metro hosted the 2024 Copa America opener, and it now stages eight 2026 World Cup matches, including a semi-final — a fitting stage for a city that turned a football town into a soccer capital.",
+  "sources": [
+    {
+      "title": "History of Atlanta — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/History_of_Atlanta"
+    },
+    {
+      "title": "Atlanta | History, Population, Facts — Britannica",
+      "url": "https://www.britannica.com/place/Atlanta-Georgia"
+    },
+    {
+      "title": "Atlanta United FC — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Atlanta_United_FC"
+    },
+    {
+      "title": "How Atlanta United turned a football town into a soccer capital — Atlanta Magazine",
+      "url": "https://www.atlantamagazine.com/news-culture-articles/how-atlanta-united-turned-a-football-town-into-a-soccer-capital/"
+    },
+    {
+      "title": "Mercedes-Benz Stadium — Wikipedia (pinned oldid 1360507185)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Mercedes-Benz_Stadium&oldid=1360507185"
+    },
+    {
+      "title": "World Cup 2026: Atlanta Stadium — StadiumDB.com",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/mercedes_benz_stadium"
+    },
+    {
+      "title": "Why is Mercedes-Benz Stadium now Atlanta Stadium? — 11Alive",
+      "url": "https://www.11alive.com/article/sports/soccer/world-cup/why-is-mercedes-benz-stadium-now-atlanta-stadium/85-30493642-053b-4968-b833-023899faae0f"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

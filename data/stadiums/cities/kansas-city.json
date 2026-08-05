@@ -1,0 +1,29 @@
+{
+  "city_id": "kansas-city",
+  "title": "Kansas City",
+  "prose": "Kansas City sits on the Missouri–Kansas state line, at the confluence of the Missouri and Kansas rivers, and the metro straddles both states. It was first incorporated as the Town of Kansas in 1850, reincorporated as the City of Kansas in 1853, and renamed Kansas City in 1889.\n\nAs the largest city in Missouri, it grew into a historic rail, stockyard and commerce hub of the American Midwest. It is internationally known for its jazz heritage, centered on the 18th & Vine district, for Kansas City-style barbecue, and for its fountains.\n\nFor its size, Kansas City is a deep football town. It is home to Sporting Kansas City, a charter soccer club founded in 1996 as the Kansas City Wiz, later the Wizards. The club played at Arrowhead through 2007 before moving to its own soccer-specific stadium. The city is also home to the Kansas City Current of the NWSL, who built the first stadium purpose-built for a women's professional team. Kansas City hosted the 2024 Copa América along with multiple USMNT and Gold Cup fixtures. Separately, on the gridiron, the NFL's Chiefs make Arrowhead one of the loudest venues in sport.",
+  "sources": [
+    {
+      "title": "Arrowhead Stadium — Wikipedia (oldid 1360442411)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Arrowhead_Stadium&oldid=1360442411"
+    },
+    {
+      "title": "Kansas City Wiz / Kansas City Wizards — FunWhileItLasted",
+      "url": "https://funwhileitlasted.net/2019/11/09/1996-2010-kansas-city-wizards/"
+    },
+    {
+      "title": "History — Sporting Kansas City",
+      "url": "https://www.sportingkc.com/club/history/"
+    },
+    {
+      "title": "Loudest crowd roar at a sports stadium — Guinness World Records",
+      "url": "https://www.guinnessworldrecords.com/world-records/loudest-crowd-roar-at-a-sports-stadium"
+    },
+    {
+      "title": "Kansas City to host six matches — FIFA",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/kansas-city-host-six-matches-stadium"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

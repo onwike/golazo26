@@ -1,0 +1,29 @@
+{
+  "venue_id": "boston",
+  "title": "Gillette Stadium",
+  "prose": "Gillette Stadium broke ground on 24 March 2000 and opened on 11 May 2002, privately financed by Robert Kraft at a cost of $325 million. It was designed by HOK Sport, the firm now known as Populous, and has been owned and operated by the Kraft Group since it opened.\n\nThe venue began life under a different name. From 11 May to 4 August 2002 it was known as CMGI Field, before a naming-rights deal rechristened it Gillette Stadium. For the 2026 World Cup it takes the FIFA neutral name Boston Stadium.\n\nThe stadium replaced the adjacent Foxboro Stadium, which had stood from 1971 to 2002. Since opening, Gillette has been home to both the New England Patriots of the NFL and the New England Revolution of MLS. Its playing surface has changed with its tenants' needs: natural grass from 2002 to 2006, then FieldTurf CORE artificial turf from 2006, before a return to natural grass for the World Cup. Its American-football seating has likewise been reconfigured over the years, from 68,756 in its early seasons to 65,878 and then 64,628.\n\nA separate $250 million project completed in 2023 reshaped the stadium's skyline, adding a 22-story lighthouse tower crowned by a 360-degree observation deck, alongside a large curved outdoor video board.\n\nFor the 2026 tournament the stadium carries one of the heaviest match loads among host venues, scheduled to stage seven games: five in the group stage, one in the Round of 32, and one quarter-final — the first of the tournament, on 9 July 2026.",
+  "sources": [
+    {
+      "title": "Gillette Stadium - Wikipedia (pinned oldid 1360794413)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Gillette_Stadium&oldid=1360794413"
+    },
+    {
+      "title": "FIFA - final stadium capacities confirmed (official, 10 June 2026) - Boston Stadium 64,146",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Foxborough, Massachusetts - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Foxborough,_Massachusetts"
+    },
+    {
+      "title": "New England Revolution - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/New_England_Revolution"
+    },
+    {
+      "title": "Boston to host seven matches - FIFA official",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/boston-host-seven-matches-stadium"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

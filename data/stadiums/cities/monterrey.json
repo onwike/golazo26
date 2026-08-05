@@ -1,0 +1,29 @@
+{
+  "city_id": "monterrey",
+  "title": "Monterrey",
+  "prose": "Monterrey was founded on 20 September 1596 by Diego de Montemayor, who christened it the Ciudad Metropolitana de Nuestra Señora de Monterrey. Capital and largest city of the state of Nuevo León in northeastern Mexico, it sits at the foothills of the Sierra Madre Oriental and anchors the country's second-largest metropolitan area, a Monterrey metro of roughly 5.3 million people, with a city proper of 1,142,194 recorded in the 2020 census. The city stands as Mexico's leading industrial and business hub, built on steel, cement, glass, auto parts and brewing, and is often counted among the wealthiest cities in Latin America. Its nickname, La Sultana del Norte, hints at that prosperity. Watching over it all is the Cerro de la Silla, the Saddle Mountain that rises some 1,820 m and serves as the city's defining landmark, visible from inside Estadio BBVA, whose jagged roofline echoes the mountain's profile.\n\nFootball runs deep here. Monterrey is one of Mexico's most intense football cities, shaped by the Clásico Regiomontano derby between C.F. Monterrey, the club known as Rayados who play at Estadio BBVA, and Tigres UANL. Rayados rank among Liga MX's most successful and best-supported clubs, and stand as CONCACAF's most decorated Champions League and Champions Cup side. That pedigree gives the metro a deep top-flight heritage that predates Estadio BBVA itself, which only opened in 2015.",
+  "sources": [
+    {
+      "title": "Estadio BBVA — Wikipedia (pinned rev. 1360440989, 21 June 2026)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_BBVA&oldid=1360440989"
+    },
+    {
+      "title": "FIFA — Final stadium capacities confirmed (10 June 2026): Monterrey Stadium 51,243",
+      "url": "https://inside.fifa.com/news/fifa-world-cup-stadium-capacities-confirmed"
+    },
+    {
+      "title": "Monterrey — Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Monterrey"
+    },
+    {
+      "title": "Monterrey | History, Map, Economy, Population, & Facts — Britannica",
+      "url": "https://www.britannica.com/place/Monterrey-Mexico"
+    },
+    {
+      "title": "World Cup 2026 Monterrey Tickets Guide: Estadio BBVA schedule & history — Goal.com",
+      "url": "https://www.goal.com/en-us/lists/estadio-bbva-stadium-guide-history-stay/blt97d127638d6fc159"
+    }
+  ],
+  "written_at": "2026-06-23",
+  "model": "opus (stadiums, closed-book)"
+}

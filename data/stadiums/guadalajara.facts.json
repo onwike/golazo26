@@ -1,0 +1,231 @@
+{
+  "venue_id": "guadalajara",
+  "stadium_current": "Estadio Akron",
+  "stadium_historic": "Estadio Omnilife (2010-2016) / Estadio Chivas (2016-2017)",
+  "fifa_name": "Estadio Guadalajara (Guadalajara Stadium)",
+  "city": "Guadalajara (Zapopan, Jalisco)",
+  "country": "Mexico",
+  "opened": 2010,
+  "primary_tenant": "C.D. Guadalajara (Chivas), Liga MX",
+  "architect": "Concept design: Jean-Marie Massaud & Daniel Pouzet; Sports architects: Populous (formerly HOK Sport); Architect of record: VFO Architects",
+  "capacity_regular": 49813,
+  "capacity_regular_source": {
+    "title": "Estadio Akron — Wikipedia (oldid 1360713645), infobox capacity 49,813",
+    "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+  },
+  "capacity_wc2026": 45664,
+  "capacity_wc2026_source": {
+    "title": "World Cup 2026: Estadio Guadalajara — StadiumDB.com (WC config 45,664; corroborated by FIFA official stadium page). NOTE: beIN Sports does NOT corroborate this figure — it states ~48,000.",
+    "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_omnilife"
+  },
+  "field_type_2026": "Natural grass — high-quality grass installed/renewed to FIFA standards in the 2025 WC2026 renovation (StadiumDB). The venue's original 2010 artificial turf was replaced with natural grass in 2012 (Wikipedia). NOTE: the 'hybrid / ~95% natural / FIFA-Pro-certified / Mexico's first hybrid' characterization is NOT supported by any cited source and was removed.",
+  "wc_editions_hosted": [
+    2026
+  ],
+  "wc_matches_2026": 4,
+  "renovation_cost_2026": "Over MXN 250 million (over US$12.4 million) — StadiumDB, Mar 2025. This is the WC2026 upgrade cost, distinct from original construction cost. USD figure is an approximate conversion per StadiumDB.",
+  "iconic_games": [
+    {
+      "date": "2010-07-30",
+      "match": "C.D. Guadalajara vs Manchester United",
+      "score": "3–2",
+      "event": "High-profile early friendly (the stadium's third public football match, per cited source)",
+      "note": "Guadalajara won 3–2; the stadium's first goal was scored by Javier 'Chicharito' Hernández, who played one half for each club that night — for Guadalajara, then for Manchester United — a farewell as he transferred between them (per the cited Wikipedia revision + ESPN). This high-profile friendly was the stadium's third public match, not its first.",
+      "source": {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    },
+    {
+      "date": "2010-08-11",
+      "match": "Guadalajara (Chivas) vs Internacional",
+      "score": null,
+      "event": "2010 Copa Libertadores Final, first leg (hosted at the stadium)",
+      "note": "Stadium's first major international event. Guadalajara reached the final, losing the tie to Brazil's Internacional on aggregate. Score left null; for reference the first leg was Internacional 2–1 (away win) — NOT the 3–2 that was the second leg in Brazil on 19 Aug 2010.",
+      "source": {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    },
+    {
+      "date": "2011-10-14",
+      "match": "2011 Pan American Games — opening ceremony & football tournament",
+      "score": null,
+      "event": "2011 Pan American Games (Guadalajara): opening and closing ceremonies; hosted all men's and women's football matches",
+      "note": "Venue hosted the Games' opening/closing ceremonies plus all matches of the men's and women's football tournaments (Wikipedia).",
+      "source": {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    },
+    {
+      "date": "2011-06",
+      "match": "2011 FIFA U-17 World Cup — 8 matches incl. Uruguay vs Brazil semifinal",
+      "score": null,
+      "event": "2011 FIFA U-17 World Cup (Mexico)",
+      "note": "Hosted eight U-17 World Cup matches including a semifinal between Uruguay and Brazil (Wikipedia). Exact day not specified in cited source; tournament ran June–July 2011.",
+      "source": {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    },
+    {
+      "date": "2026-03-31",
+      "match": "DR Congo vs Jamaica",
+      "score": "1–0 (a.e.t.)",
+      "event": "2026 FIFA World Cup inter-confederation play-off (Pathway 1, Final)",
+      "note": "Venue hosted Pathway 1 of the inter-confederation play-offs: semi-final New Caledonia 0–1 Jamaica (26 Mar 2026, att. 40,983) and final DR Congo 1–0 Jamaica a.e.t. (att. 39,983). Attendances/scores per Wikipedia revision.",
+      "source": {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    },
+    {
+      "date": "2026-06-11",
+      "match": "South Korea (Korea Republic) vs Czechia (Czech Republic)",
+      "score": "2–1",
+      "event": "2026 FIFA World Cup — Group A",
+      "note": "Venue's first senior World Cup match; attendance 44,985 (Wikipedia).",
+      "source": {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    },
+    {
+      "date": "2026-06-18",
+      "match": "Mexico vs South Korea (Korea Republic)",
+      "score": "1–0",
+      "event": "2026 FIFA World Cup — Group A (Mexico's second match)",
+      "note": "Attendance 45,522 (Wikipedia).",
+      "source": {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    }
+  ],
+  "iconic_games_note": "Genuinely rich football venue (not an NFL-bowl site): hosted the 2010 Copa Libertadores Final first leg, eight 2011 FIFA U-17 World Cup matches (incl. a semifinal), and the full football tournament + ceremonies of the 2011 Pan American Games. For WC2026 it hosts four group-stage matches only — the only 2026 venue with no knockout games. As of 2026-06-23 two group matches have been played (KOR 2–1 CZE on 11 Jun; MEX 1–0 KOR on 18 Jun); the remaining two (Colombia vs DR Congo, 23 Jun; Uruguay vs Spain, 26 Jun) had not yet been played and have no scores. The venue also staged Pathway 1 of the March 2026 inter-confederation play-offs. NOTE: the 30 Jul 2010 Man Utd friendly was the stadium's THIRD public match per the cited source, not the inaugural/opening match.",
+  "renovations": [
+    {
+      "category": "pitch",
+      "change": "Installed/renewed high-quality natural grass in accordance with FIFA standards. (The sheet's prior 'hybrid / ~95% natural / FIFA Pro-certified / Mexico's first / 3x use / faster drainage' wording is NOT in the source and was removed.)",
+      "value": "FIFA-standard natural grass",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Mexico: Multi-million renovation of Estadio Akron with World Cup in mind — StadiumDB.com (24 Mar 2025)",
+        "url": "https://stadiumdb.com/news/2025/03/mexico_multimillion_renovation_of_estadio_akron_with_world_cup_in_mind"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "State-of-the-art LED field lighting installed.",
+      "value": "LED lighting",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Mexico: Multi-million renovation of Estadio Akron with World Cup in mind — StadiumDB.com (Mar 2025)",
+        "url": "https://stadiumdb.com/news/2025/03/mexico_multimillion_renovation_of_estadio_akron_with_world_cup_in_mind"
+      }
+    },
+    {
+      "category": "tech",
+      "change": "Renewed sound/PA system and stadium-wide high-speed Wi-Fi (billed as Mexico's first stadium with full fan connectivity, including the parking lot); machine-learning/AI tools developed to predict match attendance and optimize security/resources.",
+      "value": "Sound system + full-venue Wi-Fi + ML attendance prediction",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "Mexico: Multi-million renovation of Estadio Akron with World Cup in mind — StadiumDB.com (Mar 2025)",
+        "url": "https://stadiumdb.com/news/2025/03/mexico_multimillion_renovation_of_estadio_akron_with_world_cup_in_mind"
+      }
+    },
+    {
+      "category": "capacity",
+      "change": "WC2026 net capacity set to 45,664 — reduced from the regular configuration to meet FIFA requirements. Sources confirm the WC figure but do NOT itemise exactly which seats were removed.",
+      "value": "45,664 (WC config)",
+      "as_of": "2026-06-23",
+      "source": {
+        "title": "World Cup 2026: Estadio Guadalajara — StadiumDB.com",
+        "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_omnilife"
+      }
+    }
+  ],
+  "city_history": {
+    "founded": "Guadalajara was founded 14 February 1542 in the Atemajac Valley (after several earlier relocations from 1532); became capital of Nueva Galicia in 1560.",
+    "significance": "Capital and most populous city of the state of Jalisco; its metropolitan area (~5.3 million, 2020) is the third-largest in Mexico. Often called the 'most Mexican of Mexican cities' — heartland of mariachi, tequila, charrería and Ballet Folklórico. The WC2026 venue is in the suburb of Zapopan, part of the Guadalajara metropolitan area.",
+    "football_culture": "Football culture centres on C.D. Guadalajara (Chivas), founded 1906 and one of Mexico's two most popular and successful clubs — famous for fielding only Mexican players. Chivas, tenant of Estadio Akron, is woven into the city's identity. The metro also hosts Liga MX side Atlas; the city previously staged matches at the historic Estadio Jalisco (a 1970 & 1986 World Cup venue) before Chivas built this stadium in 2010.",
+    "sources": [
+      {
+        "title": "Guadalajara — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/Guadalajara"
+      },
+      {
+        "title": "C.D. Guadalajara — Wikipedia",
+        "url": "https://en.wikipedia.org/wiki/C.D._Guadalajara"
+      },
+      {
+        "title": "Estadio Akron — Wikipedia (oldid 1360713645)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+      }
+    ]
+  },
+  "stadium_history_facts": [
+    "Construction announced February 2004 (Chivas intended to leave the historic Estadio Jalisco); ground broken May 2007 after financing delays.",
+    "Opened 30 July 2010; an early high-profile friendly (the stadium's third public match per Wikipedia) was C.D. Guadalajara 3–2 Manchester United, with the first goal at the stadium scored by Javier 'Chicharito' Hernández for Guadalajara.",
+    "Concept design by Jean-Marie Massaud & Daniel Pouzet; sports architecture by Populous (formerly HOK Sport); architect of record VFO. Spherical/coliseum form built into a raised, grass-covered artificial hill (berm) wrapping the back of the stands.",
+    "Original construction cost reported as US$200 million by Wikipedia (≈US$295m in 2025 dollars); some other sources (StadiumDB) cite a lower figure — original cost is contested.",
+    "Opened with artificial turf, which drew heavy player criticism; replaced with natural grass in mid-2012.",
+    "Name history: Estadio Omnilife (2010–2016) → Estadio Chivas (2016–2017) → Estadio Akron from December 2017 (deal with lubricants firm Grupo Akron).",
+    "Home of C.D. Guadalajara since 2010 and used for selected Mexico national team matches.",
+    "Hosted the 2010 Copa Libertadores Final (1st leg), the 2011 Pan American Games opening/closing ceremonies + full football tournament, and 8 matches of the 2011 FIFA U-17 World Cup (incl. a semifinal).",
+    "For WC2026, temporarily renamed 'Estadio Guadalajara' per FIFA's clean-venue policy; hosts 4 group-stage matches and is the only 2026 venue with no knockout games."
+  ],
+  "sources": [
+    {
+      "title": "Estadio Akron — Wikipedia (pinned revision, oldid 1360713645)",
+      "url": "https://en.wikipedia.org/w/index.php?title=Estadio_Akron&oldid=1360713645"
+    },
+    {
+      "title": "World Cup 2026: Estadio Guadalajara — StadiumDB.com (WC capacity 45,664; 4 matches)",
+      "url": "https://stadiumdb.com/tournaments/world_cup/2026/estadio_omnilife"
+    },
+    {
+      "title": "Mexico: Multi-million renovation of Estadio Akron with World Cup in mind — StadiumDB.com (24 Mar 2025)",
+      "url": "https://stadiumdb.com/news/2025/03/mexico_multimillion_renovation_of_estadio_akron_with_world_cup_in_mind"
+    },
+    {
+      "title": "Guadalajara Stadium — FIFA official stadium page (WC name 'Estadio Guadalajara', capacity 45,664, 4 matches)",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/stadiums/guadalajara"
+    },
+    {
+      "title": "Guadalajara to host four matches — FIFA official article",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/guadalajara-host-four-matches-stadium-estadio"
+    },
+    {
+      "title": "Guadalajara Stadium: Capacity, Location, Matches — beIN SPORTS (states ~48,000, NOT 45,664)",
+      "url": "https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/guadalajara-stadium-capacity-location-matches-and-everything-you-need-to-know-2026-05-08"
+    },
+    {
+      "title": "2010 Copa Libertadores finals — Wikipedia (first leg Inter 2–1 Guadalajara at Omnilife)",
+      "url": "https://en.wikipedia.org/wiki/2010_Copa_Libertadores_finals"
+    },
+    {
+      "title": "Guadalajara — Wikipedia (city history)",
+      "url": "https://en.wikipedia.org/wiki/Guadalajara"
+    },
+    {
+      "title": "C.D. Guadalajara (Chivas) — Wikipedia (football culture)",
+      "url": "https://en.wikipedia.org/wiki/C.D._Guadalajara"
+    }
+  ],
+  "gaps": [
+    "field_type_2026 'hybrid pitch': the hybrid / ~95% natural / FIFA-Pro-certified / 'Mexico's first hybrid' / 3x-use / faster-drainage claims are NOT SUPPORTED by the cited StadiumDB source, which says only 'high-quality grass in accordance with FIFA standards'. Treated as unverified and removed from the asserted facts.",
+    "HD video screens renovation: NOT SPECIFIED IN SOURCES — not present in the StadiumDB renovation article (was previously sourced only to a 'WebSearch aggregate'); removed from renovations.",
+    "Accessibility upgrades renovation: NOT SPECIFIED IN SOURCES — not present in the cited StadiumDB renovation article; removed from renovations.",
+    "WC2026 capacity corroboration: FIFA + StadiumDB confirm 45,664, but beIN Sports states ~48,000 — a divergent tertiary figure; the prior claim of beIN corroboration of 45,664 is false.",
+    "original construction cost (2010 build): CONTESTED — US$200 million (Wikipedia) vs a lower figure cited by StadiumDB; no single confirmed number.",
+    "2010 Copa Libertadores first-leg score deliberately left null; if later filled it must be Internacional 2–1 Guadalajara (away win), NOT the 3–2 that was the second leg in Brazil (19 Aug 2010).",
+    "Exact WC2026 seating-reduction mechanics (which sections removed for the FIFA pitch) NOT SPECIFIED IN SOURCES — only the net WC capacity 45,664 is confirmed.",
+    "Alternate regular-capacity figures (49,850 / 49,000) appear in tertiary aggregators; shipped 49,813 from Wikipedia infobox; the minor discrepancy is NOT RESOLVED in authoritative sources.",
+    "WC2026 renovation contractor and precise completion date NOT SPECIFIED IN SOURCES.",
+    "Exact dates of individual 2011 FIFA U-17 World Cup matches at the venue NOT SPECIFIED (only that 8 matches incl. a semifinal were hosted)."
+  ],
+  "confidence": "High on identity, location, tenant, opening year (2010), architect, FIFA name ('Estadio Guadalajara'), WC2026 role (4 group matches, no knockouts), and WC2026 net capacity (45,664, confirmed by FIFA + StadiumDB). High on iconic football history (Wikipedia pinned oldid), with the inaugural-match note corrected to remove fabricated detail. Medium on regular capacity (49,813 from Wikipedia; tertiary sources vary). Renovation: LED lighting, sound/Wi-Fi, ML attendance prediction and FIFA-standard grass are sourced; HD screens and accessibility were unsourced and dropped. The 'hybrid pitch' narrative was fabricated and removed. Low/contested on original construction cost. Two of four WC2026 group matches were still unplayed as of 2026-06-23.",
+  "_as_of": "2026-06-23"
+}
