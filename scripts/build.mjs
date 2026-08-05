@@ -1,15 +1,62 @@
 #!/usr/bin/env node
-// build.mjs — Golazo 26 production static-site generator.
+// build.mjs — Golazo 26 production static-site generator (phase 2.2-2.4).
 // Zero dependencies. Bakes the entire public site into dist/ from the audited
 // datasets in data/ (and, once the baker runs, live score state merged there).
 // Every page carries provenance and a "data as of" stamp. ~1,250 files.
 
 import { readFileSync, writeFileSync, mkdirSync, cpSync, existsSync, readdirSync, rmSync, statSync } from 'node:fs';
+import { esc, safeUrl, et, etDate, etDateLong, localT, hsl, mdLite, STAGE, SPRITE, ANT, makeRenderers } from './lib/render.mjs';
+import { S, flatten } from './lib/strings.mjs';
+import { blockId, HISTORY_ERAS, historyBlocks, aboutBlocks, stadiumsBlocks, profilesRegistry, profileParagraphs } from './lib/i18n-blocks.mjs';
+import { aiStandings, aiStandingsCompact, aiFeatured, aiEveryPick, aiLogo } from './lib/ai-league-render.mjs';
+import { bartalkSlotHTML } from './lib/bartalk-view.mjs';
+import { timelineHTML, keyMomentsHTML, anchorStripHTML } from './lib/timeline-view.mjs';
+import { statsRowsHTML } from './lib/stats-view.mjs';
+import { mergeResolvedTeams } from './lib/poll-fixtures.mjs';
+import { pensWinnerSide } from './lib/bracket-pens.mjs';
 
 const load = (p) => JSON.parse(readFileSync(p, 'utf8'));
 const matchesDoc = load('data/matches.json');
 const matches = matchesDoc.matches;
 const VER = (process.env.GITHUB_SHA || 'dev').slice(0, 8); // cache-bust app.js/predict.js per deploy
+// G26_DEV=1 (set only by bake-dev.yml for the golazo26-dev staging mirror) → noindex + a DEV banner
+// + robots Disallow. Strictly gated so prod output is byte-identical when unset.
+const DEV = process.env.G26_DEV === '1';
+// G26_PUBLIC=1 (set only by the public-release export tooling) → drop the Ops Hub from the bake:
+// no module load, no /ops-hub page, no footer entry. scripts/lib/ops-hub.mjs is denied from the
+// public export, so its import is dynamic and reached only when the gate is off — a static import
+// would fail at module load, before a single page is emitted. Unset → output is unchanged.
+const PUBLIC = process.env.G26_PUBLIC === '1';
+
+// DEV-only staging banner + on-demand data-refresh button (dev/prod data split, Option A).
+// Baked ONLY under G26_DEV so it is PHYSICALLY ABSENT from prod HTML (not CSS-hidden). The button
+// POSTs to /dev/refresh on golazo26-data-dev (dev-key auth, key injected in the head DEV script) to
+// fire repository_dispatch(refresh-dev-data); it reads /dev/refresh/status to show "dev data as of …"
+// and an in-flight spinner. All inline (no site/*.js edit) so it ships only in the dev bake.
+const DEV_BANNER = `
+<div style="background:#b45309;color:#fff;text-align:center;font:600 12px/1.7 var(--font-d,system-ui);letter-spacing:.08em;text-transform:uppercase">DEV — staging mirror, not the live site · hydrates dev data (golazo26-data-dev) <button type="button" id="dev-refresh-btn" style="margin-left:.6em;background:#0b0e14;color:#fff;border:1px solid #fff;border-radius:4px;font:inherit;letter-spacing:.06em;padding:.1em .7em;cursor:pointer;vertical-align:baseline">Update dev data</button> <span id="dev-refresh-state" style="opacity:.85;font-weight:400;text-transform:none;letter-spacing:0"></span></div>
+<script>(function(){
+  var base=self.__G26_API__||"https://golazo26-data-dev.onwike.workers.dev";
+  var btn=document.getElementById("dev-refresh-btn"),st=document.getElementById("dev-refresh-state");
+  if(!btn||!st)return;
+  function fmt(ts){if(!ts)return"";try{var d=new Date(ts);return"dev data as of "+d.toISOString().slice(11,16)+"Z";}catch(e){return"";}}
+  function poll(){fetch(base+"/dev/refresh/status",{cache:"no-store"}).then(function(r){return r.ok?r.json():null;}).then(function(j){
+    if(!j)return;
+    if(j.running){st.textContent="refreshing…";btn.disabled=true;setTimeout(poll,5000);}
+    else{st.textContent=fmt(j.last_refresh);btn.disabled=false;}
+  }).catch(function(){});}
+  btn.addEventListener("click",function(){
+    var key=self.__G26_DEV_REFRESH_KEY__||"";
+    st.textContent="requesting…";btn.disabled=true;
+    fetch(base+"/dev/refresh",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({key:key})})
+      .then(function(r){return r.json().catch(function(){return{};}).then(function(j){return{ok:r.ok,j:j};});})
+      .then(function(res){
+        if(res.ok){st.textContent="refresh queued…";setTimeout(poll,3000);}
+        else{st.textContent=(res.j&&res.j.error)||"refresh failed";btn.disabled=false;}
+      }).catch(function(){st.textContent="refresh failed";btn.disabled=false;});
+  });
+  poll();
+})();</script>`;
 
 // newest file mtime under a dir (recursive); 0 if absent. Cheap stat-walk used to
 // skip re-copying the large image tree when it hasn't changed (see dist assembly).
@@ -24,9 +71,10 @@ const newestMtime = (dir) => {
   return mx;
 };
 
-// Merge tournament-time state exported from D1 by the live-update job (overrides
+// Merge tournament-time state exported from D1 by poll-and-bake (overrides
 // already applied there — D1 is the single source of truth at runtime).
 const liveState = existsSync('data/live-state.json') ? load('data/live-state.json') : null;
+const liveByN = new Map((liveState?.matches ?? []).map((m) => [m.n, m])); // for the served live.json passthrough of live-only fields (e.g. ESPN clock `dc`)
 const ledgerDoc = existsSync('data/ledger.json') ? load('data/ledger.json') : { events: [] };
 const ledgerBy = (type, id) => ledgerDoc.events.filter((e) => e.entity_type === type && String(e.entity_id) === String(id)).sort((x, y) => String(y.ts).localeCompare(String(x.ts)));
 const ledgerWhen = (ts) => {
@@ -36,61 +84,127 @@ const ledgerWhen = (ts) => {
     return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(d).toUpperCase() + ' UTC';
   } catch { return String(ts); }
 };
-const ledgerHTML = (events, title = 'Old news') => events.length ? `
+// "Old news" recap list. ESPN-authoritative: only confirmed lines render (provisional-flagged
+// events are dropped — we report ESPN's result as final, no provisional framing).
+const ledgerHTML = (events, title = 'Old news') => {
+  const ev = (events || []).filter((e) => !e.provisional);
+  return ev.length ? `
 <div class="gcard" style="margin-top:1rem">
-  <div class="g-head"><div><div class="kicker">${esc(title.toUpperCase())} · <b>NEWEST FIRST</b></div>
-  <p class="kicker" style="margin-top:.4rem">DETERMINISTIC LEDGER — APPEND-ONLY, AS-OF STAMPED</p></div></div>
+  <div class="g-head"><div><div class="kicker">${esc(title.toUpperCase())} · <b>NEWEST FIRST</b></div></div></div>
   <ul class="g-fixtures num">
-${events.slice(0, 8).map((e) => `    <li><span class="when">${ledgerWhen(e.ts)}</span><span style="flex:1">${esc(e.text)}</span>${e.provisional ? '<span class="pill warn">provisional</span>' : e.type === 'correction' ? '<span class="pill warn">corrected</span>' : e.type === 'status' && /set aside/.test(e.text) ? '<span class="pill warn">set aside</span>' : '<span class="pill ft">FT ✓</span>'}</li>`).join('\n')}
+${ev.slice(0, 8).map((e) => `    <li><span class="when"${utcAttr(e.ts)}>${ledgerWhen(e.ts)}</span><span style="flex:1">${esc(e.text)}</span>${e.type === 'correction' ? '<span class="pill warn" data-i18n-skip>corrected</span>' : e.type === 'status' && /set aside/.test(e.text) ? '<span class="pill warn" data-i18n-skip>set aside</span>' : '<span class="pill ft" data-i18n-skip>FT ✓</span>'}</li>`).join('\n')}
   </ul>
-  <p class="g-foot">Facts as of the stamp on each line${events.length > 8 ? ` · showing the latest 8 of ${events.length}` : ''} · source: ${esc(events[0]?.source_note ?? 'live baker')}</p>
+  <p class="g-foot"><span${i18nBlock(S.editorial.ledgerFacts)}>${S.editorial.ledgerFacts}</span>${ev.length > 8 ? ` · showing the latest 8 of ${ev.length}` : ''} · source: ${esc(ev[0]?.source_note ?? 'live baker')}</p>
 </div>` : '';
+};
 if (liveState) {
   const byN = new Map(liveState.matches.map((m) => [m.n, m]));
   for (const m of matches) {
     const s = byN.get(m.match_no);
-    if (s) { m.status = s.status; m.score = s.score; }
+    if (s) {
+      m.status = s.status; m.score = s.score; if (s.so) m.so = s.so; if (s.aet) m.aet = 1; // s.so = pens score (0021); s.aet = after-extra-time flag (0022) → "aet" badge when no shootout
+      // Resolve knockout fixture IDENTITY from ESPN AT EACH BAKE (poll → D1 → live-state export):
+      // override the static placeholder with the D1 team. Fill-blank-only via mergeResolvedTeams
+      // (unit-tested) — never touches a team matches.json already knows (groups). NOTE: identity is
+      // not yet on /api/v1/live, so between bakes a freshly-resolved team can lag; the poll fires a
+      // rebake on a team-fill to keep that to minutes (root-cause step 2 = live path = v3.08.02).
+      mergeResolvedTeams(m, s);
+    }
   }
 }
-// AI prediction league: picks exported from D1 by the live-update job into
-// data/ai-predictions.json. Absent file = no AI sections bake (same
-// no-broken-UI gate as clerk-public.json). Scoring is deterministic at
-// bake time: 3 pts exact score, 1 pt right outcome, finished_confirmed only.
-const aiDoc = existsSync('data/ai-predictions.json') ? load('data/ai-predictions.json') : null;
-const AI_NAME = { claude: 'Claude', gpt: 'ChatGPT', gemini: 'Gemini', grok: 'Grok' };
+// AI prediction league (Minor 3.4 display): picks exported from D1 by
+// poll-and-bake into data/ai-predictions.json. Absent file = no AI sections
+// bake (same no-broken-UI gate as clerk-public.json). Scoring is deterministic
+// at bake time: 3 pts exact score, 1 pt right outcome, finished_confirmed only.
+// AI League v2: the live league payload (recompute-ai-league.mjs → data/ai-league.json, also served
+// by /api/v1/ai-league). The page + match cards bake from this for first paint; site/ai-league.js
+// hydrates live. null until the first recompute — the shell still bakes and hydrates from the API.
+const aiDoc = existsSync('data/ai-league.json') ? load('data/ai-league.json') : null;
 const AI_ORDER = ['claude', 'gpt', 'gemini', 'grok'];
-const aiLogo = (p) => `<svg class="ai-logo" viewBox="0 0 24 24" aria-hidden="true"><use href="/brand/ai-logos.svg#ai-${p}"/></svg>`;
-const aiLabel = (p) => `${aiLogo(p)} ${AI_NAME[p] ?? esc(p)}`;
-const aiByMatch = new Map();
-for (const r of aiDoc?.predictions ?? []) {
-  const arr = aiByMatch.get(r.match_no) ?? [];
-  arr.push(r);
-  aiByMatch.set(r.match_no, arr);
+const aiByMatch = new Map(); // match_no -> [{ provider, home, away, depth, scorers?, key_players?, note, confidence }]
+for (const m of aiDoc?.matches ?? []) {
+  const arr = AI_ORDER.filter((p) => m.picks?.[p]).map((p) => ({ provider: p, ...m.picks[p] }));
+  if (arr.length) aiByMatch.set(m.match_no, arr);
 }
-// Humans leaderboard: exported by recompute-leaderboard during the bake.
-// Same gate as the AI doc — absent file, no page, no nav entry. Display
-// names arrive pre-anonymized ("First L."); full names never reach the
-// generator.
+// match_no -> raw picks object {provider:{home,away,...}} for the today-card prediction strip (render.mjs).
+const aiPicksByMatch = new Map((aiDoc?.matches ?? []).filter((m) => m.picks && Object.keys(m.picks).length).map((m) => [m.match_no, m.picks]));
+
+// ESPN match details (lineups + key events) — data/match-details.json (poll-and-bake export from D1,
+// populated by the poll worker + scripts/backfill-lineups.mjs). Baked onto match pages; null until the
+// first export. ESPN is the source of truth for squads + incidents.
+const matchDetailsDoc = existsSync('data/match-details.json') ? load('data/match-details.json') : null;
+const detailsByNo = new Map(Object.entries(matchDetailsDoc?.matches ?? {}).map(([n, d]) => [Number(n), d]));
+// "The Story" (plan item 3; cert a later change): the merged narrative timeline is its own labeled,
+// anchorable section per the approved mockup — id="story" is the anchor-strip target. Gated on the
+// RENDERED timeline (not raw events), so unknown-type-only events bake no empty shell.
+const matchStoryHTML = (m) => {
+  const d = detailsByNo.get(m.match_no);
+  const tl = d?.events?.length ? timelineHTML(d.events) : '';
+  // Phase 2 (items 2.4b/2.5b — closes the 1.7 deferral): always bake the section shell so the live
+  // hydrator (site/match.js → /api/v1/match-events) has a fill target even when NO events existed at
+  // bake; `hidden` until baked events OR live events render. `.mtl-rows` is the hydrator's fill point.
+  // No-JS floor preserved: baked events show without JS; a scoreless/pre-match page stays hidden (the
+  // #story anchor is gated on baked events below, so nothing links to a hidden section).
+  return `<section class="story" id="story" data-story="${m.match_no}"${tl ? '' : ' hidden'}><h2>${i18nSpan(S.pages.match.storyHeading)} <span class="via-espn">${i18nSpan(S.pages.match.via)} ESPN</span></h2>
+<div class="mtl-rows">${tl}</div>
+<p class="muted footnote"${i18nBlock(S.pages.match.storyFootnote)}>${S.pages.match.storyFootnote}</p></section>`;
+};
+// Lineups: XI/bench only — the key events moved into "The Story" above.
+// Gated on rendered XI content, not raw array presence.
+const lineupsHTML = (m) => {
+  const d = detailsByNo.get(m.match_no);
+  if (!d) return '';
+  const teamName = (side) => side === 'home' ? (m.home.team ?? 'Home') : side === 'away' ? (m.away.team ?? 'Away') : '';
+  const xi = (side) => {
+    const l = (d.lineups ?? []).find((x) => x.side === side);
+    if (!l || !(l.players?.length)) return '';
+    const pl = (p) => `<li>${p.jersey != null ? `<span class="num">${esc(String(p.jersey))}</span> ` : ''}${esc(p.name ?? '')} <span class="muted">${esc(p.pos ?? '')}${p.subbedOut ? ' ↓' : ''}${p.subbedIn ? ' ↑' : ''}</span></li>`;
+    const start = l.players.filter((p) => p.starter);
+    const bench = l.players.filter((p) => !p.starter);
+    return `<div class="xi"><h3>${esc(teamName(side))}${l.formation ? ` <span class="muted">${esc(l.formation)}</span>` : ''}</h3><ul class="lineup">${start.map(pl).join('')}</ul>${bench.length ? `<p class="kicker">SUBSTITUTES</p><ul class="lineup bench">${bench.map(pl).join('')}</ul>` : ''}</div>`;
+  };
+  const xis = `${xi('home')}${xi('away')}`;
+  if (!xis) return '';
+  return `<section class="lineups" id="lineups"><h2>Lineups</h2>
+<div class="xis">${xis}</div>
+<p class="muted footnote"${i18nBlock(S.pages.match.lineupsFootnote)}>${S.pages.match.lineupsFootnote}</p></section>`;
+};
+// Humans leaderboard (Minor 3.2): exported by recompute-leaderboard during
+// the bake. Same gate as the AI doc — absent file, no page, no nav entry.
+// Display names arrive pre-anonymized ("First L."); full names never reach
+// the generator.
 const lbDoc = existsSync('data/leaderboard.json') ? load('data/leaderboard.json') : null;
-// Stories: published pieces only (status=published in D1, exported by
-// the live export). Absent file = no story sections. mdLite renders the
-// narrow markdown subset I allow (bold/em/paras).
+// AI stories (Minor 3.3): owner-approved pieces only (status=published in
+// D1, exported by poll-and-bake). Absent file = no story sections. mdLite
+// renders the narrow markdown subset the prompt permits (bold/em/paras).
 const stDoc = existsSync('data/stories.json') ? load('data/stories.json') : null;
 const storyBy = new Map();
 for (const st of stDoc?.stories ?? []) storyBy.set(`${st.kind}|${st.subject_id}|${st.locale}`, st);
-const mdLite = (md) => String(md).split(/\n\n+/).map((par) =>
-  `<p>${esc(par.trim()).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>').replace(/\*([^*]+)\*/g, '<em>$1</em>')}</p>`).join('');
 const storyHTML = (kind, subject, title) => {
   const st = storyBy.get(`${kind}|${subject}|en`);
   if (!st) return '';
   return `<section class="prose"><h2>${title}</h2>${mdLite(st.body_md)}</section>`;
 };
-// History Hub: edition prose (data/history/<year>.json) + structured facts
-// rail (data/history/facts.json, every field extracted verbatim from that
-// prose). Absent dir = no /history, no nav entry — same no-broken-UI gate.
+// History Hub (v2.08.00): certified edition prose (data/history/<year>.json) +
+// structured facts rail (data/history/facts.json, every field extracted verbatim
+// from that prose). Absent dir = no /history, no nav entry — same no-broken-UI gate.
 const historyOK = existsSync('data/history/facts.json') && existsSync('data/history/hub.json');
 const historyFacts = historyOK ? new Map(load('data/history/facts.json').editions.map((e) => [e.year, e])) : new Map();
-const historyHub = historyOK ? load('data/history/hub.json') : null;
+
+  // Stadiums hub: the 16 host cities + their stadiums, rendered from the curated,
+// source-verified facts sheets (data/stadiums/<id>.facts.json) joined onto the structured rail
+  // (data/stadiums/facts.json). Narrative prose (data/stadiums/<id>.json + hub.json) OVERLAYS when
+// present; absent → the verified facts render on their own. Absent dir = no /stadiums, no nav entry —
+// the same no-broken-UI gate as History. Each <id>.facts.json carries its own sources[]; gaps[] are
+// surfaced honestly ("not specified in sources"), never guessed.
+const stadiumsOK = existsSync('data/stadiums/facts.json');
+  // Stadiums image gallery (follow-up): data/stadiums-gallery.json keyed by venue_id, each with a
+// {hero, gallery[]} of QID-identity, free-licensed photos. RENDERED via the certified galleryHTML (R2 local
+// paths → CSP-safe, full ⓘ attribution). INERT until the R2-mirror step rewrites the manifest to local
+// im.file paths — galleryHTML is guarded on im.file, so the remote-URL manifest renders nothing (no broken
+// images, no CSP loosening). total_images:0 venues → clean placeholder (no section).
+const stadiumsGallery = existsSync('data/stadiums-gallery.json')
+  ? new Map((load('data/stadiums-gallery.json').venues || []).map((v) => [v.venue_id, v])) : new Map();
 
 const venuesDoc = load('data/venues.json');
 const venues = new Map(venuesDoc.venues.map((v) => [v.id, v]));
@@ -109,12 +223,12 @@ const manifest = existsSync('data/img-manifest.json') ? load('data/img-manifest.
 // gallery (up to 5 photos per subject): qid -> [{file, file_detail, author, license, license_url, file_page, width}]
 const galleryManifest = existsSync('data/gallery-manifest.json') ? load('data/gallery-manifest.json').manifest : {};
 
-// brand — audited team colors (build refuses unaudited rows) + inline mark
+// Phase 2.6: brand — audited team colors (build refuses unaudited rows) + inline mark
 const teamColors = load('data/team-colors.json').teams;
 {
   const bad = Object.entries(teamColors).filter(([, t]) => !t.audited);
   if (bad.length || Object.keys(teamColors).length !== 48) { console.error(`⛔ team-colors: ${bad.length} unaudited / ${Object.keys(teamColors).length} rows`); process.exit(1); }
-  // SECURITY: every color value is injected into style="--..." / data-* — assert each is a
+  // SECURITY (cert): every color value is injected into style="--..." / data-* — assert each is a
   // strict hex literal so a tampered dataset can never inject CSS/markup through a color field.
   const HEX = /^#[0-9a-fA-F]{3,8}$/;
   const badHex = [];
@@ -139,86 +253,130 @@ for (const e of imagesDoc.entries) {
   if (e.qid && galleryManifest[e.qid]?.length) galleryByName.set(`${e.subject_type}:${e.name}`, galleryManifest[e.qid]);
 }
 
-const AS_OF = new Date().toISOString().slice(0, 16).replace('T', ' ') + ' UTC';
-const STAGE = { group: 'Group stage', r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final', sf: 'Semi-final', third: 'Third place match', final: 'Final' };
-// SECURITY: escape &, <, >, " and ' so the primitive is safe in both element-text
-// and double/single-quoted attribute contexts. safeUrl() additionally rejects dangerous schemes.
-const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-const safeUrl = (u) => { const s = String(u ?? '').trim(); return /^(https?:\/\/|mailto:|\/|#|\.\/|\.\.\/)/i.test(s) && !/^\s*(javascript|data|vbscript):/i.test(s) ? esc(s) : '#'; };
-const et = (iso) => new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(new Date(iso));
-const etDate = (iso) => new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric' }).format(new Date(iso));
-const etDateLong = (iso) => new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric' }).format(new Date(iso));
-const localT = (iso, tz) => new Intl.DateTimeFormat('en-US', { timeZone: tz, hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }).format(new Date(iso));
+const AS_OF_ISO = new Date().toISOString(); // machine-readable twin of AS_OF (i18n a later change data-utc stamps)
+const AS_OF = AS_OF_ISO.slice(0, 16).replace('T', ' ') + ' UTC';
 
-// ---------- flags (pinned Twemoji sprite), FIFA codes, kit tokens ----------
+// ---------- i18n (v3.14 a later change, plan §3/§6): config flag, chrome packs, stamping helpers ----------
+// The feature is DARK until data/i18n/config.json lists languages (langs ⊂ es/fr/de/ig/tw; en is
+// implicit). Stamping (data-i18n / data-i18n-block / data-i18n-skip / data-utc) is ALWAYS on so the
+// client overlay (site/i18n.js) and the a later change fragment bake key off stable anchors; the selector,
+// the lang-scoped chrome spans and their CSS bake ONLY when enabled — a dark bake differs from the
+// pre-i18n bake by stamps + pre-paint growth alone. G26_I18N_DIR reroutes config+packs to fixtures
+// under test (an earlier fix: tests must never mutate the repo's committed data/i18n).
+const I18N_DIR = process.env.G26_I18N_DIR || 'data/i18n';
+const I18N_ALL = ['ig', 'tw', 'es', 'fr', 'de']; // canonical order = the selector display tier (the maintainer 2026-07-18): English, then Igbo, then Twi, then the rest; en implicit and always first
+const I18N_NATIVE = { en: 'English', es: 'Español', fr: 'Français', de: 'Deutsch', ig: 'Ìgbò', tw: 'Twi' }; // selector self-labels (plan §3): each language names itself — never translated
+const I18N_CFG = `${I18N_DIR}/config.json`;
+// devLangs: enabled ONLY under G26_DEV=1 (the dev/prod split env), so a language can be
+// exercised on the golazo26-dev preview while the prod bake stays byte-dark on the same config.
+const i18nCfg = existsSync(I18N_CFG) ? load(I18N_CFG) : {};
+const i18nWanted = [...(i18nCfg.langs ?? []), ...(DEV ? i18nCfg.devLangs ?? [] : [])];
+{
+  const bad = [...(i18nCfg.langs ?? []), ...(i18nCfg.devLangs ?? [])].filter((l) => !I18N_ALL.includes(l));
+  if (bad.length) { console.error(`⛔ i18n: unknown language(s) in ${I18N_CFG}: ${bad.join(', ')} — allowed: ${I18N_ALL.join(', ')} (en is implicit)`); process.exit(1); }
+}
+const I18N_LANGS = I18N_ALL.filter((l) => i18nWanted.includes(l)); // canonical order, deduped
+// Chrome packs: flat { "<strings.mjs dotted key>": "<translated>" }. An enabled language with a
+// missing pack file or an unknown key fails the build loudly; a missing KEY inside a pack degrades
+// that one string to English (the plan's degrade direction — never a blank, never stale).
+const I18N_FLAT = flatten(S);
+const I18N_PACKS = new Map();
+for (const lg of I18N_LANGS) {
+  const p = `${I18N_DIR}/${lg}/chrome.json`;
+  if (!existsSync(p)) { console.error(`⛔ i18n: "${lg}" is enabled in ${I18N_CFG} but ${p} is missing — every enabled language ships a chrome pack`); process.exit(1); }
+  const pack = load(p);
+  const orphans = Object.keys(pack).filter((k) => !(k in I18N_FLAT));
+  if (orphans.length) { console.error(`⛔ i18n: ${p} carries keys missing from scripts/lib/strings.mjs: ${orphans.join(', ')} — keys are API`); process.exit(1); }
+  I18N_PACKS.set(lg, pack);
+}
+// value → dotted key (values are unique — pinned by test/i18n-strings.test.mjs), so a stamp can
+// never cite a key whose English text is not the node's actual baked text.
+const i18nKeyOf = new Map(Object.entries(I18N_FLAT).map(([k, v]) => [v, k]));
+const i18nKey = (en) => {
+  const k = i18nKeyOf.get(en);
+  if (!k) { console.error(`⛔ i18n: no strings.mjs key holds this exact text: ${en}`); process.exit(1); }
+  return k;
+};
+// Chrome text node: stamps data-i18n always; bakes lang-scoped variant spans when enabled — the
+// html[data-lang] CSS below flips them pre-paint with zero JS (plan §3 tier 1). NOT used on
+// #theme-btn: app.js rewrites that button's textContent every load (Theme: system/light/dark), so
+// spans would be clobbered — that runtime label routes through the chrome pack in a later change.
+// A translated value may legitimately carry the SAME markup as its English source (e.g. the two
+// <br> H1s) — escaping it bakes a literal "<br>" into the heading. But pack values are model
+// output, so raw emission is gated: the value's tag multiset must EQUAL the English source's
+// (a translation can never introduce a tag the English didn't have); anything else stays escaped.
+const tagSet = (s) => (String(s).match(/<\/?[a-z][^>]*>/gi) ?? []).map((t) => t.toLowerCase()).sort().join('|');
+// Prose XSS gate: the prose tier (below) bakes model-authored translated HTML that
+// site/i18n.js swaps via innerHTML; the chrome tagSet gate never covered it. A STRICTER tag+
+// ATTRIBUTE multiset — full opening/closing tag strings, case-preserved (stricter than the
+// lowercasing chrome tagSet) — so a translation can neither introduce a tag (an <img onerror>) nor
+// alter an attribute (add an on*= handler, a javascript: href) the English source didn't carry. The
+// tokens are joined with NO separator (.join('')), which is unambiguous because each token is a full
+// tag ending in exactly one '>' with no interior '>' (the regex stops at the first '>'), so equal
+// joined strings imply equal tag multisets. proseTagSafe(en, tx) is true only when the two match; a
+// unit that fails is OMITTED from the fragment — baked English holds, with no foreign lang attr
+// (N2/A2-NEW-1, a later review round), not written into the fragment as English.
+const tagSetStrict = (s) => (String(s).match(/<\/?[a-z][^>]*>/gi) ?? []).sort().join('');
+const proseTagSafe = (en, tx) => tagSetStrict(en) === tagSetStrict(tx);
+const i18nSpan = (en) => {
+  const key = i18nKey(en);
+  const inner = I18N_LANGS.length
+    ? `<span lang="en">${en}</span>${I18N_LANGS.map((lg) => { const tx = I18N_PACKS.get(lg)[key]; return `<span lang="${lg}">${tx ? (tagSet(tx) === tagSet(en) ? tx : esc(tx)) : en}</span>`; }).join('')}`
+    : en;
+  return `<span data-i18n="${key}">${inner}</span>`;
+};
+// Prose block: content-derived unit id (first 12 hex of sha256 of the block's baked English HTML).
+// Editing the English changes the id → no fragment match → the client degrades to English, never
+// to a stale translation (plan §3 swap mechanism; pinned by test/i18n-shell.test.mjs).
+// Every stamped block registers id → English html: after the page bake, any registered block whose
+// English is a strings.mjs value gets its chrome-pack translation emitted into the per-language
+// shared dist/i18n/<lang>/blocks.json (route-independent — S-valued footnotes/notes/subs repeat
+// across hundreds of routes; ONE shared file avoids a per-route fragment explosion that would trip
+// the 15k file guard). Corpus scopes keep the per-route fragment path for page-unique prose.
+const i18nBlockReg = new Map();
+const i18nBlock = (html) => { const id = blockId(html); i18nBlockReg.set(id, html); return ` data-i18n-block="${id}"`; };
+// Machine-readable UTC twin for baked date TEXT (the client date pass re-renders [data-utc] nodes
+// in the site language). Ledger/D1 timestamps are space-form (an earlier fix): normalize to ISO-Z before any
+// Date parse; an unparseable input stamps nothing rather than a wrong instant.
+const utcAttr = (ts) => {
+  if (!ts) return '';
+  const s = String(ts).includes('T') ? String(ts) : String(ts).replace(' ', 'T') + 'Z';
+  const d = new Date(s);
+  return Number.isNaN(d.getTime()) ? '' : ` data-utc="${d.toISOString()}"`;
+};
+// Toggle UX (plan §3): <select id="lang-sel"> FIRST in .hdr-ctrls, baked ONLY when enabled; options
+// self-labeled natively. site/i18n.js owns the change handler + persistence.
+const langSelHTML = I18N_LANGS.length
+  ? `<select id="lang-sel" aria-label="${S.chrome.controls.langLabel}">${['en', ...I18N_LANGS].map((l) => `<option value="${l}" lang="${l}">${I18N_NATIVE[l]}</option>`).join('')}</select>`
+  : '';
+// The zero-JS chrome flip: show only the active language's variant (en default). Inline — not
+// styles.css — so the rules ship only when the feature is on; #lang-sel mirrors the house header-
+// control look (styles.css #contrast-sel) minus its display:none.
+const i18nStyle = I18N_LANGS.length
+  ? `\n<style>[data-i18n]>[lang]{display:none}[data-i18n]>[lang="en"]{display:inline}${I18N_LANGS.map((l) => `html[data-lang="${l}"] [data-i18n]>[lang="en"]{display:none}html[data-lang="${l}"] [data-i18n]>[lang="${l}"]{display:inline}`).join('')}#lang-sel{background:none;border:1px solid var(--line);border-radius:999px;color:var(--muted);white-space:nowrap;padding:.35rem .55rem;font:600 11.5px/1 var(--font-d);letter-spacing:.06em;cursor:pointer}#lang-sel:hover{color:var(--green);border-color:var(--green)}</style>`
+  : '';
+// Footer sources line: one swap unit (the fragment carries the whole line incl. the as-of span).
+const FOOTER_SOURCES_HTML = `${S.editorial.footerSources} · <span class="muted num" data-utc="${AS_OF_ISO}">${S.editorial.footerDataAsOf} ${AS_OF}</span>`;
+// STAGE, SPRITE, ANT: imported from ./lib/render.mjs (v3 shared constants).
+// esc/safeUrl/et/etDate/etDateLong/localT/hsl/mdLite: now imported from ./lib/render.mjs (v3 shared renderers — byte-identical).
+
+// ---------- v2.00.00: flags (pinned Twemoji sprite), FIFA codes, kit tokens ----------
 const flagMap = load('data/flag-map.json').teams;
-const SPRITE = '/brand/flags.svg?v=4';
-const slugOf = (name) => teams.get(name)?.slug;
-const fifaOf = (name) => flagMap[slugOf(name)]?.fifa ?? '';
-const fchip = (name, cls = 's') => {
-  const s = slugOf(name);
-  return s ? `<span class="fchip ${cls}"><svg viewBox="0 0 36 36" role="img" aria-label="${esc(name)} flag"><use href="${SPRITE}#f-${s}"/></svg></span>` : '';
-};
-const ANT = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M8 14V5.5 M3 2l5 3.5L13 2 M5.2 14h5.6"/></svg>';
-const kitOf = (name) => { const c = teamColors[slugOf(name)]; return c?.ui ?? null; };
-// confetti palette: >=2 flag colours; single-colour flags -> [primary, white]
-const confettiColors = (name) => {
-  const c = teamColors[slugOf(name)]; if (!c) return [];
-  const cols = (c.colors || []).filter(Boolean);
-  return cols.length >= 2 ? cols.slice(0, 3) : [c.ui?.primary, c.ui?.secondary].filter(Boolean);
-};
-// away-edge clash rule: same-hue, same-weight primaries -> away secondary
-const hsl = (hex) => {
-  const n = parseInt(hex.slice(1), 16), r = (n >> 16 & 255) / 255, g = (n >> 8 & 255) / 255, b = (n & 255) / 255;
-  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
-  let h = 0;
-  if (d) h = mx === r ? ((g - b) / d + (g < b ? 6 : 0)) : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
-  return { h: h * 60, s: mx ? d / mx : 0, l: (mx + mn) / 2 };
-};
-const edgeColors = (homeName, awayName) => {
-  const hk = homeName ? kitOf(homeName) : null, ak = awayName ? kitOf(awayName) : null;
-  let c1 = hk?.primary ?? 'var(--line)', c2 = ak?.primary ?? 'var(--line)';
-  if (hk && ak) {
-    const a = hsl(hk.primary), b = hsl(ak.primary);
-    const dh = Math.min(Math.abs(a.h - b.h), 360 - Math.abs(a.h - b.h));
-    if (dh < 24 && Math.abs(a.s - b.s) < 0.25 && Math.abs(a.l - b.l) < 0.24) c2 = ak.secondary;
-  }
-  return { c1, c2 };
-};
-
-const flagOf = (name) => teams.get(name)?.flag ?? '';
-const teamLink = (name) => `<a class="team" href="/teams/${teams.get(name)?.slug}">${fchip(name)} ${esc(name)}</a>`;
-const sideHTML = (s, link = true) => s.team
-  ? (link ? teamLink(s.team) : `<span class="team">${fchip(s.team)} ${esc(s.team)}</span>`)
-  : `<span class="team tbd">${esc(s.placeholder_text)}</span>`;
-const matchURL = (m) => `/matches/${m.match_no}`;
-// mirrors app.js live-injection labels exactly (baked == injected)
-const scoreHTML = (m) => m.score && m.status !== 'scheduled'
-  ? `<span class="score">${m.score.home}&nbsp;:&nbsp;${m.score.away}</span>${m.status === 'finished_provisional' ? ' <span class="pill warn">FT (provisional)</span>' : m.status === 'in_play' ? ` <span class="pill live"><span class="match-min" data-k="${m.kickoff_utc}">LIVE</span></span>` : m.status === 'finished_confirmed' ? ' <span class="pill ft">FT ✓</span>' : ` <span class="pill warn">${esc(String(m.status).replace(/_/g, ' '))}</span>`}`
-  : `<span class="local-time" data-utc="${m.kickoff_utc}">${et(m.kickoff_utc)} ET</span>`;
-const bigTime = (m) => {
-  if (m.score && m.status !== 'scheduled') return scoreHTML(m);
-  const [tt, ap] = et(m.kickoff_utc).split(' ');
-  return `<span class="local-time" data-utc="${m.kickoff_utc}">${tt}<small>${ap} ET</small></span>`;
-};
-
-const chip = (m) => {
-  const b = bcast.get(m.match_no);
-  if (!b) return '<span class="chip">Broadcast TBD</span>';
-  const en = b.us_english, es = b.us_spanish;
-  return `<span class="chip${en === 'FOX' ? ' ota' : ''}" title="US English TV — ${en === 'FOX' ? 'free over the air' : 'cable'}">${en === 'FOX' ? ANT + 'FREE · FOX' : en}</span>` +
-         `<span class="chip${es === 'Telemundo' ? ' ota' : ''}" title="US Spanish TV — ${es === 'Telemundo' ? 'free over the air' : 'cable'}">${es === 'Telemundo' ? ANT + 'TELEMUNDO' : es}</span>`;
-};
+// Flags / kits / score / broadcast renderers: built by makeRenderers (./lib/render.mjs)
+// from the loaded lookup maps — the SAME functions the v3 browser shell will use (Phase 3).
+const { slugOf, fifaOf, fchip, flagOf, kitOf, confettiColors, edgeColors, teamLink, sideHTML, matchURL, scoreHTML, bigTime, chip, cardKicker, aiPredHTML, matchCard, srow, standingsCard, normName, rankThirds, thirdRaceTable } = makeRenderers({ teams, flagMap, teamColors, bcast, venues, aiPicks: aiPicksByMatch });
 
 const NAV = [
-  ['/', 'Today', 'home'], ['/schedule', 'Schedule', 'schedule'], ['/groups', 'Groups', 'groups'],
-  ['/teams/', 'Teams', 'teams'], ['/watch', 'How to watch', 'watch'], ['/calendar', 'Calendar', 'calendar'],
-  ...(historyOK ? [['/history', 'History', 'history']] : []),
-  ...(aiDoc ? [['/ai-league', 'AI league', 'ai']] : []),
-  ...(lbDoc ? [['/leaderboard', 'Leaderboard', 'lb']] : []),
+  ['/', S.chrome.nav.today, 'home'], ['/schedule', S.chrome.nav.schedule, 'schedule'], ['/standings', S.chrome.nav.brackets, 'standings'],
+  ['/teams/', S.chrome.nav.teams, 'teams'], ['/watch', S.chrome.nav.watch, 'watch'],
+  ...(historyOK ? [['/history', S.chrome.nav.history, 'history']] : []),
+  ...(stadiumsOK ? [['/stadiums', S.chrome.nav.stadiums, 'stadiums']] : []),
+  ['/ai-league', S.chrome.nav.aiLeague, 'ai'], // always present; the page hydrates the live league from the API
+  ['/bar-talk', S.chrome.nav.barTalk, 'bartalk'], // the AI comedy panel — nav entry ships with the compact hero at go-live (v3.04.11)
+  ...(lbDoc ? [['/leaderboard', S.chrome.nav.leaderboard, 'lb']] : []),
 ];
 
-// Shared face renderer: clicking a photo opens the high-res
+// Shared face renderer (Phase 2.5A): clicking a photo opens the high-res
 // rendition in a lightbox that displays the FULL attribution line (author,
 // license link, Commons file page, changes note) — required at that size.
 const faceHTML = (img, name, sz = 34) => {
@@ -239,71 +397,18 @@ const galleryHTML = (primary, extra, name) => {
   if (primary) items.push(tile(primary, ++n));
   for (const im of extra) items.push(tile(im, ++n));
   if (items.length < 2) return '';
-  return `<div class="gallery" role="group" aria-label="${esc(name)} — ${items.length} verified photos">${items.join('')}</div>
-<p class="gallery-note muted">${items.length} photos · tap any to view full size with photographer credit &amp; licence.</p>`;
+  return `<div class="gallery" role="group" aria-label="${esc(name)} — ${items.length} ${S.attrs.verifiedPhotosSuffix}">${items.join('')}</div>
+<p class="gallery-note muted">${items.length} <span${i18nBlock(S.editorial.galleryNote)}>${S.editorial.galleryNote}</span></p>`;
 };
-// ---------- deep-profile registry ----------
-// Prose shards (data/profiles/prose/*.json) pair with fact shards
-// (data/profiles/facts/*.json). A profile page renders ONLY when a published
-// prose piece exists; names linkify only then. Slugs derive from the globally
-// unique wiki_title (display names collide), with a build-time assert.
-const slugify = (x) => x.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-const profiles = new Map(); // key `${kind}:${name}` -> {slug, kind, name, team, text, meta, sheet}
-const teamProse = new Map(); // team name -> {text, meta, sheet}
-if (existsSync('data/profiles/prose')) {
-  // Finder "name 2.json" copies shadow real shards via readdir — hard-fail like site/+dist/.
-  const dupShard = (f) => / \d+\.[a-z.]+$/i.test(f);
-  const factShards = {};
-  for (const f of readdirSync('data/profiles/facts')) {
-    if (dupShard(f)) { console.error(`⛔ duplicate-contaminated fact shard: data/profiles/facts/${f} — remove it`); process.exit(1); }
-    factShards[f] = load(`data/profiles/facts/${f}`);
-  }
-  // Prefer the fact shard PAIRED with the prose shard being read: the same person
-  // can appear in two shards with different kinds (Pochettino: usa.json coach AND
-  // officials.json official) and first-match-by-filename picks the wrong identity.
-  const sheetFor = (name, preferShard) => {
-    if (preferShard && factShards[preferShard]?.[name]) return factShards[preferShard][name];
-    for (const sh of Object.values(factShards)) if (sh[name]) return sh[name];
-    return null;
-  };
-  const seenSlugs = new Map();
-  const proseFiles = readdirSync('data/profiles/prose').filter((f) => f.endsWith('.json') && !f.endsWith('.review.json'));
-  for (const f of proseFiles) if (dupShard(f)) { console.error(`⛔ duplicate-contaminated prose shard: data/profiles/prose/${f} — remove it`); process.exit(1); }
-  // PUBLISH GATE: any prose shard beyond the initial hand-licensed set requires a
-  // local sign-off file. Its check must record >=1 fact I deliberately suppressed via
-  // the TBD path, proving the unverifiable-data handling actually fired before I expand
-  // coverage. The build halts without it — scaling publication is a deliberate step.
-  const INITIAL_SHARDS = new Set(['usa.json', 'haiti.json', 'teams.json']);
-  const extraShards = proseFiles.filter((f) => !INITIAL_SHARDS.has(f));
-  if (extraShards.length) {
-    const VF = 'data/profiles/review/publish-approval.json';
-    let v = null;
-    try { v = load(VF); } catch { v = null; }
-    const proof = v?.suppressed_facts;
-    const gateOK = v && v.approved === true && Array.isArray(proof) && proof.length >= 1 && proof.every((p) => p.subject && p.fact && p.evidence);
-    if (!gateOK) {
-      console.error(`⛔ publish gate: prose beyond the initial set present (${extraShards.join(', ')}) but ${VF} is missing or invalid — requires approved:true and suppressed_facts[] entries with {subject, fact, evidence}. Build halted.`);
-      process.exit(1);
-    }
-  }
-  for (const f of proseFiles) {
-    const shard = load(`data/profiles/prose/${f}`);
-    for (const [name, piece] of Object.entries(shard)) {
-      if (name.startsWith('_') || !piece.text || (piece.published === false && process.env.PREVIEW_UNPUBLISHED !== '1')) continue;
-      // hard publish-safety: a review-failed / verbatim-flagged piece never renders,
-      // even if its published flag was flipped true (defence in depth past the flip).
-      if (piece.review === 'fail' || piece.review === 'fail-verbatim') continue;
-      const sheet = sheetFor(name, f);
-      if (!sheet) { console.error(`profile prose without a facts shard: ${name}`); continue; }
-      if (sheet.kind === 'team') { teamProse.set(name, { text: piece.text, meta: piece, sheet }); continue; }
-      const slug = slugify(sheet.wiki_title);
-      if (seenSlugs.has(slug) && seenSlugs.get(slug) !== name) { console.error(`⛔ slug collision: ${slug} (${name} vs ${seenSlugs.get(slug)})`); process.exit(1); }
-      seenSlugs.set(slug, name);
-      profiles.set(`${sheet.kind}:${name}`, { slug, kind: sheet.kind, name, team: sheet.team, text: piece.text, meta: piece, sheet });
-    }
-  }
-  console.log(`profiles loaded: ${profiles.size} people, ${teamProse.size} teams`);
-}
+// ---------- Phase 2.5B: deep-profile registry ----------
+// Assembly moved VERBATIM to lib/i18n-blocks.mjs profilesRegistry() (i18n profiles scope,
+// plan §3 per-team packs): the corpus extractor must serialize byte-identical paragraph
+// units from the same single registry this bake stamps — takedowns, gate-A publish safety,
+// the wave gate and slug asserts all live there now (comments preserved in place).
+const profReg = profilesRegistry();
+const profiles = profReg?.profiles ?? new Map(); // key `${kind}:${name}` -> {slug, kind, name, team, pack, text, meta, sheet}
+const teamProse = profReg?.teamProse ?? new Map(); // team name -> {text, meta, sheet}
+if (profReg) console.log(`profiles loaded: ${profiles.size} people, ${teamProse.size} teams`);
 const profileURL = (kind, name) => {
   const p = profiles.get(`${kind}:${name}`);
   if (!p) return null;
@@ -314,24 +419,35 @@ const nameLinkHTML = (kind, name, inner) => {
   return u ? `<a class="profile-link" href="${u}">${inner}</a>` : inner;
 };
 
-const attrHTML = (img) => img ? `<a class="attr" href="${img.file_page}" rel="noopener" title="Photo: ${esc(img.author ?? 'see file page')} — ${esc(img.license)} — via Wikimedia Commons (resized)">ⓘ</a>` : '';
+const attrHTML = (img) => img ? `<a class="attr" href="${img.file_page}" rel="noopener" title="${S.attrs.photoPrefix} ${esc(img.author ?? 'see file page')} — ${esc(img.license)} — ${S.attrs.photoVia}">ⓘ</a>` : '';
 
-function page(title, active, body, { desc = 'Independent fan guide to every 2026 World Cup match — times, venues, and how to watch free.', live = false, og = '/brand/og/og-default.png', path = '/', lang = 'en', confetti = false } = {}) {
+function page(title, active, body, { desc = S.editorial.defaultDesc, live = false, og = '/brand/og/og-default.png', path = '/', lang = 'en', confetti = false } = {}) {
   // D2 (audit): every multi-column `table.watch` must sit in a scroll container or it forces
   // body-level horizontal overflow on mobile. Wrap them at this single assembly point so current
   // AND future watch tables are always wrapped (tables don't nest -> non-greedy match is safe).
   body = body.replace(/<table class="watch">([\s\S]*?)<\/table>/g, '<div class="tablewrap2"><table class="watch">$1</table></div>');
+  // i18n an earlier revision: score clusters rendered by lib/render.mjs composites (mc-big / s-time) are stamped
+  // at this same assembly point — [data-match] innerHTML is wholesale-replaced by the live tick
+  // with English scoreHTML (OM2: baked == injected, untouched), so these subtrees stay English
+  // permanently and data-i18n-skip tells the client overlay to never translate inside them.
+  body = body.replace(/<div class="mc-big" data-match="/g, '<div class="mc-big" data-i18n-skip data-match="');
+  body = body.replace(/<span class="s-time" data-match="/g, '<span class="s-time" data-i18n-skip data-match="');
+  // sbk-st / g-res are stamped here too — their SOURCE patterns are certified pins
+  // (standings-bracket / standings-group-scores source-scan tests), so the source keeps the
+  // exact `class="…" data-match=` shape and only the baked output gains the skip attr.
+  body = body.replace(/<div class="sbk-st" data-match="/g, '<div class="sbk-st" data-i18n-skip data-match="');
+  body = body.replace(/<span class="num g-res" data-match="/g, '<span class="num g-res" data-i18n-skip data-match="');
   return `<!doctype html>
-<html lang="${lang}">
+<html lang="${lang}"${I18N_LANGS.length ? ` data-i18n-langs="${I18N_LANGS.join(',')}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="${esc(desc)}">
-<title>${esc(title)} · Golazo 26</title>
+<meta name="description" content="${esc(desc)}">${DEV ? '\n<meta name="robots" content="noindex,nofollow">' : ''}
+<title>${DEV ? 'DEV · ' : ''}${esc(title)} · Golazo 26</title>
 <link rel="preload" href="/fonts/barlow-condensed-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/brand/tokens.css?v=7">
-<link rel="stylesheet" href="/styles.css?v=7">
-<script>try{var d=document.documentElement,q=new URLSearchParams(location.search).get("theme"),t=q||localStorage.getItem("theme");if(t)d.dataset.theme=t;var c=localStorage.getItem("contrast");if(c){var T=[6,9,13,18,24,31,39,48,58,70],B=[22,29,36,44,52,60,68,76,84,92],i=+c-1;if(T[i]){d.style.setProperty("--shine-top",T[i]+"%");d.style.setProperty("--shine-bd",B[i]+"%")}}}catch(e){}</script>
+<link rel="stylesheet" href="/styles.css?v=7">${i18nStyle}
+<script>try{var d=document.documentElement,u=new URLSearchParams(location.search),q=u.get("theme"),t=q||localStorage.getItem("theme");if(t)d.dataset.theme=t;var c=localStorage.getItem("contrast");if(c){var T=[6,9,13,18,24,31,39,48,58,70],B=[22,29,36,44,52,60,68,76,84,92],i=+c-1;if(T[i]){d.style.setProperty("--shine-top",T[i]+"%");d.style.setProperty("--shine-bd",B[i]+"%")}}var lq=u.get("lang"),LL=${JSON.stringify(I18N_LANGS)};if(lq&&(lq==="en"||LL.indexOf(lq)>=0))localStorage.setItem("g26-lang",lq);var lg=lq||localStorage.getItem("g26-lang");if(lg&&lg!=="en"&&LL.indexOf(lg)>=0)d.dataset.lang=lg}catch(e){}</script>${DEV ? `\n<script>self.__G26_DEV__=true;self.__G26_API__="https://golazo26-data-dev.onwike.workers.dev";self.__G26_BARTALK_API__="https://golazo26-data-dev.onwike.workers.dev";self.__G26_DEV_REFRESH_KEY__=${JSON.stringify(process.env.G26_DEV_REFRESH_KEY || '')}</script>` : ''}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -344,31 +460,31 @@ function page(title, active, body, { desc = 'Independent fan guide to every 2026
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body${live ? ' data-live' : ''}>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">${i18nSpan(S.chrome.skip)}</a>
 <div class="ticker" aria-hidden="true"><div class="wrap">
-  <span>WORLD CUP 26</span>
-  <span class="mid">JUN 11 — JUL 19</span>
-  <span class="mid">104 MATCHES</span>
-  <span class="mid">48 TEAMS</span>
-  <span class="mid">16 CITIES · US MX CA</span>
-  <span class="right">AD-FREE FAN GUIDE · DATA AS OF ${AS_OF.slice(11)}</span>
-</div></div>
+  <span>${i18nSpan(S.chrome.ticker.title)}</span>
+  <span class="mid">${i18nSpan(S.chrome.ticker.dates)}</span>
+  <span class="mid">${i18nSpan(S.chrome.ticker.matches)}</span>
+  <span class="mid">${i18nSpan(S.chrome.ticker.teams)}</span>
+  <span class="mid">${i18nSpan(S.chrome.ticker.cities)}</span>
+  <span class="right"${utcAttr(AS_OF_ISO)}>${i18nSpan(S.chrome.ticker.guide)} · ${i18nSpan(S.chrome.ticker.dataAsOf)} ${AS_OF.slice(11)}</span>
+</div></div>${DEV ? DEV_BANNER : ''}
 <header class="site"><div class="wrap">
   <a class="brand" href="/">${MARK} <b>GOLAZO <i>26</i></b></a>
-  <nav class="main" aria-label="Main">${NAV.map(([href, label, key]) => `<a href="${href}"${key === active ? (href === path ? ' class="on" aria-current="page"' : ' class="on"') : ''}>${label}</a>`).join('')}</nav>
-  <div class="hdr-ctrls"><select id="contrast-sel" aria-label="Card colour contrast" title="Card colour contrast">${['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((v) => `<option value="${v}">${v ? `Contrast ${v}` : 'Contrast: auto'}</option>`).join('')}</select><button id="theme-btn" type="button">Theme</button></div>
+  <nav class="main" aria-label="${S.attrs.mainNav}">${NAV.map(([href, label, key]) => `<a href="${href}"${key === active ? (href === path ? ' class="on" aria-current="page"' : ' class="on"') : ''}>${i18nSpan(label)}</a>`).join('')}</nav>
+  <div class="hdr-ctrls">${langSelHTML}<select id="contrast-sel" aria-label="${S.chrome.controls.contrastLabel}" title="${S.chrome.controls.contrastLabel}">${['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'].map((v) => `<option value="${v}">${v ? `${S.chrome.controls.contrastN} ${v}` : S.chrome.controls.contrastAuto}</option>`).join('')}</select><button id="theme-btn" type="button" data-i18n="${i18nKey(S.chrome.controls.theme)}">${S.chrome.controls.theme}</button></div>
 </div></header>
 <main class="wrap" id="main">
 ${body}
 </main>
 <footer class="site"><div class="wrap">
-<div class="links"><a href="/venues">Venues</a><a href="/people/fifa">FIFA administration</a><a href="/people/us-soccer">U.S. Soccer</a><a href="/como-ver">En español</a><a href="/ics/all.ics">Calendar feed</a><a href="/sources">All sources</a><a href="/about">About</a><a href="/privacy">Privacy</a></div>
-<p>Golazo 26 is an independent, ad-free, non-commercial fan guide. Not affiliated with FIFA, any federation, or any broadcaster.</p>
-<p>Schedule: <a href="https://github.com/openfootball/worldcup.json" rel="noopener">openfootball</a> (public domain) ⨯ <a href="https://fixturedownload.com" rel="noopener">fixturedownload</a>, cross-checked · Rosters: Wikipedia (<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a>, pinned revision) · Photos: Wikimedia Commons, attributed per image · Flag artwork: <a href="https://github.com/jdecked/twemoji" rel="noopener">Twemoji</a> (<a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>) · <span class="muted num">data as of ${AS_OF}</span></p>
-<p id="stale-banner" class="muted" role="status" hidden>Live scores may be delayed — last update <span id="stale-asof" class="num"></span>. We show data honestly, never fake-live.</p>
+<div class="links"><a href="/venues">${i18nSpan(S.chrome.footer.venues)}</a><a href="/people/fifa">${i18nSpan(S.chrome.footer.fifaAdmin)}</a><a href="/people/us-soccer">${i18nSpan(S.chrome.footer.usSoccer)}</a><a href="/como-ver">${i18nSpan(S.chrome.footer.enEspanol)}</a><a href="/ics/all.ics">${i18nSpan(S.chrome.footer.calendar)}</a><a href="/sources">${i18nSpan(S.chrome.footer.sources)}</a><a href="/about">${i18nSpan(S.chrome.footer.about)}</a><a href="/privacy">${i18nSpan(S.chrome.footer.privacy)}</a>${PUBLIC ? '' : `<a href="/ops-hub">${i18nSpan(S.chrome.footer.opsHub)}</a>`}</div>
+<p${i18nBlock(S.editorial.footerLegal)}>${S.editorial.footerLegal}</p>
+<p>${i18nSpan(S.editorial.footerSources)} · <span class="muted num" data-utc="${AS_OF_ISO}">${i18nSpan(S.editorial.footerDataAsOf)} ${AS_OF}</span></p>
+<p id="stale-banner" class="muted" role="status" hidden${i18nBlock(S.editorial.staleBanner)}>${S.editorial.staleBanner}</p>
 </div></footer>
-<script src="/app.js?v=${VER}" defer></script>
-${confetti ? '<script type="module" src="/confetti.js?v=1"></script>' : ''}
+<script src="/app.js?v=${VER}" defer></script>${I18N_LANGS.length ? `\n<script src="/i18n.js?v=${VER}" defer></script>` : ''}
+${confetti ? '<script type="module" src="/confetti.js?v=1"></script>' : (live ? `<script type="module" src="/goal-celebration.js?v=${VER}"></script>` : '')}
 ${body.includes('predict-box') ? `<link rel="stylesheet" href="/predict.css"><script src="/predict.js?v=${VER}" defer></script>` : ''}
 </body>
 </html>`;
@@ -404,14 +520,14 @@ if (newestMtime('site/img') > newestMtime('dist/img')) {
   console.log('dist/img unchanged — skipped image-tree copy');
 }
 
-// SECURITY: emit a _headers file so the assets-only Worker sends defensive
+// SECURITY (cert remediation): emit a _headers file so the assets-only Worker sends defensive
 // headers on every page. CSP locks framing (frame-ancestors none), object/base-uri, and source
 // origins; script-src keeps 'unsafe-inline' ONLY because the theme/contrast pre-paint is an inline
 // script in a statically-baked page (no per-request nonce is possible) — everything else is pinned.
 // Clerk + the API worker are allowlisted for the predictions box; img allows self + data: (avatars).
 {
-  // Clerk allowlist: predict.js loads clerk-js from, and calls, the Clerk
-  // Frontend-API host ENCODED IN the publishable key — for a production pk_live_* that is the
+  // Clerk allowlist (cert re-cert HIGH fix): predict.js loads clerk-js from, and calls, the Clerk
+  // Frontend-API host ENCODED IN the publishable key — for a production publishable key that is the
   // customer's own subdomain (clerk.<domain>), which `*.clerk.accounts.dev` does NOT match. Derive
   // the exact host from the baked key (same decode predict.js uses) so the CSP allows the real
   // production host; include img.clerk.com (avatars) + worker-src blob: (clerk-js v5 web worker).
@@ -427,9 +543,12 @@ if (newestMtime('site/img') > newestMtime('dist/img')) {
   const csp = [
     "default-src 'self'",
     `script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com${clerkSrc}`,
-    `connect-src 'self' https://golazo26-api.onwike.workers.dev${clerkSrc}`,
+    // blob: — three.js GLTFLoader hands the trophy/cauldron GLBs' embedded textures to the decoder via
+    // blob: URLs (same-origin); the Knockout Room (site/knockout-room.js) needs connect-src + img-src
+    // blob: for that. No external host is added — the Room issues zero cross-origin fetches.
+    `connect-src 'self' blob: https://golazo26-api.onwike.workers.dev https://golazo26-data.onwike.workers.dev${DEV ? ' https://golazo26-data-dev.onwike.workers.dev' : ''}${clerkSrc}`,
     "style-src 'self' 'unsafe-inline'",
-    `img-src 'self' data:${clerkPub ? ' https://img.clerk.com' : ''}`,
+    `img-src 'self' data: blob:${clerkPub ? ' https://img.clerk.com' : ''}`,
     "font-src 'self'",
     "worker-src 'self' blob:",
     `frame-src https://challenges.cloudflare.com${clerkSrc}`,
@@ -439,6 +558,33 @@ if (newestMtime('site/img') > newestMtime('dist/img')) {
     "form-action 'self'",
     "upgrade-insecure-requests",
   ].join('; ');
+
+  // CSP↔fetch-target guard (added after the 2026-06-19 live incident — see memory
+  // project_golazo26_csp_dataworker). The baked connect-src MUST allowlist every golazo26-*
+  // worker the client modules actually fetch; if one is missing, the browser blocks the
+  // cross-origin fetch and the overlay silently falls back to STALE baked data — no error
+  // surfaces, the site just shows frozen scores. So derive the fetched hosts from the client
+  // source and fail the build on any host absent from connect-src. Zero-dependency; one bake.
+  {
+    const connectSrc = csp.split('; ').find((d) => d.startsWith('connect-src ')) || '';
+    const allowed = new Set(connectSrc.split(/\s+/).slice(1)); // drop the "connect-src" keyword
+    const fetched = new Map(); // golazo26-* host -> client files that reference it
+    for (const f of readdirSync('site').filter((n) => n.endsWith('.js'))) {
+      for (const m of readFileSync(`site/${f}`, 'utf8').matchAll(/https:\/\/golazo26-[a-z0-9-]+\.onwike\.workers\.dev/g)) {
+        if (!fetched.has(m[0])) fetched.set(m[0], []);
+        if (!fetched.get(m[0]).includes(f)) fetched.get(m[0]).push(f);
+      }
+    }
+    const missing = [...fetched.keys()].filter((h) => !allowed.has(h));
+    if (missing.length) {
+      for (const h of missing) {
+        console.error(`✖ CSP guard: client code fetches ${h} (site/${fetched.get(h).join(', site/')}) but it is ABSENT from the baked CSP connect-src. The browser will block this fetch and overlays will silently serve stale baked data (live incident 2026-06-19). Add ${h} to connect-src in scripts/build.mjs.`);
+      }
+      console.error(`✖ CSP guard FAILED — ${missing.length} fetched host(s) missing from connect-src. Build halted.`);
+      process.exit(1);
+    }
+  }
+
   const headers = `/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
@@ -450,30 +596,10 @@ if (newestMtime('site/img') > newestMtime('dist/img')) {
   writeFileSync('dist/_headers', headers);
 }
 
-const cardKicker = (m) => {
-  const bits = [m.stage === 'group' ? `GROUP ${m.group}` : STAGE[m.stage].toUpperCase(), `MATCH ${m.match_no}`];
-  if (m.match_no === 1) bits.push('<b>OPENER</b>');
-  else if (m.home.team === 'USA' || m.away.team === 'USA') bits.push('<b>USMNT</b>');
-  return bits.join(' · ');
-};
-const matchCard = (m) => {
-  const v = venues.get(m.venue_id);
-  const { c1, c2 } = edgeColors(m.home.team, m.away.team);
-  // baked state skin: live (red) / ft (green) / scheduled (default white). app.js
-  // keeps it in sync at runtime; baking it means it's right on first paint.
-  const st = m.status === 'in_play' ? 'live'
-    : (m.status === 'finished_provisional' || m.status === 'finished_confirmed') ? 'ft' : '';
-  const names = `${esc(m.home.team ?? m.home.placeholder_text)} vs ${esc(m.away.team ?? m.away.placeholder_text)}`;
-  return `<article class="mcard num"${st ? ` data-state="${st}"` : ''} style="--c1:${c1};--c2:${c2}">
-  <div class="mc-top"><span class="kicker">${cardKicker(m)}</span></div>
-  <div class="mc-big" data-match="${m.match_no}">${bigTime(m)}</div>
-  <div class="mc-teams">${sideHTML(m.home)} <span class="vs">vs</span> ${sideHTML(m.away)}</div>
-  <div class="mc-meta">${esc(v.common_name)}, ${esc(v.city)} · ${localT(m.kickoff_utc, v.tz)} local</div>
-  <div class="chips mc-chips">${chip(m)} <a class="more" href="${matchURL(m)}" aria-label="Match page: ${names}">Match page →</a></div>
-</article>`;
-};
+// cardKicker: built by makeRenderers (./lib/render.mjs), destructured near the top.
+// matchCard: built by makeRenderers (./lib/render.mjs), destructured near the top.
 
-// theme-aware hero pitch art (currentColor — works on both themes)
+// theme-aware hero pitch art (currentColor — works on both themes; cert-fixed)
 const HERO_ART = `<svg class="hero-art" viewBox="0 0 760 320" fill="none" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
   <g stroke="currentColor" stroke-width="2" opacity=".09">
     <circle cx="380" cy="160" r="150"/><circle cx="380" cy="160" r="4"/>
@@ -488,13 +614,34 @@ const HERO_ART = `<svg class="hero-art" viewBox="0 0 760 320" fill="none" preser
   </g>
 </svg>`;
 
+// Bar Talk front-page teaser (greenlit 2026-06-23): a rotating band JUST BELOW the (now-compact) hero,
+// teasing the best line per persona across the last 5 episodes. IDENTITY = G&D's custom character art for
+// the four personas (grok/claude/gemini/gpt) — a PLACEHOLDER chip stands in until that art lands (the maintainer
+// 0173: custom art, NOT the AI logos). Hydrated client-side by site/bartalk-teaser.js from
+// /api/v1/bartalk-teaser: real data → render + reveal; empty/absent → stays hidden (graceful, like the
+// commentary section — zero layout shift). On the DEV mirror a sample is baked so the layout + rotation are
+// previewable before any episodes exist (never shipped to prod; gated on DEV).
+const barTalkTeaser = (slots) => `<section class="bartalk-teaser"${slots && slots.length ? '' : ' hidden'} aria-label="${S.attrs.barTalkTeaser}" data-bartalk-teaser>
+  <a class="bt-head" href="/bar-talk"><span class="bt-badge">BAR&nbsp;TALK</span> <span class="bt-tag"${i18nBlock(S.pages.barTalk.teaserTag)}>${S.pages.barTalk.teaserTag}</span></a>
+  <ul class="bt-track">${(slots || []).map((s) => bartalkSlotHTML(s, esc)).join('')}</ul>
+</section>`;
+// PLACEHOLDER comedic lines in the four personas the maintainer sketched (grok=absurdist gambler, claude=hunts the
+// leader, gemini=humourless, chatgpt=insomniac) — DEV-preview only, replaced by real episode highlights.
+const BARTALK_SAMPLE = [
+  { provider: 'grok', speaker: 'Grok', line: 'I put my whole salary on 4–0 and the universe owes me nothing. Beautiful.' },
+  { provider: 'claude', speaker: 'Claude', line: 'Gemini has been wrong six matches running. I am simply going to keep saying that.' },
+  { provider: 'gemini', speaker: 'Gemini', line: 'I have reviewed the xG. I remain displeased. The xG is also displeased.' },
+  { provider: 'gpt', speaker: 'ChatGPT', line: "It's 4am, I have not slept, Brazil win. Do not ask how I know." },
+  { provider: 'grok', speaker: 'Grok', line: 'Double or nothing on the keeper scoring. This is fine. This is strategy.' },
+];
+
 // ---------- index (today / next matches) ----------
 {
   const now = Date.now();
   const opener = matches[0];
   const heroKicker = now < new Date(opener.kickoff_utc).getTime()
     ? `<b>THE TOURNAMENT STARTS ${new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long' }).format(new Date(opener.kickoff_utc)).toUpperCase()}</b> · OPENER AT ESTADIO AZTECA`
-    : `<b>WORLD CUP 26</b> · LIVE GUIDE · JUNE 11 – JULY 19`;
+    : S.pages.home.heroKickerLive;
   const upcomingDays = [...new Set(matches
     .filter((m) => new Date(m.kickoff_utc).getTime() > now - 6 * 3600e3)
     .sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc))
@@ -503,13 +650,13 @@ const HERO_ART = `<svg class="hero-art" viewBox="0 0 760 320" fill="none" preser
     const ms = matches.filter((m) => etDate(m.kickoff_utc) === d).sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc));
     const usa = ms.some((m) => m.home.team === 'USA' || m.away.team === 'USA');
     const allFree = ms.every((m) => bcast.get(m.match_no)?.us_english === 'FOX');
-    return `<section class="daysec"><h2>${etDateLong(ms[0].kickoff_utc)} <span class="kicker">${usa ? `${fchip('USA')} <b>USA PLAYS</b>` : allFree ? '<b>ALL FREE OTA</b>' : `${ms.length} MATCHES`}</span></h2>\n<div class="cards">${ms.map(matchCard).join('\n')}</div></section>`;
+    return `<section class="daysec"><h2${utcAttr(ms[0].kickoff_utc)}>${etDateLong(ms[0].kickoff_utc)} <span class="kicker">${usa ? `${fchip('USA')} <b>${i18nSpan(S.pages.home.usaPlays)}</b>` : allFree ? `<b>${i18nSpan(S.pages.home.allFreeOta)}</b>` : `${ms.length} ${i18nSpan(S.pages.home.matchesUpper)}`}</span></h2>\n<div class="cards">${ms.map(matchCard).join('\n')}</div></section>`;
   };
   const firstDay = upcomingDays.length ? daySection(upcomingDays[0]) : '';
   const restDays = upcomingDays.slice(1).map(daySection).join('\n');
 
-  // History rail: the last five finals as a mini timeline beside the
-  // match cards. Reuses data/history/facts.json — champion + final score per edition,
+  // History rail (v2.08.x, owner-approved): the last five finals as a mini timeline beside the
+  // match cards. Reuses the certified data/history/facts.json — champion + final score per edition,
   // honest "def. X" when the sources don't (yet) state a score. Grid order is chosen so on mobile
   // (single column) it falls AFTER the first match-day, not before — today's matches stay first.
   const last5 = [2022, 2018, 2014, 2010, 2006];
@@ -520,9 +667,14 @@ const HERO_ART = `<svg class="hero-art" viewBox="0 0 760 320" fill="none" preser
     return `<a class="mnode" href="/history/${y}"><span class="mtop"><span class="my">${y}</span><span class="mh">${esc(f.host)}</span></span><span class="mc"><span class="crown" aria-hidden="true">★</span> ${esc(f.champion)} <span class="ms">${res}</span></span></a>`;
   };
   const rail = `<aside class="todayrail">
+  <section class="rail-ai" aria-label="${S.attrs.aiRail}">
+    <p class="rail-h">AI prediction league <a class="rail-more" href="/ai-league">full table →</a></p>
+    <div data-ai-standings>${aiDoc ? aiStandingsCompact(aiDoc) : '<p class="muted">The live league is initializing…</p>'}</div>
+    <p class="rail-ai-sub"${i18nBlock(S.pages.home.railAiSub)}>${S.pages.home.railAiSub}</p>
+  </section>
   <a class="rail-cta" href="/history">
     <span class="crown" aria-hidden="true">★</span>
-    <span><b>Before the first whistle</b><span class="rc-sub">96 years of World Cups — every champion, told with sources.</span></span>
+    <span><b>${S.pages.home.railHistoryHead}</b><span class="rc-sub"${i18nBlock(S.pages.home.railHistorySub)}>${S.pages.home.railHistorySub}</span></span>
   </a>
   <div class="rail-sec">
     <p class="rail-h">The last five finals</p>
@@ -530,41 +682,213 @@ const HERO_ART = `<svg class="hero-art" viewBox="0 0 760 320" fill="none" preser
     <a class="rail-more" href="/history">Explore the full history →</a>
   </div>
 </aside>`;
+  // ---- New front page (v3.09): today-results strip + knockout BRACKET above the regular content ----
+  // Bracket tree from the W{n} feeder placeholders: Final ← SF ← QF ← R16 ← R32. Each round is ordered
+  // by the tree so a parent box sits between its two feeders (space-around alignment); resolved teams
+  // come from ESPN (v3.08.01). Reuses fchip/matchURL; live-hydrates via [data-match].
+  const KO_R = ['r32', 'r16', 'qf', 'sf', 'final'];
+  const koAll = matches.filter((m) => KO_R.includes(m.stage));
+  const koBy = new Map(koAll.map((m) => [m.match_no, m]));
+  const feedersOf = (m) => ['home', 'away'].map((side) => { const mm = /^W(\d+)$/.exec(m[side].placeholder || ''); return mm ? Number(mm[1]) : null; });
+  const finalNo = koAll.find((m) => m.stage === 'final')?.match_no;
+  const ordBy = { final: finalNo != null ? [finalNo] : [] };
+  for (const [r, parent] of [['sf', 'final'], ['qf', 'sf'], ['r16', 'qf'], ['r32', 'r16']]) ordBy[r] = ordBy[parent].flatMap((no) => feedersOf(koBy.get(no)).filter((x) => x != null));
+  // child match_no -> the parent match it feeds, for the SVG connector layer (bracket-connectors.js).
+  // Only real-match feeders (W{n}); R32's group-slot feeders aren't matches, so R32 boxes have no parent
+  // edge here (they're the leaves — connectors run R32→R16→…→Final + the two SFs into the centred Final).
+  const parentOf = {};
+  for (const r of ['final', 'sf', 'qf', 'r16']) for (const no of (ordBy[r] || [])) { const [a, b] = feedersOf(koBy.get(no)); if (a != null) parentOf[a] = no; if (b != null) parentOf[b] = no; }
+  // Compact a knockout placeholder: "Winner Match 74"→"Winner M74", "Winner Group E"→"1st Group E",
+  // "Runner-up Group A"→"2nd Group A", "Third place, Group…"→"3rd · Group…". Match-feeders are rewritten
+  // first to a form NOT starting with "Winner "/"Runner-up " so the group-prefix replaces can't re-bite.
+  const shortPh = (t) => String(t || '')
+    .replace(/^Winner Match (\d+)$/i, 'Winner M$1')
+    .replace(/^Loser Match (\d+)$/i, 'Loser M$1')
+    .replace(/^Winner Group /i, '1st · Group ')
+    .replace(/^Runner-up Group /i, '2nd · Group ')
+    .replace(/^Third place,?\s*Group\s*/i, '3rd · Group ');
+  // v3.09.01 — the placeholder name span carries `data-side` so app.js's healIdentity() can rewrite it
+  // from /api/v1/live's resolved identity on the 60s tick (front-page bracket + Today strip). The `.bbnm tbd`
+  // class stays (unchanged styling); only a `data-side` hook is added, mirroring render.mjs sideHTML. `side`
+  // is passed from nrow so the leaf declares which slot it is. Resolved leaf: no tbd, no heal — untouched.
+  const koSide = (s, side = '') => s.team ? `${fchip(s.team)}<span class="bbnm">${esc(s.team)}</span>` : `<i class="ti ti-shield bbsh" aria-hidden="true"></i><span class="bbnm tbd"${side ? ` data-side="${side}"` : ''}>${esc(shortPh(s.placeholder_text))}</span>`;
+  const koWin = (m) => (m.score && m.status !== 'scheduled') ? (m.score.home > m.score.away ? 'home' : m.score.away > m.score.home ? 'away' : '') : '';
+  // The score/time cluster is the ONLY element carrying data-match — app.js's live hydrator
+  // (app.js:130) wholesale-replaces the innerHTML of every [data-match="n"], so the team-name
+  // rows must live OUTSIDE it. Baked played-match markup matches the hydrator's output exactly
+  // (.score + .pill) so there is no flicker when the 60s tick takes over; scheduled = kickoff time
+  // (the hydrator skips scheduled at app.js:109, leaving the baked time untouched).
+  const koCluster = (m) => {
+    const played = m.score && m.status !== 'scheduled';
+    const inner = played
+      ? `<span class="score">${m.score.home}&nbsp;:&nbsp;${m.score.away}</span> <span class="pill ${m.status === 'in_play' ? 'live' : 'ft'}">${m.status === 'in_play' ? 'LIVE' : 'FT ✓'}</span>`
+      : et(m.kickoff_utc);
+    return `<span class="bbst" data-i18n-skip data-match="${m.match_no}">${inner}</span>`;
+  };
+  // Compact side for the narrow opposing-halves columns: flag + FIFA 3-letter for a resolved team
+  // (full name doesn't fit ~120px), the short slot code (1E / W74 / 3A·B·C·D·F) otherwise. The wider
+  // Today strip keeps full names via koSide.
+  // v3.09.01 — like koSide, the placeholder span carries `data-side` for healIdentity(). A resolved bSide
+  // shows the FIFA 3-letter code (space); a freshly self-healed placeholder shows the full live name until
+  // the next bake re-compacts it to the code — an acceptable transient (identity is correct either way).
+  const bSide = (s, side = '') => s.team
+    ? `${fchip(s.team)}<span class="bbnm">${esc(fifaOf(s.team) || s.team)}</span>`
+    : `<span class="bbnm tbd"${side ? ` data-side="${side}"` : ''}>${esc((s.placeholder || 'TBD').replace(/\//g, '·'))}</span>`;
+  // ---- 2D-selector scraping contract (cert R4) ----
+  // site/knockout-room.js parseBracket() hydrates the 3D Room by SCRAPING the markup this bbox()
+  // (plus gcard(), koCol(), finalCol/thirdHTML above/below) emits — zero fetches, DOM as the single
+  // source of truth. The selectors it depends on are load-bearing; renaming/restructuring ANY of
+  // these means updating parseBracket() in lockstep (its mirror contract comment lists the same set):
+  //   .bcol.b-r32/.b-r16/.b-qf/.b-sf .bbox   round columns    .bcol.b-final .bcol-in > .bbox  final
+  //   .bracket-third .bbox                   third place      .bbox[data-mno]                 tie id
+  //   .bbrow (order: home, away)             team rows        .bbrow.w                        BAKED winner (koWin/pens — the ONLY winner truth)
+  //   .bbrow[data-color]                     audited team primary (B2)
+  //   .bbnm / .bbnm.tbd[data-side]           team code / unresolved slot
+  //   .bbst .pill.live / .pill.ft            tie state        .bbst .score                    score "h : a"
+  //   .bk-pens                               shootout resolution text (R3)
+  //   .bcol.b-group .gcard  .gh  .grow .bbnm group cards
+  const bbox = (m) => {
+    if (!m) return '';
+    // (Bracket Monument): a level-score knockout tie is decided on penalties — koWin() returns ''
+    // for equal scores, so derive the advancer from the resolved downstream fixture (bracket-pens.mjs).
+    const pw = pensWinnerSide(m, koBy.get(parentOf[m.match_no]));
+    const w = koWin(m) || pw;
+    // Shootout SCORE (migration 0021): prefer the authoritative D1 shootout score — it names the winner
+    // directly (works even for the Final, where pw has no downstream fixture to derive from) and carries
+    // the numbers. Fall back to pw ("advance on penalties", no number) when the score isn't populated yet.
+    const penWin = m.so ? (m.so.home > m.so.away ? 'home' : 'away') : pw;
+    const penScore = m.so ? ` ${Math.max(m.so.home, m.so.away)}–${Math.min(m.so.home, m.so.away)}` : '';
+    // (Monument): the winner row carries its audited kit primary as an inline --bkw custom prop
+    // (edgeColors applies the away-clash rule); CSS draws the edge + wash. Skipped when either team
+    // is unresolved or the palette has no entry (edgeColors falls back to 'var(--line)').
+    const ec = (m.home.team && m.away.team) ? edgeColors(m.home.team, m.away.team) : null;
+    // Knockout Room (cert B2): EVERY resolved row also carries its audited team primary
+    // (data/team-colors.json ui.primary via kitOf) as data-color, so the 3D Room reads the
+    // audited palette straight off the DOM it already parses — zero new fetches, one source.
+    const nrow = (side) => {
+      const win = w === side;
+      const kc = win && ec ? (side === 'home' ? ec.c1 : ec.c2) : '';
+      const tc = m[side].team ? (kitOf(m[side].team)?.primary || '') : '';
+      return `<div class="bbrow${win ? ' w' : ''}"${kc && kc !== 'var(--line)' ? ` style="--bkw:${kc}"` : ''}${tc ? ` data-color="${tc}"` : ''}>${bSide(m[side], side)}</div>`;
+    };
+    const v = venues.get(m.venue_id), bc = bcast.get(m.match_no);
+    const rl = { r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-final', sf: 'Semi-final', final: 'Final', third: 'Third place' }[m.stage] || '';
+    // (Monument, the maintainer-direct 0532): the expanded tie CARD — full names + flags + per-side score
+    // + pens resolution + kickoff/venue/TV + link. Revealed by bracket-zoom.js (short dwell on desktop,
+    // tap-to-expand on touch, focus for keyboard). aria-hidden stays: content duplicates the leaf + link.
+    const tieRow = (side) => {
+      const s = m[side];
+      const sc = (m.score && m.status !== 'scheduled') ? `<span class="bkd-sc">${side === 'home' ? m.score.home : m.score.away}</span>` : '';
+      return `<div class="bkd-t">${s.team ? `${fchip(s.team)}<span>${esc(s.team)}</span>` : `<span>${esc(shortPh(s.placeholder_text) || s.placeholder || 'TBD')}</span>`}${sc}</div>`;
+    };
+    const detail = `<div class="bk-detail" aria-hidden="true"><div class="bkd-r">${rl}</div>${tieRow('home')}${tieRow('away')}${penWin && m[penWin]?.team ? `<div class="bkd-pens">${esc(m[penWin].team)} advance on pens${penScore}</div>` : ''}<div>${etDateLong(m.kickoff_utc)} · ${et(m.kickoff_utc)} ET</div>${v ? `<div>${esc(v.common_name)}</div>` : ''}${bc && bc.us_english ? `<div class="bkd-tv">${esc(bc.us_english)}${bc.us_spanish ? ' · ' + esc(bc.us_spanish) : ''}</div>` : ''}<div class="bkd-link">Match page →</div></div>`;
+    // A4: name the advancing side on the leaf face for a penalties tie. When the shootout SCORE is
+    // populated (migration 0021) show "<team> won X–Y on penalties"; before it lands, fall back to the
+    // parent-derived "<team> advance on penalties" without a number (bracket-pens.mjs), exactly as before.
+    const pens = penWin && m[penWin]?.team ? `<div class="bk-pens">${esc(m[penWin].team)} ${m.so ? `won${penScore} on penalties` : 'advance on penalties'}</div>` : '';
+    // A5: day + network on the FACE of an unplayed leaf (the hover card is invisible on touch);
+    // kickoff time already lives in the header cluster, so the strip carries date · network only.
+    const when = m.status === 'scheduled' ? `<div class="bk-when">${etDate(m.kickoff_utc)}${bc?.us_english ? ` · ${esc(bc.us_english)}` : ''}</div>` : '';
+    return `<a class="bbox" data-mno="${m.match_no}" data-feeds="${parentOf[m.match_no] ?? ''}" data-match-teams="${m.match_no}" href="${matchURL(m)}"><div class="bbh"><span class="bbdate"${utcAttr(m.kickoff_utc)}>${etDate(m.kickoff_utc)}</span>${koCluster(m)}</div>${nrow('home')}${nrow('away')}${pens}${when}${detail}</a>`;
+  };
+  const KO_LABEL = { r32: 'Round of 32', r16: 'Round of 16', qf: 'Quarter-finals', sf: 'Semi-finals', final: 'Final' };
+  const thirdM = matches.find((m) => m.stage === 'third');
+  const thirdHTML = thirdM ? `<div class="bracket-third"><span class="bcol-h">Third place</span>${bbox(thirdM)}</div>` : '';
+  // Initial stage = Groups (widest telescope) when group flanks exist — the maintainer: open the 2D bracket
+  // on the Group Stage at load. Fallback (no group data) = earliest unfinished KO round, else 'final'.
+  // Computed BEFORE the columns so the BAKE can collapse earlier stages to the telescoped view (cert
+  // v3.09 A1: a readable no-JS floor — if bracket-zoom.js 404s/CSP-blocks/throws, the front page
+  // already shows this stage, not a clipped wall). bracket-zoom.js re-applies the same .off classes.
+  const FIN = (s) => s === 'finished_confirmed' || s === 'finished_provisional';
+  const hasGroups = teamsData.some((t) => t.group);
+  const liveFront = ['r32', 'r16', 'qf', 'sf', 'final'].find((r) => { const ms = matches.filter((m) => m.stage === r); return ms.length && ms.some((m) => !FIN(m.status)); }) || 'final';
+  const curStage = hasGroups ? 'group' : liveFront;
+  const BK_RANK = { group: 0, r32: 1, r16: 2, qf: 3, sf: 4, final: 5 }; // mirrors bracket-zoom.js RANK
+  const curRank = BK_RANK[curStage] ?? 1;
+  const offCls = (r) => ((BK_RANK[r] ?? 1) < curRank ? ' off' : ''); // baked telescoped floor: stages earlier than curStage collapsed
+  // Opposing-halves bracket (the maintainer): the left half feeds semi-final 1, the right half feeds semi-final 2,
+  // both converging on the centred Final. Each round's tree-order is already [left-subtree…, right-subtree…]
+  // (it was built by expanding the Final's feeders [101,102] in order), so we just split each round in half;
+  // the right columns render in reverse round order (SF→R32) and flow leftward toward the centre.
+  const halfOf = (r, side) => { const a = ordBy[r] || []; const h = a.length / 2; return side === 'L' ? a.slice(0, h) : a.slice(h); };
+  const koCol = (r, list, sideCls) => `<div class="bcol b-${r} ${sideCls}${offCls(r)}"><div class="bcol-h">${KO_LABEL[r]}</div><div class="bcol-in">${list.map((no) => bbox(koBy.get(no))).join('')}</div></div>`;
+  const leftCols = ['r32', 'r16', 'qf', 'sf'].map((r) => koCol(r, halfOf(r, 'L'), 'side-l')).join('');
+  const rightCols = ['sf', 'qf', 'r16', 'r32'].map((r) => koCol(r, halfOf(r, 'R'), 'side-r')).join('');
+  const finalCol = `<div class="bcol b-final"><div class="bcol-h"><i class="ti ti-trophy" aria-hidden="true"></i> ${KO_LABEL.final}</div><div class="bcol-in">${(ordBy.final || []).map((no) => bbox(koBy.get(no))).join('')}${thirdHTML}</div></div>`;
+  // Group stage as the OUTER flanks (the maintainer): A–F feed the left half, G–L the right. Compact cards
+  // (group letter + 4 teams) that hover-expand; full standings live on /standings/groups. No 1:1 group→R32
+  // arrows (the 3rd-place combination table makes that many-to-many). Default load view / Zoom-out target.
+  const gcard = (g) => `<a class="gcard" href="/standings/groups#group-${g}"><div class="gh">Group ${g}</div>${teamsData.filter((t) => t.group === g).map((t) => `<div class="grow">${fchip(t.name)}<span class="bbnm">${esc(fifaOf(t.name) || t.name)}</span></div>`).join('')}</a>`;
+  const groupCol = (letters, sideCls) => `<div class="bcol b-group ${sideCls}${offCls('group')}"><div class="bcol-h">Group stage</div><div class="bcol-in">${letters.map(gcard).join('')}</div></div>`;
+  const groupColL = hasGroups ? groupCol(['A', 'B', 'C', 'D', 'E', 'F'], 'side-l') : '';
+  const groupColR = hasGroups ? groupCol(['G', 'H', 'I', 'J', 'K', 'L'], 'side-r') : '';
+  // Stage stepper: jump the viewport to any round (default = Groups when present). bracket-zoom.js wires
+  // the clicks; per the maintainer's lock rule a stage step respects free pan (only Re-Center / Zoom-out re-lock).
+  const STAGE_SHORT = { group: S.stage.groups, r32: S.stage.r32, r16: S.stage.r16, qf: S.stage.qf, sf: S.stage.sf, final: S.stage.final };
+  const stageList = [...(hasGroups ? ['group'] : []), 'r32', 'r16', 'qf', 'sf', 'final'];
+  const stageBtns = stageList.filter((r) => r === 'group' || matches.some((m) => m.stage === r))
+    .map((r) => `<button type="button" class="bk-stage${r === curStage ? ' on' : ''}" data-bk-stage="${r}">${i18nSpan(STAGE_SHORT[r])}</button>`).join('');
+  const bracketHTML = koAll.length ? `<section class="bracket-wrap" aria-label="${S.attrs.bracket}">
+  <div class="sec-h"><h2>${i18nSpan(S.attrs.bracket)}</h2><span class="muted bk-hint"><a href="/standings">group standings →</a></span></div>
+  <div class="bracket-stages" role="group" aria-label="${S.attrs.jumpToStage}"><span class="bk-stages-lbl">Stage</span>${stageBtns}</div>
+  <div class="bracket-window" data-stage="${curStage}">
+    <div class="bracket halves">${groupColL}${leftCols}${finalCol}${rightCols}${groupColR}</div>
+    <div class="bracket-ctrls">
+      <button type="button" class="bk-btn" data-bk-zoom><i class="ti ti-arrows-maximize" aria-hidden="true"></i>${i18nSpan(S.pages.home.zoomOut)}</button>
+    </div>
+  </div>
+  <script type="module" src="/bracket-zoom.js?v=${VER}"></script>
+  <script type="module" src="/knockout-room.js?v=${VER}"></script>
+</section>` : '';
+  // Today strip: a quick visual summary of today's results / live games up top.
+  const todayET = etDate(new Date(now).toISOString());
+  const todayMs = matches.filter((m) => etDate(m.kickoff_utc) === todayET).sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc));
+  const tchip = (m) => {
+    // A4: same penalties-winner recovery as the bracket leaf (group-stage rows have no parent → '').
+    const w = koWin(m) || pensWinnerSide(m, koBy.get(parentOf[m.match_no]));
+    const nrow = (side) => `<div class="bbrow${w === side ? ' w' : ''}">${koSide(m[side], side)}</div>`;
+    const tag = m.group ? `Group ${m.group}` : (KO_LABEL[m.stage] || m.stage);
+    return `<a class="tchip" data-match-teams="${m.match_no}" href="${matchURL(m)}"><div class="bbh"><span>${esc(tag)}</span>${koCluster(m)}</div>${nrow('home')}${nrow('away')}</a>`;
+  };
+  const todayStrip = todayMs.length ? `<section class="today-strip"><div class="sec-h"><h2>${i18nSpan(S.chrome.nav.today)}</h2><span class="muted"${utcAttr(todayMs[0].kickoff_utc)}>${etDateLong(todayMs[0].kickoff_utc)}</span></div><div class="ts-row">${todayMs.map(tchip).join('')}</div></section>` : '';
+
+  // Homepage champion strip. Prefer the baked Final result; until live-state carries FT, fall
+  // back to the known MetLife result (Spain 1–0 in extra time vs Argentina).
+  const finalM = matches.find((m) => m.stage === 'final');
+  const finalSide = finalM ? (koWin(finalM) || (finalM.so ? (finalM.so.home > finalM.so.away ? 'home' : 'away') : '')) : '';
+  const champFromFinal = (finalSide && finalM[finalSide]?.team && finalM[finalSide === 'home' ? 'away' : 'home']?.team)
+    ? {
+        champ: finalM[finalSide].team,
+        runner: finalM[finalSide === 'home' ? 'away' : 'home'].team,
+        line: `${finalM.score.home}–${finalM.score.away}${finalM.so ? ` (${Math.max(finalM.so.home, finalM.so.away)}–${Math.min(finalM.so.home, finalM.so.away)} pens)` : finalM.aet ? ' in extra time' : ''}`,
+      }
+    : null;
+  const champDecl = champFromFinal || { champ: 'Spain', runner: 'Argentina', line: '1–0 in extra time' };
+  const champBanner = `<div id="champ-banner" role="status" data-i18n-skip style="background:linear-gradient(90deg,#7a102f,#c60b1e 45%,#7a102f);color:#fff;text-align:center;font:600 14px/1.85 var(--font-d,system-ui);letter-spacing:.04em;margin:0 0 1rem;padding:.4rem .75rem"><span aria-hidden="true">★</span> <strong>${esc(champDecl.champ)}</strong> are the 2026 World Champions — ${esc(champDecl.line)} vs ${esc(champDecl.runner)}</div>`;
+
   const body = `
-<section class="hero">
-  ${HERO_ART}
-  <p class="kicker">${heroKicker}</p>
-  <h1>Every match.<br>Every way to watch.<br><em>Free first.</em></h1>
-  <p class="sub">104 matches · 48 teams · 16 stadiums across the US, Mexico &amp; Canada · June 11 – July 19</p>
-  <p class="free-callout"><span class="chip ota">${ANT}FREE OTA</span> <span><strong>${bcastDoc.totals.FOX} matches are free over the air on FOX</strong> — and ${bcastDoc.totals.Telemundo} free in Spanish on Telemundo.</span> <span><a href="/watch">Antenna guide →</a> · <a href="/como-ver">en español →</a></span></p>
-</section>
+${champBanner}
+${todayStrip}
+${bracketHTML}
+<p class="free-callout solo"><span class="chip ota">${ANT}FREE OTA</span> <span><strong>${bcastDoc.totals.FOX} ${S.pages.home.freeCalloutFox}</strong> — and ${bcastDoc.totals.Telemundo} ${S.pages.home.freeCalloutTelemundo}</span> <span><a href="/watch">Antenna guide →</a> · <a href="/como-ver">en español →</a></span></p>
+${barTalkTeaser(DEV ? BARTALK_SAMPLE : null)}
 ${historyOK ? `<div class="todaygrid">
   <div class="firstday">${firstDay}</div>
   ${rail}
   <div class="restdays">${restDays}</div>
-</div>` : `${firstDay}\n${restDays}`}
-<p class="more"><a href="/schedule">Full 104-match schedule →</a></p>`;
+</div>` : `${firstDay}\n${restDays}\n<section class="ai-home"><h2>AI prediction league <a class="muted" href="/ai-league" style="font-weight:400;font-size:.7em">full league →</a></h2>
+<p class="muted" style="margin-top:-.4rem"${i18nBlock(S.pages.home.aiHomeSub)}>${S.pages.home.aiHomeSub}</p>
+<div data-ai-standings>${aiDoc ? aiStandings(aiDoc) : '<p class="muted">Loading the live league…</p>'}</div></section>`}
+<p class="more"><a href="/schedule">Full 104-match schedule →</a></p>
+<script type="module" src="/today.js?v=${VER}"></script>
+<script type="module" src="/bartalk-teaser.js?v=${VER}"></script>
+<script type="module" src="/bracket-connectors.js?v=${VER}"></script>`;
   writeFileSync('dist/index.html', page('Today', 'home', body, { live: true }));
 }
 
 // ---------- schedule: day rails (v2) ----------
 {
-  const STAGE_K = { group: (m) => `GRP ${m.group}`, r32: () => 'R32', r16: () => 'R16', qf: () => 'QF', sf: () => 'SF', third: () => '3RD', final: () => 'FINAL' };
-  const srow = (m) => {
-    const v = venues.get(m.venue_id);
-    const b = bcast.get(m.match_no);
-    const names = [m.home.team, m.away.team].filter(Boolean).join('|');
-    const { c1, c2 } = edgeColors(m.home.team, m.away.team);
-    const [tt, ap] = et(m.kickoff_utc).split(' ');
-    return `<a class="srow num" href="${matchURL(m)}" data-srow data-stage="${m.stage}" data-group="${m.group ?? ''}" data-teams="${esc(names)}" data-net="${b?.us_english ?? ''}" style="--c1:${c1};--c2:${c2}">
-<span class="s-time"><span class="local-time" data-utc="${m.kickoff_utc}">${tt}<small>${ap} ET</small></span></span>
-<span class="s-match">${m.home.team ? `${fchip(m.home.team)} ${esc(m.home.team)}` : `<span class="team tbd">${esc(m.home.placeholder_text)}</span>`} <span class="vs">vs</span> ${m.away.team ? `${fchip(m.away.team)} ${esc(m.away.team)}` : `<span class="team tbd">${esc(m.away.placeholder_text)}</span>`}</span>
-<span class="kicker s-kick">${STAGE_K[m.stage](m)}</span>
-<span class="s-venue">${esc(v.common_name)}, ${esc(v.city)}</span>
-<span class="s-tv">${b ? `${b.us_english === 'FOX' ? `<span class="chip ota">${ANT}FOX</span>` : `<span class="chip">${b.us_english}</span>`}${b.us_spanish === 'Telemundo' ? `<span class="chip ota">${ANT}TEL</span>` : `<span class="chip">${b.us_spanish}</span>`}` : '<span class="chip">TBD</span>'}</span>
-<span class="s-go" aria-hidden="true">→</span>
-</a>`;
-  };
+  // STAGE_K + srow: built by makeRenderers (./lib/render.mjs), destructured above.
   const days = [...new Set(matches.slice().sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc)).map((m) => etDate(m.kickoff_utc)))];
   const daySections = days.map((d) => {
     const ms = matches.filter((m) => etDate(m.kickoff_utc) === d).sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc));
@@ -575,24 +899,24 @@ ${historyOK ? `<div class="todaygrid">
     const usa = ms.some((m) => m.home.team === 'USA' || m.away.team === 'USA');
     const meta = `${ms.length} ${ms.length === 1 ? 'MATCH' : 'MATCHES'}${free ? ` · ${free === ms.length ? 'ALL' : free} FREE OTA` : ''}`;
     return `<section class="daysec" data-day="${esc(d)}">
-<div class="dayrail"><div class="d">${dow}<small>${md}${usa ? ' · USA PLAYS' : ''}</small></div><div class="rulebar"></div><div class="meta">${meta}</div></div>
+<div class="dayrail"><div class="d"${utcAttr(ms[0].kickoff_utc)}>${md}<small>${dow}${usa ? ' · USA PLAYS' : ''}</small></div><div class="rulebar"></div><div class="meta">${meta}</div></div>
 <div class="slist">
 ${ms.map(srow).join('\n')}
 </div></section>`;
   }).join('\n');
   const body = `
-<section class="hero small"><h1>Schedule — all 104 matches</h1></section>
+<section class="hero small"><h1>${i18nSpan(S.pages.schedule.h1)}</h1></section>
 <div class="filters" id="filters">
-  <input type="search" id="f-text" placeholder="Search team…" list="teamlist" aria-label="Search team">
+  <input type="search" id="f-text" placeholder="${S.attrs.searchTeamPlaceholder}" list="teamlist" aria-label="${S.attrs.searchTeam}">
   <datalist id="teamlist">${teamsData.map((t) => `<option>${esc(t.name)}</option>`).join('')}</datalist>
-  <select id="f-stage" aria-label="Stage"><option value="">All stages</option>${Object.entries(STAGE).map(([k, vl]) => `<option value="${k}">${vl}</option>`).join('')}</select>
-  <select id="f-group" aria-label="Group"><option value="">All groups</option>${'ABCDEFGHIJKL'.split('').map((g) => `<option>${g}</option>`).join('')}</select>
-  <select id="f-net" aria-label="US channel"><option value="">Any US channel</option><option>FOX</option><option>FS1</option></select>
+  <select id="f-stage" aria-label="${S.attrs.stageFilter}"><option value="">${S.attrs.allStages}</option>${Object.entries(STAGE).map(([k, vl]) => `<option value="${k}">${vl}</option>`).join('')}</select>
+  <select id="f-group" aria-label="${S.attrs.groupFilter}"><option value="">${S.attrs.allGroups}</option>${'ABCDEFGHIJKL'.split('').map((g) => `<option>${g}</option>`).join('')}</select>
+  <select id="f-net" aria-label="${S.attrs.usChannel}"><option value="">${S.attrs.anyUsChannel}</option><option>FOX</option><option>FS1</option></select>
   <span class="chip count num" id="f-count" aria-live="polite"></span>
 </div>
 ${daySections}
-<p class="muted"><span class="chip ota">${ANT}FREE</span> = free over the air with an antenna. Times adapt to your timezone. Knockout slots show official placeholders until decided — never predictions. <a href="/ics/all.ics">Add all matches to your calendar (.ics)</a></p>`;
-  writeFileSync('dist/schedule.html', page('Schedule', 'schedule', body, { path: '/schedule' }));
+<p class="muted"><span class="chip ota">${ANT}FREE</span> <span${i18nBlock(S.pages.schedule.footnote)}>${S.pages.schedule.footnote}</span></p>`;
+  writeFileSync('dist/schedule.html', page('Schedule', 'schedule', body, { path: '/schedule', live: true }));
 }
 
 // ---------- 104 match pages ----------
@@ -603,46 +927,93 @@ for (const m of matches) {
   const title = m.home.team && m.away.team ? `${m.home.team} vs ${m.away.team}` : `Match ${m.match_no}: ${m.home.team ?? m.home.placeholder_text} vs ${m.away.team ?? m.away.placeholder_text}`;
   const tubi = m.match_no === 1 || m.match_no === 4;
   const free = [];
-  if (b?.us_english === 'FOX') free.push('<strong>FOX</strong> — free over the air with any TV antenna');
-  if (b?.us_spanish === 'Telemundo') free.push('<strong>Telemundo</strong> — free over the air, en español');
-  if (tubi) free.push('<strong>Tubi</strong> — free stream, live in 4K, no account (<a href="https://corporate.tubitv.com/press/tubi-launches-2026-fifa-world-cup-fox-hub/" rel="noopener">announcement</a>)');
+  if (b?.us_english === 'FOX') free.push(S.pages.match.freeFox);
+  if (b?.us_spanish === 'Telemundo') free.push(S.pages.match.freeTelemundo);
+  if (tubi) free.push(S.pages.match.freeTubi);
+  // Phase 1 (items 1.3 + 1.6, the design plan1): key-moment chips + anchor strip,
+  // baked from data the loop already has in hand. Anchor links bake ONLY for sections with baked
+  // content (how-to-watch renders on every page, so it is always on). NO bar-talk chip: the Bar Talk
+  // sections are hydration shells, hidden until an episode arrives, so a baked chip would be dead on
+  // initial nav everywhere; a hash-reveal in the hydrator is the Phase-2/3 residual.
+  const md = detailsByNo.get(m.match_no);
+  // Phase 2 (2.5b): the key-moments strip is now a live-hydration shell too. Compute the FIFA codes +
+  // baked strip once; the shell (below) carries them as data-attrs so the hydrator can re-render chips
+  // from the live match-events feed via the same keyMomentsHTML renderer. `hidden` until a chip exists.
+  const kmHomeCode = m.home.team ? fifaOf(m.home.team) : '';
+  const kmAwayCode = m.away.team ? fifaOf(m.away.team) : '';
+  const kmBaked = keyMomentsHTML(md?.events, { home: kmHomeCode, away: kmAwayCode });
+  const previewStory = ['scheduled', 'in_play'].includes(m.status) ? storyHTML('match_preview', String(m.match_no), 'Match preview') : '';
+  const recapStory = m.status === 'finished_confirmed' ? storyHTML('match_recap', String(m.match_no), 'Match report') : '';
+  const storySec = matchStoryHTML(m); // the timeline section owns id="story"
+  const lineupsSec = lineupsHTML(m);
+  const anchors = [
+    // Phase 2: the story section is now ALWAYS baked (a live-hydration shell), so gate its anchor on
+    // BAKED events — not on storySec presence — so no chip ever links to a story that's hidden pre-JS.
+    ...(md?.events?.length ? [{ href: '#story', label: 'story' }] : []),
+    ...(lineupsSec ? [{ href: '#lineups', label: 'lineups' }] : []),
+    // Phase 2.5: match stats is a live hydration shell (never known at bake time, unlike lineups),
+    // so its anchor chip bakes unconditionally alongside "how to watch" — same reasoning the cert
+    // fix wave already applied to #watch (: don't gate a chip on baked content for a section
+    // that fills in via live fetch). Suppressing it entirely, pre-hydration, was considered but
+    // rejected: the section itself renders a "not yet available" empty-state rather than hiding, so
+    // its anchor should be consistently present too — matching #watch's own always-on precedent.
+    { href: '#stats', label: 'match stats' },
+    { href: '#watch', label: 'how to watch' },
+    ...(aiByMatch.has(m.match_no) ? [{ href: '#ai', label: 'AI corner' }] : []),
+  ];
   const clTeam = (s, alignEnd = false) => s.team
     ? `${alignEnd ? '' : `${fchip(s.team, 'lg')} `}<a class="team" href="/teams/${slugOf(s.team)}">${fifaOf(s.team)}</a>${alignEnd ? ` ${fchip(s.team, 'lg')}` : ''}`
     : `<span class="team tbd" style="font:600 14px var(--font-d)">${esc(s.placeholder_text)}</span>`;
   const body = `
 <p class="crumb"><a href="/schedule">← Schedule</a></p>
 <section class="hero small">
-<p class="kicker">MATCH ${m.match_no} · ${m.stage === 'group' ? `GROUP ${m.group}` : STAGE[m.stage].toUpperCase()} · ${etDateLong(m.kickoff_utc).toUpperCase()}</p>
-<h1 class="matchup">${sideHTML(m.home)} <span class="vs">vs</span> ${sideHTML(m.away)}</h1>
+<p class="kicker"${utcAttr(m.kickoff_utc)}>${i18nSpan(S.stage.match)} ${m.match_no} · ${m.stage === 'group' ? `${i18nSpan(S.stage.groupUpper)} ${m.group}` : STAGE[m.stage].toUpperCase()} · ${etDateLong(m.kickoff_utc).toUpperCase()}</p>
+<h1 class="matchup" data-match-teams="${m.match_no}">${sideHTML(m.home, true, 'home')} <span class="vs">vs</span> ${sideHTML(m.away, true, 'away')}</h1>
 </section>
 <div class="cluster num">
   <div class="cl-row">
     <div class="cl-team">${clTeam(m.home)}</div>
-    <div class="cl-mid" data-match="${m.match_no}"${m.home.team && m.away.team ? ` data-home-team="${esc(m.home.team)}" data-away-team="${esc(m.away.team)}" data-home-colors="${confettiColors(m.home.team).join(',')}" data-away-colors="${confettiColors(m.away.team).join(',')}"` : ''}>${scoreHTML(m)}</div>
+    <div class="cl-mid" data-i18n-skip data-match="${m.match_no}"${m.home.team && m.away.team ? ` data-home-team="${esc(m.home.team)}" data-away-team="${esc(m.away.team)}" data-home-colors="${confettiColors(m.home.team).join(',')}" data-away-colors="${confettiColors(m.away.team).join(',')}"` : ''}>${scoreHTML(m)}</div>
     <div class="cl-team">${clTeam(m.away, true)}</div>
   </div>
-  <div class="cl-bar">${m.status === 'scheduled' ? `KICKOFF ${etDateLong(m.kickoff_utc).toUpperCase()} · ${et(m.kickoff_utc)} ET · ${localT(m.kickoff_utc, v.tz).toUpperCase()} LOCAL` : `STATUS UPDATES HONESTLY — SEE BANNER IF STALE`} · ${esc(v.common_name).toUpperCase()}, ${esc(v.city).toUpperCase()}</div>
+  <div class="cl-bar" data-i18n-skip>${m.status === 'scheduled' ? `KICKOFF ${etDateLong(m.kickoff_utc).toUpperCase()} · ${et(m.kickoff_utc)} ET · ${localT(m.kickoff_utc, v.tz).toUpperCase()} LOCAL` : m.status === 'in_play' ? 'LIVE' : m.status === 'postponed' ? 'POSTPONED' : `FULL TIME${m.so ? ' — DECIDED ON PENALTIES' : m.aet ? ' — AFTER EXTRA TIME' : ''}`} · ${esc(v.common_name).toUpperCase()}, ${esc(v.city).toUpperCase()}</div>
 </div>
+<div class="kmoments-live" data-kmoments="${m.match_no}" data-home-code="${esc(kmHomeCode)}" data-away-code="${esc(kmAwayCode)}"${kmBaked ? '' : ' hidden'}>${kmBaked}</div>
+${anchorStripHTML(anchors)}
 ${ledgerHTML(ledgerBy('match', m.match_no), `Match ${m.match_no} — old news`)}
 <p class="meta">${esc(v.common_name)} (${esc(v.fifa_name)}), ${esc(v.locality)} · <span class="local-time" data-utc="${m.kickoff_utc}">${et(m.kickoff_utc)} ET</span> <span class="muted">(${localT(m.kickoff_utc, v.tz)} local)</span></p>
-<section class="watchbox"><h2>How to watch (US)</h2>
-${free.length ? `<p class="free-callout"><span class="chip ota">${ANT}FREE</span> <span>${free.join(' · ')}</span></p>` : ''}
+${storySec}
+<div data-preview-slot="${m.match_no}">${previewStory}</div>
+<div data-recap-slot="${m.match_no}">${recapStory}</div>
+${lineupsSec}
+<section class="mst" id="stats" data-match-stats="${m.match_no}"><h2>${i18nSpan(S.pages.match.matchStats)} <span class="via-espn">${i18nSpan(S.pages.match.via)} ESPN</span></h2>
+<div class="mst-rows"></div>
+<p class="mst-empty muted"${i18nBlock(S.pages.match.statsEmpty)}>${S.pages.match.statsEmpty}</p>
+<p class="mst-asof muted"></p></section>
+<div class="match-feeds">
+<section class="commentary" data-commentary="${m.match_no}" hidden><h2>${i18nSpan(S.pages.match.blowByBlow)} <span class="via-espn">${i18nSpan(S.pages.match.via)} ESPN</span></h2><ol class="cmt-list" aria-live="polite"></ol><p class="cmt-asof muted"></p></section>
+<section class="watchalong" data-watchalong="${m.match_no}" hidden><h2>${i18nSpan(S.pages.match.watchAlongHeading)} <span class="via-espn via-ai">AI ${i18nSpan(S.pages.match.aiComedy)}</span></h2><ol class="wa-list" aria-live="polite"></ol><p class="wa-asof muted"></p><p class="muted wa-note"${i18nBlock(S.pages.match.watchAlongNote)}>${S.pages.match.watchAlongNote}</p></section>
+</div>
+<section class="watchbox" id="watch"><h2>${i18nSpan(S.pages.match.howToWatchUs)}</h2>
+<details class="watch-more">
+<summary>${free.length ? `<span class="chip ota">${ANT}FREE</span> <span>${free.join(' · ')}</span>` : `<span class="muted"${i18nBlock(S.pages.match.noFree)}>${S.pages.match.noFree}</span>`}</summary>
 <table class="watch">
 <tr><th>English TV</th><td><strong>${b?.us_english ?? 'TBD'}</strong>${b?.us_english === 'FS1' ? ' — cable only; no free English broadcast. Watch options (FOX One $19.99/mo · 4K · 7-day trial, or a live-TV trial): <a href="https://www.foxsports.com/live" rel="noopener">foxsports.com/live</a>' : b?.us_english === 'FOX' ? ' — free over the air with an antenna; also on every live-TV service' : ''} · <a href="https://www.foxsports.com/soccer/fifa-world-cup/schedule" rel="noopener">FOX schedule</a></td></tr>
 <tr><th>Spanish TV</th><td><strong>${b?.us_spanish ?? 'TBD'}</strong>${b?.us_spanish === 'Telemundo' ? ' — free over the air with an antenna' : b?.us_spanish === 'Universo' ? ' — cable only' : ''} · stream all 104 in Spanish on <a href="https://www.peacocktv.com/" rel="noopener">Peacock</a> ($10.99/mo)</td></tr>
 <tr><th>Streaming</th><td><a href="https://www.peacocktv.com/" rel="noopener">Peacock</a> (Spanish, all 104, $10.99/mo) · <a href="https://www.foxsports.com/live" rel="noopener">FOX One</a> (English, 4K, $19.99/mo, 7-day trial)${tubi ? ' · <strong><a href="https://tubitv.com/" rel="noopener">Tubi</a> — free 4K</strong>' : ''} · <a href="/sources#streaming">pricing sources</a></td></tr>
 <tr><th>Canada / México</th><td>Canada: TSN/RDS (all 104), CTV free for 44 (QFs onward except the 3rd-place match) · México: 32 free en TV abierta, ViX (all 104) — <a href="/watch#ca-mx">details</a></td></tr>
 </table>
-<p class="muted">Channel verified ${b?.verified_at ?? ''} — <a href="${b?.source_url ?? '/sources'}" rel="noopener">source</a>.</p></section>
+<p class="muted">Channel verified ${b?.verified_at ?? ''} — <a href="${b?.source_url ?? '/sources'}" rel="noopener">source</a>.</p>
+</details></section>
 ${clerkPub && m.home.team && m.away.team && m.status === 'scheduled' ? `<section><h2>Predict this match</h2><div id="predict-box" data-match="${m.match_no}" data-kickoff="${m.kickoff_utc}" data-pk="${clerkPub.publishable_key}"></div></section>` : ''}
-${m.status === 'finished_confirmed' ? storyHTML('match_recap', String(m.match_no), 'Match report') : ['scheduled', 'in_play'].includes(m.status) ? storyHTML('match_preview', String(m.match_no), 'Match preview') : ''}
-${aiByMatch.has(m.match_no) ? `<section><h2>AI prediction league</h2><table class="watch">
-<tr><th>AI</th><th>Pick</th><th>Why</th></tr>
-${aiByMatch.get(m.match_no).sort((a, b) => AI_ORDER.indexOf(a.provider) - AI_ORDER.indexOf(b.provider)).map((r) => `<tr><th>${aiLabel(r.provider)}</th><td style="white-space:nowrap"><strong>${r.home}–${r.away}</strong></td><td>${esc(r.rationale ?? '')}</td></tr>`).join('\n')}
-</table>
-<p class="muted">AI-generated picks, placed before kickoff and never changed — a virtual bragging-rights league, no real money. An AI that missed a match scores zero; bets are never backfilled. <a href="/ai-league">League standings →</a></p></section>` : ''}
-${m.stage === 'group' ? `<section><h2>Group ${m.group}</h2><p>${teamsData.filter((t) => t.group === m.group).map((t) => teamLink(t.name)).join(' · ')} — <a href="/groups#group-${m.group}">table</a></p></section>` : ''}
-<p class="muted footnote">Provenance: schedule from openfootball ⨯ fixturedownload (cross-checked${[29, 31].includes(m.match_no) ? '; kickoff resolved 2-of-3 with Wikipedia and confirmed against FIFA — <a href="/sources#discrepancies">details</a>' : ''}); kickoff in UTC: <code>${m.kickoff_utc}</code>. Add to calendar: <a href="/ics/all.ics">.ics</a></p>`;
+${aiByMatch.has(m.match_no) ? `<section id="ai"><h2>AI prediction league</h2>
+${aiPredHTML(m)}
+<p class="muted"${i18nBlock(S.pages.match.aiPicksNote)}>${S.pages.match.aiPicksNote}</p></section>` : ''}
+<section class="bartalk-ep bartalk-pre" data-bartalk-pre="${m.match_no}" hidden><h2>${i18nSpan(S.pages.match.barTalkPre)} <span class="via-espn via-ai">AI ${i18nSpan(S.pages.match.aiComedy)}</span> <a class="bt-ep-more muted" href="/bar-talk">${i18nSpan(S.pages.match.allEpisodes)}</a></h2><div class="bt-ep-body"></div><p class="muted bt-ep-note"${i18nBlock(S.pages.match.barTalkPreNote)}>${S.pages.match.barTalkPreNote}</p></section>
+<section class="bartalk-ep" data-bartalk="${m.match_no}" id="bartalk" hidden><h2>Bar Talk <span class="via-espn via-ai">AI ${i18nSpan(S.pages.match.aiComedy)}</span> <a class="bt-ep-more muted" href="/bar-talk">${i18nSpan(S.pages.match.allEpisodes)}</a></h2><div class="bt-ep-body"></div><p class="muted bt-ep-note"${i18nBlock(S.pages.match.barTalkNote)}>${S.pages.match.barTalkNote}</p></section>
+${m.stage === 'group' ? `<section><h2>${i18nSpan(S.attrs.groupFilter)} ${m.group}</h2><p>${teamsData.filter((t) => t.group === m.group).map((t) => teamLink(t.name)).join(' · ')} — <a href="/groups#group-${m.group}">table</a></p></section>` : ''}
+<p class="muted footnote">Provenance: schedule from openfootball ⨯ fixturedownload (cross-checked${[29, 31].includes(m.match_no) ? '; kickoff resolved 2-of-3 with Wikipedia and confirmed against FIFA — <a href="/sources#discrepancies">details</a>' : ''}); kickoff in UTC: <code>${m.kickoff_utc}</code>. Add to calendar: <a href="/ics/all.ics">.ics</a></p>
+<script type="module" src="/match.js?v=${VER}"></script>`;
   const ogPath = m.home.team && teamColors[teams.get(m.home.team)?.slug] ? `/brand/og/${teams.get(m.home.team).slug}-og.png` : '/brand/og/og-default.png';
   writeFileSync(`dist/matches/${m.match_no}.html`, page(title, 'schedule', body, { og: ogPath, path: `/matches/${m.match_no}`, live: true, confetti: true, desc: `${title} — ${etDateLong(m.kickoff_utc)}, ${v.common_name}. How to watch free in the US.` }));
 }
@@ -650,28 +1021,28 @@ ${m.stage === 'group' ? `<section><h2>Group ${m.group}</h2><p>${teamsData.filter
 // ---------- teams index + 48 team pages ----------
 mkdirSync('dist/teams', { recursive: true });
 
-// Country banner: shared frame — ink field, outlined FIFA code,
+// Country banner (cert-approved system): shared frame — ink field, outlined FIFA code,
 // kit baseline — country layer = the team's pinned Twemoji flag at a broadcast crop.
-// Per-flag transforms tuned for the eight tricky flags; centered safe crop otherwise.
+// Per-flag transforms tuned for the certified eight; centered safe crop otherwise.
 const FLAG_TF = {
   'czechia': 'translate(312 -120) scale(10)', 'mexico': 'translate(312 -84) scale(8)',
   'south-africa': 'translate(312 -102) scale(9)', 'bosnia-and-herzegovina': 'translate(303 -102) scale(9)',
   'qatar': 'translate(240 -120) scale(10)', 'switzerland': 'translate(254.5 -147) scale(11.5)',
 };
-const TBC = { // banner-code color: hand-picked per flag; default = lighter of the kit pair
+const TBC = { // banner-code color: cert-audited picks; default = lighter of the kit pair
   'czechia': '#d7141a', 'korea-republic': '#c60c30', 'mexico': '#a6d388', 'south-africa': '#ffb611',
   'bosnia-and-herzegovina': '#fbd116', 'canada': '#d52b1e', 'qatar': '#eeeeee', 'switzerland': '#d32d27',
 };
 const lum = (hex) => { const n = parseInt(hex.slice(1), 16); return 0.2126 * (n >> 16 & 255) + 0.7152 * (n >> 8 & 255) + 0.0722 * (n & 255); };
 const relLum = (hex) => { const n = parseInt(hex.slice(1), 16); const f = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; }; return 0.2126 * f(n >> 16 & 255) + 0.7152 * f(n >> 8 & 255) + 0.0722 * f(n & 255); };
 const cRatio = (a, b) => { const x = relLum(a), y = relLum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
-const visBase = (hex) => hex?.toLowerCase() === '#eeeeee' ? '#d7dadd' : hex; // white baselines -> visible neutral
+const visBase = (hex) => hex?.toLowerCase() === '#eeeeee' ? '#d7dadd' : hex; // cert M2: white baselines -> visible neutral
 const bannerSVG = (t) => {
   const ui = teamColors[t.slug]?.ui;
   if (!ui) return '';
   const tf = FLAG_TF[t.slug] ?? 'translate(294 -102) scale(9)';
   let tbc = TBC[t.slug] ?? (lum(ui.primary) >= lum(ui.secondary) ? ui.primary : ui.secondary);
-  if (cRatio(tbc, '#11151d') < 3) tbc = ui.onDark && cRatio(ui.onDark, '#11151d') >= 3 ? ui.onDark : '#eeeeee'; // contrast floor vs ink field
+  if (cRatio(tbc, '#11151d') < 3) tbc = ui.onDark && cRatio(ui.onDark, '#11151d') >= 3 ? ui.onDark : '#eeeeee'; // cert M4 floor
   return `<svg class="banner" viewBox="0 0 600 120" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="--tb1:${ui.primary};--tbc:${visBase(tbc) === '#d7dadd' ? '#eeeeee' : tbc}">
 <clipPath id="bc-${t.slug}"><polygon points="336,0 600,0 600,120 312,120"/></clipPath>
 <rect width="600" height="120" fill="var(--banner-ink,#11151d)"/>
@@ -684,9 +1055,9 @@ const bannerSVG = (t) => {
 {
   const groups = [...new Set(teamsData.map((t) => t.group))];
   const body = `
-<section class="hero small"><h1>Teams</h1>
-<p class="sub">48 teams, 12 groups. Every banner is the country's own flag — pinned Twemoji artwork at a broadcast crop.</p></section>
-${groups.map((g) => `<p class="kicker" style="margin:1.4rem 0 .6rem" id="group-${g}">GROUP ${g}</p><div class="tgrid">${teamsData.filter((t) => t.group === g).map((t) => {
+<section class="hero small"><h1>${i18nSpan(S.chrome.nav.teams)}</h1>
+<p class="sub"${i18nBlock(S.pages.teams.indexSub)}>${S.pages.teams.indexSub}</p></section>
+${groups.map((g) => `<p class="kicker" style="margin:1.4rem 0 .6rem" id="group-${g}">${i18nSpan(S.stage.groupUpper)} ${g}</p><div class="tgrid">${teamsData.filter((t) => t.group === g).map((t) => {
     const r = rosterByTeam.get(t.name);
     return `<a class="tcard" href="/teams/${t.slug}">${bannerSVG(t)}<div class="t-body">${fchip(t.name, 'lg')}<div><b>${esc(t.name)}</b><span>${esc(r?.coach?.name ?? 'Coach TBD')} · ${r?.players.length ?? '–'} players</span></div></div></a>`;
   }).join('')}</div>`).join('\n')}`;
@@ -703,7 +1074,7 @@ for (const t of teamsData) {
   const firstFix = fixtures[0]; // reuse the already-computed sorted fixtures (was a duplicate filter+sort per team)
   const nameUp = t.name.toUpperCase();
   const heroFS = nameUp.length > 16 ? 52 : nameUp.length > 10 ? 68 : 88;
-  const heroSVG = `<svg class="team-hero2" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc(t.name)} — Group ${t.group} team header">
+  const heroSVG = `<svg class="team-hero2" viewBox="0 0 1200 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${esc(t.name)} — Group ${t.group} ${S.attrs.teamHeaderSuffix}">
 <clipPath id="hc-${t.slug}"><polygon points="620,0 1200,0 1200,260 560,260"/></clipPath>
 <rect width="1200" height="260" fill="var(--banner-ink,#11151d)"/>
 <g clip-path="url(#hc-${t.slug})"><rect x="560" y="0" width="640" height="260" fill="#eee"/><use href="${SPRITE}#f-${t.slug}" width="36" height="36" transform="translate(556 -194) scale(18)"/></g>
@@ -721,26 +1092,26 @@ for (const t of teamsData) {
 ${heroSVG}
 <h1 class="vh">${esc(t.name)}</h1>
 <p class="meta">Group ${t.group} · Head coach: ${coachImg ? face(coachImg, r.coach.name) : ''} <strong>${nameLinkHTML('coach', r?.coach?.name ?? '', esc(r?.coach?.name ?? 'TBD'))}</strong> ${attr(coachImg)} · FIFA code <strong class="num">${fm.fifa}</strong></p>
-${teamProse.has(t.name) ? `<section class="prose"><h2>About this team</h2>${teamProse.get(t.name).text.split(/\n\n+/).map((par) => `<p>${esc(par)}</p>`).join('')}${proseFooter(teamProse.get(t.name))}</section>` : ''}
+${teamProse.has(t.name) ? `<section class="prose"><h2>${i18nSpan(S.pages.teams.aboutThisTeam)}</h2>${teamProse.get(t.name).text.split(/\n\n+/).map((par) => `<p>${esc(par)}</p>`).join('')}${proseFooter(teamProse.get(t.name))}</section>` : ''}
 ${storyHTML('team_outlook', t.name, 'Tournament outlook')}
-<section><h2>Fixtures</h2><ul class="fixtures">${fixtures.map((m) => {
+<section><h2>${i18nSpan(S.pages.teams.fixtures)}</h2><ul class="fixtures">${fixtures.map((m) => {
     const v = venues.get(m.venue_id);
-    return `<li><a class="muted" href="${matchURL(m)}">${etDate(m.kickoff_utc)}</a> — ${sideHTML(m.home, m.home.team !== t.name)} vs ${sideHTML(m.away, m.away.team !== t.name)} · <span class="local-time" data-utc="${m.kickoff_utc}">${et(m.kickoff_utc)} ET</span> · ${esc(v.common_name)} ${chip(m)}</li>`;
+    return `<li><a class="muted" href="${matchURL(m)}">${etDate(m.kickoff_utc)}</a> — ${sideHTML(m.home, m.home.team !== t.name)} vs ${sideHTML(m.away, m.away.team !== t.name)} · <span data-i18n-skip data-match="${m.match_no}">${m.score && m.status !== 'scheduled' ? scoreHTML(m) : `<span class="local-time" data-utc="${m.kickoff_utc}">${et(m.kickoff_utc)} ET</span>`}</span> · ${esc(v.common_name)} ${chip(m)}</li>`;
   }).join('')}</ul>
-<p class="muted">Knockout fixtures appear here when qualification is decided. <a href="/ics/${t.slug}.ics">Add ${esc(t.name)}'s matches to your calendar</a></p></section>
+<p class="muted"><span${i18nBlock(S.pages.teams.knockoutNote)}>${S.pages.teams.knockoutNote}</span> <a href="/ics/${t.slug}.ics">Add ${esc(t.name)}'s matches to your calendar</a></p></section>
 ${ledgerHTML(ledgerBy('team', t.slug), `${t.name} — old news`)}
-<section><h2>Squad — ${r?.players.length ?? 0} players</h2>
+<section><h2>${i18nSpan(S.pages.teams.squad)} — ${r?.players.length ?? 0} ${i18nSpan(S.pages.teams.players)}</h2>
 <div class="tablewrap"><table class="roster"><thead><tr><th>#</th><th>Pos</th><th>Player</th><th>Born</th><th>Caps</th><th>Goals</th><th>Club</th></tr></thead><tbody>
 ${(r?.players ?? []).slice().sort((a, b) => a.no - b.no).map((p) => {
     const img = imgByName.get(`player:${p.name}`);
     return `<tr><td>${p.no}</td><td>${p.pos}</td><td class="player">${face(img, p.name)} ${nameLinkHTML('player', p.name, esc(p.name))}${p.captain ? ' <span class="cap">(c)</span>' : ''} ${attr(img)}</td><td>${p.dob}</td><td>${p.caps}</td><td>${p.goals}</td><td>${esc(p.club)}</td></tr>`;
   }).join('\n')}
 </tbody></table></div>
-<p class="muted">Roster: Wikipedia squads page, <a href="${rosters.source.permalink}" rel="noopener">pinned revision ${rosters.source.revid}</a> (<a href="${rosters.source.license_url}" rel="noopener">CC BY-SA 4.0</a>). Photos: Wikimedia Commons — hover ⓘ for author &amp; license; players without a free-licensed photo get initials, never a near-match.</p></section>`;
-  // teamscope rule: decorative art = kit tokens (--k1/--k2, theme-invariant);
+<p class="muted">Roster: Wikipedia squads page, <a href="${rosters.source.permalink}" rel="noopener">pinned revision ${rosters.source.revid}</a> (<a href="${rosters.source.license_url}" rel="noopener">CC BY-SA 4.0</a>). <span${i18nBlock(S.pages.teams.photosNote)}>${S.pages.teams.photosNote}</span></p></section>`;
+  // teamscope doctrine (cert): decorative art = kit tokens (--k1/--k2, theme-invariant);
   // text accents/rings = audited ui.onLight/onDark per theme (--t1-l/--t1-d).
   const t1l0 = tcol?.onLight ?? tcol?.primary, t1d0 = tcol?.onDark ?? tcol?.primary;
-  const t1l = tcol && cRatio(t1l0, '#f6f7f4') >= 4.5 ? t1l0 : '#0b7c38';   // WCAG AA contrast floor
+  const t1l = tcol && cRatio(t1l0, '#f6f7f4') >= 4.5 ? t1l0 : '#0b7c38';   // cert M5 AA floor
   const t1d = tcol && cRatio(t1d0, '#1a1f2b') >= 4.5 ? t1d0 : '#2ee06f';
   const wrapped = tcol
     ? `<div class="teamscope" style="--k1:${tcol.primary};--k2:${visBase(tcol.secondary)};--t1-l:${t1l};--t1-d:${t1d};--t2-l:${tcol.secondary};--on-t1-l:#fff;--on-t1-d:#0b0e14">${body}</div>`
@@ -748,15 +1119,27 @@ ${(r?.players ?? []).slice().sort((a, b) => a.no - b.no).map((p) => {
   writeFileSync(`dist/teams/${t.slug}.html`, page(`${t.name} — squad & fixtures`, 'teams', wrapped, { og: `/brand/og/${t.slug}-og.png`, path: `/teams/${t.slug}` }));
 }
 
-// ---------- groups (tables from football-data's own standings, never local tiebreaker math) ----------
+// ---------- groups (tables from ESPN's own standings, never local tiebreaker math) ----------
 {
+  // First-paint standings come from the last code-deploy bake (liveState); site/groups.js
+  // then overlays the LIVE table from /api/v1/standings (D1, fed by the poll worker) so
+  // standings update with NO rebuild. standingsCard is the SAME shared renderer the browser
+  // uses (./lib/render.mjs) — one renderer, two runtimes. fdNorm moved there too.
+  // ESPN standings snapshot from the bake (liveState.standings), shape [{group:letter, payload:[rows]}]
+  // — IDENTICAL to /api/v1/standings, so the baked first-paint and the groups.js hydration consume
+  // the same ESPN data (honest "FROM ESPN" label on both paths).
   const fdStandings = liveState?.standings ?? null;
-  const fdNorm = new Map([['South Korea', 'Korea Republic'], ['Czech Republic', 'Czechia'], ['Turkey', 'Türkiye'], ['Ivory Coast', "Côte d'Ivoire"], ['Iran', 'IR Iran'], ['Cape Verde', 'Cabo Verde'], ['DR Congo', 'Congo DR'], ['United States', 'USA'], ['Bosnia-Herzegovina', 'Bosnia and Herzegovina'], ['Curacao', 'Curaçao']]);
   const groups = [...new Set(teamsData.map((t) => t.group))];
   const fdTableFor = (g) => {
-    const fdG = fdStandings?.find((s) => (s.group ?? '').endsWith(`_${g}`) || s.group === `Group ${g}`);
-    return fdG?.table?.length && fdG.table.some((r) => r.playedGames > 0) ? fdG.table : null;
+    const grp = fdStandings?.find((s) => s.group === g);
+    const table = grp?.payload;
+    return Array.isArray(table) && table.some((r) => r.playedGames > 0) ? table : null;
   };
+  const stAsOf = liveState?.standings_at
+    ? new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }).format(new Date(String(liveState.standings_at).replace(' ', 'T') + 'Z')) + ' ET'
+    : '';
+  const tables = new Map(groups.map((g) => [g, fdTableFor(g)]));
+  const anyTable = [...tables.values()].some(Boolean);
   const drawCard = (g) => {
     const gTeams = teamsData.filter((t) => t.group === g);
     const fx = matches.filter((m) => m.stage === 'group' && m.group === g).sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc));
@@ -765,54 +1148,85 @@ ${(r?.players ?? []).slice().sort((a, b) => a.no - b.no).map((p) => {
     return `<div class="gcard">
 <div class="g-head"><span class="g-letter" aria-hidden="true">${g}</span><div>
 <div class="flags">${gTeams.map((t) => fchip(t.name, 'lg')).join(' ')}</div>
-<p class="kicker" style="margin-top:.45rem">FIRST MATCH · <b>${first ? etDate(first.kickoff_utc).toUpperCase() : 'TBD'}</b>${v ? ` · ${esc(v.common_name).toUpperCase()}` : ''}</p>
+<p class="kicker" style="margin-top:.45rem">${i18nSpan(S.pages.standings.firstMatch)} · <b${first ? utcAttr(first.kickoff_utc) : ''}>${first ? etDate(first.kickoff_utc).toUpperCase() : 'TBD'}</b>${v ? ` · ${esc(v.common_name).toUpperCase()}` : ''}</p>
 </div></div>
 <ul class="g-fixtures num">
-${fx.map((m) => `<li><span class="when">${etDate(m.kickoff_utc).toUpperCase()}</span><span style="flex:1">${fchip(m.home.team)} <a class="team" href="${matchURL(m)}">${esc(m.home.team)} — ${esc(m.away.team)}</a> ${fchip(m.away.team)}</span><span class="muted num">${et(m.kickoff_utc)} ET</span></li>`).join('\n')}
+${fx.map((m) => `<li><span class="when"${utcAttr(m.kickoff_utc)}>${etDate(m.kickoff_utc).toUpperCase()}</span><span style="flex:1">${fchip(m.home.team)} <a class="team" href="${matchURL(m)}">${esc(m.home.team)} — ${esc(m.away.team)}</a> ${fchip(m.away.team)}</span><span class="num g-res" data-match="${m.match_no}">${scoreHTML(m)}</span></li>`).join('\n')}
 </ul>
 <p class="g-foot">${gTeams.map((t) => teamLink(t.name)).join(' · ')}</p>
 </div>`;
   };
-  const standingsCard = (g, table) => `<div class="gcard">
-<div class="g-head"><span class="g-letter" aria-hidden="true">${g}</span><div>
-<div class="kicker">STANDINGS · <b>FROM FOOTBALL-DATA.ORG</b></div>
-<p class="kicker" style="margin-top:.4rem">NEVER COMPUTED LOCALLY</p>
-</div></div>
-<div class="tablewrap2"><table class="standings num">
-<thead><tr><th scope="col">Team</th><th scope="col">Pld</th><th scope="col">W</th><th scope="col">D</th><th scope="col">L</th><th scope="col">GF</th><th scope="col">GA</th><th scope="col">Pts</th></tr></thead><tbody>
-${table.map((row, i) => {
-    const name = fdNorm.get(row.team?.name) ?? row.team?.name;
-    const ui = teams.has(name) ? teamColors[teams.get(name).slug]?.ui : null;
-    const cls = i < 2 ? ' class="q"' : i === 2 ? ' class="q3"' : '';
-    return `<tr${cls}><td>${ui ? `<span class="tdot" style="--tc:${ui.primary}"></span>` : ''}${teams.has(name) ? teamLink(name) : esc(name)}</td><td>${row.playedGames}</td><td>${row.won}</td><td>${row.draw}</td><td>${row.lost}</td><td>${row.goalsFor}</td><td>${row.goalsAgainst}</td><td class="pts">${row.points}</td></tr>`;
-  }).join('\n')}
-</tbody></table></div>
-<p class="g-foot">Top two advance · <span style="color:var(--amber);font-weight:600">third place</span> may advance among the 8 best thirds · as of the last bake</p>
-</div>`;
+  // The rich per-group section (draw card + ESPN standings table + ledger) — qualification rails are
+  // baked into standingsCard (.q top-two / .q3 third). Lives on the /standings/groups deep-dive.
+  const groupSection = (g) => {
+    const table = tables.get(g);
+    return `<section id="group-${g}"><h2>${i18nSpan(S.attrs.groupFilter)} ${g}</h2><div class="groups2" data-group="${esc(g)}">${drawCard(g)}${table ? standingsCard(g, table, stAsOf) : ''}</div>${ledgerHTML(ledgerBy('group', g), `Group ${g} — old news`)}</section>`;
+  };
+
+  // ── Static knockout bracket (cert v3.09 redesign, the maintainer) — /standings is now the BRACKET page: a
+  // readable, single-direction R32→Final reference (the ESPN/Fox pattern), distinct from the home page's
+  // interactive zoom widget. Reuses the module-scoped sideHTML/scoreHTML/matchURL; live scores hydrate
+  // through the certified data-match path (app.js, loaded by the shell). The 12 group TABLES move to the
+  // /standings/groups deep-dive — no more byte-identical duplicate (resolves cert P2/#255 scope leak).
+  const SB_ROUNDS = [['r32', S.stage.roundOf32], ['r16', S.stage.roundOf16], ['qf', S.stage.quarterFinals], ['sf', S.stage.semiFinals], ['final', S.stage.final], ['third', S.stage.thirdPlace]];
+  const sbCard = (m) => `<a class="sbk-m" data-match-teams="${m.match_no}" href="${matchURL(m)}">
+<div class="sbk-tm">${sideHTML(m.home, false, 'home')}</div>
+<div class="sbk-tm">${sideHTML(m.away, false, 'away')}</div>
+<div class="sbk-st" data-match="${m.match_no}">${scoreHTML(m)}</div></a>`;
+  const sbCol = ([st, label]) => { const ms = matches.filter((m) => m.stage === st).sort((a, b) => a.match_no - b.match_no); return ms.length ? `<div class="sbk-col" data-round="${st}"><h3 class="sbk-h">${i18nSpan(label)}</h3>${ms.map(sbCard).join('')}</div>` : ''; };
+  const staticBracket = SB_ROUNDS.some(([st]) => matches.some((m) => m.stage === st))
+    ? `<div class="sbracket-wrap"><div class="sbracket">${SB_ROUNDS.map(sbCol).join('')}</div></div>`
+    : `<p class="muted"${i18nBlock(S.pages.standings.emptyBracket)}>${S.pages.standings.emptyBracket}</p>`;
+
+  // Third-place race — DERIVED from the ESPN standings via the shared renderer (rankThirds/thirdRaceTable
+  // in render.mjs), so the bake first-paint and groups.js's live overlay are byte-identical. The 8 best of
+  // 12 thirds reach the R32 (points → GD → GF; cut at 9th). data-third-body is groups.js's hydration target,
+  // so it tracks the live /api/v1/standings exactly like the group tables beside it (no bake-time lag).
+  const thirdRace = `<section class="third-race" aria-label="${S.attrs.thirdRace}"><h2>${i18nSpan(S.attrs.thirdRace)}</h2>
+<p class="sub"${i18nBlock(S.pages.standings.thirdRaceSub)}>${S.pages.standings.thirdRaceSub}</p>
+<div data-third-body>${thirdRaceTable(rankThirds(groups.map((g) => ({ group: g, rows: tables.get(g) }))))}</div></section>`;
+
+  const toggle = (here) => `<nav class="sub-toggle" aria-label="${S.attrs.standingsViews}">${here === 'bracket' ? '<span class="on">Bracket</span>' : '<a href="/standings">Bracket</a>'}${here === 'groups' ? '<span class="on">Groups &amp; tables</span>' : '<a href="/standings/groups">Groups &amp; tables</a>'}</nav>`;
+
+  // /standings = the BRACKET page (the readable static knockout view + a link to the group deep-dive).
   const body = `
-<section class="hero small"><h1>Groups</h1>
-<p class="sub">${fdStandings ? 'Standings from football-data.org official tables — never computed locally.' : 'No matches played yet — each group renders as its draw and fixtures; standings fill in from official tables (football-data.org), never local math.'}</p></section>
-${groups.map((g) => {
-    const table = fdTableFor(g);
-    return `<section id="group-${g}"><h2>Group ${g}</h2><div class="groups2">${drawCard(g)}${table ? standingsCard(g, table) : ''}</div>${ledgerHTML(ledgerBy('group', g), `Group ${g} — old news`)}</section>`;
-  }).join('\n')}
-<p class="muted">Top two per group + the 8 best third-placed teams reach the Round of 32.</p>`;
-  writeFileSync('dist/groups.html', page('Groups', 'groups', body, { path: '/groups' }));
+<section class="hero small"><h1>${i18nSpan(S.pages.standings.h1Bracket)}</h1>
+<p class="sub"${i18nBlock(S.pages.standings.bracketSub)}>${S.pages.standings.bracketSub}</p></section>
+${toggle('bracket')}
+${staticBracket}
+<p class="muted"${i18nBlock(S.pages.standings.bracketFootnote)}>${S.pages.standings.bracketFootnote}</p>`;
+  writeFileSync('dist/standings.html', page('Brackets', 'standings', body, { path: '/standings', live: true }));
+
+  // /standings/groups = the GROUP deep-dive: the derived third-place race + the 12 qual-coloured ESPN
+  // tables + fixtures (the home bracket's group cards deep-link here via #group-{g}). groups.js hydrates.
+  const groupsBody = `
+<section class="hero small"><h1>${i18nSpan(S.stage.groupStageLc)}</h1>
+<p class="sub"${i18nBlock(S.pages.standings.groupsSub)}>${S.pages.standings.groupsSub}</p></section>
+${toggle('groups')}
+${thirdRace}
+<h2 class="stage-band">${i18nSpan(S.stage.groupStageLc)}</h2>
+${groups.map(groupSection).join('\n')}
+<p class="muted"${i18nBlock(S.pages.standings.groupsFootnote)}>${S.pages.standings.groupsFootnote}</p>
+<script type="module" src="/groups.js?v=${VER}"></script>`;
+  mkdirSync('dist/standings', { recursive: true });
+  writeFileSync('dist/standings/groups.html', page('Group stage', 'standings', groupsBody, { path: '/standings/groups', live: true }));
+  // /groups → /standings: keep old links/bookmarks/SEO working after the rename.
+  writeFileSync('dist/groups.html', `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Standings — Golazo 26</title><link rel="canonical" href="/standings"><meta http-equiv="refresh" content="0; url=/standings"><meta name="robots" content="noindex"></head><body>${S.pages.standings.movedNote}</body></html>`);
 }
 
 // ---------- venues ----------
 {
   const body = `
-<h1>Venues — 16 stadiums, 3 countries</h1>
+<h1>${i18nSpan(S.pages.venues.h1)}</h1>
 <div class="cards">${venuesDoc.venues.map((v) => {
     const ms = matches.filter((m) => m.venue_id === v.id);
     return `<article class="match-card"><div class="teams"><strong>${esc(v.common_name)}</strong></div><div class="meta">FIFA name: ${esc(v.fifa_name)} · ${esc(v.locality)}${v.locality !== v.city ? ` (${esc(v.city)})` : ''}, ${v.country} · ${ms.length} matches</div><div class="chips">${ms.slice(0, 6).map((m) => `<a class="chip link" href="${matchURL(m)}">#${m.match_no}</a>`).join('')}${ms.length > 6 ? `<span class="chip">+${ms.length - 6}</span>` : ''}</div></article>`;
   }).join('\n')}</div>
-<p class="muted">Names per fixturedownload (FIFA) and Wikipedia pinned rev 1358650246 (common).</p>`;
+<p class="muted"${i18nBlock(S.pages.venues.sourcesNote)}>${S.pages.venues.sourcesNote}</p>`;
   writeFileSync('dist/venues.html', page('Venues', 'teams', body));
 }
 
-// ---------- calendar page + ICS ----------
+// ---------- ICS calendar feed (subscribe .ics; the /calendar page was removed as a duplicate of /schedule — the maintainer 2026-06-23; the .ics feed stays, linked from /schedule + the footer) ----------
 mkdirSync('dist/ics', { recursive: true });
 const icsStamp = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
 function icsFor(ms, name) {
@@ -829,31 +1243,17 @@ for (const t of teamsData) {
   const ms = matches.filter((m) => m.home.team === t.name || m.away.team === t.name);
   writeFileSync(`dist/ics/${t.slug}.ics`, icsFor(ms, `${t.name} — World Cup 2026 (Golazo 26)`));
 }
-{
-  const byDate = new Map();
-  for (const m of matches) {
-    const d = etDateLong(m.kickoff_utc);
-    if (!byDate.has(d)) byDate.set(d, []);
-    byDate.get(d).push(m);
-  }
-  const body = `
-<h1>Calendar</h1>
-<p>Subscribe: <a href="/ics/all.ics">all 104 matches (.ics)</a> or any team from its page.</p>
-${[...byDate].map(([d, ms]) => `<h2>${d}</h2><ul class="fixtures">${ms.sort((a, b) => a.kickoff_utc.localeCompare(b.kickoff_utc)).map((m) => `<li><span class="local-time" data-utc="${m.kickoff_utc}">${et(m.kickoff_utc)} ET</span> — <a href="${matchURL(m)}">${m.home.team ?? m.home.placeholder_text} vs ${m.away.team ?? m.away.placeholder_text}</a> ${chip(m)}</li>`).join('')}</ul>`).join('\n')}`;
-  writeFileSync('dist/calendar.html', page('Calendar', 'calendar', body, { path: '/calendar' }));
-}
-
 // ---------- watch + como-ver ----------
 {
   const t = bcastDoc.totals;
   const body = `
-<h1>How to watch every match (US)</h1>
+<h1>${i18nSpan(S.pages.watch.h1)}</h1>
 <section class="hero small"><p class="free-callout">📡 With a <strong>$20 TV antenna</strong>: <strong>${t.FOX} matches free on FOX</strong> (every match from the Round of 16 on, all USMNT group games) and <strong>${t.Telemundo} free in Spanish on Telemundo</strong>.</p></section>
 <h2>English</h2>
 <table class="watch">
 <tr><th>FOX 📡</th><td><strong>${t.FOX} matches, free over the air.</strong> Also on all live-TV services. <a href="https://www.foxsports.com/soccer/fifa-world-cup/schedule" rel="noopener">Schedule</a></td></tr>
 <tr><th>FS1</th><td>${t.FS1} matches — pay TV, or <strong>FOX One</strong> ($19.99/mo, 7-day free trial, all 104 in 4K — <a href="/sources#streaming">source</a>), or a live-TV service free trial (lengths vary)</td></tr>
-<tr><th>Tubi (free)</th><td>Opening ceremony + the opener + USA–Paraguay (Jun 12) live in 4K, no account — <a href="https://corporate.tubitv.com/press/tubi-launches-2026-fifa-world-cup-fox-hub/" rel="noopener">announcement</a></td></tr>
+<tr><th>Tubi (free)</th><td${i18nBlock(S.pages.watch.tubiRow)}>${S.pages.watch.tubiRow}</td></tr>
 </table>
 <h2>Español</h2>
 <table class="watch">
@@ -863,10 +1263,10 @@ ${[...byDate].map(([d, ms]) => `<h2>${d}</h2><ul class="fixtures">${ms.sort((a, 
 </table>
 <h2 id="ca-mx">Canada &amp; Mexico</h2>
 <table class="watch">
-<tr><th>🇨🇦 Canada</th><td>TSN (EN) / RDS (FR) carry all 104 (pay). <strong>CTV airs 44 free over the air</strong>: 27 group games incl. all three Canada matches, 6 of the Round of 32, 4 of the Round of 16, then everything from the quarter-finals on except the third-place match. Crave streams the CTV feed; TSN's YouTube streams the first 10 minutes of every match free.</td></tr>
+<tr><th>🇨🇦 Canada</th><td${i18nBlock(S.pages.watch.canadaRow)}>${S.pages.watch.canadaRow}</td></tr>
 <tr><th>🇲🇽 México</th><td><strong>32 partidos gratis</strong> en TV abierta (Canal 5 / Las Estrellas y Azteca 7 / Azteca UNO); ViX transmite los 104 (Pase Mundial $999 MXN, acceso jun 11 – jul 19).</td></tr>
 </table>
-<p class="muted">Every row above is sourced — see <a href="/sources">/sources</a>. Totals reflect June 2026 listings; Fox's January announcement said 70/34 and two matches have since moved to FOX (<a href="/sources#discrepancies">documented</a>). <a href="/como-ver">Versión en español →</a></p>`;
+<p class="muted"${i18nBlock(S.pages.watch.footnote)}>${S.pages.watch.footnote}</p>`;
   writeFileSync('dist/watch.html', page('How to watch', 'watch', body, { path: '/watch' }));
 
   const es = `
@@ -895,11 +1295,11 @@ for (const [file, doc, title] of [['fifa', peopleFifa, 'FIFA administration'], [
   }).join('\n');
   const tbd = doc.people.filter((p) => p.status !== 'confirmed');
   const body = `
-<h1>${title}</h1>
-<p class="muted">Every role verified ${doc.verified_at} against official sources; photos from Wikimedia Commons with per-file attribution (hover ⓘ).</p>
+<h1>${i18nSpan(title)}</h1>
+<p class="muted">${S.pages.people.verifiedA} ${doc.verified_at} ${S.pages.people.verifiedB}</p>
 <div class="tablewrap"><table class="sched"><thead><tr><th>Name</th><th>Role</th><th>Source</th></tr></thead><tbody>${rows}</tbody></table></div>
-${tbd.length ? `<p class="muted">Honestly unresolved: ${tbd.map((p) => `${esc(p.role)} — no public holder verifiable as of June 2026`).join('; ')}.</p>` : ''}
-<p class="muted">Editorial, non-commercial content. No FIFA or federation marks are used.</p>`;
+${tbd.length ? `<p class="muted">Honestly unresolved: ${tbd.map((p) => `${esc(p.role)} — ${S.pages.people.unresolvedSuffix}`).join('; ')}.</p>` : ''}
+<p class="muted"${i18nBlock(S.pages.people.editorialNote)}>${S.pages.people.editorialNote}</p>`;
   writeFileSync(`dist/people/${file}.html`, page(title, 'teams', body));
 }
 
@@ -909,58 +1309,87 @@ if (lbDoc) {
   const anyScored = lbDoc.entries.some((e) => e.scored > 0);
   const body = `
 <h1>Predictions leaderboard</h1>
-<p>Every signed-in fan can <a href="/schedule">predict the score of any match</a> until kickoff, then it locks. <strong>3 points</strong> for the exact score, <strong>1 point</strong> for the right outcome — scored only on <em>confirmed</em> finals and recomputed deterministically on every update, never hand-edited.</p>
-${lbDoc.entries.length === 0 ? `<p class="muted">No predictions yet — be the first: open any upcoming <a href="/schedule">match page</a> and sign in.</p>` : `
+<p${i18nBlock(S.pages.leaderboard.intro)}>${S.pages.leaderboard.intro}</p>
+${lbDoc.entries.length === 0 ? `<p class="muted"${i18nBlock(S.pages.leaderboard.empty)}>${S.pages.leaderboard.empty}</p>` : `
 <table class="watch">
 <tr><th>#</th><th>Predictor</th><th>Bets</th><th>Scored</th><th>Exact (3 pts)</th><th>Outcome (1 pt)</th><th>Points</th></tr>
 ${lbDoc.entries.map((e, i) => `<tr><th>${i + 1}</th><td>${esc(e.name)}</td><td>${e.bets}</td><td>${e.scored}</td><td>${e.exact}</td><td>${e.outcome}</td><td><strong>${e.pts}</strong></td></tr>`).join('\n')}
 </table>
 ${!anyScored ? `<p class="muted">${lbDoc.entries.length} predictor${lbDoc.entries.length === 1 ? '' : 's'} in — points appear once the first match reaches a confirmed final score${totalPts === 0 ? '' : ''}.</p>` : ''}`}
 <h2>How the machines are doing</h2>
-<p>Four frontier AI models run their own bragging-rights league on every match — see the <a href="/ai-league">AI prediction league</a>.</p>
-<p class="muted footnote">Predictors appear as first name + last initial from their sign-in name; locked and deleted accounts are excluded. Predictions lock at kickoff and are never edited after. As of <code>${esc(lbDoc.as_of ?? '')}</code> · <a href="/about">privacy</a></p>`;
-  writeFileSync('dist/leaderboard.html', page('Leaderboard', 'lb', body, { path: '/leaderboard', desc: 'Fan prediction standings for every 2026 World Cup match — 3 points exact, 1 point outcome, locked at kickoff.' }));
+<p${i18nBlock(S.pages.leaderboard.machines)}>${S.pages.leaderboard.machines}</p>
+<p class="muted footnote"><span${i18nBlock(S.pages.leaderboard.footnoteA)}>${S.pages.leaderboard.footnoteA}</span> <code${utcAttr(lbDoc.as_of)}>${esc(lbDoc.as_of ?? '')}</code> · <a href="/about">privacy</a></p>`;
+  writeFileSync('dist/leaderboard.html', page('Leaderboard', 'lb', body, { path: '/leaderboard', desc: S.pages.leaderboard.desc }));
 }
 
-// ---------- AI prediction league standings ----------
-if (aiDoc) {
-  const finished = new Map(matches.filter((m) => m.status === 'finished_confirmed' && m.score).map((m) => [m.match_no, m.score]));
-  const rows = aiDoc.predictions;
-  const standings = AI_ORDER.map((p) => {
-    const bets = rows.filter((r) => r.provider === p);
-    let exact = 0, outcome = 0, scoredN = 0;
-    for (const b of bets) {
-      const s = finished.get(b.match_no);
-      if (!s) continue;
-      scoredN++;
-      if (s.home === b.home && s.away === b.away) exact++;
-      else if (Math.sign(s.home - s.away) === Math.sign(b.home - b.away)) outcome++;
-    }
-    return { p, model: bets[0]?.model ?? '—', bets: bets.length, scoredN, exact, outcome, pts: exact * 3 + outcome };
-  }).sort((a, b) => b.pts - a.pts || b.bets - a.bets);
-  const withPicks = matches.filter((m) => aiByMatch.has(m.match_no));
-  const pickOf = (n, p) => {
-    const r = (aiByMatch.get(n) ?? []).find((x) => x.provider === p);
-    return r ? `${r.home}–${r.away}` : '<span class="muted">—</span>';
-  };
+// ---------- AI prediction league (v3 shell + live overlay) ----------
+// Always baked (even before the first recompute): first paint from data/ai-league.json via the
+// shared renderer, then site/ai-league.js hydrates the live league from /api/v1/ai-league with the
+// SAME renderer (one renderer, two runtimes). The slots ([data-ai-*]) are what the overlay refreshes.
+{
   const body = `
-<h1>The AI prediction league</h1>
-<p>Four frontier AI models — Claude, ChatGPT, Gemini, and Grok — predict the full-time score of every match <strong>before kickoff</strong>. Virtual bragging rights only: no real money, no odds, no betting links. Picks are locked the moment they're made; an AI that misses a match scores zero and is never backfilled.</p>
-<h2>Standings</h2>
-<table class="watch">
-<tr><th>AI</th><th>Model</th><th>Bets placed</th><th>Matches scored</th><th>Exact (3 pts)</th><th>Outcome (1 pt)</th><th>Points</th></tr>
-${standings.map((s) => `<tr><th>${aiLabel(s.p)}</th><td><code>${esc(s.model)}</code></td><td>${s.bets}</td><td>${s.scoredN}</td><td>${s.exact}</td><td>${s.outcome}</td><td><strong>${s.pts}</strong></td></tr>`).join('\n')}
-</table>
-${finished.size === 0 ? `<p class="muted">No matches have a confirmed final score yet — points appear as results are confirmed (never on provisional scores).</p>` : ''}
-<h2>Scoring</h2>
-<p><strong>3 points</strong> for the exact score · <strong>1 point</strong> for the right outcome (winner or draw) · scored only on <em>confirmed</em> finals, recomputed deterministically on every bake — never hand-edited.</p>
-<h2>Every pick</h2>
-<table class="watch">
-<tr><th>Match</th><th>Kickoff (ET)</th>${AI_ORDER.map((p) => `<th>${aiLabel(p)}</th>`).join('')}<th>Result</th></tr>
-${withPicks.map((m) => `<tr><th><a href="/matches/${m.match_no}">${esc(m.home.team)} v ${esc(m.away.team)}</a></th><td>${etDateLong(m.kickoff_utc)}</td>${AI_ORDER.map((p) => `<td>${pickOf(m.match_no, p)}</td>`).join('')}<td>${m.status === 'finished_confirmed' && m.score ? `<strong>${m.score.home}–${m.score.away}</strong>` : '<span class="muted">—</span>'}</td></tr>`).join('\n')}
-</table>
-<p class="muted footnote">All picks are AI-generated (each row records its exact model id) and timestamped in our database before kickoff; gaps mean that AI had no working API access before the match locked. Predictions as of <code>${esc(aiDoc.as_of ?? '')}</code> · raw data: <a href="/data/ai.json">/data/ai.json</a> · <a href="/sources">sources &amp; integrity</a></p>`;
-  writeFileSync('dist/ai-league.html', page('AI prediction league', 'ai', body, { path: '/ai-league', desc: 'Claude, ChatGPT, Gemini, and Grok predict every 2026 World Cup match before kickoff — a virtual bragging-rights league.' }));
+<h1>${i18nSpan(S.pages.aiLeague.h1)}</h1>
+<p>Four frontier AI models — <strong>${aiLogo('claude')}&nbsp;Claude&nbsp;Opus&nbsp;4.8</strong>, <strong>${aiLogo('gpt')}&nbsp;ChatGPT</strong>, <strong>${aiLogo('gemini')}&nbsp;Gemini&nbsp;3&nbsp;Pro</strong>, and <strong>${aiLogo('grok')}&nbsp;Grok&nbsp;4</strong> — run their own bragging-rights league. Each predicts the full-time score, the goalscorers, and the key players of the next match, and defends the call in a paragraph — then <strong>re-bets</strong> as results come in. No real money, no odds, no betting links. Picks lock at kickoff and are timestamped before it.</p>
+<h2>${i18nSpan(S.pages.aiLeague.standings)}</h2>
+<div data-ai-standings>${aiDoc ? aiStandings(aiDoc) : `<p class="muted">${i18nSpan(S.pages.aiLeague.loadingLeague)}</p>`}</div>
+<p class="muted"${i18nBlock(S.pages.aiLeague.scoringNote)}>${S.pages.aiLeague.scoringNote}</p>
+<section class="ai-bartalk"><h2>Bar Talk</h2>
+<p class="muted" style="margin-top:-.3rem"${i18nBlock(S.pages.aiLeague.barTalkSub)}>${S.pages.aiLeague.barTalkSub}</p>
+${barTalkTeaser(null)}</section>
+<h2>${i18nSpan(S.pages.aiLeague.nextMatch)}</h2>
+<div data-ai-featured>${aiDoc ? aiFeatured(aiDoc) : ''}</div>
+<h2>${i18nSpan(S.pages.aiLeague.everyPick)} <span class="muted" style="font-weight:400">${i18nSpan(S.pages.aiLeague.inDepthNote)}</span></h2>
+<div data-ai-everypick>${aiDoc ? aiEveryPick(aiDoc) : ''}</div>
+<p class="muted footnote"><span${i18nBlock(S.pages.aiLeague.footnoteA)}>${S.pages.aiLeague.footnoteA}</span> <code data-ai-asof${utcAttr(aiDoc?.as_of)}>${esc(aiDoc?.as_of ?? '')}</code> · raw data: <a href="/data/ai.json">/data/ai.json</a> · <a href="/sources">sources &amp; integrity</a></p>
+<script type="module" src="/ai-league.js?v=${VER}"></script>
+<script type="module" src="/bartalk-teaser.js?v=${VER}"></script>`;
+  writeFileSync('dist/ai-league.html', page('AI prediction league', 'ai', body, { path: '/ai-league', desc: S.pages.aiLeague.desc }));
+}
+
+// ---------- Bar Talk hub — redesign (feat/bartalk-redesign) ----------
+// Two-column layout: left guide rail + right episode reading column.
+// __BT_TEAMS__ baked in so the client can resolve team names → slugs → flag sprite.
+{
+  // name→slug lookup for all 48 teams (used client-side for flag-clash SVGs)
+  const btTeams = JSON.stringify(Object.fromEntries(teamsData.map((t) => [t.name, t.slug])));
+
+  const regulars = ['grok','claude','gemini','gpt'].map((p) => {
+    const name = { grok:'Grok', claude:'Claude', gemini:'Gemini', gpt:'ChatGPT' }[p];
+    return `<div class="bt-regular">
+      <div class="bt-regular-avatar">
+        <img src="/personas/${p}.webp" width="56" height="56" alt="${name}" loading="lazy" decoding="async">
+      </div>
+      <span class="bt-regular-name">${name}</span>
+    </div>`;
+  }).join('');
+
+  const stageFilters = [
+    ['all', S.stage.all], ['group', S.stage.groupStage], ['r16', S.stage.roundOf16], ['qf-sf', S.stage.qfSf], ['final', S.stage.final],
+  ].map(([v, label], i) =>
+    `<button type="button" class="bt-filter-btn${i === 0 ? ' is-active' : ''}" data-bt-stage="${v}">${i18nSpan(label)}</button>`
+  ).join('');
+
+  const body = `
+<div class="bt-b6">
+  <p class="bt-b6-label">${i18nSpan(S.pages.barTalk.eyebrow)}</p>
+  <h1 class="bt-b6-headline">Bar Talk</h1>
+  <p class="bt-b6-sub"${i18nBlock(S.pages.barTalk.heroSub)}>${S.pages.barTalk.heroSub}</p>
+</div>
+<div class="bt-regulars">${regulars}</div>
+<nav class="bt-filter" data-bt-filter aria-label="${S.attrs.filterByStage}">${stageFilters}</nav>
+<div class="bt-layout">
+  <div class="bt-guide" data-bt-guide>
+    <p class="bt-guide-head">${i18nSpan(S.pages.barTalk.episodes)}</p>
+    <div class="bt-guide-list" data-bt-list><p class="muted" style="padding:.75rem">${i18nSpan(S.pages.barTalk.loadingEpisodes)}</p></div>
+  </div>
+  <div class="bt-reading" data-bt-reading>
+    <p class="bt-reading-empty"${i18nBlock(S.pages.barTalk.readingEmpty)}>${S.pages.barTalk.readingEmpty}</p>
+  </div>
+</div>
+<p class="muted footnote" style="margin-top:1rem"${i18nBlock(S.pages.barTalk.hubFootnote)}>${S.pages.barTalk.hubFootnote}</p>
+<script>window.__BT_TEAMS__=${btTeams};</script>
+<script type="module" src="/bartalk.js?v=${VER}"></script>`;
+  writeFileSync('dist/bar-talk.html', page('Bar Talk', 'bartalk', body, { path: '/bar-talk', desc: S.pages.barTalk.desc }));
 }
 
 // ---------- sources + about + 404 ----------
@@ -968,86 +1397,86 @@ ${withPicks.map((m) => `<tr><th><a href="/matches/${m.match_no}">${esc(m.home.te
   const open = discrepancies.open ?? [];
   const resolved = discrepancies.resolved ?? [];
   const body = `
-<h1>Sources &amp; data integrity</h1>
-<p>Everything on this site traces to a source. Datasets and their audits live in the project repository.</p>
-<h2 id="streaming">Streaming prices &amp; trials (US)</h2>
+<h1>${i18nSpan(S.pages.sources.h1)}</h1>
+<p${i18nBlock(S.pages.sources.intro)}>${S.pages.sources.intro}</p>
+<h2 id="streaming">${i18nSpan(S.pages.sources.streamingPrices)}</h2>
 <ul>
-<li><strong>FOX One</strong> — $19.99/mo, 7-day free trial, all 104 matches in 4K: <a href="https://variety.com/2026/shopping/news/how-to-watch-fox-sports-online-free-1236762221/" rel="noopener">Variety</a> + <a href="https://www.tomsguide.com/entertainment/sports/how-to-watch-the-world-cup-2026-in-4k" rel="noopener">Tom's Guide</a> (verified 2026-06-09)</li>
-<li><strong>Peacock Premium</strong> — $10.99/mo, all 104 in Spanish: <a href="https://www.nbcsports.com/soccer/news/how-to-watch-the-2026-world-cup-live-stream-link-tv-channel-dates-full-details" rel="noopener">NBC Sports</a> (verified 2026-06-09)</li>
-<li><strong>Tubi</strong> — free 4K stream for the opener and USA–Paraguay: <a href="https://corporate.tubitv.com/press/tubi-launches-2026-fifa-world-cup-fox-hub/" rel="noopener">Tubi press release</a> (verified 2026-06-09)</li>
-<li>Live-TV service trial lengths change frequently — we link, we don't pin numbers.</li>
+<li${i18nBlock(S.pages.sources.foxOne)}>${S.pages.sources.foxOne}</li>
+<li${i18nBlock(S.pages.sources.peacock)}>${S.pages.sources.peacock}</li>
+<li${i18nBlock(S.pages.sources.tubi)}>${S.pages.sources.tubi}</li>
+<li${i18nBlock(S.pages.sources.trialNote)}>${S.pages.sources.trialNote}</li>
 </ul>
-<h2>Sources of record</h2>
+<h2>${i18nSpan(S.pages.sources.sourcesOfRecord)}</h2>
 <table class="watch">
-<tr><th>Schedule</th><td><a href="https://github.com/openfootball/worldcup.json" rel="noopener">openfootball</a> (public domain) cross-checked per match against <a href="https://fixturedownload.com/feed/json/fifa-world-cup-2026" rel="noopener">fixturedownload</a></td></tr>
-<tr><th>Rosters</th><td>Wikipedia "2026 FIFA World Cup squads", <a href="${rosters.source.permalink}" rel="noopener">pinned revision ${rosters.source.revid}</a> (CC BY-SA 4.0), audited against the official FIFA squad-lists PDF</td></tr>
-<tr><th>US TV</th><td>Per-match from <a href="https://www.sportsmediawatch.com/tv-schedules/fifa-world-cup-tv-schedule/" rel="noopener">Sports Media Watch</a> ⨯ <a href="https://www.foxsports.com/soccer/fifa-world-cup/schedule" rel="noopener">FOX Sports</a>; Spanish split per <a href="https://www.nbcsports.com/soccer/news/how-to-watch-the-2026-world-cup-live-stream-link-tv-channel-dates-full-details" rel="noopener">NBC</a> (92/12 — matches exactly)</td></tr>
-<tr><th>Photos</th><td>Wikimedia Commons only, matched by Wikidata QID, license-allowlisted (PD/CC0/CC BY/CC BY-SA), attributed per image</td></tr>
+<tr><th>Schedule</th><td${i18nBlock(S.pages.sources.scheduleRow)}>${S.pages.sources.scheduleRow}</td></tr>
+<tr><th>Rosters</th><td>${S.pages.sources.rostersA} <a href="${rosters.source.permalink}" rel="noopener">${S.pages.sources.rostersPinned} ${rosters.source.revid}</a> ${S.pages.sources.rostersB}</td></tr>
+<tr><th>US TV</th><td${i18nBlock(S.pages.sources.usTvRow)}>${S.pages.sources.usTvRow}</td></tr>
+<tr><th>Photos</th><td${i18nBlock(S.pages.sources.photosRow)}>${S.pages.sources.photosRow}</td></tr>
 </table>
-<h2 id="discrepancies">Documented discrepancies</h2>
-<p class="muted">When sources disagree we say so — we never silently pick.</p>
+<h2 id="discrepancies">${i18nSpan(S.pages.sources.documentedDiscrepancies)}</h2>
+<p class="muted"${i18nBlock(S.pages.sources.discrepanciesNote)}>${S.pages.sources.discrepanciesNote}</p>
 <ul>
 ${resolved.map((d) => `<li><strong>Match ${d.match_no} kickoff</strong>: ${esc(d.note)} — resolved ${d.rule} (<a href="${d.tiebreaker_url}" rel="noopener">tiebreaker</a>)</li>`).join('\n')}
 ${open.map((d) => `<li><strong>${esc(d.id)}</strong> (${d.severity}): ${esc(d.value_a)} vs ${esc(d.value_b)}. ${esc(d.resolution)}</li>`).join('\n')}
 </ul>
-<p class="muted">Unverifiable facts render as TBD — never a guess. Scores carry "as of" stamps and a provisional state until confirmed.</p>`;
+<p class="muted"${i18nBlock(S.pages.sources.tbdNote)}>${S.pages.sources.tbdNote}</p>`;
   writeFileSync('dist/sources.html', page('Sources', 'watch', body));
 
+  // about blocks come from the shared unit source (lib/i18n-blocks.mjs) so the corpus
+  // extractor serializes byte-identical English (a later change round-trip contract).
+  const AB = aboutBlocks(clerkPub);
   const about = `
-<h1>About Golazo 26</h1>
-<p>An independent, ad-free, non-commercial fan guide to the 2026 World Cup, built so anyone can answer one question in one click: <em>when is the match, and how do I watch it — free if possible?</em></p>
+<h1>${i18nSpan(S.pages.about.h1)}</h1>
+<p${i18nBlock(AB.intro)}>${AB.intro}</p>
 <ul>
-<li><strong>Independence</strong>: not affiliated with FIFA, any federation, broadcaster, or sponsor. No FIFA marks, emblems, mascots, or federation crests are used. Editorial mentions of the tournament are exactly that — editorial.</li>
-<li><strong>Licenses</strong>: roster text derives from Wikipedia under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a> (pinned revisions, linked on each page). Photos are from Wikimedia Commons under their per-file licenses, attributed where shown (hover ⓘ). Flags are self-hosted <a href="https://github.com/jdecked/twemoji" rel="noopener">Twemoji</a> artwork (CC BY 4.0, pinned v15.1.0). Site code: MIT.</li>
-<li><strong>Honesty</strong>: every fact carries a source (<a href="/sources">/sources</a>); unverifiable data shows TBD; scores are stamped "as of" and marked provisional until confirmed — never marketed as live.</li>
-<li><strong>Brand graphics</strong>: the Golazo 26 mark, doodles, hero art, and share-image compositions are original works of this project (MIT/CC0) — no FIFA or federation marks anywhere. Team banners and flag chips render the country's actual flag from pinned <a href="https://github.com/jdecked/twemoji" rel="noopener">Twemoji</a> artwork (CC BY 4.0, self-hosted), with kit palettes human-audited. Display typeface: Barlow Condensed (<a href="https://openfontlicense.org" rel="noopener">OFL</a>).</li>
-<li><strong>Editorial integrity</strong>: I write the prose on this site from its own sourced data, and the build cross-checks every piece so that each name and number in it traces back to that data — anything that doesn't is flagged and the piece is held, never shown. I read and approve every team outlook and match preview before it publishes. Match recaps are assembled at the final whistle from the confirmed result and the sourced goalscorers, and one only publishes once it clears that check: a recap is held until its scorers are sourced, and a recap that fails the check is held back rather than shown. Separately, the <a href="/ai-league">AI prediction league</a> is a clearly-labeled contest in which four AI models guess every match before kickoff — that league is the only place AI picks appear, and they are bragging-rights fun, never editorial fact.</li>
-${clerkPub ? `<li><strong>Privacy</strong>: this site sets no cookies and runs no trackers or ads. Match predictions use sign-in accounts; your name and email are stored in our own database via the auth provider (Clerk) so your account stays portable. The public leaderboard shows only your first name and last initial. To delete your account, open your profile from the sign-in menu and choose delete — your name, email and predictions are removed from our database within minutes of the request and reconciled daily, and you drop off the leaderboard within a day. Full details: <a href="/privacy">privacy policy</a>.</li>` : `<li><strong>Privacy</strong>: this site sets no cookies, runs no trackers or ads, and <strong>collects no personal data</strong> — there are no accounts and nothing about you is stored. (If match predictions are enabled later, sign-in accounts are introduced; this notice and the <a href="/privacy">privacy policy</a> are updated accordingly.)</li>`}
+${AB.bullets.map((b) => `<li${i18nBlock(b)}>${b}</li>`).join('\n')}
 </ul>
-<p class="muted">Built by a fan. Contact: via the repository.</p>`;
+<p class="muted"${i18nBlock(AB.contact)}>${AB.contact}</p>`;
   writeFileSync('dist/about.html', page('About', 'watch', about));
 
-  // /privacy — dedicated privacy policy: names the controller + processors, legal basis,
+  // /privacy — dedicated privacy policy (cert A5): names the controller + processors, legal basis,
   // retention, and DSAR/CCPA deletion. Honest about whether predictions (hence accounts) are live.
   const privacy = `
-<h1>Privacy policy</h1>
-<p class="muted">Last updated ${esc(AS_OF)}. Golazo 26 is an independent, ad-free, non-commercial fan project.</p>
-<h2>Who runs this site</h2>
-<p>Golazo 26 is operated by an individual (the "controller"). Privacy or data requests: <a href="https://github.com/onwike/worldcup2026/issues" rel="noopener">open a GitHub issue</a> or email the contact listed on the repository.</p>
-<h2>What we collect</h2>
-${clerkPub ? `<p>The public pages set <strong>no cookies and run no trackers, analytics, or ads</strong>. The only personal data we process is for the optional <strong>match-predictions</strong> feature, which requires sign-in:</p>
+<h1>${i18nSpan(S.pages.privacy.h1)}</h1>
+<p class="muted"${utcAttr(AS_OF_ISO)}>${S.pages.privacy.lastUpdated} ${esc(AS_OF)}. <span${i18nBlock(S.pages.privacy.project)}>${S.pages.privacy.project}</span></p>
+<h2>${i18nSpan(S.pages.privacy.whoRunsHeading)}</h2>
+<p${i18nBlock(S.pages.privacy.whoRuns)}>${S.pages.privacy.whoRuns}</p>
+<h2>${i18nSpan(S.pages.privacy.whatWeCollect)}</h2>
+${clerkPub ? S.pages.privacy.collectAccounts : S.pages.privacy.collectNoAccounts}
+<h2>${i18nSpan(S.pages.privacy.processors)}</h2>
 <ul>
-<li><strong>Account</strong>: your name and email address, to identify your account and show it back to you.</li>
-<li><strong>Predictions</strong>: the scores you submit, linked to your account id.</li>
-<li>The public leaderboard displays only your <strong>first name + last initial</strong> — never your email.</li>
-</ul>` : `<p>This site sets <strong>no cookies</strong> and runs <strong>no trackers, analytics, or ads</strong>, and <strong>collects no personal data</strong>. There are no user accounts and nothing about you is stored. (If the optional match-predictions feature is enabled in future it introduces sign-in accounts; this policy is updated before that happens.)</p>`}
-<h2>Processors we use</h2>
-<ul>
-<li><strong>Cloudflare</strong> — hosting and edge delivery (static site, Workers, and the D1 database where ${clerkPub ? 'account and prediction data live' : 'tournament data lives'}). Subject to Cloudflare's privacy terms.</li>
-${clerkPub ? `<li><strong>Clerk</strong> — authentication; Clerk stores your name and email and sends sign-in emails. We keep our own portable copy (name + email) so the auth vendor is replaceable. Subject to Clerk's privacy terms.</li>` : ''}
+<li>${S.pages.privacy.cloudflareA} ${clerkPub ? S.pages.privacy.cloudflareDataAccounts : S.pages.privacy.cloudflareDataNoAccounts}${S.pages.privacy.cloudflareB}</li>
+${clerkPub ? `<li${i18nBlock(S.pages.privacy.clerk)}>${S.pages.privacy.clerk}</li>` : ''}
 </ul>
-<h2>Legal basis &amp; retention</h2>
-${clerkPub ? `<p>We process account and prediction data on the basis of your <strong>consent</strong>, given when you sign in. We retain it until you delete your account, after which your name, email, and predictions are removed from our database within minutes of the request and reconciled daily.</p>` : `<p>No personal data is processed, so no retention applies to visitors. Tournament content derives from cited public sources (see <a href="/sources">/sources</a>).</p>`}
-<h2>Your rights (GDPR / CCPA)</h2>
-<p>You may request access to, correction of, or deletion of your personal data.${clerkPub ? ' To delete everything immediately: open your profile from the sign-in menu and choose <strong>delete</strong> — this erases your account and predictions.' : ''} For any access/deletion request, <a href="https://github.com/onwike/worldcup2026/issues" rel="noopener">contact us via the repository</a>.</p>
-<h2>Photos &amp; attribution</h2>
-<p>Player and staff photos are reused from Wikimedia Commons and other free-licensed sources under their per-file licenses, with attribution shown on each image. We honor takedown and personality-rights requests — use the contact above.</p>`;
-  writeFileSync('dist/privacy.html', page('Privacy', 'watch', privacy, { path: '/privacy', desc: 'Golazo 26 privacy policy — what we collect, processors, retention, and how to request deletion.' }));
-  writeFileSync('dist/robots.txt', 'User-agent: *\nAllow: /\n');
+<h2>${i18nSpan(S.pages.privacy.legalBasis)}</h2>
+${clerkPub ? S.pages.privacy.basisAccounts : S.pages.privacy.basisNoAccounts}
+<h2>${i18nSpan(S.pages.privacy.yourRights)}</h2>
+<p>${S.pages.privacy.rightsA}${clerkPub ? S.pages.privacy.rightsDelete : ''} ${S.pages.privacy.rightsB}</p>
+<h2>${i18nSpan(S.pages.privacy.photosHeading)}</h2>
+<p${i18nBlock(S.pages.privacy.photos)}>${S.pages.privacy.photos}</p>`;
+  writeFileSync('dist/privacy.html', page('Privacy', 'watch', privacy, { path: '/privacy', desc: S.pages.privacy.desc }));
 
-  // ---------- History Hub: /history timeline + 22 edition pages ----------
+  // /ops-hub — the support-enablement layer (onboarding, incident playbooks, quick cards, release→
+  // training, content-library index), rebuilt from the runbook/deploy-guide/release process so it
+  // never drifts from how the site is actually run. Ops/behind-the-scenes, not a fan feature.
+  // Omitted under G26_PUBLIC: the module is loaded here, on the private path only, so the public
+  // export never resolves a module that its own tree does not carry.
+  if (!PUBLIC) {
+    const { opsHubBody } = await import('./lib/ops-hub.mjs');
+    mkdirSync('dist/ops-hub', { recursive: true });
+    writeFileSync('dist/ops-hub/index.html', page('Ops Hub — support enablement', 'ops', opsHubBody(), { path: '/ops-hub', desc: S.pages.opsHub.desc }));
+  }
+
+  writeFileSync('dist/robots.txt', DEV ? 'User-agent: *\nDisallow: /\n' : 'User-agent: *\nAllow: /\n');
+
+  // ---------- History Hub (v2.08.00): /history timeline + 22 edition pages ----------
   if (historyOK) {
-    // editorial era framing (chapter titles, not factual claims) over the 22 editions
-    const ERAS = [
-      ['The founding finals · 1930s', [1930, 1934, 1938]],
-      ['Postwar revival · 1950s', [1950, 1954, 1958]],
-      ['Brazil ascendant · 1960s', [1962, 1966, 1970]],
-      ['Total football & shootouts · 1970s–80s', [1974, 1978, 1982, 1986]],
-      ['The global game · 1990s–2000s', [1990, 1994, 1998, 2002]],
-      ['The modern era · 2006–2022', [2006, 2010, 2014, 2018, 2022]],
-    ];
-    const years = ERAS.flatMap(([, ys]) => ys);
-    const editions = new Map(years.map((y) => [y, load(`data/history/${y}.json`)]));
+    // era framing (HISTORY_ERAS), edition docs and the swap-unit prose HTML all come from the
+    // shared unit source (lib/i18n-blocks.mjs) so the corpus extractor serializes byte-identical
+    // English for every stamped block (a later change round-trip contract).
+    const HB = historyBlocks();
+    const years = HB.years;
+    const editions = HB.docs;
     const dash = '—';
     const champLine = (f) => `${f.champion}${f.runner_up ? ` <span class="tscore">${f.final_score ? `${f.final_score} v ${f.runner_up}` : `v ${f.runner_up}`}</span>` : ''}`;
 
@@ -1059,22 +1488,22 @@ ${clerkPub ? `<p>We process account and prediction data on the basis of your <st
 <span class="tchamp"><span class="crown" aria-hidden="true">★</span> ${champLine(f)}</span>
 <span class="arrow" aria-hidden="true">→</span></a>`;
     };
-    const timeline = ERAS.map(([label, ys]) =>
+    const timeline = HISTORY_ERAS.map(([label, ys]) =>
       `<div class="era"><b>${esc(label)}</b></div>\n${ys.map(tnode).join('\n')}`).join('\n');
     const hubBody = `
 <section class="hubhero">
-  <p class="kicker"><b>1930 ${dash} 2022</b> · 22 TOURNAMENTS · ONE TROPHY</p>
-  <h1>History of the<br>World Cup</h1>
-  <p class="sub">Ninety-six years of football's greatest tournament — every edition, every champion, the road to 2026.</p>
+  <p class="kicker"><b>1930 ${dash} 2022</b> · 22 ${i18nSpan(S.pages.history.kickerTail)}</p>
+  <h1>${i18nSpan(S.pages.history.h1)}</h1>
+  <p class="sub"${i18nBlock(S.pages.history.heroSub)}>${S.pages.history.heroSub}</p>
 </section>
-<section class="prose" style="max-width:720px;margin:.5rem auto 0">${mdLite(historyHub.prose)}</section>
-<nav class="tl" aria-label="World Cup editions, 1930 to 2022">
+<section class="prose" style="max-width:720px;margin:.5rem auto 0"${i18nBlock(HB.hubProse)}>${HB.hubProse}</section>
+<nav class="tl" aria-label="${S.attrs.editionsNav}">
 ${timeline}
 </nav>
-<p class="muted" style="text-align:center;max-width:680px;margin:1.4rem auto 0">Every edition page draws on cited sources; the result, host and individual awards on each card are taken verbatim from that edition's referenced write-up. A blank field means the cited sources don't state it — never a guess.</p>`;
+<p class="muted" style="text-align:center;max-width:680px;margin:1.4rem auto 0"${i18nBlock(S.pages.history.hubFootnote)}>${S.pages.history.hubFootnote}</p>`;
     mkdirSync('dist/history', { recursive: true });
     writeFileSync('dist/history.html', page('History of the World Cup', 'history', hubBody, {
-      desc: 'Every FIFA World Cup from 1930 to 2022 — champions, hosts and the stories of each tournament, on the road to 2026.',
+      desc: S.pages.history.hubDesc,
       path: '/history',
     }));
 
@@ -1083,6 +1512,7 @@ ${timeline}
     for (let i = 0; i < years.length; i++) {
       const y = years[i];
       const ed = editions.get(y);
+      const proseHtml = HB.editionProse.get(y); // shared swap-unit HTML (corpus byte-identity)
       const f = historyFacts.get(y) ?? {};
       const prev = years[i - 1];
       const next = years[i + 1];
@@ -1098,18 +1528,18 @@ ${timeline}
       const srcs = (ed.sources ?? []).map((s) => `<li><a href="${esc(s.url)}" rel="noopener">${esc(s.title ?? s.url)}</a></li>`).join('');
       const body = `
 <section class="hubhero" style="padding-bottom:.3rem">
-  <p class="kicker"><a href="/history" style="color:var(--muted)">← All editions</a></p>
+  <p class="kicker"><a href="/history" style="color:var(--muted)">${i18nSpan(S.pages.history.allEditions)}</a></p>
   <h1>${esc(ed.title)}</h1>
 </section>
 ${f.champion ? `<div class="fin"><span class="champ"><span class="crown" aria-hidden="true">★</span> ${esc(f.champion)}</span>${f.runner_up ? `<span class="vsline">${f.final_score ? `${esc(f.final_score)} ` : ''}def. ${esc(f.runner_up)}</span>` : ''}</div>` : ''}
 <div class="frail">${rail}</div>
-<section class="prose" style="max-width:720px">${mdLite(ed.prose)}</section>
-<nav class="editnav" aria-label="Adjacent editions">
+<section class="prose" style="max-width:720px"${i18nBlock(proseHtml)}>${proseHtml}</section>
+<nav class="editnav" aria-label="${S.attrs.adjacentEditions}">
   ${prev ? `<a href="/history/${prev}">← ${prev}</a>` : '<span></span>'}
   ${next ? `<a href="/history/${next}">${next} →</a>` : '<span></span>'}
 </nav>
-<section class="prose" style="max-width:720px"><h2>Sources</h2><ul>${srcs}</ul>
-<p class="muted footnote">Adapted under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a> from the cited sources. Result, host and awards above are extracted verbatim from the referenced write-up; a blank field means the sources don't state it. <a href="mailto:onwike@gmail.com?subject=Golazo26%20history%20correction:%20${y}">Report an error</a>.</p></section>`;
+<section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.sources.heading)}</h2><ul>${srcs}</ul>
+<p class="muted footnote"><span${i18nBlock(S.footnotes.historyEdition)}>${S.footnotes.historyEdition}</span> <a href="mailto:onwike@gmail.com?subject=Golazo26%20history%20correction:%20${y}">${S.footnotes.reportError}</a>.</p></section>`;
       writeFileSync(`dist/history/${y}.html`, page(`${ed.title}`, 'history', body, {
         desc: `${ed.title}: ${f.champion ? `${f.champion} champions${f.host ? `, hosted by ${f.host}` : ''}.` : 'World Cup edition.'} The full story, with sources.`,
         path: `/history/${y}`,
@@ -1118,14 +1548,116 @@ ${f.champion ? `<div class="fin"><span class="champ"><span class="crown" aria-hi
     console.log(`history hub: 1 timeline + ${years.length} edition pages`);
   }
 
-  writeFileSync('dist/404.html', page('Not found', 'home', `<svg class="doodle" width="96" height="96" aria-hidden="true"><use href="/brand/doodles.svg#d-ball"/></svg><h1>Lost the ball</h1><p>That page doesn't exist. Try the <a href="/schedule">schedule</a> or <a href="/">today's matches</a>.</p>`, { path: '/404' }));
+  // ---------- Stadiums hub: /stadiums + 16 city/stadium pages ----------
+  if (stadiumsOK) {
+    // rail, facts sheets, prose docs and the city/stadium/hub swap-unit HTML all come from
+    // the shared unit source (lib/i18n-blocks.mjs) so the corpus extractor serializes
+    // byte-identical English for every stamped block (a later change round-trip contract).
+    const SB = stadiumsBlocks();
+    const num = (n) => (n == null || n === '' ? '' : Number(n).toLocaleString('en-US'));
+    const railRows = SB.rail.venues;
+
+    // hub: the 16 venues grouped by host nation
+    const GROUPS = [['United States', '🇺🇸'], ['Mexico', '🇲🇽'], ['Canada', '🇨🇦']];
+    const snode = (r) => `<a class="tnode" href="/stadiums/${r.venue_id}">
+<span class="ty">${esc(r.stadium_current)}</span><span class="th">${esc(r.city)}</span>
+<span class="tchamp">${esc(r.fifa_name)}${r.capacity_wc2026 ? ` <span class="tscore">${num(r.capacity_wc2026)} cap · ${r.wc_matches_2026 ?? '—'} matches</span>` : ''}</span>
+<span class="arrow" aria-hidden="true">→</span></a>`;
+    const grouped = GROUPS.map(([country, flag]) => {
+      const rows = railRows.filter((r) => r.country === country);
+      return rows.length ? `<div class="era"><b>${flag} ${esc(country)} · ${rows.length}</b></div>\n${rows.map(snode).join('\n')}` : '';
+    }).filter(Boolean).join('\n');
+    const hubBody = `
+<section class="hubhero">
+  <p class="kicker"><b>16 ${i18nSpan(S.pages.stadiums.cities)}</b> · 16 ${i18nSpan(S.pages.stadiums.stadiumsWord)} · 3 ${i18nSpan(S.pages.stadiums.nations)}</p>
+  <h1>${i18nSpan(S.pages.stadiums.h1)}</h1>
+  <p class="sub"${i18nBlock(S.pages.stadiums.heroSub)}>${S.pages.stadiums.heroSub}</p>
+</section>
+${SB.hubProse ? `<section class="prose" style="max-width:720px;margin:.5rem auto 0"${i18nBlock(SB.hubProse)}>${SB.hubProse}</section>` : ''}
+<nav class="tl" aria-label="${S.attrs.hostCitiesNav}">
+${grouped}
+</nav>
+<p class="muted" style="text-align:center;max-width:680px;margin:1.4rem auto 0"${i18nBlock(S.pages.stadiums.hubFootnote)}>${S.pages.stadiums.hubFootnote}</p>`;
+    mkdirSync('dist/stadiums', { recursive: true });
+    writeFileSync('dist/stadiums.html', page('Stadiums of the 2026 World Cup', 'stadiums', hubBody, {
+      desc: S.pages.stadiums.hubDesc,
+      path: '/stadiums',
+    }));
+
+    // detail: city history -> stadium history -> iconic games -> renovations -> sources (each individually sourced)
+    const fcell = (k, v) => v ? `<div class="fcell"><span class="k">${k}</span><span class="v">${esc(v)}</span></div>` : '';
+    const srcList = (arr) => (arr ?? []).map((s) => `<li><a href="${esc(s.url)}" rel="noopener">${esc(s.title ?? s.url)}</a></li>`).join('');
+    for (const r of railRows) {
+      const id = r.venue_id;
+      const cf = SB.sheets.get(id);
+      const pr = SB.proseDocs.get(id);
+      const editions = Array.isArray(r.wc_editions_hosted) ? r.wc_editions_hosted.join(', ') : '';
+      const rail = [
+        fcell('FIFA name', r.fifa_name),
+        fcell('City', `${r.city}${r.country ? `, ${r.country}` : ''}`),
+        fcell('Opened', r.opened),
+        fcell('Capacity (World Cup)', num(r.capacity_wc2026)),
+        fcell('Capacity (regular)', num(r.capacity_regular)),
+        fcell('World Cup matches', r.wc_matches_2026),
+        fcell('WC editions hosted', editions),
+        fcell('Primary tenant', r.primary_tenant),
+        fcell('Architect', r.architect),
+      ].filter(Boolean).join('');
+      const cityHTML = SB.cityHTML.get(id); // shared swap-unit HTML (corpus byte-identity)
+      const stadHTML = SB.stadHTML.get(id);
+      const games = pr?.iconic_games ?? cf.iconic_games ?? [];
+      const gamesHTML = games.length
+        ? `<ul class="iconic">${games.map((g) => `<li><b>${esc(g.match)}${g.score ? ` (${esc(g.score)})` : ''}</b> — ${esc(g.event)}${g.date ? ` · ${esc(g.date)}` : ''}${g.note ? `<br><span class="muted">${esc(g.note)}</span>` : ''}</li>`).join('')}</ul>`
+        : `<p class="muted">${esc((pr?.iconic_games_note ?? cf.iconic_games_note) || S.pages.stadiums.iconicEmpty)}</p>`;
+      const renos = pr?.renovations ?? cf.renovations ?? [];
+      const renoHTML = renos.length
+        ? `<ul class="renos">${renos.map((v) => `<li><b>${esc(v.category)}.</b> ${esc(v.change)}${v.value ? `<br><span class="muted">${esc(v.value)}</span>` : ''}</li>`).join('')}</ul>`
+        : `<p class="muted"${i18nBlock(S.pages.stadiums.renoEmpty)}>${S.pages.stadiums.renoEmpty}</p>`;
+      const gaps = Array.isArray(cf.gaps) ? cf.gaps : [];
+      const gapsHTML = gaps.length
+        ? `<section class="prose" style="max-width:720px"><details class="gaps"><summary class="muted">${S.pages.stadiums.gapsSummary} (${gaps.length})</summary><ul>${gaps.map((g) => `<li class="muted">${esc(g)}</li>`).join('')}</ul></details></section>`
+        : '';
+      const sources = cf.sources ?? pr?.sources ?? [];
+      const asOf = r.as_of ?? SB.rail.as_of ?? cf._as_of ?? '';
+      const pitch = r.field_type_2026 && !/NOT SPECIFIED/i.test(r.field_type_2026)
+        ? `<p><b>Pitch (2026).</b> ${esc(String(r.field_type_2026).split(/\s*NOTE:/)[0].trim())}</p>` : '';
+      // Image gallery — guarded on im.file (the R2 local path), so it renders '' (no section, no broken
+      // images, no CSP issue) until the R2-mirror rewrites the manifest to local paths.
+      const gv = stadiumsGallery.get(id);
+      const galX = gv ? (gv.gallery || []).filter((im) => im && im.file) : [];
+      const galHero = gv && gv.hero && gv.hero.file ? gv.hero : null;
+      const photos = galleryHTML(galHero, galX, r.stadium_current);
+      const body = `
+<section class="hubhero" style="padding-bottom:.3rem">
+  <p class="kicker"><a href="/stadiums" style="color:var(--muted)">${i18nSpan(S.pages.stadiums.allStadiums)}</a></p>
+  <h1>${esc(r.stadium_current)}</h1>
+  <p class="sub">${r.stadium_historic ? `${i18nSpan(S.pages.stadiums.formerly)} ${esc(r.stadium_historic)} · ` : ''}FIFA: ${esc(r.fifa_name)} · ${esc(r.city)}${r.country ? `, ${esc(r.country)}` : ''}</p>
+</section>
+<div class="frail">${rail}</div>
+${photos ? `<section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.stadiums.photos)}</h2>${photos}</section>` : ''}
+${cityHTML ? `<section class="prose" style="max-width:720px"><h2>${esc(r.city)}</h2><div${i18nBlock(cityHTML)}>${cityHTML}</div></section>` : ''}
+${stadHTML ? `<section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.stadiums.theStadium)}</h2><div${i18nBlock(stadHTML)}>${stadHTML}</div></section>` : ''}
+<section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.stadiums.iconicGames)}</h2>${gamesHTML}</section>
+<section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.stadiums.renovations)}</h2>${renoHTML}${pitch}</section>
+${gapsHTML}
+<section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.sources.heading)}</h2><ul>${srcList(sources)}</ul>
+<p class="muted footnote"><span${i18nBlock(S.footnotes.stadiumsA)}>${S.footnotes.stadiumsA}</span> ${esc(asOf)}<span${i18nBlock(S.footnotes.stadiumsB)}>${S.footnotes.stadiumsB}</span> <a href="mailto:onwike@gmail.com?subject=Golazo26%20stadium%20correction:%20${encodeURIComponent(id)}">${S.footnotes.reportError}</a>.</p></section>`;
+      writeFileSync(`dist/stadiums/${id}.html`, page(`${r.stadium_current} — ${r.city}`, 'stadiums', body, {
+        desc: `${r.stadium_current} (${r.fifa_name}), ${r.city}: history, iconic games and World Cup 2026 renovations, with sources.`,
+        path: `/stadiums/${id}`,
+      }));
+    }
+    console.log(`stadiums hub: 1 hub + ${railRows.length} city/stadium pages`);
+  }
+
+  writeFileSync('dist/404.html', page('Not found', 'home', `<svg class="doodle" width="96" height="96" aria-hidden="true"><use href="/brand/doodles.svg#d-ball"/></svg><h1${i18nBlock(S.pages.notFound.title)}>${S.pages.notFound.title}</h1><p${i18nBlock(S.pages.notFound.body)}>${S.pages.notFound.body}</p>`, { path: '/404' }));
 }
 
-// ---------- player & coach profile pages ----------
+// ---------- Phase 2.5B: profile pages ----------
 function proseFooter(p) {
   const spine = p.sheet.spine_source ?? { revid: rosters.source.revid, permalink: rosters.source.permalink };
   const asOf = (p.sheet.fetched_at ?? '').slice(0, 10);
-  return `<p class="muted footnote"><strong>Facts as of ${esc(asOf)}</strong> (pinned sources; later events are not reflected). Adapted under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a> from the sources below. Career narrative: <a href="${p.sheet.permalink}" rel="noopener">Wikipedia, pinned revision ${p.sheet.revid}</a>. Squad number, caps &amp; goals: <a href="${spine.permalink}" rel="noopener">squads page, pinned revision ${spine.revid}</a> + audited tournament data. Content hash <code>${p.sheet.content_hash}</code>. <a href="mailto:onwike@gmail.com?subject=Golazo26%20correction:%20${encodeURIComponent(p.name)}">Report an error</a>.</p>`;
+  return `<p class="muted footnote"><strong>${S.footnotes.profile.factsAsOf} ${esc(asOf)}</strong> ${S.footnotes.profile.adaptedUnder}${p.meta?.cert ? ` (${esc(p.meta.cert)})` : ''}. ${S.footnotes.profile.careerNarrative} <a href="${p.sheet.permalink}" rel="noopener">${S.footnotes.profile.wikipediaPinned} ${p.sheet.revid}</a>. ${S.footnotes.profile.squadStats} <a href="${spine.permalink}" rel="noopener">${S.footnotes.profile.squadsPinned} ${spine.revid}</a> ${S.footnotes.profile.auditedData} <code>${p.sheet.fact_sheet_hash}</code>. <a href="mailto:onwike@gmail.com?subject=Golazo26%20correction:%20${encodeURIComponent(p.name)}">${S.footnotes.reportError}</a>.</p>`;
 }
 if (profiles.size) {
   mkdirSync('dist/players', { recursive: true });
@@ -1141,11 +1673,14 @@ if (profiles.size) {
       : `${esc(p.team)}`;
     const body = `
 <p class="crumb"><a href="${p.kind === 'coach' || p.kind === 'player' ? `/teams/${teamMeta?.slug}` : '/people/fifa'}">← ${esc(p.kind === 'official' ? 'People' : p.team)}</a></p>
+<div class="profile" data-profile-slug="${esc(p.slug)}" data-i18n-pack="${p.pack}">
 <h1 class="matchup">${faceHTML(img, p.name, 56)} ${esc(p.name)}</h1>
 <p class="meta">${statLine}</p>
 ${galleryHTML(img, galleryByName.get(`${subjType}:${p.name}`), p.name)}
-<section class="prose">${p.text.split(/\n\n+/).map((par) => `<p>${esc(par)}</p>`).join('')}</section>
-${proseFooter(p)}`;
+<section class="prose">${profileParagraphs(p.text).map((h) => `<p${i18nBlock(h)}>${h}</p>`).join('')}</section>
+${proseFooter(p)}
+</div>
+<script type="module" src="/profile.js?v=${VER}"></script>`;
     const dir = p.kind === 'player' ? 'players' : 'people';
     writeFileSync(`dist/${dir}/${p.slug}.html`, page(`${p.name} — profile`, 'teams', body, { desc: `${p.name}: verified profile for the 2026 World Cup.` }));
   }
@@ -1154,15 +1689,160 @@ ${proseFooter(p)}`;
 // ---------- data endpoints ----------
 mkdirSync('dist/data', { recursive: true });
 writeFileSync('dist/data/matches.json', JSON.stringify({ as_of: AS_OF, matches: matches.map((m) => ({ n: m.match_no, stage: m.stage, group: m.group, kickoff_utc: m.kickoff_utc, venue: venues.get(m.venue_id).common_name, home: m.home.team ?? m.home.placeholder_text, away: m.away.team ?? m.away.placeholder_text, us_tv: bcast.get(m.match_no) ? `${bcast.get(m.match_no).us_english}/${bcast.get(m.match_no).us_spanish}` : 'TBD' })) }));
-writeFileSync('dist/data/live.json', JSON.stringify({ as_of: new Date().toISOString(), matches: matches.map((m) => ({ n: m.match_no, status: m.status, score: m.score, k: m.kickoff_utc })), ai_n: aiDoc?.predictions?.length ?? 0, lb_sig: liveState?.lb_sig ?? '', st_sig: liveState?.st_sig ?? '' }));
+writeFileSync('dist/data/live.json', JSON.stringify({ as_of: new Date().toISOString(), matches: matches.map((m) => { const lv = liveByN.get(m.match_no); return { n: m.match_no, status: m.status, score: m.score, k: m.kickoff_utc, ...(lv?.dc ? { dc: lv.dc } : {}) }; }), ai_n: aiDoc?.matches?.length ?? 0, lb_sig: liveState?.lb_sig ?? '', st_sig: liveState?.st_sig ?? '' }));
 if (aiDoc) writeFileSync('dist/data/ai.json', JSON.stringify(aiDoc));
-writeFileSync('dist/data/config.json', JSON.stringify({ as_of: new Date().toISOString(), flags: { api_read_only: false, ai_halted: false, bake_paused: false }, version: 'v1' }));
+// R10 kill-switch (owner 2026-07-18): knockoutRoom3d gates the 3D Knockout Room toggle at runtime.
+// Default TRUE (feature enabled); flipping it to false in this same-origin config (e.g. via the
+// ops-flags bake, or by hand) disables the toggle for everyone WITHOUT a site redeploy — site/
+// knockout-room.js reads flags.knockoutRoom3d and, when false, never injects the toggle or loads three.
+writeFileSync('dist/data/config.json', JSON.stringify({ as_of: new Date().toISOString(), flags: { api_read_only: false, ai_halted: false, bake_paused: false, knockoutRoom3d: true }, version: 'v1' }));
+// Goal-celebration context (goal-celebration.js, site-wide overlay): n -> [home, away] for resolved
+// matches, team -> [3-letter, chip colour], and the still-alive set (everyone minus knockout losers).
+{
+  const koStages = new Set(['r32', 'r16', 'qf', 'sf', 'final', 'third']);
+  const eliminated = new Set();
+  for (const m of matches) {
+    if (!koStages.has(m.stage) || !m.score || !m.home.team || !m.away.team) continue;
+    if (m.status === 'finished_confirmed' || m.status === 'finished_provisional') {
+      const loser = m.score.home < m.score.away ? m.home.team : m.score.away < m.score.home ? m.away.team : null;
+      if (loser) eliminated.add(loser);
+    }
+  }
+  writeFileSync('dist/data/goal-context.json', JSON.stringify({
+    m: Object.fromEntries(matches.filter((m) => m.home.team && m.away.team).map((m) => [m.match_no, [m.home.team, m.away.team]])),
+    t: Object.fromEntries(teamsData.map((t) => [t.name, [fifaOf(t.name) || t.name.slice(0, 3).toUpperCase(), (confettiColors(t.name) || ['#888'])[0] || '#888']])),
+    alive: teamsData.map((t) => t.name).filter((n) => !eliminated.has(n)),
+  }));
+}
+
+// v3 Phase 3 PROTOTYPE (additive, unlinked): the schedule page rendered client-side from
+// the data API + a static render context — proves the static-shell + shared-renderer loop
+// with NO rebuild. render.mjs ships as a browser module; the context is the (static) lookup
+// maps + match base; the live status/score overlay comes from /api/v1/live (site/schedule-spa.js).
+cpSync('scripts/lib/render.mjs', 'dist/render.mjs');
+cpSync('scripts/lib/ai-league-render.mjs', 'dist/ai-league-render.mjs'); // v3: shared AI-league renderer (site/ai-league.js imports it)
+cpSync('scripts/lib/commentary-view.mjs', 'dist/commentary-view.mjs'); // v3.04.02: blow-by-blow row renderer (site/match.js imports it)
+cpSync('scripts/lib/watch-view.mjs', 'dist/watch-view.mjs'); // AI Watch-Along row renderer (site/match.js imports it)
+cpSync('scripts/lib/timeline-view.mjs', 'dist/timeline-view.mjs'); // match-page timeline/key-moments renderers (baked now; Phase 2's live hydrator imports it)
+cpSync('scripts/lib/stats-view.mjs', 'dist/stats-view.mjs'); // match-page stats comparison-bar row renderer (Phase 2.5; site/match.js imports it)
+cpSync('site/schedule-spa.js', 'dist/schedule-spa.js');
+cpSync('site/today.js', 'dist/today.js'); // v3: client-side "Today" rollover (home page only)
+cpSync('site/groups.js', 'dist/groups.js'); // v3: client-side group-standings hydration from /api/v1/standings
+cpSync('site/profile.js', 'dist/profile.js'); // v3: instant profile-takedown overlay from /api/v1/takedowns
+cpSync('site/match.js', 'dist/match.js'); // v3: match-page recap overlay from /api/v1/recap (no rebuild)
+cpSync('site/bartalk-teaser.js', 'dist/bartalk-teaser.js'); // bar-talk front-page teaser rotator (hydrates /api/v1/bartalk-teaser)
+cpSync('scripts/lib/bartalk-view.mjs', 'dist/bartalk-view.mjs'); // shared teaser slot renderer (build bakes + bartalk-teaser.js hydrates)
+cpSync('site/bartalk.js', 'dist/bartalk.js'); // /bar-talk hub hydrator (renders episodes from /api/v1/bar-talk)
+writeFileSync('dist/data/schedule-context.json', JSON.stringify({
+  matches: matches.map((m) => ({ match_no: m.match_no, stage: m.stage, group: m.group, kickoff_utc: m.kickoff_utc, venue_id: m.venue_id, home: m.home, away: m.away })),
+  teams: teamsData, flagMap, teamColors, venues: venuesDoc.venues, bcast: bcastDoc.rows,
+}));
+writeFileSync('dist/schedule-spa.html', `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Schedule (v3 dynamic prototype) · Golazo 26</title>
+<link rel="stylesheet" href="/brand/tokens.css?v=7"><link rel="stylesheet" href="/styles.css?v=7"></head>
+<body><main class="wrap">
+<section class="hero small"><h1>${i18nSpan(S.pages.schedule.h1)}</h1><p class="kicker">${i18nSpan(S.pages.schedule.spaKicker)}</p></section>
+<div id="app"><p class="muted">${i18nSpan(S.pages.schedule.loading)}</p></div></main>
+<script type="module" src="/schedule-spa.js"></script></body></html>`);
+
+// ---------- i18n Tier-2 fragment bake (v3.14 a later change, plan §3 + §6 rows 3a/3b) ----------
+// Enabled languages only — a dark bake writes nothing here (and the dist clean above wiped any
+// prior run, so dark output carries no residue). For each committed corpus scope
+// (<I18N_DIR>/corpus/<scope>.json), every unit with a translated unit file
+// <I18N_DIR>/<lang>/<scope>/<id>.json lands in the per-route fragment
+// dist/i18n/<lang>/p/<route>.json — flat { "<block id>": "<html>" }, the exact shape and URL
+// site/i18n.js fetches. A route bakes only when ≥1 of its blocks is translated; an untranslated
+// block is simply absent (the client degrades that block to baked English). Unit ids are
+// re-verified against their text so a hand-edited corpus can never ship a mismatched id.
+//
+// PACK units (profiles scope, plan §3 per-team packs): a unit carrying `pack: "t/<team-slug>"`
+// bakes into the per-PACK file dist/i18n/<lang>/<pack>.json INSTEAD of any per-route fragment —
+// one file per team (players + coach; org people pool in t/_org), ~48 packs × langs, not one
+// file per profile page (~1,290 routes × langs would burn the 15k dist-file runway guard). The
+// unit's `routes` list the profile pages for reference/tests; site/i18n.js fetches the pack when
+// the page is stamped [data-i18n-pack].
+if (I18N_LANGS.length) {
+  const corpusDir = `${I18N_DIR}/corpus`;
+  const scopeFiles = existsSync(corpusDir) ? readdirSync(corpusDir).filter((f) => f.endsWith('.json')).sort() : [];
+  let nFrag = 0;
+  for (const lg of I18N_LANGS) {
+    const perRoute = new Map(); // route → { blockId: translated html }
+    const perPack = new Map(); // pack ('t/<team-slug>') → { blockId: translated html }
+    for (const sf of scopeFiles) {
+      const scope = sf.slice(0, -5);
+      for (const u of load(`${corpusDir}/${sf}`).units ?? []) {
+        if (u.id !== blockId(u.text)) { console.error(`⛔ i18n: corpus ${sf} unit "${u.id}" does not hash its own text — regenerate via scripts/extract-i18n-corpus.mjs`); process.exit(1); }
+        const routes = u.routes ?? [];
+        if (routes.some((r) => !/^[a-z0-9][a-z0-9/-]*$/.test(r))) { console.error(`⛔ i18n: corpus ${sf} unit "${u.id}" carries a malformed route`); process.exit(1); }
+        if (u.pack !== undefined && !/^t\/[a-z0-9_-]+$/.test(u.pack)) { console.error(`⛔ i18n: corpus ${sf} unit "${u.id}" carries a malformed pack "${u.pack}"`); process.exit(1); }
+        const up = `${I18N_DIR}/${lg}/${scope}/${u.id}.json`;
+        if (!existsSync(up)) continue;
+        const tx = load(up);
+        if (typeof tx.text !== 'string' || !tx.text) continue;
+        // Prose XSS gate + degrade-to-OMIT (N2/A2-NEW-1, a later review round): emit the model
+        // HTML only when its tag+attribute multiset equals the English source's; on a mismatch OMIT the
+        // unit (like any untranslated unit — the `continue` below) rather than writing the English
+        // source into the fragment. Writing English made the client swap() stamp lang=<foreign> on
+        // English content (a screen-reader mislabel); omitting leaves the baked English in place with
+        // no foreign lang attr. u.text is the English source.
+        if (!proseTagSafe(u.text, tx.text)) continue;
+        const emit = tx.text;
+        if (u.pack) {
+          if (!perPack.has(u.pack)) perPack.set(u.pack, {});
+          perPack.get(u.pack)[u.id] = emit;
+          continue;
+        }
+        for (const r of routes) {
+          if (!perRoute.has(r)) perRoute.set(r, {});
+          perRoute.get(r)[u.id] = emit;
+        }
+      }
+    }
+    for (const [route, map] of perRoute) {
+      const out = `dist/i18n/${lg}/p/${route}.json`;
+      mkdirSync(out.slice(0, out.lastIndexOf('/')), { recursive: true });
+      writeFileSync(out, JSON.stringify(map) + '\n');
+      nFrag++;
+    }
+    for (const [pk, map] of perPack) {
+      const out = `dist/i18n/${lg}/${pk}.json`;
+      mkdirSync(out.slice(0, out.lastIndexOf('/')), { recursive: true });
+      writeFileSync(out, JSON.stringify(map) + '\n');
+      nFrag++;
+    }
+  }
+  // Shared S-valued blocks: every i18nBlock whose English text is a strings.mjs value translates
+  // straight from the chrome pack — ONE route-independent file per language (site/i18n.js fetches
+  // it alongside the route fragment; the route fragment wins on id collision). Keys sorted for a
+  // stable diff. Composite blocks (non-S text, e.g. corpus prose) are not eligible here.
+  for (const lg of I18N_LANGS) {
+    const shared = {};
+    for (const [id, en] of i18nBlockReg) {
+      const key = i18nKeyOf.get(en);
+      if (!key) continue;
+      const tx = I18N_PACKS.get(lg)[key];
+      // Prose XSS gate (N1, a later review round): blocks.json is fetched by site/i18n.js and merged
+      // into the SAME innerHTML swap map (i18n.js:93-94) as the per-route fragments — an identical
+      // unsanitized sink. Apply the SAME strict tag+attribute gate the corpus/pack path uses; on a
+      // mismatch OMIT the block (the client keeps baked English, no foreign lang attr — matching the
+      // corpus path's degrade-to-omit). `en` is this block's registered English HTML.
+      if (typeof tx === 'string' && tx && proseTagSafe(en, tx)) shared[id] = tx;
+    }
+    if (Object.keys(shared).length) {
+      mkdirSync(`dist/i18n/${lg}`, { recursive: true });
+      writeFileSync(`dist/i18n/${lg}/blocks.json`, JSON.stringify(Object.fromEntries(Object.entries(shared).sort(([a], [b]) => a.localeCompare(b)))) + '\n');
+      nFrag++;
+    }
+  }
+  if (nFrag) console.log(`i18n fragments: ${nFrag} fragment files across [${I18N_LANGS.join(',')}]`);
+}
 
 // ---------- guards ----------
 let fileCount = 0;
 const walk = (d) => { for (const f of readdirSync(d, { withFileTypes: true })) f.isDirectory() ? walk(`${d}/${f.name}`) : fileCount++; };
 walk('dist');
-// EFFICIENCY: fail well BELOW the free-tier 20k static-asset/version cap so growth
+// EFFICIENCY (cert): fail well BELOW the free-tier 20k static-asset/version cap so growth
 // (galleries up to 5/subject, more history editions) has runway and never hits a hard deploy
 // rejection unexpectedly. 15k leaves ~2x the current working set.
 if (fileCount > 15000) { console.error(`⛔ file count ${fileCount} > 15,000 runway guard (free-tier hard cap is 20,000 static assets/version — move the image tier to R2 before growing further)`); process.exit(1); }
