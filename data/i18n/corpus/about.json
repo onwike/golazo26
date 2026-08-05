@@ -1,0 +1,61 @@
+{
+  "scope": "about",
+  "units": [
+    {
+      "id": "ec8d20a5ae91",
+      "text": "An independent, ad-free, non-commercial fan guide to the 2026 World Cup, built so anyone can answer one question in one click: <em>when is the match, and how do I watch it — free if possible?</em>",
+      "routes": [
+        "about"
+      ]
+    },
+    {
+      "id": "74a5e7b658ff",
+      "text": "<strong>Independence</strong>: not affiliated with FIFA, any federation, broadcaster, or sponsor. No FIFA marks, emblems, mascots, or federation crests are used. Editorial mentions of the tournament are exactly that — editorial.",
+      "routes": [
+        "about"
+      ]
+    },
+    {
+      "id": "aef964efc259",
+      "text": "<strong>Licenses</strong>: roster text derives from Wikipedia under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" rel=\"noopener\">CC BY-SA 4.0</a> (pinned revisions, linked on each page). Photos are from Wikimedia Commons under their per-file licenses, attributed where shown (hover ⓘ). Flags are self-hosted <a href=\"https://github.com/jdecked/twemoji\" rel=\"noopener\">Twemoji</a> artwork (CC BY 4.0, pinned v15.1.0). Site code: MIT.",
+      "routes": [
+        "about"
+      ]
+    },
+    {
+      "id": "4ef3c3b0a59b",
+      "text": "<strong>Honesty</strong>: every fact carries a source (<a href=\"/sources\">/sources</a>); unverifiable data shows TBD; live scores come straight from ESPN's official match feed.",
+      "routes": [
+        "about"
+      ]
+    },
+    {
+      "id": "01ac320e3810",
+      "text": "<strong>Brand graphics</strong>: the Golazo 26 mark, doodles, hero art, and share-image compositions are original works of this project (MIT/CC0) — no FIFA or federation marks anywhere. Team banners and flag chips render the country's actual flag from pinned <a href=\"https://github.com/jdecked/twemoji\" rel=\"noopener\">Twemoji</a> artwork (CC BY 4.0, self-hosted), with kit palettes human-audited. Display typeface: Barlow Condensed (<a href=\"https://openfontlicense.org\" rel=\"noopener\">OFL</a>).",
+      "routes": [
+        "about"
+      ]
+    },
+    {
+      "id": "6c0103a58771",
+      "text": "<strong>Editorial integrity</strong>: the written pieces on this site are AI-drafted from this site's own sourced data and then machine-checked, so every name and number in them traces back to that data — anything that doesn't is flagged and the piece is held, never shown. Team outlooks and match previews are read and approved by the editor before publishing. Match recaps are generated automatically at the final whistle: each is grounded in the confirmed result and the sourced goalscorers, and it publishes only once it clears that machine check — no human in the loop. A recap is held until its scorers are sourced, and a recap that fails the check is held back rather than shown. Separately, the <a href=\"/ai-league\">AI prediction league</a> is a clearly-labeled contest in which four AI models guess every match before kickoff — that league is the only place AI picks are presented as such, and they are bragging-rights fun, never editorial fact.",
+      "routes": [
+        "about"
+      ]
+    },
+    {
+      "id": "03f4a5c9736a",
+      "text": "<strong>Privacy</strong>: this site sets no cookies, runs no trackers or ads, and <strong>collects no personal data</strong> — there are no accounts and nothing about you is stored. (If match predictions are enabled later, sign-in accounts are introduced; this notice and the <a href=\"/privacy\">privacy policy</a> are updated accordingly.)",
+      "routes": [
+        "about"
+      ]
+    },
+    {
+      "id": "c7504edcd9b0",
+      "text": "Built by a fan. Contact: via the <a href=\"https://github.com/onwike/golazo26\" rel=\"noopener\">public repository</a>.",
+      "routes": [
+        "about"
+      ]
+    }
+  ]
+}

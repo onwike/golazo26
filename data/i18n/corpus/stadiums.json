@@ -1,0 +1,294 @@
+{
+  "scope": "stadiums",
+  "units": [
+    {
+      "id": "0242ca97ce77",
+      "text": "Sixteen host cities across the United States, Mexico and Canada — their history, their stadiums, and the games that made them.",
+      "routes": [
+        "stadiums"
+      ]
+    },
+    {
+      "id": "e798e4e4c7b7",
+      "text": "<p>Across the United States, Mexico, and Canada, the host venues of 2026 form a portrait of stadium-building over half a century. The oldest, Mexico City&#39;s Estadio Banorte, opened in 1966 and stands as the only ground to welcome the World Cup in 1970, 1986, and 2026. The youngest, Los Angeles&#39;s SoFi Stadium, opened in 2020. Between them gather Canada&#39;s BC Place and BMO Field, the great roofed bowls converted from gridiron to football, and Mexico&#39;s Estadio Akron and Estadio BBVA. Built by hands from Pedro Ramírez Vázquez to Populous and HKS, each venue arrives reshaped for the tournament: natural grass laid, seating recut, a continent readied to host.</p>",
+      "routes": [
+        "stadiums"
+      ]
+    },
+    {
+      "id": "7b591e8ad2d9",
+      "text": "Every fact is drawn from cited sources; capacities show the FIFA World Cup configuration with the regular configuration alongside. A blank or \"not specified\" field means the cited sources don't state it — never a guess. <a href=\"/venues\">Match-by-venue index →</a>",
+      "routes": [
+        "stadiums"
+      ]
+    },
+    {
+      "id": "2e9a0a1ce433",
+      "text": "<p>Mexico City is the capital of Mexico and the oldest capital city in the Americas. Its origins reach back to Tenochtitlan, the Mexica (Aztec) capital traditionally founded in 1325 — a symbolic date, 13 March 1325, fixed in 1925 for the city&#39;s 600th anniversary. Raised on an island in former Lake Texcoco, Tenochtitlan grew into the largest city in the pre-Columbian Americas and the hub of the Aztec Empire, until it fell to Hernán Cortés and his Tlaxcaltec allies in 1521. The Spanish re-founded the modern city that same year atop the ruins. Today it ranks among the largest metropolitan areas in the world and stands as Mexico&#39;s political, cultural and economic center, with its great stadium sitting at roughly 2,200 m (7,220 ft) elevation in the Tlalpan and Coyoacán area.</p><p>The capital is the beating heart of Mexican football. The home of Club América — the country&#39;s most successful and most polarizing club — it is also the regular home of El Tri, whose qualifiers and marquee internationals fill the bowl. The city stages the Clásico Capitalino, pitting América against Cruz Azul and Pumas, and its main arena has staged two of football&#39;s most mythologized moments: Pelé&#39;s coronation in 1970 and Maradona&#39;s double against England in 1986. Combined with the thin air at around 2,200 m and a fiercely partisan home crowd, all of this makes Mexico City one of the most intimidating settings in world football.</p>",
+      "routes": [
+        "stadiums/mexico-city"
+      ]
+    },
+    {
+      "id": "e2a49133cb0d",
+      "text": "<p>Estadio Azteca opened on 29 May 1966, its inaugural match a 2–2 draw between Club América and Torino. It was designed by the Mexican architects Pedro Ramírez Vázquez and Rafael Mijares Alcérreca, and from the start served as the permanent home of Club América and the regular home of the Mexico national team — a dual identity it has carried ever since.</p><p>The venue was owned by Grupo Televisa from 1966 onward. In a 2024 restructuring, operations were spun off into the publicly listed Grupo Ollamani, which now operates the stadium and controls Club América, while ultimate ownership remains within the Televisa group. The naming history shifted again on 14 March 2025, when Grupo Financiero Banorte acquired naming rights and the ground was renamed Estadio Banorte. For the 2026 World Cup, FIFA applies the neutral designation &quot;Mexico City Stadium&quot; (Estadio Ciudad de México), since corporate names are barred during the tournament.</p><p>Few arenas carry such a record. It was the first stadium to host two World Cup finals and stands as the only one to host three men&#39;s World Cups, in 1970, 1986 and 2026 — and the first to host three World Cup opening matches. Its reach extends well beyond football: it hosted events of the 1968 Summer Olympics, the 1975 Pan-American Games and the 1999 FIFA Confederations Cup. Set at roughly 2,200 m (7,220 ft) above sea level, its altitude remains a defining challenge for visiting teams, a factor woven into its lore as much as the famous matches it has held. Through every change of name and ownership, the stadium has remained one of the great cathedrals of the global game.</p>",
+      "routes": [
+        "stadiums/mexico-city"
+      ]
+    },
+    {
+      "id": "b8adb2dd2a51",
+      "text": "<p>Guadalajara, capital and most populous city of the Mexican state of Jalisco, was founded on 14 February 1542 in the Atemajac Valley — the last of several relocations that began in 1532. In 1560 it became the capital of Nueva Galicia, cementing an importance it has carried ever since. Its metropolitan area, home to roughly 5.3 million people as of 2020, ranks as the third-largest in Mexico.</p><p>The city is often called the &quot;most Mexican of Mexican cities,&quot; and the description is earned: Guadalajara is a heartland of mariachi, tequila, charrería and Ballet Folklórico, traditions that have shaped the national image of Mexico itself.</p><p>Football runs just as deep. The city&#39;s identity is woven around C.D. Guadalajara — better known as Chivas — founded in 1906 and one of Mexico&#39;s two most popular and successful clubs, famous for fielding only Mexican players. Chivas is the tenant of Estadio Akron, the stadium it built in 2010 in the suburb of Zapopan, part of the Guadalajara metropolitan area and the site of the 2026 World Cup venue. The metro is also home to Liga MX side Atlas, giving the city a second top-flight club. Before Chivas built its own ground, Guadalajara staged matches at the historic Estadio Jalisco, a venue of both the 1970 and 1986 World Cups — a lineage that places the city firmly among the homes of Mexican football.</p>",
+      "routes": [
+        "stadiums/guadalajara"
+      ]
+    },
+    {
+      "id": "c468d970e385",
+      "text": "<p>The stadium known for the 2026 World Cup as Estadio Guadalajara — and through most of its life as Estadio Akron — was conceived as a new home for C.D. Guadalajara, who intended to leave the historic Estadio Jalisco. Construction was announced in February 2004, but financing delays meant ground was not broken until May 2007. The venue opened on 30 July 2010.</p><p>Its design is distinctive. Concept work came from Jean-Marie Massaud and Daniel Pouzet, with sports architecture by Populous, formerly HOK Sport, and VFO as architect of record. The result is a spherical, coliseum-like form built into a raised, grass-covered artificial hill, or berm, that wraps the back of the stands. Wikipedia reports the original construction cost at US$200 million, though the figure is contested across sources.</p><p>The stadium opened with artificial turf, which drew heavy criticism from players and was replaced with natural grass in mid-2012. Its name has changed several times: it began as Estadio Omnilife from 2010 to 2016, became Estadio Chivas from 2016 to 2017, and took the name Estadio Akron from December 2017 under a deal with the lubricants firm Grupo Akron.</p><p>Since opening in 2010 it has served as the home of C.D. Guadalajara and has staged selected Mexico national team matches. For the 2026 World Cup it was temporarily renamed Estadio Guadalajara under FIFA&#39;s clean-venue policy, hosting four group-stage matches as the only 2026 venue with no knockout games.</p>",
+      "routes": [
+        "stadiums/guadalajara"
+      ]
+    },
+    {
+      "id": "af206c1cc4d5",
+      "text": "<p>Monterrey was founded on 20 September 1596 by Diego de Montemayor, who christened it the Ciudad Metropolitana de Nuestra Señora de Monterrey. Capital and largest city of the state of Nuevo León in northeastern Mexico, it sits at the foothills of the Sierra Madre Oriental and anchors the country&#39;s second-largest metropolitan area, a Monterrey metro of roughly 5.3 million people, with a city proper of 1,142,194 recorded in the 2020 census. The city stands as Mexico&#39;s leading industrial and business hub, built on steel, cement, glass, auto parts and brewing, and is often counted among the wealthiest cities in Latin America. Its nickname, La Sultana del Norte, hints at that prosperity. Watching over it all is the Cerro de la Silla, the Saddle Mountain that rises some 1,820 m and serves as the city&#39;s defining landmark, visible from inside Estadio BBVA, whose jagged roofline echoes the mountain&#39;s profile.</p><p>Football runs deep here. Monterrey is one of Mexico&#39;s most intense football cities, shaped by the Clásico Regiomontano derby between C.F. Monterrey, the club known as Rayados who play at Estadio BBVA, and Tigres UANL. Rayados rank among Liga MX&#39;s most successful and best-supported clubs, and stand as CONCACAF&#39;s most decorated Champions League and Champions Cup side. That pedigree gives the metro a deep top-flight heritage that predates Estadio BBVA itself, which only opened in 2015.</p>",
+      "routes": [
+        "stadiums/monterrey"
+      ]
+    },
+    {
+      "id": "5cba31164b29",
+      "text": "<p>Estadio BBVA rose from construction that ran from 2011 to 2015 at a cost of US$200 million, a price tag that made it the most expensive stadium in Mexico at the time. It was inaugurated on 2 August 2015, a date chosen to coincide with C.F. Monterrey&#39;s 70th anniversary. The design came from Populous working alongside the Mexican firm VFO, with Federico Velasco as lead designer. The result earned the nickname El Gigante de Acero, the Steel Giant, a fitting label for a venue whose grandstand rises at an inclination of 34 degrees and whose field-to-seat distance sits at the FIFA minimum. Through the open northern end, the Cerro de la Silla mountain is framed like a picture.</p><p>The stadium was built as the home of C.F. Monterrey, the club known as Rayados, who moved here from the 63-year-old Estadio Tecnológico. Owned and operated by FEMSA, it broke new ground beyond Mexico as well: it became the first football stadium in North America to earn LEED Silver certification. In its regular configuration the ground seats roughly 53,500, with about 43,000 general seats, some 5,000 club seats, and 324 luxury suites, a precise count of 53,529 in the fullest tally. For the 2026 World Cup the venue carries a capacity of 51,243 and will stage four matches, marking the first time it hosts men&#39;s World Cup football.</p>",
+      "routes": [
+        "stadiums/monterrey"
+      ]
+    },
+    {
+      "id": "94dde5453b1a",
+      "text": "<p>Founded in 1886, Vancouver is the largest city in British Columbia and the third-largest metropolitan area in Canada — a major Pacific port and gateway on Canada&#39;s west coast, ringed by the North Shore Mountains and the Pacific Ocean. Its setting between sea and mountains gives the city a distinct identity among Canadian metropolises, and its standing as a world stage was confirmed when it served as host city of the 2010 Winter Olympic and Paralympic Games, whose ceremonies were staged at BC Place.</p><p>Vancouver also holds one of Canada&#39;s deepest soccer roots. Organized association football took hold in British Columbia early, with the Pacific Coast Association Football League formed in 1908 and the first professional game played in 1910. The modern era of fanfare arrived with the Vancouver Whitecaps, who captured the NASL&#39;s Soccer Bowl in 1979 — a triumph that drew roughly 100,000 fans to a victory parade on Robson Street. The lineage continued through the 86ers, named for 1886, the city&#39;s founding year, who carried the local game through the 1980s and 1990s. That thread runs unbroken to the present-day Vancouver Whitecaps FC, who joined MLS in 2011 and play their matches at BC Place.</p><p>The city&#39;s football pedigree extends well beyond its clubs. Vancouver hosted the 2015 FIFA Women&#39;s World Cup Final at BC Place, cementing its place as a major Canadian football hub and a fitting host on the international stage. From its founding port-city beginnings to its modern role as an MLS home and a World Cup venue, Vancouver pairs its dramatic Pacific geography with a soccer culture as established as any in the country.</p>",
+      "routes": [
+        "stadiums/vancouver"
+      ]
+    },
+    {
+      "id": "97ed482afdad",
+      "text": "<p>BC Place opened on 19 June 1983 as the world&#39;s largest air-supported domed stadium, crowned by an inflatable fabric roof that became one of Vancouver&#39;s defining landmarks. Designed by Studio Phillips Barratt, it was built at an original construction cost of CA$126.1 million — roughly CA$356 million in 2025 dollars. Owned by the Province of British Columbia and operated by the BC Pavilion Corporation (PavCo), the venue was conceived as a multipurpose home for the city&#39;s major sporting and civic events.</p><p>From the outset it served as the home of the BC Lions of the CFL, a tenancy that has run since 1983. Its identity broadened over the decades: BC Place became the main stadium for the 2010 Winter Olympic and Paralympic Games, hosting the opening and closing ceremonies, and it remains home to Canada Sevens rugby and the BC Sports Hall of Fame.</p><p>The stadium was transformed by a roughly 16-month, approximately CA$514 million revitalization completed in 2011. Designed by Stantec Architecture, the project replaced the original inflated dome with a retractable cable-supported roof — the largest of its kind in the world — modernizing the venue while preserving its place at the heart of the city. That same year, Vancouver Whitecaps FC arrived as a tenant, joining MLS in 2011 and making BC Place its home.</p><p>Among its distinguishing features, BC Place carries the second-largest centrally-hung high-resolution scoreboard in North America, behind only AT&amp;T Stadium. Its soccer pitch is laid out at 117 by 75 yards (107 by 69 m), targeting FIFA 2-star certification. From an inflatable-domed multipurpose arena to a retractable-roof landmark on Canada&#39;s Pacific coast, BC Place has continually reinvented itself while remaining one of the country&#39;s most prominent stadiums.</p>",
+      "routes": [
+        "stadiums/vancouver"
+      ]
+    },
+    {
+      "id": "cee80a47d4b3",
+      "text": "<p>Toronto is the most populous city in Canada and the capital of Ontario. Its roots reach back to 1793, when the settlement of York was founded as the capital of Upper Canada. On March 6, 1834, that settlement was incorporated as the City of Toronto, taking up a restored Indigenous-derived name in place of York.</p><p>Today Toronto stands as Canada&#39;s financial and cultural centre and one of the most multicultural cities in the world. Its 2021 census population of 2,794,356 makes it the fourth-most-populous city in North America, after Mexico City, New York and Los Angeles. The city is one of only two Canadian host cities for the 2026 World Cup, the other being Vancouver. Its tournament venue, BMO Field, sits at Exhibition Place on the Lake Ontario waterfront.</p><p>Toronto&#39;s football culture is deep and established, and it is anchored at BMO Field itself. The ground is the home of MLS side Toronto FC, founded in 2007, whose treble-winning 2017 MLS Cup triumph at the stadium drew a passionate sellout. It is also an intermittent home of the Canada men&#39;s national team. The venue carries a purpose-built soccer pedigree, having staged the 2007 FIFA U-20 World Cup, the 2014 FIFA U-20 Women&#39;s World Cup and marquee club friendlies against opponents such as Real Madrid.</p><p>Together with the city&#39;s large immigrant communities, that soccer-specific heritage gives Toronto its football identity directly — this is a genuine football venue rather than a borrowed one.</p>",
+      "routes": [
+        "stadiums/toronto"
+      ]
+    },
+    {
+      "id": "771deefe52ec",
+      "text": "<p>BMO Field broke ground on March 29, 2006 and opened on April 28, 2007, built as a soccer-specific stadium for the 2007 FIFA U-20 World Cup and as the first home of Toronto FC. Its original construction cost was CA$62.9 million, and it was designed by Brisbin Brooks Beynon Architects.</p><p>The ground was originally surfaced with FieldTurf from 2007 to 2009, a playing surface that drew player criticism. It was converted to natural Kentucky bluegrass before the 2010 season, and then to a hybrid-grass system from 2019.</p><p>A major expansion designed by Gensler followed in 2014–2016, costing roughly CA$120 million. It added an east-grandstand upper deck of about 8,400 seats, completed in May 2015, along with a canopy roof over the east, west and south stands and a lengthened field for Canadian football. Together these works raised soccer capacity from around 21,566 to roughly 30,000.</p><p>The stadium&#39;s identity widened beyond soccer when the CFL&#39;s Toronto Argonauts moved in for the 2016 season. Beyond its regular configuration, which seats 28,180, the venue has long hosted finals and showcase fixtures, reflecting its standing as a national football home.</p><p>Bank of Montreal holds the naming rights as BMO Field, but the stadium is temporarily renamed Toronto Stadium for the 2026 World Cup under FIFA&#39;s clean-venue policy — just as it was branded National Soccer Stadium for the 2007 and 2014 FIFA youth tournaments. For the 2026 World Cup it hosts six matches: five group-stage games plus one Round of 32 fixture on July 2, 2026, among them Canada&#39;s opener on June 12, 2026. Its tournament capacity is set at 43,036.</p>",
+      "routes": [
+        "stadiums/toronto"
+      ]
+    },
+    {
+      "id": "1b8822826c29",
+      "text": "<p>Atlanta was founded in 1837 as Terminus, the end of the Western &amp; Atlantic Railroad line. It was renamed Marthasville in 1843 and finally Atlanta in 1845, and from that railroad junction it grew into the commercial and transportation capital of the U.S. Southeast.</p><p>The city&#39;s history runs through the defining chapters of the American South. A key city in the American Civil War, it was burned during Sherman&#39;s 1864 campaign and rebuilt as a &quot;New South&quot; metropolis. It became a global center of the civil rights movement — the birthplace and base of Dr. Martin Luther King Jr., whose Southern Christian Leadership Conference and Ebenezer Baptist Church on &quot;Sweet Auburn&quot; anchored the cause. In 1996 the city hosted the Summer Olympics, cementing its place on the world stage.</p><p>Atlanta is also one of MLS&#39;s flagship soccer markets. Atlanta United FC, founded in 2017, plays at Mercedes-Benz Stadium and has led MLS in average attendance every season since its debut. The club set the MLS Cup attendance record of 73,019 at the 2018 MLS Cup, which it won, and built a raucous supporter culture around groups such as Footie Mob, La Doce and All Stripes — a fervor that earned the metro Bleacher Report&#39;s 2018 label as the &quot;Black Soccer Capital of America.&quot;</p><p>The region&#39;s top-flight football pedigree extends beyond its own club. The metro hosted the 2024 Copa America opener, and it now stages eight 2026 World Cup matches, including a semi-final — a fitting stage for a city that turned a football town into a soccer capital.</p>",
+      "routes": [
+        "stadiums/atlanta"
+      ]
+    },
+    {
+      "id": "a2c2d0309b0d",
+      "text": "<p>Mercedes-Benz Stadium broke ground on May 19, 2014, and opened on August 26, 2017, in downtown Atlanta, replacing the Georgia Dome. Built at a construction cost of approximately US$1.6 billion (a 2016 estimate), it was conceived as a state-of-the-art home for the city&#39;s professional football. It is owned by the Georgia World Congress Center Authority and operated by AMB Sports and Entertainment Group under owner Arthur Blank.</p><p>The design was led by 360 Architecture, an HOK subsidiary, working alongside tvsdesign, Goode Van Slyke Architecture, and Stanley Beaman &amp; Sears. Its signature feature is a retractable roof built from eight translucent triangular &quot;pinwheel,&quot; camera-aperture panels that open and close above the bowl. The venue&#39;s permanent playing surface is FieldTurf CORE artificial turf.</p><p>Since 2017, Mercedes-Benz Stadium has served as the home of the NFL&#39;s Atlanta Falcons and MLS&#39;s Atlanta United FC, with an Atlanta NWSL team slated to begin play in 2028. From the outset it was designed to host the biggest events in American sport. It staged Super Bowl LIII on February 3, 2019, where the Patriots beat the Rams 13-3, and it hosted the 2018 and 2025 College Football Playoff National Championships. The stadium is set to host Super Bowl LXII in 2028.</p><p>The venue carries a genuine football lineage as well, having hosted the 2018 MLS Cup and two 2024 Copa America matches. For the 2026 World Cup it takes the name Atlanta Stadium and welcomes eight matches: five group-stage fixtures, one Round of 32, one Round of 16, and a semi-final on July 15, 2026 — its largest tournament responsibility yet.</p>",
+      "routes": [
+        "stadiums/atlanta"
+      ]
+    },
+    {
+      "id": "dcaf6d75a773",
+      "text": "<p>Foxborough, Massachusetts sits in the Greater Boston metropolitan area, roughly 22 miles (35 km) southwest of downtown Boston and about 18 miles (29 km) northeast of Providence, Rhode Island. The town was settled in 1704 and incorporated in 1778, taking its name from Charles James Fox, a British Whig MP who had supported the American colonies. Today Foxborough is known above all as the home of Gillette Stadium, the sports and entertainment complex that, with the adjacent Patriot Place, is owned by the Kraft Group.</p><p>The football culture here belongs less to the small town of Foxborough than to the Greater Boston metro that surrounds it. Boston is a deep American sports market, and two of its tenants share the stadium: the New England Patriots of the NFL and the New England Revolution of MLS. The Revolution were among MLS&#39;s ten charter clubs, founded by Robert Kraft in 1996 and named for the region&#39;s role in the American Revolution.</p><p>The region&#39;s soccer roots run deeper still. Boston&#39;s Oneida Football Club, formed in 1862, is cited as the first organized football club in the United States. That heritage carried into the modern era through the venue&#39;s predecessor, Foxboro Stadium, which staged matches at the 1994 FIFA World Cup and the 1999 Women&#39;s World Cup. Gillette Stadium has since added to that lineage, hosting the 2003 Women&#39;s World Cup, the 2016 Copa America Centenario, and multiple Gold Cups — a record that makes this corner of New England one of the more storied football destinations in the country.</p>",
+      "routes": [
+        "stadiums/boston"
+      ]
+    },
+    {
+      "id": "750811cdd033",
+      "text": "<p>Gillette Stadium broke ground on 24 March 2000 and opened on 11 May 2002, privately financed by Robert Kraft at a cost of $325 million. It was designed by HOK Sport, the firm now known as Populous, and has been owned and operated by the Kraft Group since it opened.</p><p>The venue began life under a different name. From 11 May to 4 August 2002 it was known as CMGI Field, before a naming-rights deal rechristened it Gillette Stadium. For the 2026 World Cup it takes the FIFA neutral name Boston Stadium.</p><p>The stadium replaced the adjacent Foxboro Stadium, which had stood from 1971 to 2002. Since opening, Gillette has been home to both the New England Patriots of the NFL and the New England Revolution of MLS. Its playing surface has changed with its tenants&#39; needs: natural grass from 2002 to 2006, then FieldTurf CORE artificial turf from 2006, before a return to natural grass for the World Cup. Its American-football seating has likewise been reconfigured over the years, from 68,756 in its early seasons to 65,878 and then 64,628.</p><p>A separate $250 million project completed in 2023 reshaped the stadium&#39;s skyline, adding a 22-story lighthouse tower crowned by a 360-degree observation deck, alongside a large curved outdoor video board.</p><p>For the 2026 tournament the stadium carries one of the heaviest match loads among host venues, scheduled to stage seven games: five in the group stage, one in the Round of 32, and one quarter-final — the first of the tournament, on 9 July 2026.</p>",
+      "routes": [
+        "stadiums/boston"
+      ]
+    },
+    {
+      "id": "c6c174ca9305",
+      "text": "<p>AT&amp;T Stadium sits in Arlington, Texas, a city of roughly 390,000 wedged between Dallas and Fort Worth. Arlington was incorporated in 1884, while the metroplex&#39;s anchor city, Dallas, traces its founding to 1841. Together they form the heart of the Dallas-Fort Worth metroplex, one of the largest metropolitan areas in the United States with a population of over 7 million.</p><p>Arlington has grown into the metroplex&#39;s sports and entertainment hub. Alongside AT&amp;T Stadium, the city is home to the Texas Rangers&#39; Globe Life Field and to Six Flags Over Texas, clustering some of the region&#39;s marquee attractions within a single suburban core.</p><p>Football culture here belongs less to suburban Arlington than to the wider Dallas-Fort Worth metroplex. The region fields MLS side FC Dallas, based in Frisco, and is home to a large and growing Hispanic and Latin American community whose support drives strong followings for Mexican and South American national teams. That appetite for the international game has made AT&amp;T Stadium a natural neutral host: the venue has staged repeat Concacaf Gold Cup matches and 2024 Copa América fixtures, regularly drawing large crowds and cementing the metroplex&#39;s place on the continental football map.</p>",
+      "routes": [
+        "stadiums/dallas"
+      ]
+    },
+    {
+      "id": "61eb5abf0944",
+      "text": "<p>AT&amp;T Stadium opened on May 27, 2009 under its original name, Cowboys Stadium, the new home of the NFL&#39;s Dallas Cowboys. Designed by HKS, Inc. at a construction cost of about $1.3 billion, it was conceived on a monumental scale, becoming the largest NFL stadium by seating capacity. Its roughly 80,000 seats can be reconfigured to hold well past 100,000, and the building is defined by two signature features: a retractable roof and one of the largest center-hung video boards in all of sports.</p><p>The venue took its lasting identity in 2013, when a naming-rights deal announced on July 25 rechristened it AT&amp;T Stadium. From the outset it served as far more than a football field. In February 2011 it hosted Super Bowl XLV, and over the years it has welcomed a steady stream of major events beyond American football, establishing itself as one of the country&#39;s premier multi-purpose arenas.</p><p>Crucially, the stadium also built a genuine international football pedigree. It became a regular host for Concacaf Gold Cup matches and, in 2024, a Copa América venue, repeatedly serving as a neutral ground for high-level continental competition. That track record positioned it for its largest stage yet. For the 2026 World Cup, FIFA renamed the venue Dallas Stadium and oversaw its conversion to a natural-grass pitch raised and widened to meet tournament dimensions, a transformation that turned the celebrated gridiron showpiece into a global football arena.</p>",
+      "routes": [
+        "stadiums/dallas"
+      ]
+    },
+    {
+      "id": "ddcc65955232",
+      "text": "<p>Houston was founded on August 30, 1836 by New York real-estate speculators Augustus C. and John K. Allen on land along Buffalo Bayou. They named it for the Texas Revolution hero and later Republic of Texas president, General Sam Houston, and the young settlement briefly served as capital of the Republic of Texas.</p><p>From those bayou-side origins, Houston grew into the fourth-largest city in the United States, its population exceeding 2.3 million and its metropolitan area surpassing 7 million. It became the global capital of the energy and oil-and-gas industry, home to NASA&#39;s Johnson Space Center — the source of its nickname, &quot;Space City&quot; — and to the Texas Medical Center. It ranks among the most ethnically diverse major cities in America.</p><p>That diversity shapes the city&#39;s football culture. Houston is a strong soccer market, anchored by MLS side Houston Dynamo FC and NWSL&#39;s Houston Dash, both playing at Shell Energy Stadium. A large and passionate Mexican-American fan base has made the city a frequent host for the Mexico national team, El Tri, and for CONCACAF events. NRG Stadium — long known as Reliant Stadium — has served as a go-to United States venue for USMNT–Mexico fixtures, the Gold Cup, and Copa América Centenario matches, regularly drawing crowds of 68,000 and above. It is that deep, demonstrated appetite for the international game, as much as the city&#39;s scale and global outlook, that frames Houston as a fitting stage among the 2026 host cities.</p>",
+      "routes": [
+        "stadiums/houston"
+      ]
+    },
+    {
+      "id": "2ac7e712a3d3",
+      "text": "<p>Houston Stadium — known as NRG Stadium, and originally as Reliant Stadium — was conceived as much for the rodeo as for football. Groundbreaking came on March 9, 2000, the building was topped off in October 2001, and construction was completed in 30 months at a cost of US$352 million. It opened on August 24, 2002 with a preseason game, the Miami Dolphins defeating the Houston Texans 24–3; the first regular-season NFL game followed on September 8, 2002, the Texans beating the Dallas Cowboys 19–10.</p><p>The venue&#39;s signature feat was engineering: it was the first NFL facility built with a retractable roof. Two fabric panels split at the 50-yard line and open in as little as 7 minutes, designed using kinetic-architecture principles by Populous (HOK Sport) together with Walter P Moore and Uni-Systems. The dual-purpose brief was no afterthought — co-tenant the Houston Livestock Show and Rodeo, RodeoHouston, was integral to the design, the building shaped to serve both audiences.</p><p>As the primary home of the Houston Texans, the stadium offers over 7,000 club seats and 186 luxury suites, with a regular capacity of 72,220 that can expand to roughly 80,000 for special events. Its field has changed over the years, from a natural-grass tray system at opening to permanent artificial turf installed in 2015. The naming has shifted too: opened as Reliant Stadium, it became NRG Stadium in 2014 under NRG Energy naming rights, then took the name Houston Stadium for the 2026 World Cup, with the Reliant name set to return afterward.</p><p>Beyond football and the rodeo, the building has hosted some of the country&#39;s largest events: Super Bowls XXXVIII and LI, the 2024 College Football Playoff National Championship, and WrestleMania 25. The 2026 World Cup marks its first men&#39;s World Cup, the latest chapter for a venue long defined by versatility and scale.</p>",
+      "routes": [
+        "stadiums/houston"
+      ]
+    },
+    {
+      "id": "d6274c6f687a",
+      "text": "<p>Kansas City sits on the Missouri–Kansas state line, at the confluence of the Missouri and Kansas rivers, and the metro straddles both states. It was first incorporated as the Town of Kansas in 1850, reincorporated as the City of Kansas in 1853, and renamed Kansas City in 1889.</p><p>As the largest city in Missouri, it grew into a historic rail, stockyard and commerce hub of the American Midwest. It is internationally known for its jazz heritage, centered on the 18th &amp; Vine district, for Kansas City-style barbecue, and for its fountains.</p><p>For its size, Kansas City is a deep football town. It is home to Sporting Kansas City, a charter soccer club founded in 1996 as the Kansas City Wiz, later the Wizards. The club played at Arrowhead through 2007 before moving to its own soccer-specific stadium. The city is also home to the Kansas City Current of the NWSL, who built the first stadium purpose-built for a women&#39;s professional team. Kansas City hosted the 2024 Copa América along with multiple USMNT and Gold Cup fixtures. Separately, on the gridiron, the NFL&#39;s Chiefs make Arrowhead one of the loudest venues in sport.</p>",
+      "routes": [
+        "stadiums/kansas-city"
+      ]
+    },
+    {
+      "id": "08f6ed4ad525",
+      "text": "<p>Known to its NFL tenant as GEHA Field at Arrowhead Stadium and rebranded &quot;Kansas City Stadium&quot; for the 2026 FIFA World Cup, the venue traces its origins to a groundbreaking on 11 July 1968. It opened on 12 August 1972, when the Kansas City Chiefs beat the St. Louis Cardinals 24–14 in the first preseason game. The stadium was built as part of the Truman Sports Complex, which it shares with Kauffman Stadium, home of MLB&#39;s Royals.</p><p>The original design was the work of the Kansas City firm Kivett and Myers; a later renovation between 2007 and 2010 was designed by Populous, formerly HOK Sport, at a cost of about US$375 million. The stadium opened with a capacity of 78,097, in use from 1972 to 1994, and the Chiefs-configuration capacity has stood at 76,416 from 2010 onward.</p><p>The venue has been the continuous home of the Chiefs since 1972, making it one of the most established stadiums in American professional sport. From 1996 to 2007 it also hosted the MLS charter club then known as the Kansas City Wiz and Wizards, the franchise that became Sporting Kansas City. Its playing surface is natural NorthBridge Bermudagrass, in use since 2013.</p><p>In March 2021 naming rights were sold to GEHA, establishing the official name GEHA Field at Arrowhead Stadium. The stadium holds the Guinness World Record for the loudest crowd roar at a sports stadium, 142.2 dBA, set on 29 September 2014.</p><p>For the 2026 FIFA World Cup, the venue hosts six matches: four group-stage games, one Round of 32 tie, and one quarterfinal.</p>",
+      "routes": [
+        "stadiums/kansas-city"
+      ]
+    },
+    {
+      "id": "3e74213603a0",
+      "text": "<p>SoFi Stadium sits in Inglewood, California, a city incorporated in 1908 within the Los Angeles metropolitan area. Los Angeles itself was founded in 1781 as El Pueblo de Nuestra Senora la Reina de los Angeles, and the metro it anchors has grown into the second-largest in the United States and a global entertainment capital.</p><p>The stadium stands roughly 4.8 km from Los Angeles International Airport, on the former Hollywood Park Racetrack site, as the centerpiece of the Hollywood Park mixed-use development. Greater Los Angeles is also slated to host ceremonies for the 2028 Summer Olympics, with SoFi Stadium among the venues at the heart of that celebration.</p><p>Los Angeles ranks among the strongest soccer markets in the United States. A large Mexican-American and broader Latino population gives CONCACAF and CONMEBOL fixtures a near-home-crowd atmosphere, and Mexico routinely sells out the Los Angeles area, as it did at the 2023 Gold Cup Final. The metro is home to two MLS clubs, LA Galaxy and LAFC, and carries a deep history of high-profile international matches, first at the Rose Bowl and now at SoFi Stadium.</p><p>It is worth noting that this football culture attaches to the Los Angeles metro as a whole rather than to the small city of Inglewood, where the stadium physically stands. The metro&#39;s scale, its passionate Latino fan base, and its long pedigree of staging marquee international football make it a fitting host within the wider tournament map.</p>",
+      "routes": [
+        "stadiums/los-angeles"
+      ]
+    },
+    {
+      "id": "9b14a50ac69d",
+      "text": "<p>SoFi Stadium opened on 8 September 2020 in Inglewood, California, rising on the former Hollywood Park Racetrack site within the Hollywood Park development. Designed by HKS, Inc., it carried a cost estimated at roughly $5.5 billion by May 2020, placing it among the most expensive stadiums ever built. Ownership rests with StadCo LA and the Hollywood Park Land Company, tied to Stan Kroenke.</p><p>The venue was conceived as a home for two NFL franchises, the Los Angeles Rams and the Los Angeles Chargers, both resident since 2020. Its most distinctive feature is a freestanding translucent ETFE canopy spanning about one million square feet across 302 panels, beneath which hangs the dual-sided oval 4K Infinity Screen video board.</p><p>From its earliest seasons the stadium drew the biggest events in American sport. It hosted Super Bowl LVI in February 2022, where the Rams beat the Bengals 23-20, and staged the 2023 College Football Playoff National Championship. Its football pedigree began to build alongside, with top-tier CONCACAF and CONMEBOL fixtures bringing international crowds to Inglewood.</p><p>For the World Cup the stadium is officially branded &quot;Los Angeles Stadium&quot; under FIFA&#39;s clean-venue, neutral-naming policy, and its regular capacity of 70,240 was set at a FIFA-confirmed 70,492 for the tournament. Its artificial turf was lifted and replaced with a natural-grass pitch, a hybrid Kentucky bluegrass surface grown over a layered drainage and ventilation structure with grow lighting to sustain living grass beneath the canopy.</p><p>Looking ahead, SoFi Stadium is set to host the opening and closing ceremonies of the 2028 Summer Olympics, cementing its place as one of the defining venues of its era. In a remarkably short span it moved from a horse-racing site to one of the most recognizable stadiums in the world, equally at home staging an NFL season, a Super Bowl, and now the global game.</p>",
+      "routes": [
+        "stadiums/los-angeles"
+      ]
+    },
+    {
+      "id": "ea940bd8b5cb",
+      "text": "<p>Miami Gardens is a city in Miami-Dade County, Florida, incorporated in 2003 and home to Hard Rock Stadium, which had opened years earlier in 1987. The young municipality sits within the Greater Miami metropolitan area, one of the United States&#39; major gateways to Latin America and the Caribbean.</p><p>Football culture in this corner of Florida hangs not on the suburban locality of Miami Gardens but on the Greater Miami metro that surrounds it. Miami ranks among the most football-passionate markets in the United States, a fervor driven by its large Latin American and Caribbean diaspora. The city is home to Inter Miami CF, the club Lionel Messi joined in 2023, and it routinely draws blockbuster internationals and tournaments. That pedigree has been written largely at Hard Rock Stadium, where both the 2024 Copa America Final and matches of the 2025 FIFA Club World Cup were staged. Few American host cities bring this depth of top-flight football heritage to the 2026 World Cup, and fewer still channel it through a fan base so closely woven into the football traditions of the Americas. In Miami Gardens, a city barely two decades old, the global game finds one of its most natural homes.</p>",
+      "routes": [
+        "stadiums/miami"
+      ]
+    },
+    {
+      "id": "b8e8351aab4f",
+      "text": "<p>Hard Rock Stadium opened on August 16, 1987, when it hosted its first preseason game. Built at a construction cost of $115 million and designed by HOK Sport, the firm now known as Populous, it began life as Joe Robbie Stadium, a name it carried until 1996. From the outset it was the home of the NFL&#39;s Miami Dolphins, a tenancy held since 1987.</p><p>The venue&#39;s identity has been remarkably fluid. Through naming-rights deals it became Pro Player Park and Pro Player Stadium, then Dolphins and Dolphin Stadium, Land Shark Stadium, Sun Life Stadium and briefly New Miami Stadium, before settling on Hard Rock Stadium in 2016. Its tenant roster has been equally broad: it served as home to MLB&#39;s Florida and Miami Marlins from 1993 to 2011, who won the 1997 and 2003 World Series there; it has hosted the Miami Hurricanes in college football since 2008 and the Miami Open tennis tournament since 2019. The playing surface is Tifway 419 Bermuda grass.</p><p>The stadium&#39;s character was reshaped by a 2015-2016 renovation, privately funded by owner Stephen Ross. The project added corner video boards and additional suites and crowned the venue with an open-air canopy, anchored by four corner spires, covering most of the seating bowl. The work reduced capacity from the original roughly 75,000 to about 65,000.</p><p>Beyond its football tenants, the stadium has staged some of American sport&#39;s largest occasions, including six Super Bowls and multiple college football national-championship games. In recent years it has built a genuine association-football resume, hosting the 2024 Copa America Final and 2025 FIFA Club World Cup matches, among them the Al Ahly 0-0 Inter Miami opener. For the 2026 FIFA World Cup the stadium is temporarily renamed Miami Stadium under FIFA&#39;s clean-venue naming policy. It will host seven matches: four group-stage games, one Round of 32, one quarter-final, and the third-place match on July 18, 2026.</p>",
+      "routes": [
+        "stadiums/miami"
+      ]
+    },
+    {
+      "id": "ff4c8df7a133",
+      "text": "<p>East Rutherford incorporated as a borough on March 28, 1894, carved out of Boiling Springs Township. A small Bergen County borough roughly 7 miles west of Midtown Manhattan, it is anchored by the Meadowlands Sports Complex — home to MetLife Stadium, the Meadowlands Racetrack and the American Dream mega-mall. The Meadowlands Sports Complex opened in 1976, and MetLife Stadium followed in 2010. Despite its modest size, the borough carries an outsized place in sporting history: it is the smallest municipality ever to host a Super Bowl, having staged Super Bowl XLVIII in 2014, and it hosts the 2026 World Cup final.</p><p>The football culture, however, belongs less to the borough than to the wider New York/New Jersey metropolitan area — one of the largest and most football-passionate markets in the United States. The metro is home to the New York Red Bulls and NYCFC, and it remembers the New York Cosmos of the 1970s and 1980s, whose ranks once included Pelé and Beckenbauer. Layered on top are vast Latino, European and African diaspora fanbases that give the region a deep, polyglot relationship with the global game.</p><p>That appetite has long shown itself at the gate. MetLife Stadium and its predecessor, Giants Stadium, built a record of selling out marquee internationals, from the Copa América Centenario final to Argentina–Brazil superclásicos. The bi-state reach of the market is written directly into the tournament identity: for the World Cup, the venue carries the name &quot;New York New Jersey Stadium,&quot; a deliberate nod to a fanbase that spreads across two states rather than a single small borough. It is the metro, not East Rutherford alone, that the World Cup branding is meant to capture.</p>",
+      "routes": [
+        "stadiums/new-york-nj"
+      ]
+    },
+    {
+      "id": "9f443c9a94fe",
+      "text": "<p>MetLife Stadium opened on April 10, 2010 as New Meadowlands Stadium, taking its place on the Meadowlands Sports Complex where it replaced Giants Stadium, which had stood from 1976 to 2010. Built at roughly US$1.6 billion and privately financed by the ownership of the New York Giants and New York Jets, it was the most expensive stadium in the United States at the time of its completion. The following year a naming-rights agreement reshaped its identity: under a 25-year deal signed on August 23, 2011, New Meadowlands Stadium became MetLife Stadium.</p><p>The venue was conceived as a shared home for two NFL franchises, the Giants and the Jets — an unusual arrangement reflected in its design. The lead architect was 360 Architecture, working with EwingCole, Rockwell Group and Bruce Mau Design, and the building&#39;s neutral exterior was lit in each home team&#39;s colors so that it could belong to whichever club was playing. Ownership traces through the New Jersey Sports and Exposition Authority lineage.</p><p>From the outset MetLife was built to host events on the grandest scale, and its milestones span codes. In American football it staged Super Bowl XLVIII on February 2, 2014, where Seattle beat Denver 43–8 — the first cold-weather, open-air Super Bowl, with kickoff temperatures around 49°F. In international football it hosted the 2016 Copa América Centenario final, in which Chile beat Argentina 4–2 on penalties.</p><p>Its place in the global game culminates with the 2026 World Cup. FIFA selected the stadium to host the tournament&#39;s final on July 19, 2026, and it will stage eight matches in all. To meet the demands of the event, the playing surface was converted from artificial turf to natural Bermudagrass — a transformation that turned a purpose-built gridiron venue into a stage fit for the world&#39;s biggest football match.</p>",
+      "routes": [
+        "stadiums/new-york-nj"
+      ]
+    },
+    {
+      "id": "36f74be5d5ba",
+      "text": "<p>Philadelphia was founded by William Penn in 1682 and grew into the largest city in the American colonies, serving as the capital of the United States through much of the Revolutionary era. It is the birthplace of American independence: both the Declaration of Independence in 1776 and the U.S. Constitution in 1787 were signed at Independence Hall. That heritage gives the city&#39;s place on the 2026 World Cup map a symbolic charge, as Philadelphia hosts a Round of 16 match on July 4 — Independence Day — during the United States&#39; 250th-anniversary year.</p><p>Few American cities wear their sporting allegiances as openly as Philadelphia. The metro carries a famously fervent fan base across the Eagles in the NFL, the Phillies in MLB, the 76ers in the NBA and the Flyers in the NHL, a devotion that runs through the whole region rather than any single team. On the soccer side, the metro is home to MLS side Philadelphia Union, who have played at Subaru Park in Chester since 2010, anchoring a top-flight professional presence for the game in the area.</p><p>The city&#39;s international football pedigree is real and earned at the venue itself. Lincoln Financial Field has staged Copa America Centenario fixtures, the 2015 CONCACAF Gold Cup final, and matches involving the USMNT, layering genuine top-flight football history onto a metro already steeped in big-event sport. Taken together — the founding story, the constitutional milestones, and a sporting culture as passionate as any in the country — Philadelphia arrives at the 2026 World Cup as a host city where civic identity and football fervour meet on the same ground.</p>",
+      "routes": [
+        "stadiums/philadelphia"
+      ]
+    },
+    {
+      "id": "9dce3d4ee161",
+      "text": "<p>Lincoln Financial Field opened in August 2003 as a purpose-built football venue, replacing Veterans Stadium in the city&#39;s South Philadelphia sports-complex district at 1020 Pattison Avenue. It was built at an original construction cost of US$512 million and designed by NBBJ with Agoos Lovera Architects, with structural engineering by Ove Arup &amp; Partners.</p><p>From its opening it has served as the home of the Philadelphia Eagles in the NFL and the Temple Owls in NCAA football, while also hosting soccer fixtures. The dual role as a gridiron home and an occasional football ground has shaped the venue&#39;s identity across more than two decades, anchoring it as one of the marquee stadiums of its city.</p><p>A defining chapter in the stadium&#39;s story is its sustainability programme. A 2013 renovation, costing roughly US$125 million, added about 11,000 solar panels and 14 wind turbines, together generating around a third — 30% — of the stadium&#39;s energy. That installation made the venue a notable example of large-scale on-site renewable power among major American stadiums.</p><p>The ground also carries a substantial international football record, having staged Copa America Centenario group matches and the 2015 CONCACAF Gold Cup final, in which Mexico beat Jamaica 3-1 on July 26, 2015. For the 2026 World Cup the venue is renamed Philadelphia Stadium and hosts six matches, including a Round of 16 tie on July 4 — a tournament chapter that places a stadium first conceived for the gridiron at the centre of the global game, with a confirmed World Cup configuration capacity of 68,324.</p>",
+      "routes": [
+        "stadiums/philadelphia"
+      ]
+    },
+    {
+      "id": "546137031a76",
+      "text": "<p>The 2026 World Cup&#39;s San Francisco Bay Area matches are played in Santa Clara, a city at the southern edge of Silicon Valley roughly 40 miles south of downtown San Francisco. Santa Clara traces its origin to 1777, when Mission Santa Clara de Asís was established; it was incorporated as a city in 1852. The wider San Francisco metro reaches back further still, to the Spanish presidio and mission of 1776, before booming with the Gold Rush of 1849.</p><p>Today Santa Clara is a tech-industry hub, and Levi&#39;s Stadium anchors the Bay Area&#39;s standing as a 2026 host region. FIFA&#39;s &quot;San Francisco Bay Area&quot; host designation is deliberately broad, spanning Santa Clara and San Jose as well as the wider Bay metropolitan area rather than a single municipality.</p><p>Because the venue sits in a small city, the region&#39;s football identity is best understood through the metro as a whole. The San Francisco Bay Area is one of the most soccer-engaged parts of the United States. The San Jose Earthquakes, two-time MLS Cup champions, play nearby at PayPal Park, and the area draws a large, diverse fan base — including notably strong Mexican-American support for El Tri friendlies and for Copa América and Gold Cup matches. That enthusiasm is matched by a track record of staging major international tournaments, among them the Copa América Centenario in 2016 and the CONCACAF Gold Cup in 2017.</p><p>The Bay Area&#39;s appetite for the game sits within an unusually deep general sports culture. Across the region, allegiances run through the 49ers, the Giants, the Warriors and the A&#39;s, giving Santa Clara&#39;s World Cup venue a metropolitan audience long accustomed to top-tier competition. It is that combination — a Silicon Valley setting, a broad multi-city host footprint, and one of the country&#39;s most committed soccer followings — that frames the San Francisco Bay Area as a 2026 host.</p>",
+      "routes": [
+        "stadiums/sf-bay-area"
+      ]
+    },
+    {
+      "id": "f7a7304a905f",
+      "text": "<p>The venue FIFA lists as San Francisco Bay Area Stadium for the 2026 World Cup is Levi&#39;s Stadium, which opened on July 17, 2014 as the home of the San Francisco 49ers of the NFL. It was designed by HNTB, serving as both design architect and architect of record, and built by Turner Construction at a construction cost of approximately $1.3 billion — around $1.2 billion by some accounts.</p><p>The stadium takes its name from Levi Strauss &amp; Co., which acquired the naming rights in 2013. Built primarily for American football, it offers a regular seating capacity of 68,500, expandable to roughly 75,000 for major events. For the 2026 World Cup, FIFA confirmed a configuration capacity of 68,827.</p><p>From its early years, Levi&#39;s Stadium established itself as a venue for marquee occasions well beyond its NFL tenant. It hosted Super Bowl 50 in February 2016 and returned to that stage with Super Bowl LX in February 2026. The same period saw it stage WrestleMania 31 in 2015 and the College Football Playoff National Championship in 2019, underscoring its role as a flagship multi-sport arena.</p><p>Unusually for a stadium built principally for the NFL, it also accumulated a genuine top-level football history before its World Cup selection, drawing on major international competition staged on its pitch.</p><p>For the 2026 tournament, the venue is temporarily renamed San Francisco Bay Area Stadium in keeping with FIFA&#39;s clean-venue and neutral-naming policy, which sets aside commercial stadium names during the competition. The World Cup also marks a distinctive milestone in the building&#39;s identity: in 2026 Levi&#39;s Stadium becomes the first venue to host a Super Bowl and FIFA World Cup matches in the same calendar year, a convergence of two of the sport world&#39;s largest events under one roof within months of each other.</p>",
+      "routes": [
+        "stadiums/sf-bay-area"
+      ]
+    },
+    {
+      "id": "29e402e68726",
+      "text": "<p>Seattle traces its permanent non-Native settlement to Alki Point in 1851. The town was incorporated on 14 January 1865, that charter was voided in 1867, and Seattle re-incorporated on 2 December 1869.</p><p>Today Seattle is the largest city in Washington State and across the Pacific Northwest, set on Puget Sound. Known as the Emerald City, it is a major tech, aerospace and maritime hub, home to Boeing among its defining industries. Lumen Field sits in the SoDo district, just south of downtown.</p><p>The city carries one of the deepest soccer cultures in the United States. The Seattle Sounders FC have played in MLS since 2009 and routinely draw among the largest crowds in the league. They are backed by highly organized supporters&#39; groups, the Emerald City Supporters, Gorilla FC, Eastside Supporters and North End Faithful, whose tifo and chant culture is often compared to European ultras. The Sounders sold out their inaugural MLS season and quickly built a season-ticket waitlist, a sign of demand that has rarely cooled since.</p><p>The professional game in Seattle is not the Sounders alone. The city is also home to NWSL side Seattle Reign FC, which has played at Lumen Field since 2022 and rebranded from OL Reign back to Seattle Reign FC in January 2024. That dual presence, men&#39;s and women&#39;s top-flight football sharing one ground, deepens a calendar of high-level matches few American cities can match.</p><p>The scale of that support shows in the record book. The Sounders set a club single-game attendance record of 69,314 at the Leagues Cup 2025 Final on 31 August 2025, a 3-0 win over Inter Miami CF. It is the kind of figure that explains why Seattle was entrusted with a share of the world&#39;s biggest tournament: a metro where football fills a major stadium not as a novelty but as routine, and where the supporters&#39; culture has matured into one of the loudest and most committed in North American soccer.</p>",
+      "routes": [
+        "stadiums/seattle"
+      ]
+    },
+    {
+      "id": "39d51a36ebab",
+      "text": "<p>Lumen Field opened on 28 July 2002, built on the site of the demolished Kingdome at a total complex cost of about $430 million, roughly $770 million in 2025 dollars. It debuted as Seahawks Stadium, the new home of the NFL&#39;s Seattle Seahawks, who have played there since 2002.</p><p>The venue&#39;s name has changed several times across its life. It became Qwest Field in 2004, CenturyLink Field in 2011, and Lumen Field in November 2020 after Lumen Technologies. For the FIFA World Cup, FIFA&#39;s corporate-name policy sets the sponsor name aside, and the ground is branded Seattle Stadium for the tournament.</p><p>The stadium is owned by the Washington State Public Stadium Authority and was designed by Ellerbe Becket in association with LMN Architects, together with Streeter &amp; Associates. It stands at 800 Occidental Avenue South in Seattle&#39;s SoDo neighborhood, just south of downtown.</p><p>Though conceived as a football and soccer venue, Lumen Field grew into one of the busiest grounds in American sport. Beyond the Seahawks, it became home to MLS&#39;s Seattle Sounders FC from 2009 and to NWSL&#39;s Seattle Reign FC from 2022, giving a single stadium three major professional tenants. Its configurations flex to match: about 68,740 for NFL and expandable to roughly 72,000 for special events, about 37,722 for MLS, and about 10,000 for NWSL.</p><p>The playing surface has its own history. Outside the World Cup the ground uses a FieldTurf CORE artificial surface, installed in March 2024. For the 2026 tournament it was converted to a temporary natural and hybrid grass pitch, grown in Moses Lake, WA, and laid over the existing turf.</p><p>From a name that shifts with its sponsors to a field that changes with its calendar, Lumen Field has remained a fixture of Seattle&#39;s sporting identity for more than two decades, a multi-purpose venue purpose-built to host the city&#39;s biggest occasions.</p>",
+      "routes": [
+        "stadiums/seattle"
+      ]
+    },
+    {
+      "id": "189de7f80f53",
+      "text": "Facts and figures are drawn from the cited sources and reviewed by the site's solo maintainer. Capacities show the FIFA World Cup configuration with the regular configuration alongside; a blank or \"not specified\" field means the sources don't state it. Renovation details as of",
+      "routes": [
+        "stadiums/mexico-city",
+        "stadiums/guadalajara",
+        "stadiums/monterrey",
+        "stadiums/vancouver",
+        "stadiums/toronto",
+        "stadiums/atlanta",
+        "stadiums/boston",
+        "stadiums/dallas",
+        "stadiums/houston",
+        "stadiums/kansas-city",
+        "stadiums/los-angeles",
+        "stadiums/miami",
+        "stadiums/new-york-nj",
+        "stadiums/philadelphia",
+        "stadiums/sf-bay-area",
+        "stadiums/seattle"
+      ]
+    },
+    {
+      "id": "7d697a810d72",
+      "text": "; later changes are not reflected. Text adapted under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" rel=\"noopener\">CC BY-SA 4.0</a>.",
+      "routes": [
+        "stadiums/mexico-city",
+        "stadiums/guadalajara",
+        "stadiums/monterrey",
+        "stadiums/vancouver",
+        "stadiums/toronto",
+        "stadiums/atlanta",
+        "stadiums/boston",
+        "stadiums/dallas",
+        "stadiums/houston",
+        "stadiums/kansas-city",
+        "stadiums/los-angeles",
+        "stadiums/miami",
+        "stadiums/new-york-nj",
+        "stadiums/philadelphia",
+        "stadiums/sf-bay-area",
+        "stadiums/seattle"
+      ]
+    }
+  ]
+}
