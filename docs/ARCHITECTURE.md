@@ -1,119 +1,149 @@
 # Architecture
 
-Golazo 26 is a **bake-don't-serve** static site. There is no application server,
-no database in the request path, and no code running when you load a page. A
-single Node generator turns a set of sourced JSON datasets into a folder of plain
-HTML, and that folder is served as static files. This document explains how the
-pieces fit and how to extend them.
+## What this repository is
 
-## The shape of it
+This is a showcase of a static-site generator, not an operational deployment. It
+contains the engine, the datasets it reads, and the client-side code it emits.
+There is no server to stand up, no infrastructure definition to apply, and no
+scheduler running anywhere in here. Anyone who clones it can run the generator
+and get the same output that the published guide is built from; nobody who clones
+it inherits a running system.
 
-```
-data/*.json   ──┐
-                ├──►  node scripts/build.mjs  ──►  dist/   ──►  static host
-site/*        ──┘        (the generator)         (HTML +        (Cloudflare
-(static assets)                                   assets)         Workers)
-```
+Read the sections below as a description of the machine, in the order data moves
+through it.
 
-Three inputs, one command, one output:
+---
 
-- **`data/`** — the datasets the whole site is built from: matches, teams,
-  rosters, people, venues, broadcasts, image metadata. Every record carries its
-  own `source_url`. This is the source of truth.
-- **`site/`** — static assets that get copied into the build verbatim: CSS,
-  client JS, fonts, icons, brand marks, flags.
-- **`scripts/build.mjs`** — the generator. It reads `data/`, renders every page,
-  copies `site/` in, and writes the finished site to `dist/`.
+## 1. Ingest — pinned upstream, versioned locally
 
-`dist/` is disposable — it's `.gitignore`d and regenerated from scratch on every
-build. Nothing downstream of the generator is hand-edited.
+Nothing in the site talks to an upstream provider at page-view time. Instead, the
+scripts in `scripts/` fetch from public sources on demand and write the result
+into `data/` as ordinary JSON that is reviewed and committed like any other file.
 
-## The data pipeline
+Each ingest script owns one dataset and one shape. The fixture list, the squad
+lists, the venue records, the flag map, and the team palettes are all built this
+way, and every record keeps the URL it was derived from alongside the value. Two
+consequences fall out of that choice:
 
-The build is a pure function of its inputs: same `data/` in, same `dist/` out.
-For one build run:
+- **The build is reproducible.** A checkout plus Node reproduces the site byte
+  for byte. Upstream can go down, rate-limit, or reshape its API without
+  affecting anyone building the site today.
+- **Corrections are diffs.** When a source is wrong, the fix is a reviewable
+  change to a JSON file, not an invisible cache eviction.
 
-1. **Load + validate** the JSON datasets. Counts that should reconcile do
-   reconcile (104 matches, 48 teams, squads of 23–26) or the build is wrong.
-2. **Render** every page from that data: the Today view, the schedule, one page
-   per match, one per team, venues, groups, the how-to-watch guides (English and
-   Spanish), the calendar and per-team `.ics` feeds, the prediction league and
-   leaderboard, history, sources, and the static pages.
-3. **Assemble** `dist/` — render the HTML, copy `site/` across, and emit the
-   machine-readable exports (e.g. the schedule as JSON) alongside it.
+Where a value is not confirmed, the dataset leaves it unset and the page renders
+a placeholder. The generator has no path that invents a plausible substitute.
 
-Helper scripts in `scripts/` prepare data and images *before* a build (resolving
-player photos to a Wikidata QID, pinning flag SVGs, mirroring thumbnails). They
-feed `data/` and `site/`; they are not part of rendering. The generator itself is
-the only thing that produces a page.
+## 2. Generation — one script, one pass, no dependencies
 
-## Zero dependencies
+`scripts/build.mjs` is the whole build. It loads the datasets, then emits the
+complete site into `dist/` in a single pass: the fixture list and per-match pages,
+group tables, venue and squad pages, the bracket, the static assets copied from
+`site/`, and the redirect and header files a static host needs.
 
-`build.mjs` imports nothing but `node:fs`. There is no `package.json`, no
-`node_modules`, no install step. You need a recent Node and that's it:
+Rendering is done with template literals and small helper modules under
+`scripts/lib/` — an escaping layer, a URL sanitiser, a date formatter that keeps
+tournament time and visitor time distinct, and one shared string table. There is
+no template language and no plugin system, because there is exactly one site to
+generate and speculative flexibility would cost more than it returns.
 
-```sh
-node scripts/build.mjs
-```
+Two properties are worth calling out because they shape everything downstream:
 
-The point isn't minimalism for its own sake — it's that the build can't rot. No
-dependency can break it, go unmaintained, or quietly change its behaviour between
-runs. A clone from years from now still builds the same site.
+- **Output is inert.** The generator writes files. It does not deploy, publish,
+  or notify.
+- **Pages are complete.** Every page is fully readable as delivered. The client
+  scripts described below only ever refine a page that already says the right
+  thing.
 
-## Why static assets
+## 3. Hydration — patching a finished page
 
-The site deploys to Cloudflare Workers as **assets only** — no fetch handler, no
-secrets, no server code (`wrangler.public.toml` is the structural guarantee of
-this; never add a `main` to it). That choice buys three things:
+Live tournament state is the one thing that cannot be baked, because it changes
+while the page is open. The client handles it with the smallest mechanism that
+works: a short poll for a small JSON snapshot of current match state, followed by
+in-place patches to the score, status, and table cells already present in the DOM.
 
-- **No metered requests.** Static asset requests are free and exempt from the
-  account request cap. A viral matchday cannot run up a bill.
-- **It fails closed.** There's no live backend to crash. If my build machine is
-  off, the last good `dist/` is still being served. The worst failure mode is
-  *slightly stale*, never *down*.
-- **It's cheap and fast.** Pages are pre-rendered HTML; nothing is computed at
-  request time. Serving files costs effectively nothing.
+The rules the hydrator follows are deliberately narrow.
 
-The site updates by **rebaking**: a scheduled job pulls fresh scores, rebuilds
-`dist/`, and redeploys only when something actually changed. The live page is
-always a finished artifact, never a render-on-demand.
+- It fetches a snapshot document and, if that request fails for any reason, falls
+  back to a snapshot baked into the site at build time. A reader never sees an
+  error state caused by the live layer.
+- It mutates existing nodes rather than re-rendering regions. Nodes that carry
+  live values are the same DOM nodes for the lifetime of the page, which is what
+  lets the translation layer coexist with it (see below).
+- It polls only while matches could plausibly be in progress, and re-checks when
+  a backgrounded tab returns to the foreground.
 
-## Provenance discipline
+Everything else on the page — filters, sorting, visitor-local kickoff times — is
+pure client enhancement over baked markup, re-runnable at any time and idempotent
+by construction, because several layers may enhance the same subtree in sequence.
 
-The hard rule, enforced end to end:
+## 4. The translation overlay
 
-> Every fact carries a source. Anything that can't be sourced renders as **TBD** —
-> never a guess.
+The site ships in English and five additional languages (Spanish, French, German,
+Igbo, Twi). Translation is an overlay in two tiers, and the split matters.
 
-Concretely:
+**Chrome tier.** Short, structural labels — navigation, column headings, buttons —
+are baked into the HTML once per language as sibling spans scoped by language.
+A single attribute on the root element decides, in CSS, which set is visible.
+That flip happens before first paint, so switching language never shows a frame
+of the wrong text.
 
-- Datasets require a `source_url` per record. Schedule data is cross-checked
-  across independent sources before it's trusted.
-- Photos are matched to people by **Wikidata QID**, never by name string, and
-  must pass a license allowlist; a subject without a verified, cleared photo gets
-  a neutral initials avatar rather than a near-match. Full policy in
-  [ATTRIBUTION.md](../ATTRIBUTION.md).
-- Undetermined things stay undetermined on the page. Knockout fixtures show the
-  official "Winner Group X" placeholders until the bracket is decided — the site
-  never fills them with a prediction.
+**Prose tier.** Longer passages are too large to bake five times into every page.
+Instead the build emits one JSON fragment per language per route, and the client
+swaps the matching sections in when a non-English language is active. The root
+language attribute is only updated once that swap has completed.
 
-A wrong kickoff time or a misidentified player is worse than a blank, so the
-default is to show less.
+Two safeguards keep the overlay from fighting the live layer. Subtrees that carry
+live values are explicitly marked as never-translated, and they survive a section
+swap as the very same nodes, so a score being updated mid-swap is never orphaned.
+And when a fragment is missing, slow, or malformed, nothing happens at all: the
+page stays in English. The degraded path is the designed path, not an accident.
 
-## How to extend it
+## 5. The knockout room — optional 3D, strictly opt-in
 
-Because the build is data-in / HTML-out, most changes are small and local:
+The bracket has two presentations behind a `[2D | 3D]` toggle. The flat diagram is
+the default and the guaranteed one; the 3D scene is an extra.
 
-- **Add or fix a fact** → edit the relevant `data/*.json` (with its `source_url`)
-  and rebuild. No code change.
-- **Add a page or section** → add a render step in `scripts/build.mjs` that reads
-  from `data/` and calls `writeFileSync` into `dist/`. Follow the existing
-  shared page shell so navigation, theming, and metadata come for free.
-- **Add a static asset** (icon, font, style) → drop it in `site/`; it's copied
-  into the build as-is.
-- **Add a new dataset** → write a small `scripts/` helper that produces a sourced
-  JSON file under `data/`, then read it in the generator.
+- **It is not offered unless it makes sense.** No WebGL, a reduced-motion
+  preference, a narrow viewport, or a low reported device memory each suppress
+  the toggle entirely.
+- **Nothing loads until it is asked for.** The three.js runtime and the glTF
+  models are dynamic imports from the same origin, triggered by the first opt-in.
+  A visitor who never touches the toggle downloads none of it.
+- **The scene has no data source of its own.** It builds its model by reading the
+  already-baked 2D bracket out of the DOM, and it re-syncs through a debounced
+  observer when the hydration layer changes those cells. There is exactly one
+  source of truth for match state on the page, and the 3D layer is downstream of
+  it rather than beside it.
+- **Turning it off is complete.** Toggling back to 2D disposes the GL context and
+  the scene graph and restores the flat view immediately.
 
-Keep three invariants and you won't break the design: the generator stays a pure
-function of `data/` + `site/`; the public deploy stays assets-only; and nothing
-ships a fact without a source.
+The scene itself is built for a low, flat frame cost: baked lighting rather than
+real-time lights, a small fixed set of materials, and a fixed-cardinality model
+sized to the tournament (12 groups, 16 first-round ties, then 8, 4, 2, 1) so that
+no part of it grows with the data.
+
+## 6. Testing
+
+The tests under `test/` are plain `node --test` files with no runner or harness to
+install. They cover the shapes the generator depends on — dataset integrity,
+string-table uniqueness, escaping at every markup sink, the translation
+fragments' numeric fidelity against their English source, and structural pins on
+the generated HTML that would otherwise drift silently.
+
+They are unit and contract tests over a pure function from data to files, which is
+the useful thing about a generator with no runtime: almost everything worth
+asserting can be asserted without a browser.
+
+---
+
+## Why it is shaped this way
+
+The whole design follows from one constraint: the site had to be correct, fast,
+and cheap to keep alive for a tournament that lasts weeks and an archive that
+lasts longer. Baking everything makes it fast and cheap. Keeping provenance in the
+data makes it correctable. Refusing dependencies makes it still buildable when the
+tournament is a memory. The interesting engineering is in what each layer is
+*forbidden* to do — the live layer may not re-render, the translation layer may
+not touch live nodes, the 3D layer may not fetch — and those prohibitions are what
+let five independent enhancements share one page without collisions.
