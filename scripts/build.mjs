@@ -1109,7 +1109,7 @@ ${f.champion ? `<div class="fin"><span class="champ"><span class="crown" aria-hi
   ${next ? `<a href="/history/${next}">${next} →</a>` : '<span></span>'}
 </nav>
 <section class="prose" style="max-width:720px"><h2>Sources</h2><ul>${srcs}</ul>
-<p class="muted footnote">Adapted under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a> from the cited sources. Result, host and awards above are extracted verbatim from the referenced write-up; a blank field means the sources don't state it. <a href="mailto:onwike@gmail.com?subject=Golazo26%20history%20correction:%20${y}">Report an error</a>.</p></section>`;
+<p class="muted footnote">Adapted under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a> from the cited sources. Result, host and awards above are extracted verbatim from the referenced write-up; a blank field means the sources don't state it. <a href="https://github.com/onwike/golazo26/issues/new?title=History%20correction:%20${y}">Report an error</a>.</p></section>`;
       writeFileSync(`dist/history/${y}.html`, page(`${ed.title}`, 'history', body, {
         desc: `${ed.title}: ${f.champion ? `${f.champion} champions${f.host ? `, hosted by ${f.host}` : ''}.` : 'World Cup edition.'} The full story, with sources.`,
         path: `/history/${y}`,
@@ -1125,7 +1125,7 @@ ${f.champion ? `<div class="fin"><span class="champ"><span class="crown" aria-hi
 function proseFooter(p) {
   const spine = p.sheet.spine_source ?? { revid: rosters.source.revid, permalink: rosters.source.permalink };
   const asOf = (p.sheet.fetched_at ?? '').slice(0, 10);
-  return `<p class="muted footnote"><strong>Facts as of ${esc(asOf)}</strong> (pinned sources; later events are not reflected). Adapted under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a> from the sources below. Career narrative: <a href="${p.sheet.permalink}" rel="noopener">Wikipedia, pinned revision ${p.sheet.revid}</a>. Squad number, caps &amp; goals: <a href="${spine.permalink}" rel="noopener">squads page, pinned revision ${spine.revid}</a> + audited tournament data. Content hash <code>${p.sheet.content_hash}</code>. <a href="mailto:onwike@gmail.com?subject=Golazo26%20correction:%20${encodeURIComponent(p.name)}">Report an error</a>.</p>`;
+  return `<p class="muted footnote"><strong>Facts as of ${esc(asOf)}</strong> (pinned sources; later events are not reflected). Adapted under <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="noopener">CC BY-SA 4.0</a> from the sources below. Career narrative: <a href="${p.sheet.permalink}" rel="noopener">Wikipedia, pinned revision ${p.sheet.revid}</a>. Squad number, caps &amp; goals: <a href="${spine.permalink}" rel="noopener">squads page, pinned revision ${spine.revid}</a> + audited tournament data. Content hash <code>${p.sheet.content_hash}</code>. <a href="https://github.com/onwike/golazo26/issues/new?title=Correction:%20${encodeURIComponent(p.name)}">Report an error</a>.</p>`;
 }
 if (profiles.size) {
   mkdirSync('dist/players', { recursive: true });

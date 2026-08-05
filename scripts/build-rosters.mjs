@@ -6,7 +6,7 @@
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 
-const UA = 'Golazo26-planning/0.1 (contact: onwike@gmail.com)';
+const UA = 'Golazo26-planning/0.1 (+https://github.com/onwike/golazo26)';
 const REVID = 1358656369;
 const API = `https://en.wikipedia.org/w/api.php?action=parse&oldid=${REVID}&prop=wikitext&format=json`;
 const PERMALINK = `https://en.wikipedia.org/w/index.php?title=2026_FIFA_World_Cup_squads&oldid=${REVID}`;

@@ -14,7 +14,7 @@
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
-const UA = 'Golazo26/1.0 (fan site; contact: onwike@gmail.com)';
+const UA = 'Golazo26/1.0 (fan site; +https://github.com/onwike/golazo26)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const chunk = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
 import { ALLOW } from './lib/commons.mjs'; // single-source license allowlist

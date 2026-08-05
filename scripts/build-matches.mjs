@@ -7,7 +7,7 @@
 
 import { writeFileSync, mkdirSync } from 'node:fs';
 
-const UA = 'Golazo26-planning/0.1 (contact: onwike@gmail.com)';
+const UA = 'Golazo26-planning/0.1 (+https://github.com/onwike/golazo26)';
 const OF_URL = 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json';
 const FD_URL = 'https://fixturedownload.com/feed/json/fifa-world-cup-2026';
 const WIKI_VENUES_URL = 'https://en.wikipedia.org/w/index.php?title=2026_FIFA_World_Cup&oldid=1358650246#Venues';

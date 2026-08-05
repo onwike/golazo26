@@ -7,7 +7,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 
-const UA = 'Golazo26/1.0 (fan site; contact: onwike@gmail.com)';
+const UA = 'Golazo26/1.0 (fan site; +https://github.com/onwike/golazo26)';
 const images = JSON.parse(readFileSync('data/images.json', 'utf8')).entries;
 mkdirSync('site/img', { recursive: true });
 

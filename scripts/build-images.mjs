@@ -9,7 +9,7 @@
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
-const UA = 'Golazo26-planning/0.1 (contact: onwike@gmail.com)';
+const UA = 'Golazo26-planning/0.1 (+https://github.com/onwike/golazo26)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function api(url) {

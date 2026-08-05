@@ -27,7 +27,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 const ROOT = process.cwd() + '/'; // scripts run from repo root (cwd), like the others
-const UA = 'Golazo26/1.0 (fan site; contact: onwike@gmail.com)';
+const UA = 'Golazo26/1.0 (fan site; +https://github.com/onwike/golazo26)';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const chunk = (a, n) => Array.from({ length: Math.ceil(a.length / n) }, (_, i) => a.slice(i * n, i * n + n));
 

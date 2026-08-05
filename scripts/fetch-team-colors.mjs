@@ -9,7 +9,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { adjustForContrast } from './brand-tokens.mjs';
 
 const TAG = 'v15.1.0';
-const UA = 'Golazo26/1.0 (fan site; contact: onwike@gmail.com)';
+const UA = 'Golazo26/1.0 (fan site; +https://github.com/onwike/golazo26)';
 const teams = JSON.parse(readFileSync('data/teams.json', 'utf8')).teams;
 
 const NEUTRALS = /^#(fff|ffffff|eee|f5f5f5|e6e7e8|ccd6dd|99aab5|292f33|66757f)$/i; // twemoji border grays + whites
