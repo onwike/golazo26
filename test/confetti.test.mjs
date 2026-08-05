@@ -1,5 +1,5 @@
-// Unit tests for the deterministic core of the goal-celebration module.
-// Zero-dep: node:test + node:assert. Pins the behaviour the renderer relies on.
+// Unit tests for the deterministic core of the goal-celebration module (v2.06.00).
+// Zero-dep: node:test + node:assert. Verifies the locked design decisions.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { durationMs, forceFor, originFor, resolveColors } from '../site/confetti.js';
