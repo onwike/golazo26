@@ -43,7 +43,7 @@ any static file server can serve it.
 | Path | What lives there |
 | --- | --- |
 | `data/` | Versioned JSON datasets. Records carry the URL they came from. |
-| `scripts/` | The generator and the ingest tools that refresh `data/`. |
+| `scripts/` | The generator (`build.mjs`). |
 | `scripts/lib/` | Rendering helpers, the string table, and shared view modules. |
 | `site/` | Client assets copied into the output: stylesheets, scripts, fonts, brand art. |
 | `site/vendor/` | Vendored third-party browser modules, pinned and self-hosted. |
@@ -56,7 +56,8 @@ The datasets ship without photographs. Portraits come from Wikimedia Commons
 under rules I kept deliberately strict: a photo is matched to its person by
 Wikidata QID rather than by name, it has to pass a license allowlist, and it
 carries its author and license credit on every page where it appears. The ingest
-scripts in `scripts/` build that image set locally; a subject with no cleared
+tooling that builds the image set lives in the private working repo; this tree
+ships the audited metadata in `data/images.json`. A subject with no cleared
 photo gets an initials avatar, and the site builds fine with no photos at all.
 The full policy is in [ATTRIBUTION.md](ATTRIBUTION.md).
 

@@ -1539,7 +1539,7 @@ ${f.champion ? `<div class="fin"><span class="champ"><span class="crown" aria-hi
   ${next ? `<a href="/history/${next}">${next} →</a>` : '<span></span>'}
 </nav>
 <section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.sources.heading)}</h2><ul>${srcs}</ul>
-<p class="muted footnote"><span${i18nBlock(S.footnotes.historyEdition)}>${S.footnotes.historyEdition}</span> <a href="mailto:onwike@gmail.com?subject=Golazo26%20history%20correction:%20${y}">${S.footnotes.reportError}</a>.</p></section>`;
+<p class="muted footnote"><span${i18nBlock(S.footnotes.historyEdition)}>${S.footnotes.historyEdition}</span> <a href="https://github.com/onwike/golazo26/issues/new?title=History%20correction:%20${y}">${S.footnotes.reportError}</a>.</p></section>`;
       writeFileSync(`dist/history/${y}.html`, page(`${ed.title}`, 'history', body, {
         desc: `${ed.title}: ${f.champion ? `${f.champion} champions${f.host ? `, hosted by ${f.host}` : ''}.` : 'World Cup edition.'} The full story, with sources.`,
         path: `/history/${y}`,
@@ -1641,7 +1641,7 @@ ${stadHTML ? `<section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pa
 <section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.stadiums.renovations)}</h2>${renoHTML}${pitch}</section>
 ${gapsHTML}
 <section class="prose" style="max-width:720px"><h2>${i18nSpan(S.pages.sources.heading)}</h2><ul>${srcList(sources)}</ul>
-<p class="muted footnote"><span${i18nBlock(S.footnotes.stadiumsA)}>${S.footnotes.stadiumsA}</span> ${esc(asOf)}<span${i18nBlock(S.footnotes.stadiumsB)}>${S.footnotes.stadiumsB}</span> <a href="mailto:onwike@gmail.com?subject=Golazo26%20stadium%20correction:%20${encodeURIComponent(id)}">${S.footnotes.reportError}</a>.</p></section>`;
+<p class="muted footnote"><span${i18nBlock(S.footnotes.stadiumsA)}>${S.footnotes.stadiumsA}</span> ${esc(asOf)}<span${i18nBlock(S.footnotes.stadiumsB)}>${S.footnotes.stadiumsB}</span> <a href="https://github.com/onwike/golazo26/issues/new?title=Stadium%20correction:%20${encodeURIComponent(id)}">${S.footnotes.reportError}</a>.</p></section>`;
       writeFileSync(`dist/stadiums/${id}.html`, page(`${r.stadium_current} — ${r.city}`, 'stadiums', body, {
         desc: `${r.stadium_current} (${r.fifa_name}), ${r.city}: history, iconic games and World Cup 2026 renovations, with sources.`,
         path: `/stadiums/${id}`,
@@ -1657,7 +1657,7 @@ ${gapsHTML}
 function proseFooter(p) {
   const spine = p.sheet.spine_source ?? { revid: rosters.source.revid, permalink: rosters.source.permalink };
   const asOf = (p.sheet.fetched_at ?? '').slice(0, 10);
-  return `<p class="muted footnote"><strong>${S.footnotes.profile.factsAsOf} ${esc(asOf)}</strong> ${S.footnotes.profile.adaptedUnder}${p.meta?.cert ? ` (${esc(p.meta.cert)})` : ''}. ${S.footnotes.profile.careerNarrative} <a href="${p.sheet.permalink}" rel="noopener">${S.footnotes.profile.wikipediaPinned} ${p.sheet.revid}</a>. ${S.footnotes.profile.squadStats} <a href="${spine.permalink}" rel="noopener">${S.footnotes.profile.squadsPinned} ${spine.revid}</a> ${S.footnotes.profile.auditedData} <code>${p.sheet.fact_sheet_hash}</code>. <a href="mailto:onwike@gmail.com?subject=Golazo26%20correction:%20${encodeURIComponent(p.name)}">${S.footnotes.reportError}</a>.</p>`;
+  return `<p class="muted footnote"><strong>${S.footnotes.profile.factsAsOf} ${esc(asOf)}</strong> ${S.footnotes.profile.adaptedUnder}${p.meta?.cert ? ` (${esc(p.meta.cert)})` : ''}. ${S.footnotes.profile.careerNarrative} <a href="${p.sheet.permalink}" rel="noopener">${S.footnotes.profile.wikipediaPinned} ${p.sheet.revid}</a>. ${S.footnotes.profile.squadStats} <a href="${spine.permalink}" rel="noopener">${S.footnotes.profile.squadsPinned} ${spine.revid}</a> ${S.footnotes.profile.auditedData} <code>${p.sheet.fact_sheet_hash}</code>. <a href="https://github.com/onwike/golazo26/issues/new?title=Correction:%20${encodeURIComponent(p.name)}">${S.footnotes.reportError}</a>.</p>`;
 }
 if (profiles.size) {
   mkdirSync('dist/players', { recursive: true });
