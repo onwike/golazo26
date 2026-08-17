@@ -3,7 +3,7 @@
 # run_worker_first. Static asset requests are free, unlimited, and exempt from
 # the account-wide 100k req/day cap — this file is the structural guarantee
 # that a viral day cannot take the site down or cost money. Never add a
-# fetch handler here (see docs/deployment-guide.md).
+# fetch handler here (see docs/ARCHITECTURE.md).
 name = "golazo26"
 compatibility_date = "2026-06-01"
 account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"  # set to your own Cloudflare account id
