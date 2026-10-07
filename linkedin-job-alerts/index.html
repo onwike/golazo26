@@ -5,20 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>LinkedIn job-alert inventory v1</title>
 <style>
-:root { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-body { margin: 0; background: #0f1419; color: #e7ecf1; }
-header { padding: 16px 20px; border-bottom: 1px solid #2a3440; position: sticky; top: 0; background: #0f1419; z-index: 2; }
+:root { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; --header-h: 140px; }
+html, body { height: 100%; margin: 0; overflow: hidden; }
+body { background: #0f1419; color: #e7ecf1; }
+header { padding: 16px 20px; border-bottom: 1px solid #2a3440; background: #0f1419; z-index: 2; }
 h1 { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
-.meta { font-size: 13px; color: #9aa7b5; }
+.meta { font-size: 13px; color: #b0bec9; }
 .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; align-items: center; }
 input[type=search] { flex: 1; min-width: 180px; padding: 8px 10px; border-radius: 8px; border: 1px solid #2a3440; background: #161d25; color: #e7ecf1; }
 select, button { padding: 8px 10px; border-radius: 8px; border: 1px solid #2a3440; background: #161d25; color: #e7ecf1; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th, td { padding: 8px 10px; border-bottom: 1px solid #1e2732; text-align: left; vertical-align: top; }
-th { position: sticky; top: 118px; background: #121820; cursor: pointer; user-select: none; white-space: nowrap; }
-th:hover { background: #1a2330; }
+th { position: sticky; top: 0; z-index: 1; background: #121820; user-select: none; white-space: nowrap; }
+th[data-sort] { cursor: pointer; }
+th[data-sort]:hover { background: #1a2330; }
 th .arrow { opacity: 0.45; margin-left: 4px; }
 th.active .arrow { opacity: 1; }
+td:nth-child(3) { white-space: nowrap; max-width: 14em; overflow: hidden; text-overflow: ellipsis; }
 a { color: #6cb6ff; text-decoration: none; }
 a:hover { text-decoration: underline; }
 .badge { display: inline-block; padding: 2px 7px; border-radius: 999px; font-size: 11px; font-weight: 600; }
@@ -26,9 +29,15 @@ a:hover { text-decoration: underline; }
 .CLOSED { background: #3a1a1a; color: #f0a0a0; }
 .UNVERIFIED { background: #2a2a12; color: #d0c070; }
 .remote { color: #9ad0ff; }
-.wrap { overflow: auto; max-height: calc(100vh - 130px); }
+.wrap { overflow: auto; max-height: calc(100vh - var(--header-h, 140px)); }
 .muted { color: #8a96a3; }
-.footnote { font-size: 12px; color: #8a96a3; margin-top: 8px; }
+.footnote { font-size: 12px; color: #b0bec9; margin-top: 8px; }
+@media (max-width: 640px) {
+  .controls { flex-direction: column; align-items: stretch; }
+  th:first-child, td:first-child { position: sticky; left: 0; z-index: 1; }
+  th:first-child { background: #121820; z-index: 2; }
+  td:first-child { background: #0f1419; }
+}
 </style>
 </head>
 <body>
@@ -140,6 +149,14 @@ document.querySelectorAll('th[data-sort]').forEach(th => {
 });
 q.addEventListener('input', render);
 statusFilter.addEventListener('change', render);
+
+function setHeaderH() {
+  const h = document.querySelector('header');
+  if (h) document.documentElement.style.setProperty('--header-h', h.offsetHeight + 'px');
+}
+setHeaderH();
+window.addEventListener('resize', setHeaderH);
+
 render();
 
 window.__sortCheck = function(key, dir) {
